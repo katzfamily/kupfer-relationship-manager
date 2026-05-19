@@ -1,0 +1,2170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Prospect Command Center — Kupfer.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bone: #f4efe6;
+    --bone-2: #ebe3d4;
+    --bone-3: #e0d6c2;
+    --ink: #1a1511;
+    --ink-soft: #3a332c;
+    --oxblood: #1a305c;
+    --oxblood-deep: #0f1f3d;
+    --navy: #1a305c;
+    --mist: #7db3c2;
+    --rule: rgba(26,21,17,0.18);
+    --rule-soft: rgba(26,21,17,0.10);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bone);
+    color: var(--ink);
+    font-family: 'Europa', 'Futura', 'Jost', sans-serif;
+    font-size: 17px;
+    font-weight: 300;
+    line-height: 1.6;
+    letter-spacing: 0.005em;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  a { color: var(--navy); text-decoration: none; }
+  a:hover { text-decoration: underline; text-underline-offset: 3px; }
+
+  .shell { max-width: 1320px; margin: 0 auto; padding: 0 40px; }
+
+  /* ========== MASTHEAD ========== */
+  .masthead {
+    border-bottom: 2px solid var(--ink);
+    padding: 18px 0 16px;
+    background: var(--bone);
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    backdrop-filter: blur(8px);
+  }
+  .masthead-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+  }
+  .brand {
+    font-family: 'Futura', 'Futura PT', 'Jost', sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--ink);
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+  }
+  .brand-mark {
+    display: inline-block;
+    width: 10px; height: 10px;
+    background: var(--oxblood);
+    border-radius: 50%;
+    transform: translateY(-1px);
+  }
+  .brand em {
+    font-style: normal;
+    font-weight: 400;
+    color: var(--oxblood);
+    letter-spacing: 0.06em;
+  }
+  .mast-meta {
+    font-family: 'Europa', 'Futura', 'Jost', sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    display: flex;
+    gap: 28px;
+    align-items: center;
+  }
+  .mast-meta b { color: var(--ink); font-weight: 500; }
+  .mast-meta .dot {
+    width: 4px; height: 4px; background: var(--mist); border-radius: 50%;
+    display: inline-block; margin-right: 8px; transform: translateY(-2px);
+  }
+
+  /* tiny secondary bar */
+  .kicker-bar {
+    border-bottom: 1px solid var(--rule);
+    font-family: 'Europa', 'Futura', 'Jost', sans-serif;
+    font-size: 11.5px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    padding: 9px 0;
+    background: var(--bone);
+  }
+  .kicker-bar .shell {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+  }
+  .kicker-bar .vol { color: var(--oxblood); }
+
+  /* ========== HERO ========== */
+  .hero {
+    padding: 72px 0 48px;
+    border-bottom: 2px solid var(--ink);
+    position: relative;
+  }
+  .hero-eyebrow {
+    font-family: 'Futura', 'Futura PT', 'Jost', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--oxblood);
+    margin-bottom: 24px;
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .hero-eyebrow::before, .hero-eyebrow::after {
+    content: "";
+    display: inline-block;
+    width: 36px; height: 1px;
+    background: var(--oxblood);
+  }
+  .hero-title {
+    font-family: 'Futura', 'Futura PT', 'Jost', sans-serif;
+    font-weight: 500;
+    font-size: clamp(48px, 7.5vw, 104px);
+    line-height: 1;
+    letter-spacing: -0.015em;
+    color: var(--ink);
+    text-align: center;
+    text-wrap: balance;
+    margin-bottom: 28px;
+  }
+  .hero-title em {
+    font-style: normal;
+    font-weight: 300;
+    color: var(--oxblood);
+  }
+  .hero-deck {
+    font-family: 'Europa', 'Futura', 'Jost', sans-serif;
+    font-size: 22px;
+    line-height: 1.45;
+    color: var(--ink-soft);
+    max-width: 820px;
+    margin: 0 auto 44px;
+    text-align: center;
+    text-wrap: pretty;
+  }
+  .hero-deck strong { color: var(--ink); font-weight: 600; }
+
+  /* ICP filter callout */
+  .icp-callout {
+    max-width: 980px;
+    margin: 0 auto 40px;
+    padding: 26px 32px;
+    background: var(--bone-2);
+    border-left: 3px solid var(--oxblood);
+    text-align: left;
+  }
+  .icp-callout b {
+    font-family: 'Futura', 'Futura PT', 'Jost', sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--oxblood);
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 500;
+  }
+  .icp-callout p {
+    font-size: 16px;
+    line-height: 1.55;
+    color: var(--ink-soft);
+  }
+  .icp-callout p strong { color: var(--ink); font-weight: 600; }
+
+  /* Hero stats row */
+  .hero-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    border-top: 2px solid var(--ink);
+    border-bottom: 2px solid var(--ink);
+    margin-top: 40px;
+  }
+  .hero-stat {
+    padding: 32px 24px 28px;
+    border-right: 1px solid var(--rule);
+    text-align: center;
+  }
+  .hero-stat:last-child { border-right: none; }
+  .hero-stat .num {
+    font-family: 'Futura', 'Futura PT', 'Jost', sans-serif;
+    font-weight: 500;
+    font-size: clamp(48px, 6vw, 82px);
+    line-height: 1;
+    letter-spacing: -0.02em;
+    color: var(--oxblood);
+    margin-bottom: 14px;
+  }
+  .hero-stat .num sup {
+    font-size: 0.45em;
+    font-weight: 500;
+    vertical-align: super;
+    color: var(--mist);
+    letter-spacing: 0;
+  }
+  .hero-stat .num small {
+    font-size: 0.32em;
+    color: var(--mist);
+    font-weight: 400;
+    letter-spacing: 0;
+    margin-left: 2px;
+  }
+  .hero-stat .label {
+    font-family: 'Europa', 'Futura', 'Jost', sans-serif;
+    font-weight: 300;
+    font-size: 14px;
+    color: var(--ink-soft);
+    line-height: 1.45;
+    max-width: 220px;
+    margin: 0 auto;
+  }
+
+  /* ========== SECTION SCAFFOLD ========== */
+  section { padding: 96px 0; border-bottom: 1px solid var(--rule); }
+  section:last-of-type { border-bottom: none; }
+
+  .section-label {
+    font-family: 'Europa', 'Futura', 'Jost', sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--oxblood);
+    font-weight: 600;
+    margin-bottom: 18px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .section-label .num {
+    font-family: 'Futura', 'Futura PT', 'Jost', sans-serif;
+    font-weight: 500;
+    font-size: 13px;
+    color: var(--mist);
+    letter-spacing: 0.12em;
+  }
+  .section-label .rule {
+    flex: 1;
+    height: 1px;
+    background: var(--rule);
+  }
+
+  .section-title {
+    font-family: 'Futura', 'Futura PT', 'Jost', sans-serif;
+    font-weight: 500;
+    font-size: clamp(36px, 4.6vw, 58px);
+    line-height: 1.08;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+    margin-bottom: 24px;
+    text-wrap: balance;
+    max-width: 22ch;
+  }
+  .section-title em {
+    font-style: normal;
+    font-weight: 300;
+    color: var(--oxblood);
+  }
+  .section-deck {
+    font-family: 'Europa', 'Futura', 'Jost', sans-serif;
+    font-size: 19px;
+    line-height: 1.5;
+    color: var(--ink-soft);
+    max-width: 64ch;
+    text-wrap: pretty;
+  }
+
+  .section-head-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    margin-bottom: 56px;
+    align-items: end;
+  }
+
+  /* ========== PRIORITY GRID ========== */
+  .priority-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 24px;
+  }
+  .pri-card {
+    background: var(--bone);
+    border: 1px solid var(--rule);
+    padding: 36px 36px 32px;
+    position: relative;
+    transition: border-color 0.2s, transform 0.25s, box-shadow 0.25s;
+    overflow: hidden;
+  }
+  .pri-card:hover {
+    border-color: var(--oxblood);
+    transform: translateY(-3px);
+    box-shadow: 0 18px 40px -22px rgba(26,21,17,0.35);
+  }
+  .pri-card.featured {
+    grid-column: span 12;
+    background: var(--bone-2);
+    border-color: var(--ink);
+    border-left: 4px solid var(--oxblood);
+  }
+  .pri-card.half { grid-column: span 6; }
+  .pri-card.third { grid-column: span 4; }
+
+  .pri-rank {
+    position: absolute;
+    top: 28px;
+    right: 36px;
+    font-family: 'Futura', 'Futura PT', 'Jost', sans-serif;
+    font-weight: 500;
+    font-size: 64px;
+    color: var(--mist);
+    opacity: 0.55;
+    line-height: 0.85;
+    letter-spacing: -0.02em;
+  }
+  .pri-card.featured .pri-rank {
+    font-size: 110px;
+    color: var(--oxblood);
+    opacity: 0.18;
+  }
+
+  .pri-pills {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 18px;
+  }
+  .pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-family: 'Futura', 'Futura PT', 'Jost', sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    font-weight: 500;
+    padding: 5px 10px;
+    border: 1px solid var(--ink);
+    color: var(--ink);
+    background: transparent;
+  }
+  .pill--connected {
+    color: var(--oxblood);
+    border-color: var(--oxblood);
+  }
+  .pill--connected::before {
+    content: "";
+    width: 6px; height: 6px;
+    background: var(--oxblood);
+    border-radius: 50%;
+  }
+  .pill--ceo {
+    color: var(--bone);
+    background: var(--oxblood);
+    border-color: var(--oxblood);
+  }
+  .pill--mist {
+    color: var(--ink);
+    border-color: var(--mist);
+    background: rgba(125,179,194,0.18);
+  }
+
+  .pri-tier-tag {
+    font-family: 'Europa', 'Futura', 'Jost', sans-serif;
+    font-weight: 600;
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin-bottom: 18px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .pri-tier-tag b { color: var(--oxblood); font-weight: 600; }
+
+  .pri-name {
+    font-family: 'Futura', 'Futura PT', 'Jost', sans-serif;
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 1.08;
+    letter-spacing: -0.012em;
+    color: var(--ink);
+    margin-bottom: 6px;
+    max-width: 80%;
+  }
+  .pri-card.featured .pri-name { font-size: 52px; max-width: 78%; }
+  .pri-title {
+    font-family: 'Europa', 'Futura', 'Jost', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    color: var(--oxblood);
+    margin-bottom: 4px;
+    letter-spacing: 0.02em;
+  }
+  .pri-firm {
+    font-size: 13.5px;
+    color: var(--ink-soft);
+    font-weight: 300;
+    margin-bottom: 24px;
+  }
+
+  .pri-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    margin: 0 0 22px;
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+  }
+  .pri-card.half .pri-stats,
+  .pri-card.third .pri-stats { grid-template-columns: repeat(2, 1fr); }
+  .pri-stat {
+    padding: 16px 14px 16px 0;
+    border-right: 1px solid var(--rule);
+  }
+  .pri-stat:last-child { border-right: none; }
+  .pri-stat label {
+    font-family: 'Europa', 'Futura', 'Jost', sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    display: block;
+    margin-bottom: 4px;
+    font-weight: 500;
+  }
+  .pri-stat val {
+    font-family: 'Futura', 'Futura PT', 'Jost', sans-serif;
+    font-size: 19px;
+    font-weight: 500;
+    color: var(--oxblood);
+    display: block;
+    letter-spacing: -0.005em;
+  }
+
+  .pri-trigger {
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--ink-soft);
+    margin-bottom: 22px;
+  }
+  .pri-trigger strong { color: var(--ink); font-weight: 600; }
+  .pri-trigger b { color: var(--oxblood); font-weight: 600; }
+
+  .pri-why {
+    font-family: 'Futura', 'Futura PT', 'Jost', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.4;
+    color: var(--oxblood);
+    border-left: 3px solid var(--mist);
+    padding: 4px 0 4px 18px;
+    margin-bottom: 26px;
+    letter-spacing: -0.005em;
+  }
+
+  .pri-actions {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  /* ===== Outreach completion checkbox ===== */
+  .pri-done {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    user-select: none;
+    padding: 11px 16px 11px 14px;
+    border: 1.5px dashed var(--ink-soft);
+    background: transparent;
+    font-family: 'Futura', 'Futura PT', 'Jost', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    transition: background 0.18s, color 0.18s, border-color 0.18s;
+    margin-left: auto;
+  }
+  /* Flex line break to force .pri-done onto its own row, then right-align */
+  .pri-actions .pri-break {
+    flex-basis: 100%;
+    height: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+  }
+  .pri-done:hover {
+    border-color: var(--oxblood);
+    color: var(--oxblood);
+  }
+  .pri-done input {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 18px;
+    height: 18px;
+    border: 1.5px solid var(--ink-soft);
+    background: var(--bone);
+    margin: 0;
+    cursor: pointer;
+    position: relative;
+    flex-shrink: 0;
+    transition: background 0.15s, border-color 0.15s;
+  }
+  .pri-done input:hover { border-color: var(--oxblood); }
+  .pri-done input:checked {
+    background: var(--oxblood);
+    border-color: var(--oxblood);
+  }
+  .pri-done input:checked::after {
+    content: "";
+    position: absolute;
+    left: 4px;
+    top: 0px;
+    width: 6px;
+    height: 11px;
+    border-right: 2px solid var(--bone);
+    border-bottom: 2px solid var(--bone);
+    transform: rotate(45deg);
+  }
+  .pri-done .pri-done-label-done { display: none; }
+  .pri-card.is-done .pri-done {
+    border-style: solid;
+    border-color: var(--oxblood);
+    color: var(--oxblood);
+    background: rgba(26,48,92,0.06);
+  }
+  .pri-card.is-done .pri-done .pri-done-label-todo { display: none; }
+  .pri-card.is-done .pri-done .pri-done-label-done { display: inline; }
+
+  /* Quiet the rest of the card once complete */
+  .pri-card.is-done {
+    opacity: 0.62;
+  }
+  .pri-card.is-done:hover { opacity: 1; }
+  .pri-card.is-done .pri-name {
+    text-decoration: line-through;
+    text-decoration-thickness: 1px;
+    text-decoration-color: var(--ink-soft);
+  }
+
+  .btn {
+    font-family: 'Futura', 'Futura PT', 'Jost', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    padding: 12px 22px;
+    border: 1.5px solid var(--ink);
+    background: transparent;
+    color: var(--ink);
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    transition: background 0.15s, color 0.15s, border-color 0.15s;
+  }
+  .btn:hover {
+    background: var(--ink);
+    color: var(--bone);
+    text-decoration: none;
+  }
+  .btn--primary {
+    background: var(--oxblood);
+    color: var(--bone);
+    border-color: var(--oxblood);
+  }
+  .btn--primary:hover {
+    background: var(--oxblood-deep);
+    border-color: var(--oxblood-deep);
+    color: var(--bone);
+  }
+  .btn .arrow {
+    font-style: italic;
+    transition: transform 0.2s;
+  }
+  .btn:hover .arrow { transform: translate(2px, -2px); }
+
+  /* Reserve card */
+  .pri-card.reserve {
+    background: transparent;
+    border-style: dashed;
+    border-color: var(--ink-soft);
+  }
+  .pri-card.reserve .pri-rank { color: var(--ink-soft); opacity: 0.35; }
+
+  /* ========== CONNECTION MAP ========== */
+  .map-section {
+    background: var(--ink);
+    color: var(--bone);
+    border-bottom: none;
+  }
+  .map-section .section-label { color: var(--mist); }
+  .map-section .section-label .num { color: rgba(244,239,230,0.55); }
+  .map-section .section-label .rule { background: rgba(244,239,230,0.18); }
+  .map-section .section-title { color: var(--bone); }
+  .map-section .section-title em { color: var(--mist); font-weight: 300; }
+  .map-section .section-deck { color: rgba(244,239,230,0.7); }
+
+  .firm-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px;
+  }
+  .firm-block {
+    background: var(--bone);
+    color: var(--ink);
+    padding: 36px 36px 32px;
+    position: relative;
+    border-left: 4px solid var(--mist);
+  }
+  .firm-block.tier-1 { border-left-color: var(--oxblood); }
+  .firm-name {
+    font-family: 'Futura', 'Futura PT', 'Jost', sans-serif;
+    font-weight: 500;
+    font-size: 28px;
+    line-height: 1.1;
+    letter-spacing: -0.012em;
+    margin-bottom: 8px;
+  }
+  .firm-meta {
+    font-family: 'Europa', 'Futura', 'Jost', sans-serif;
+    font-size: 11.5px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin-bottom: 26px;
+    font-weight: 500;
+  }
+  .firm-meta b { color: var(--oxblood); font-weight: 600; }
+  .firm-meta .sep { color: var(--mist); margin: 0 8px; }
+
+  .contacts {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .contact-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 18px;
+    background: var(--bone-2);
+    border: 1px solid var(--rule);
+    transition: border-color 0.18s, transform 0.18s;
+    gap: 12px;
+  }
+  .contact-row:hover {
+    border-color: var(--oxblood);
+    transform: translateX(3px);
+  }
+  .contact-row.key {
+    background: var(--ink);
+    color: var(--bone);
+    border-color: var(--ink);
+  }
+  .contact-row.key.mega {
+    background: var(--oxblood);
+    border-color: var(--oxblood);
+  }
+  .contact-info { flex: 1; }
+  .contact-name {
+    font-family: 'Futura', 'Futura PT', 'Jost', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.2;
+    letter-spacing: -0.005em;
+  }
+  .contact-title {
+    font-family: 'Europa', 'Futura', 'Jost', sans-serif;
+    font-size: 12.5px;
+    color: var(--ink-soft);
+    margin-top: 3px;
+    font-weight: 300;
+  }
+  .contact-row.key .contact-title { color: rgba(244,239,230,0.65); }
+
+  .badge-dm {
+    display: inline-block;
+    margin-left: 8px;
+    font-family: 'Futura', 'Futura PT', 'Jost', sans-serif;
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--ink);
+    background: var(--mist);
+    padding: 3px 7px;
+    font-weight: 500;
+    transform: translateY(-2px);
+  }
+  .contact-row.key .badge-dm { color: var(--oxblood); background: var(--mist); }
+
+  .badge-warm {
+    display: inline-block;
+    margin-left: 8px;
+    font-family: 'Futura', 'Futura PT', 'Jost', sans-serif;
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--oxblood);
+    border: 1px solid var(--oxblood);
+    padding: 2px 7px;
+    font-weight: 500;
+  }
+
+  .contact-link {
+    font-family: 'Futura', 'Futura PT', 'Jost', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: var(--oxblood);
+    border: 1px solid var(--oxblood);
+    padding: 7px 12px;
+    transition: all 0.15s;
+    white-space: nowrap;
+    text-decoration: none;
+  }
+  .contact-link:hover {
+    background: var(--oxblood);
+    color: var(--bone);
+    text-decoration: none;
+  }
+  .contact-row.key .contact-link {
+    color: var(--mist);
+    border-color: var(--mist);
+  }
+  .contact-row.key .contact-link:hover {
+    background: var(--mist);
+    color: var(--ink);
+  }
+
+  .firm-site-link {
+    display: inline-block;
+    font-family: 'Futura', 'Futura PT', 'Jost', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: lowercase;
+    color: var(--oxblood);
+    border: 1px solid var(--oxblood);
+    padding: 6px 10px;
+    margin-bottom: 22px;
+    transition: all 0.15s;
+  }
+  .firm-site-link:hover {
+    background: var(--oxblood);
+    color: var(--bone);
+    text-decoration: none;
+  }
+  .firm-trigger {
+    margin-top: 24px;
+    padding-top: 22px;
+    border-top: 1px solid var(--rule);
+    font-family: 'Futura', 'Futura PT', 'Jost', sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 1.55;
+    color: var(--ink-soft);
+    letter-spacing: -0.003em;
+  }
+  .firm-trigger b {
+    color: var(--oxblood);
+    font-weight: 600;
+    font-family: 'Europa', 'Futura', 'Jost', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 6px;
+  }
+
+  /* ========== TABLE ========== */
+  .controls {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 36px;
+    flex-wrap: wrap;
+    align-items: center;
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    padding: 16px 0;
+  }
+  .filter-btn {
+    font-family: 'Futura', 'Futura PT', 'Jost', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    font-weight: 500;
+    padding: 10px 16px;
+    background: transparent;
+    border: 1px solid var(--rule);
+    color: var(--ink-soft);
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+  .filter-btn:hover {
+    border-color: var(--oxblood);
+    color: var(--oxblood);
+  }
+  .filter-btn.active {
+    background: var(--oxblood);
+    color: var(--bone);
+    border-color: var(--oxblood);
+  }
+  .search-input {
+    flex: 1;
+    min-width: 240px;
+    background: var(--bone-2);
+    border: 1px solid var(--rule);
+    color: var(--ink);
+    padding: 10px 14px;
+    font-family: 'Europa', 'Futura', 'Jost', sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    outline: none;
+    transition: border-color 0.15s;
+  }
+  .search-input:focus { border-color: var(--oxblood); }
+  .search-input::placeholder { color: var(--ink-soft); }
+
+  .db-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+  }
+  .db-table thead { border-top: 2px solid var(--ink); border-bottom: 2px solid var(--ink); }
+  .db-table th {
+    text-align: left;
+    padding: 18px 12px;
+    font-family: 'Europa', 'Futura', 'Jost', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--ink);
+    font-weight: 600;
+    background: var(--bone-2);
+  }
+  .db-table td {
+    padding: 18px 12px;
+    border-bottom: 1px solid var(--rule);
+    vertical-align: top;
+  }
+  .db-table tr:hover td { background: var(--bone-2); }
+  .firm-cell {
+    font-family: 'Futura', 'Futura PT', 'Jost', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: var(--ink);
+    letter-spacing: -0.005em;
+  }
+  .firm-cell .firm-loc {
+    display: block;
+    font-family: 'Europa', 'Futura', 'Jost', sans-serif;
+    font-size: 12px;
+    color: var(--ink-soft);
+    margin-top: 3px;
+    font-weight: 300;
+    letter-spacing: 0;
+    text-transform: none;
+  }
+  .aum-cell {
+    font-family: 'Futura', 'Futura PT', 'Jost', sans-serif;
+    font-size: 15px;
+    color: var(--oxblood);
+    font-weight: 500;
+  }
+  .tag {
+    display: inline-block;
+    font-family: 'Futura', 'Futura PT', 'Jost', sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    font-weight: 500;
+    padding: 4px 9px;
+    border: 1px solid;
+    white-space: nowrap;
+  }
+  .tag-tier1 { color: var(--oxblood); border-color: var(--oxblood); }
+  .tag-tier2 { color: var(--ink-soft); border-color: var(--ink-soft); }
+  .tag-buy { color: var(--ink); border-color: var(--mist); background: rgba(125,179,194,0.16); }
+  .tag-sell { color: var(--ink); border-color: var(--ink); }
+  .tag-conn { color: var(--bone); background: var(--oxblood); border-color: var(--oxblood); }
+  .site-link {
+    font-family: 'Futura', 'Futura PT', 'Jost', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    color: var(--oxblood);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    white-space: nowrap;
+    transition: border-color 0.15s;
+  }
+  .site-link:hover { border-bottom-color: var(--oxblood); text-decoration: none; }
+  .why-cell {
+    font-size: 13px;
+    color: var(--ink-soft);
+    line-height: 1.5;
+    max-width: 360px;
+    font-weight: 300;
+  }
+  .dm-cell .dm-name {
+    font-family: 'Futura', 'Futura PT', 'Jost', sans-serif;
+    font-weight: 500;
+    color: var(--ink);
+    font-size: 14px;
+  }
+  .dm-cell .dm-title {
+    font-size: 12px;
+    color: var(--ink-soft);
+    margin-top: 2px;
+    font-weight: 300;
+  }
+
+  /* ========== FOOTER ========== */
+  footer {
+    background: var(--bone);
+    padding: 56px 0 40px;
+    border-top: 2px solid var(--ink);
+  }
+  .footer-top {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 48px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .footer-top h5 {
+    font-family: 'Europa', 'Futura', 'Jost', sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--oxblood);
+    margin-bottom: 16px;
+    font-weight: 600;
+  }
+  .footer-top p, .footer-top li {
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--ink-soft);
+  }
+  .footer-top ul { list-style: none; }
+  .footer-top li { margin-bottom: 6px; }
+  .footer-colophon {
+    font-family: 'Europa', 'Futura', 'Jost', sans-serif;
+    font-weight: 300;
+    color: var(--ink-soft);
+    font-size: 15px;
+    line-height: 1.6;
+    max-width: 52ch;
+  }
+  .footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 24px;
+    font-family: 'Europa', 'Futura', 'Jost', sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+  }
+
+  /* responsive */
+  @media (max-width: 1024px) {
+    .priority-grid { grid-template-columns: 1fr; }
+    .pri-card.featured, .pri-card.half, .pri-card.third { grid-column: span 1; }
+    .firm-grid { grid-template-columns: 1fr; }
+    .pri-card.featured .pri-name { font-size: 36px; }
+  }
+  @media (max-width: 900px) {
+    .shell { padding: 0 24px; }
+    .hero-stats { grid-template-columns: repeat(2, 1fr); }
+    .hero-stat:nth-child(2) { border-right: none; }
+    .hero-stat:nth-child(-n+2) { border-bottom: 1px solid var(--rule); }
+    .section-head-split, .footer-top { grid-template-columns: 1fr; gap: 32px; }
+    section { padding: 64px 0; }
+    .pri-stats { grid-template-columns: 1fr 1fr !important; }
+    .pri-stat:nth-child(2) { border-right: none; }
+    .db-table th, .db-table td { padding: 12px 8px; font-size: 12px; }
+    .why-cell { display: none; }
+    .masthead-inner { flex-wrap: wrap; gap: 12px; }
+    .mast-meta { flex-wrap: wrap; gap: 14px; }
+  }
+</style>
+</head>
+<body>
+
+  <!-- Masthead -->
+  <header class="masthead">
+    <div class="shell masthead-inner">
+      <div class="brand">
+        <span class="brand-mark"></span>
+        Kupfer.
+      </div>
+      <div class="mast-meta">
+        <span><span class="dot"></span>Connections <b>8,235</b></span>
+      </div>
+    </div>
+  </header>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="shell">
+      <div style="text-align:center;">
+        <div class="hero-eyebrow">Weekly Outreach Briefing</div>
+      </div>
+      <h1 class="hero-title">
+        Five conversations<br>
+        <em>to have</em> this week.
+      </h1>
+      <p class="hero-deck">
+        Cross-referenced the active prospect list against <strong>8,235 LinkedIn connections</strong>. The complete pipeline below tracks every prospect; the five priority recommendations are filtered to firms <strong>under $10B AUM</strong> with an existing relationship path.
+      </p>
+
+      <div class="icp-callout">
+        <b>Priority Filter / The Five Only</b>
+        <p><strong>Under $10B AUM is the qualifier for the priority five</strong> — firms above that threshold typically default to AmLaw 100 counsel. The complete pipeline in §03 includes prospects of <strong>all sizes</strong>; large connected firms (Caprock $16B, NorthRock $12B, Arax $40B, Cerity $40B+, MAI $72B, Clearstead $55B) appear there as long-cycle relationship-building targets even though they sit outside the priority outreach band.</p>
+      </div>
+
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <div class="num">5</div>
+          <div class="label">Priority outreach picks under $10B AUM</div>
+        </div>
+        <div class="hero-stat">
+          <div class="num">2</div>
+          <div class="label">Direct CEO connections in the priority five</div>
+        </div>
+        <div class="hero-stat">
+          <div class="num">90<small>+</small></div>
+          <div class="label">Total prospects tracked in the active pipeline</div>
+        </div>
+        <div class="hero-stat">
+          <div class="num">$26.2<sup>B</sup></div>
+          <div class="label">Aggregate AUM across the priority five</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- THE FIVE -->
+  <section id="five">
+    <div class="shell">
+      <div class="section-label">
+        <span class="num">01</span>
+        <span>The Five</span>
+        <span class="rule"></span>
+      </div>
+      <div class="section-head-split">
+        <h2 class="section-title">Reach out <em>this week.</em></h2>
+        <p class="section-deck">All five are 1st degree LinkedIn connections at firms strictly under $10B AUM. Two carry direct CEO-level access — both with the existing relationship at the CEO level. The remaining three offer either a CEO-direct path or an inside connection to the decision-maker.</p>
+      </div>
+
+      <div class="priority-grid">
+
+        <article class="pri-card featured">
+          <div class="pri-rank">01</div>
+          <div class="pri-pills">
+            <span class="pill pill--connected">1st Degree</span>
+            <span class="pill pill--ceo">CEO Direct</span>
+          </div>
+          <div class="pri-tier-tag"><b>Tier 1</b> &nbsp;/&nbsp; Buy-Side Serial Acquirer</div>
+          <h3 class="pri-name">David Hefty, CFP</h3>
+          <div class="pri-title">Chief Executive Officer</div>
+          <div class="pri-firm">Credent Wealth Management &nbsp;·&nbsp; Auburn, Indiana</div>
+          <div class="pri-stats">
+            <div class="pri-stat"><label>Platform AUM</label><val>$4.3B</val></div>
+            <div class="pri-stat"><label>Deal Cadence</label><val>3–4 / yr</val></div>
+            <div class="pri-stat"><label>Acquisitions</label><val>13+</val></div>
+            <div class="pri-stat"><label>Relationship</label><val>Direct CEO</val></div>
+          </div>
+          <p class="pri-trigger"><strong>Trigger.</strong> Secured an additional <b>$150M commitment from Crestline</b> in December 2025 and closed two acquisitions in January 2026 alone. Forbes Top RIA. Fourteen offices. The capital stack and the cadence both signal counsel is being engaged on a near-monthly basis right now.</p>
+          <div class="pri-why">"Direct CEO connection at a $4.3B serial acquirer doing 3–4 deals per year. Textbook 'next rung down' acquirer where the legal partner chosen now defines the next decade of transactions."</div>
+          <div class="pri-actions">
+            <a class="btn btn--primary" href="https://www.linkedin.com/messaging/" target="_blank">Send LinkedIn Message <span class="arrow">↗</span></a>
+            <a class="btn" href="https://credentwealth.com" target="_blank">Firm Website</a>
+            <label class="pri-done" data-prospect="hefty">
+              <input type="checkbox" />
+              <span class="pri-done-label-todo">Mark Outreach Complete</span>
+              <span class="pri-done-label-done">Outreach Complete ✓</span>
+            </label>
+          </div>
+        </article>
+
+        <article class="pri-card half">
+          <div class="pri-rank">02</div>
+          <div class="pri-pills">
+            <span class="pill pill--connected">1st Degree</span>
+          </div>
+          <div class="pri-tier-tag"><b>Tier 1</b> &nbsp;/&nbsp; PE-Backed</div>
+          <h3 class="pri-name">Matthew Di Lavore</h3>
+          <div class="pri-title">Relationship Manager</div>
+          <div class="pri-firm">Cyndeo Wealth Partners &nbsp;·&nbsp; St. Petersburg, Florida</div>
+          <div class="pri-stats">
+            <div class="pri-stat"><label>Platform AUM</label><val>$3.1B</val></div>
+            <div class="pri-stat"><label>Listed CEO</label><val>Matt Kilgroe</val></div>
+          </div>
+          <p class="pri-trigger"><strong>Trigger.</strong> <b>Rise Growth Partners minority investment closed March 11, 2026</b>, structured specifically to fund advisor recruiting and selective M&amp;A across Florida and the Southeast. Dynasty Financial rolled equity over. CEO publicly committed to selective M&amp;A. The #1 priority on the most recent weekly target list. Matthew offers an inside relationship path into the CEO conversation.</p>
+          <div class="pri-actions">
+            <a class="btn btn--primary" href="https://www.linkedin.com/messaging/" target="_blank">LinkedIn Message <span class="arrow">↗</span></a>
+            <a class="btn" href="https://cyndeowp.com" target="_blank">Firm Website</a>
+            <span class="pri-break"></span>
+            <label class="pri-done" data-prospect="dilavore">
+              <input type="checkbox" />
+              <span class="pri-done-label-todo">Mark Complete</span>
+              <span class="pri-done-label-done">Outreach Complete ✓</span>
+            </label>
+          </div>
+        </article>
+
+        <article class="pri-card half">
+          <div class="pri-rank">03</div>
+          <div class="pri-pills">
+            <span class="pill pill--connected">1st Degree</span>
+            <span class="pill pill--ceo">CEO Direct</span>
+          </div>
+          <div class="pri-tier-tag"><b>Tier 1</b> &nbsp;/&nbsp; Buy-Side Emerging</div>
+          <h3 class="pri-name">Randy Morris, CFP</h3>
+          <div class="pri-title">Founder &amp; Chief Executive Officer</div>
+          <div class="pri-firm">Summit Wealth Group &nbsp;·&nbsp; Colorado Springs, Colorado</div>
+          <div class="pri-stats">
+            <div class="pri-stat"><label>Platform AUM</label><val>~$3B</val></div>
+            <div class="pri-stat"><label>Deal Stage</label><val>First M&amp;A</val></div>
+          </div>
+          <p class="pri-trigger"><strong>Trigger.</strong> First acquisition just closed (Premier Private Wealth, $470M) in February 2026. Constellation-backed since June 2025. Broke from Commonwealth in 2025 and recently brought on three senior hires. Direct CEO connection at the moment a relationship can compound across every future deal. The "get in early" prospect.</p>
+          <div class="pri-actions">
+            <a class="btn btn--primary" href="https://www.linkedin.com/messaging/" target="_blank">LinkedIn Message <span class="arrow">↗</span></a>
+            <a class="btn" href="https://www.summitwealthgroup.com" target="_blank">Firm Website</a>
+            <span class="pri-break"></span>
+            <label class="pri-done" data-prospect="morris">
+              <input type="checkbox" />
+              <span class="pri-done-label-todo">Mark Complete</span>
+              <span class="pri-done-label-done">Outreach Complete ✓</span>
+            </label>
+          </div>
+        </article>
+
+        <article class="pri-card third">
+          <div class="pri-rank">04</div>
+          <div class="pri-pills">
+            <span class="pill pill--connected">1st Degree</span>
+          </div>
+          <div class="pri-tier-tag"><b>Tier 1</b> &nbsp;/&nbsp; PE-Backed</div>
+          <h3 class="pri-name">Maggie Hannum</h3>
+          <div class="pri-title">Senior Director, Executive Operations</div>
+          <div class="pri-firm">RFG Advisory &nbsp;·&nbsp; Birmingham, Alabama</div>
+          <div class="pri-stats">
+            <div class="pri-stat"><label>AUM</label><val>$7.5B</val></div>
+            <div class="pri-stat"><label>Listed CEO</label><val>Bobby White</val></div>
+          </div>
+          <p class="pri-trigger"><strong>Trigger.</strong> <b>First majority acquisition (RVA Wealth, $320M) closed March 31, 2026</b>. Long Ridge Equity-backed. President Ed Swenson publicly committed to similar succession-driven deals across ~80 platform advisors approaching retirement.</p>
+          <div class="pri-actions">
+            <a class="btn btn--primary" href="https://www.linkedin.com/messaging/" target="_blank">LinkedIn DM <span class="arrow">↗</span></a>
+            <a class="btn" href="https://www.rfgadvisory.com" target="_blank">Firm Website</a>
+            <span class="pri-break"></span>
+            <label class="pri-done" data-prospect="hannum">
+              <input type="checkbox" />
+              <span class="pri-done-label-todo">Mark Complete</span>
+              <span class="pri-done-label-done">Complete ✓</span>
+            </label>
+          </div>
+        </article>
+
+        <article class="pri-card third">
+          <div class="pri-rank">05</div>
+          <div class="pri-pills">
+            <span class="pill pill--connected">1st Degree</span>
+            <span class="pill pill--mist">Warm Path</span>
+          </div>
+          <div class="pri-tier-tag"><b>Tier 1</b> &nbsp;/&nbsp; Buy-Side Serial</div>
+          <h3 class="pri-name">Christopher Guarino, CFP</h3>
+          <div class="pri-title">Director, Wealth Advisor</div>
+          <div class="pri-firm">Composition Wealth &nbsp;·&nbsp; Los Angeles, California</div>
+          <div class="pri-stats">
+            <div class="pri-stat"><label>AUM</label><val>$9.5B</val></div>
+            <div class="pri-stat"><label>2025 Deals</label><val>6</val></div>
+          </div>
+          <p class="pri-trigger"><strong>Trigger.</strong> Six acquisitions in 2025. Targeting NYC, Boston, Austin, Dallas. Corsair Capital backed (Richard Creedon at Corsair is a separate 1st degree connection — two-track warm path).</p>
+          <div class="pri-actions">
+            <a class="btn btn--primary" href="https://www.linkedin.com/messaging/" target="_blank">LinkedIn DM <span class="arrow">↗</span></a>
+            <a class="btn" href="https://compositionwealth.com" target="_blank">Firm Website</a>
+            <span class="pri-break"></span>
+            <label class="pri-done" data-prospect="guarino">
+              <input type="checkbox" />
+              <span class="pri-done-label-todo">Mark Complete</span>
+              <span class="pri-done-label-done">Complete ✓</span>
+            </label>
+          </div>
+        </article>
+
+        <article class="pri-card third">
+          <div class="pri-rank">+1</div>
+          <div class="pri-pills">
+            <span class="pill">Reserve</span>
+          </div>
+          <div class="pri-tier-tag"><b>Reserve</b> &nbsp;/&nbsp; Backup Outreach &nbsp;/&nbsp; Sell-Side</div>
+          <h3 class="pri-name">Alex Dann, CFP</h3>
+          <div class="pri-title">SVP, Relationship Manager</div>
+          <div class="pri-firm">Novare Capital Management &nbsp;·&nbsp; Charlotte, NC</div>
+          <p class="pri-trigger"><strong>If any of the top five doesn't respond by Friday.</strong> Sell-side opportunity at $1.8B Novare. Emigrant Partners minority investment 2025. Founder-led structure. Rounds out the pipeline with a sell-side conversation alongside the four buy-side picks.</p>
+          <div class="pri-actions">
+            <a class="btn btn--primary" href="https://www.linkedin.com/messaging/" target="_blank">LinkedIn DM <span class="arrow">↗</span></a>
+            <a class="btn" href="https://novarecapital.com" target="_blank">Firm Website</a>
+            <span class="pri-break"></span>
+            <label class="pri-done" data-prospect="dann">
+              <input type="checkbox" />
+              <span class="pri-done-label-todo">Mark Complete</span>
+              <span class="pri-done-label-done">Complete ✓</span>
+            </label>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CONNECTION MAP (dark) -->
+  <section class="map-section">
+    <div class="shell">
+      <div class="section-label">
+        <span class="num">02</span>
+        <span>Connection Map</span>
+        <span class="rule"></span>
+      </div>
+      <div class="section-head-split">
+        <h2 class="section-title">Every <em>warm path</em> into the ICP pipeline.</h2>
+        <p class="section-deck">Six prospect firms under $10B AUM have at least one 1st degree LinkedIn connection. Four buy-side acquirers and one sell-side succession candidate, plus a strategic warm path through Corsair Capital into Composition Wealth.</p>
+      </div>
+
+      <div class="firm-grid">
+
+        <div class="firm-block tier-1" id="credent">
+          <h3 class="firm-name">Credent Wealth Management</h3>
+          <div class="firm-meta"><b>$4.3B</b><span class="sep">·</span>Auburn IN<span class="sep">·</span><b>Tier 1</b><span class="sep">·</span>Buy-Side Serial</div>
+          <div class="contacts">
+            <div class="contact-row key mega">
+              <div class="contact-info">
+                <div class="contact-name">David Hefty, CFP <span class="badge-dm">Decision-Maker</span></div>
+                <div class="contact-title">Chief Executive Officer</div>
+              </div>
+              <a class="contact-link" href="https://www.linkedin.com/search/results/people/?keywords=David%20Hefty" target="_blank">LinkedIn ↗</a>
+            </div>
+            <div class="contact-row">
+              <div class="contact-info">
+                <div class="contact-name">Travis Glassley, J.D.</div>
+                <div class="contact-title">Partner, Wealth Manager</div>
+              </div>
+              <a class="contact-link" href="https://www.linkedin.com/search/results/people/?keywords=Travis%20Glassley" target="_blank">LinkedIn ↗</a>
+            </div>
+          </div>
+          <div class="firm-trigger"><b>Signal</b>$150M Crestline commitment Dec 2025; two acquisitions Jan 2026; 14 offices.</div>
+        </div>
+
+        <div class="firm-block tier-1">
+          <h3 class="firm-name">Cyndeo Wealth Partners</h3>
+          <div class="firm-meta"><b>$3.1B</b><span class="sep">·</span>St. Petersburg FL<span class="sep">·</span><b>Tier 1</b></div>
+          <div class="contacts">
+            <div class="contact-row key">
+              <div class="contact-info">
+                <div class="contact-name">Matthew Di Lavore</div>
+                <div class="contact-title">Relationship Manager (inside path to CEO Matt Kilgroe)</div>
+              </div>
+              <a class="contact-link" href="https://www.linkedin.com/search/results/people/?keywords=Matthew%20Di%20Lavore" target="_blank">LinkedIn ↗</a>
+            </div>
+          </div>
+          <div class="firm-trigger"><b>Signal</b>Rise Growth Partners minority investment March 11, 2026; Dynasty Financial equity rollover; CEO publicly committed to advisor recruiting and selective M&amp;A.</div>
+        </div>
+
+        <div class="firm-block tier-1">
+          <h3 class="firm-name">Summit Wealth Group</h3>
+          <div class="firm-meta"><b>~$3B</b><span class="sep">·</span>Colorado Springs CO<span class="sep">·</span><b>Tier 1</b><span class="sep">·</span>Buy-Side Emerging</div>
+          <div class="contacts">
+            <div class="contact-row key mega">
+              <div class="contact-info">
+                <div class="contact-name">Randy Morris, CFP <span class="badge-dm">Decision-Maker</span></div>
+                <div class="contact-title">Founder &amp; CEO</div>
+              </div>
+              <a class="contact-link" href="https://www.linkedin.com/search/results/people/?keywords=Randy%20Morris" target="_blank">LinkedIn ↗</a>
+            </div>
+            <div class="contact-row">
+              <div class="contact-info">
+                <div class="contact-name">Jason Runung, CFP</div>
+                <div class="contact-title">Senior Financial Advisor &amp; VP</div>
+              </div>
+              <a class="contact-link" href="https://www.linkedin.com/search/results/people/?keywords=Jason%20Runung" target="_blank">LinkedIn ↗</a>
+            </div>
+          </div>
+          <div class="firm-trigger"><b>Signal</b>First acquisition Feb 2026 (Premier Private Wealth, $470M); Constellation-backed; three senior hires.</div>
+        </div>
+
+        <div class="firm-block tier-1">
+          <h3 class="firm-name">RFG Advisory</h3>
+          <div class="firm-meta"><b>$7.5B</b><span class="sep">·</span>Birmingham AL<span class="sep">·</span><b>Tier 1</b></div>
+          <div class="contacts">
+            <div class="contact-row key">
+              <div class="contact-info">
+                <div class="contact-name">Maggie Hannum</div>
+                <div class="contact-title">Senior Director, Executive Operations</div>
+              </div>
+              <a class="contact-link" href="https://www.linkedin.com/search/results/people/?keywords=Maggie%20Hannum" target="_blank">LinkedIn ↗</a>
+            </div>
+          </div>
+          <div class="firm-trigger"><b>Signal</b>First majority acquisition (RVA Wealth $320M) March 31, 2026; Long Ridge Equity-backed; W-2 partner firm structure; ~80 platform advisors approaching retirement.</div>
+        </div>
+
+        <div class="firm-block tier-1">
+          <h3 class="firm-name">Composition Wealth</h3>
+          <div class="firm-meta"><b>$9.5B</b><span class="sep">·</span>Los Angeles CA<span class="sep">·</span><b>Tier 1</b><span class="sep">·</span>Buy-Side Serial</div>
+          <div class="contacts">
+            <div class="contact-row key">
+              <div class="contact-info">
+                <div class="contact-name">Christopher Guarino, CFP</div>
+                <div class="contact-title">Director, Wealth Advisor</div>
+              </div>
+              <a class="contact-link" href="https://www.linkedin.com/search/results/people/?keywords=Christopher%20Guarino" target="_blank">LinkedIn ↗</a>
+            </div>
+            <div class="contact-row">
+              <div class="contact-info">
+                <div class="contact-name">Richard Creedon <span class="badge-warm">Warm Path</span></div>
+                <div class="contact-title">Managing Director, Corsair Capital (PE Backer)</div>
+              </div>
+              <a class="contact-link" href="https://www.linkedin.com/search/results/people/?keywords=Richard%20Creedon" target="_blank">LinkedIn ↗</a>
+            </div>
+          </div>
+          <div class="firm-trigger"><b>Signal</b>6 acquisitions in 2025; targeting NYC, Boston, Austin, Dallas; Corsair Capital backed; rebranded from Miracle Mile.</div>
+        </div>
+
+        <div class="firm-block">
+          <h3 class="firm-name">Novare Capital Management</h3>
+          <div class="firm-meta"><b>$1.8B</b><span class="sep">·</span>Charlotte NC<span class="sep">·</span><b>Tier 2</b><span class="sep">·</span>Sell-Side Succession</div>
+          <div class="contacts">
+            <div class="contact-row key">
+              <div class="contact-info">
+                <div class="contact-name">Alex Dann, CFP</div>
+                <div class="contact-title">Senior Vice President, Relationship Manager</div>
+              </div>
+              <a class="contact-link" href="https://www.linkedin.com/search/results/people/?keywords=Alex%20Dann" target="_blank">LinkedIn ↗</a>
+            </div>
+          </div>
+          <div class="firm-trigger"><b>Signal</b>Emigrant Partners minority investment 2025; founder-led structure; firmly in sell-side sweet spot.</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- THE WORKING LIST (table) -->
+  <section id="pipeline">
+    <div class="shell">
+      <div class="section-label">
+        <span class="num">03</span>
+        <span>ICP Pipeline · Under $10B</span>
+        <span class="rule"></span>
+      </div>
+      <div class="section-head-split">
+        <h2 class="section-title">The complete <em>working list.</em></h2>
+        <p class="section-deck">Every active prospect at all AUM tiers. Filter by size, tier, side, or connection status. The under-$10B band is highlighted as the priority outreach zone; larger firms remain on the list as long-cycle targets.</p>
+      </div>
+
+      <div class="controls">
+        <button class="filter-btn active" data-filter="all">All Prospects</button>
+        <button class="filter-btn" data-filter="under10">Under $10B (Priority Band)</button>
+        <button class="filter-btn" data-filter="over10">$10B and Above</button>
+        <button class="filter-btn" data-filter="connected">Connected</button>
+        <button class="filter-btn" data-filter="tier1">Tier 1 Only</button>
+        <button class="filter-btn" data-filter="buy">Buy-Side</button>
+        <button class="filter-btn" data-filter="sell">Sell-Side</button>
+        <input type="text" class="search-input" placeholder="Search firm, decision-maker, or signal…" id="search"/>
+      </div>
+
+      <div style="overflow-x: auto;">
+        <table class="db-table" id="dbTable">
+          <thead>
+            <tr>
+              <th>Firm</th><th>AUM</th><th>Tier</th><th>Side</th>
+              <th>Decision-Maker</th><th>Connection</th><th>Site</th><th>Signal &amp; Fit</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr data-aum="under10" data-tier="tier1" data-side="buy" data-connected="yes">
+              <td class="firm-cell">Credent Wealth Management <span class="firm-loc">Auburn, IN</span></td>
+              <td class="aum-cell">$4.3B</td>
+              <td><span class="tag tag-tier1">Tier 1</span></td>
+              <td><span class="tag tag-buy">Buy-Side Serial</span></td>
+              <td class="dm-cell"><div class="dm-name">David Hefty</div><div class="dm-title">CEO</div></td>
+              <td><span class="tag tag-conn">CEO Direct</span></td>
+              <td><a class="site-link" href="https://credentwealth.com" target="_blank">credentwealth.com ↗</a></td><td class="why-cell">$150M Crestline commitment Dec 2025; two acquisitions Jan 2026; 14 offices.</td>
+            </tr>
+
+            <!-- ===== UNDER $10B / CONNECTED ===== -->
+            <tr data-aum="under10" data-tier="tier1" data-side="buy" data-connected="yes">
+              <td class="firm-cell">Cyndeo Wealth Partners <span class="firm-loc">St. Petersburg, FL</span></td>
+              <td class="aum-cell">$3.1B</td>
+              <td><span class="tag tag-tier1">Tier 1</span></td>
+              <td><span class="tag tag-buy">PE-Backed</span></td>
+              <td class="dm-cell"><div class="dm-name">Matt Kilgroe</div><div class="dm-title">President &amp; CEO</div></td>
+              <td><span class="tag tag-conn">Connected</span></td>
+              <td><a class="site-link" href="https://cyndeowp.com" target="_blank">cyndeowp.com ↗</a></td><td class="why-cell">Rise Growth Partners minority investment Mar 11, 2026; Dynasty Financial equity rollover; selective M&amp;A planned.</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier1" data-side="buy" data-connected="yes">
+              <td class="firm-cell">Summit Wealth Group <span class="firm-loc">Colorado Springs, CO</span></td>
+              <td class="aum-cell">~$3B</td>
+              <td><span class="tag tag-tier1">Tier 1</span></td>
+              <td><span class="tag tag-buy">Buy-Side Emerging</span></td>
+              <td class="dm-cell"><div class="dm-name">Randy Morris</div><div class="dm-title">CEO</div></td>
+              <td><span class="tag tag-conn">CEO Direct</span></td>
+              <td><a class="site-link" href="https://www.summitwealthgroup.com" target="_blank">summitwealthgroup.com ↗</a></td><td class="why-cell">First acquisition Feb 2026 (Premier Private Wealth, $470M); Constellation-backed; three senior hires.</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier1" data-side="buy" data-connected="yes">
+              <td class="firm-cell">RFG Advisory <span class="firm-loc">Birmingham, AL</span></td>
+              <td class="aum-cell">$7.5B</td>
+              <td><span class="tag tag-tier1">Tier 1</span></td>
+              <td><span class="tag tag-buy">Emerging</span></td>
+              <td class="dm-cell"><div class="dm-name">Bobby White</div><div class="dm-title">Founder &amp; CEO</div></td>
+              <td><span class="tag tag-conn">Connected</span></td>
+              <td><a class="site-link" href="https://www.rfgadvisory.com" target="_blank">rfgadvisory.com ↗</a></td><td class="why-cell">First majority acquisition (RVA Wealth $320M) Mar 31, 2026; Long Ridge Equity-backed; W-2 partner firm structure.</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier1" data-side="buy" data-connected="yes">
+              <td class="firm-cell">Composition Wealth <span class="firm-loc">Los Angeles, CA</span></td>
+              <td class="aum-cell">$9.5B</td>
+              <td><span class="tag tag-tier1">Tier 1</span></td>
+              <td><span class="tag tag-buy">Buy-Side Serial</span></td>
+              <td class="dm-cell"><div class="dm-name">Nate Angelo</div><div class="dm-title">CEO</div></td>
+              <td><span class="tag tag-conn">Connected</span></td>
+              <td><a class="site-link" href="https://compositionwealth.com" target="_blank">compositionwealth.com ↗</a></td><td class="why-cell">6 acquisitions in 2025; targeting NYC, Boston, Austin, Dallas; Corsair Capital backed (warm path via Richard Creedon).</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier2" data-side="sell" data-connected="yes">
+              <td class="firm-cell">Novare Capital Management <span class="firm-loc">Charlotte, NC</span></td>
+              <td class="aum-cell">$1.8B</td>
+              <td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-sell">Succession</span></td>
+              <td class="dm-cell"><div class="dm-name">Founder</div><div class="dm-title">Connection via Alex Dann (SVP)</div></td>
+              <td><span class="tag tag-conn">Connected</span></td>
+              <td><a class="site-link" href="https://novarecapital.com" target="_blank">novarecapital.com ↗</a></td><td class="why-cell">Emigrant Partners minority 2025; Charlotte hub; founder-led succession candidate.</td>
+            </tr>
+
+            <!-- ===== UNDER $10B / NOT CONNECTED ===== -->
+            <tr data-aum="under10" data-tier="tier1" data-side="buy" data-connected="no">
+              <td class="firm-cell">Socium Advisors <span class="firm-loc">St. Louis, MO</span></td>
+              <td class="aum-cell">$4.3B</td>
+              <td><span class="tag tag-tier1">Tier 1</span></td>
+              <td><span class="tag tag-buy">Buy-Side Serial</span></td>
+              <td class="dm-cell"><div class="dm-name">Scott Underwood</div><div class="dm-title">Founder &amp; CEO</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://sociumadvisors.com" target="_blank">sociumadvisors.com ↗</a></td><td class="why-cell">Amplify Wealth Partners merger ($1.6B, April 2026); 26 financial professionals onboard; Wisconsin expansion.</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier1" data-side="buy" data-connected="no">
+              <td class="firm-cell">Krilogy <span class="firm-loc">St. Louis, MO</span></td>
+              <td class="aum-cell">$4.1B</td>
+              <td><span class="tag tag-tier1">Tier 1</span></td>
+              <td><span class="tag tag-buy">PE-Backed</span></td>
+              <td class="dm-cell"><div class="dm-name">Kent Skornia</div><div class="dm-title">Founder &amp; CEO</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.krilogy.com" target="_blank">krilogy.com ↗</a></td><td class="why-cell">Rise Growth minority Oct 2025; targets $5B in 2026; 21 prior tuck-ins; Dallas expansion.</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier1" data-side="buy" data-connected="no">
+              <td class="firm-cell">Aspen Standard Wealth <span class="firm-loc">New York, NY</span></td>
+              <td class="aum-cell">~$8B</td>
+              <td><span class="tag tag-tier1">Tier 1</span></td>
+              <td><span class="tag tag-buy">Buy-Side Serial</span></td>
+              <td class="dm-cell"><div class="dm-name">CEO</div><div class="dm-title">Newly appointed President</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://aspenstandardwealth.com" target="_blank">Visit ↗</a></td><td class="why-cell">7 acquisitions since late-2024 launch; BlueSky Wealth ($1B) Mar 2026; MG Financial ($1.1B) Aug 2025.</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier1" data-side="buy" data-connected="no">
+              <td class="firm-cell">Modern Wealth Management <span class="firm-loc">Monterey, CA</span></td>
+              <td class="aum-cell">~$10B</td>
+              <td><span class="tag tag-tier1">Tier 1</span></td>
+              <td><span class="tag tag-buy">Buy-Side Serial</span></td>
+              <td class="dm-cell"><div class="dm-name">Founders</div><div class="dm-title">ex-United Capital execs</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://modernwealth.com" target="_blank">modernwealth.com ↗</a></td><td class="why-cell">18+ acquisitions since April 2023; 5 in 2025; recently hired Head of M&amp;A.</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier1" data-side="buy" data-connected="no">
+              <td class="firm-cell">BIP Wealth <span class="firm-loc">Atlanta, GA</span></td>
+              <td class="aum-cell">$5.5B</td>
+              <td><span class="tag tag-tier1">Tier 1</span></td>
+              <td><span class="tag tag-buy">Buy-Side Emerging</span></td>
+              <td class="dm-cell"><div class="dm-name">Bill Harris</div><div class="dm-title">Co-Founder &amp; CEO</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://bipwealth.com" target="_blank">bipwealth.com ↗</a></td><td class="why-cell">Constellation Wealth Capital minority Feb 2026 to fund acquisitions; new CDO Caleb Smith.</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier1" data-side="buy" data-connected="no">
+              <td class="firm-cell">Apollon Wealth Management <span class="firm-loc">Greenville, SC</span></td>
+              <td class="aum-cell">$8.65B</td>
+              <td><span class="tag tag-tier1">Tier 1</span></td>
+              <td><span class="tag tag-buy">Buy-Side Serial</span></td>
+              <td class="dm-cell"><div class="dm-name">CEO</div><div class="dm-title">Verification needed</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://apollonwealthmanagement.com" target="_blank">Visit ↗</a></td><td class="why-cell">Acquired Motley Fool Wealth Management ($1.5B); multiple acquisitions in 2025.</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier1" data-side="buy" data-connected="no">
+              <td class="firm-cell">Summitry <span class="firm-loc">San Mateo, CA</span></td>
+              <td class="aum-cell">$4B+</td>
+              <td><span class="tag tag-tier1">Tier 1</span></td>
+              <td><span class="tag tag-buy">Buy-Side Emerging</span></td>
+              <td class="dm-cell"><div class="dm-name">CEO</div><div class="dm-title">Verification needed</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://summitry.com" target="_blank">summitry.com ↗</a></td><td class="why-cell">$721M Bay Area partner firm Mar 2026; transitioning organic-to-acquisition-led growth.</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier1" data-side="buy" data-connected="no">
+              <td class="firm-cell">Cary Street Partners <span class="firm-loc">Richmond, VA</span></td>
+              <td class="aum-cell">$10.7B</td>
+              <td><span class="tag tag-tier1">Tier 1</span></td>
+              <td><span class="tag tag-buy">PE-Backed</span></td>
+              <td class="dm-cell"><div class="dm-name">Joseph R. Schmuckler</div><div class="dm-title">CEO &amp; Managing Director</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://carystreetpartners.com" target="_blank">carystreetpartners.com ↗</a></td><td class="why-cell">CIVC Partners investment Apr 2025; IFS Advisors acquisition; 20 offices, 7 states.</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier1" data-side="buy" data-connected="no">
+              <td class="firm-cell">Americana Partners <span class="firm-loc">Houston, TX</span></td>
+              <td class="aum-cell">$12B+</td>
+              <td><span class="tag tag-tier1">Tier 1</span></td>
+              <td><span class="tag tag-buy">Buy-Side Serial</span></td>
+              <td class="dm-cell"><div class="dm-name">Jason Fertitta</div><div class="dm-title">CEO &amp; Partner</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://americanapartners.com" target="_blank">americanapartners.com ↗</a></td><td class="why-cell">Dynasty network member with Lovell Minnick backing; second out-of-state acquisition late 2025.</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier1" data-side="buy" data-connected="no">
+              <td class="firm-cell">Apella Wealth <span class="firm-loc">West Hartford, CT</span></td>
+              <td class="aum-cell">$6B+</td>
+              <td><span class="tag tag-tier1">Tier 1</span></td>
+              <td><span class="tag tag-buy">Buy-Side Serial</span></td>
+              <td class="dm-cell"><div class="dm-name">Patrick Sweeny</div><div class="dm-title">CEO</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://apellawealth.com" target="_blank">apellawealth.com ↗</a></td><td class="why-cell">21+ transactions; Marrella Mar 2025, Independence June 2025; WPCG-backed.</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier1" data-side="buy" data-connected="no">
+              <td class="firm-cell">55 North Private Wealth <span class="firm-loc">Winter Park, FL</span></td>
+              <td class="aum-cell">$600M+</td>
+              <td><span class="tag tag-tier1">Tier 1</span></td>
+              <td><span class="tag tag-buy">Emerging</span></td>
+              <td class="dm-cell"><div class="dm-name">Steve Curley, CFA</div><div class="dm-title">Founder &amp; CIS</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://55npw.com" target="_blank">55npw.com ↗</a></td><td class="why-cell">First acquisition (F4 Wealth) Jan 2025 signals acquisitive transition; Investors First Podcast network.</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier1" data-side="buy" data-connected="no">
+              <td class="firm-cell">Aerodigm Wealth <span class="firm-loc">Portland, OR</span></td>
+              <td class="aum-cell">$1.5B</td>
+              <td><span class="tag tag-tier1">Tier 1</span></td>
+              <td><span class="tag tag-buy">Emerging / Sell-Side</span></td>
+              <td class="dm-cell"><div class="dm-name">Jared Siegel</div><div class="dm-title">Managing Partner</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://aerodigmwealth.com" target="_blank">aerodigmwealth.com ↗</a></td><td class="why-cell">Management buyout of Delap LLP wealth division early 2026; UHNW focus.</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier1" data-side="sell" data-connected="no">
+              <td class="firm-cell">Mozaic <span class="firm-loc">Beverly Hills, CA</span></td>
+              <td class="aum-cell">$4.1B</td>
+              <td><span class="tag tag-tier1">Tier 1</span></td>
+              <td><span class="tag tag-sell">Active Sale</span></td>
+              <td class="dm-cell"><div class="dm-name">Christopher Zyda</div><div class="dm-title">Founder &amp; CEO</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://mozaicllc.com" target="_blank">mozaicllc.com ↗</a></td><td class="why-cell"><strong>Actively pursuing sale.</strong> Stifel KBW engaged. Time-sensitive.</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier1" data-side="sell" data-connected="no">
+              <td class="firm-cell">IFC Advisors <span class="firm-loc">Los Angeles, CA</span></td>
+              <td class="aum-cell">$2.5B</td>
+              <td><span class="tag tag-tier1">Tier 1</span></td>
+              <td><span class="tag tag-sell">Partnership Transition</span></td>
+              <td class="dm-cell"><div class="dm-name">Marc Ackerman</div><div class="dm-title">Co-Founder</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://ifcadvisors.com" target="_blank">ifcadvisors.com ↗</a></td><td class="why-cell">Sixth Street/Merchant minority Feb 2026; Jim Hays moved to executive chairman.</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier1" data-side="sell" data-connected="no">
+              <td class="firm-cell">Truepoint Wealth Counsel <span class="firm-loc">Cincinnati, OH</span></td>
+              <td class="aum-cell">$4B</td>
+              <td><span class="tag tag-tier1">Tier 1</span></td>
+              <td><span class="tag tag-sell">Succession</span></td>
+              <td class="dm-cell"><div class="dm-name">Founders</div><div class="dm-title">Long-tenured principals</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://truepointwealth.com" target="_blank">truepointwealth.com ↗</a></td><td class="why-cell">Founder-led fee-only RIA; no known succession plan; 20+ years.</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier1" data-side="sell" data-connected="no">
+              <td class="firm-cell">Telemus Capital <span class="firm-loc">Southfield, MI</span></td>
+              <td class="aum-cell">$3.5B</td>
+              <td><span class="tag tag-tier1">Tier 1</span></td>
+              <td><span class="tag tag-sell">Succession</span></td>
+              <td class="dm-cell"><div class="dm-name">Managing Partners</div><div class="dm-title">Fee-only RIA</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://telemus.com" target="_blank">telemus.com ↗</a></td><td class="why-cell">Multi-partner fee-only RIA; uneven retirement timelines; suburban Detroit.</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier1" data-side="sell" data-connected="no">
+              <td class="firm-cell">Confluence Financial Partners <span class="firm-loc">Pittsburgh, PA</span></td>
+              <td class="aum-cell">$1.5B</td>
+              <td><span class="tag tag-tier1">Tier 1</span></td>
+              <td><span class="tag tag-sell">Succession</span></td>
+              <td class="dm-cell"><div class="dm-name">Founder</div><div class="dm-title">Verification needed</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://confluencefp.com" target="_blank">confluencefp.com ↗</a></td><td class="why-cell">Independent Pittsburgh boutique; founder-led 15+ years.</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier1" data-side="sell" data-connected="no">
+              <td class="firm-cell">Prospero Wealth <span class="firm-loc">Seattle, WA</span></td>
+              <td class="aum-cell">$1.5B+</td>
+              <td><span class="tag tag-tier1">Tier 1</span></td>
+              <td><span class="tag tag-sell">Strategic Crossroads</span></td>
+              <td class="dm-cell"><div class="dm-name">Eric Franklin</div><div class="dm-title">Founder</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://prosperowealth.com" target="_blank">prosperowealth.com ↗</a></td><td class="why-cell">Post-Amazon breakaway; WA 9.9% millionaire-tax pressure; founder evaluating options.</td>
+            </tr>
+
+            <!-- ===== UNDER $10B / TIER 2 ===== -->
+            <tr data-aum="under10" data-tier="tier2" data-side="buy" data-connected="no">
+              <td class="firm-cell">Grimes &amp; Company <span class="firm-loc">Westborough, MA</span></td>
+              <td class="aum-cell">$5.7B</td>
+              <td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-buy">PE-Backed</span></td>
+              <td class="dm-cell"><div class="dm-name">Kevin Grimes</div><div class="dm-title">CEO &amp; CIO</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://grimesco.com" target="_blank">grimesco.com ↗</a></td><td class="why-cell">Rise Growth minority Feb 2025; multi-state expansion; family-owned.</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier2" data-side="buy" data-connected="no">
+              <td class="firm-cell">Trilogy Financial Services <span class="firm-loc">Irvine, CA</span></td>
+              <td class="aum-cell">$4B</td>
+              <td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-buy">PE-Backed</span></td>
+              <td class="dm-cell"><div class="dm-name">Jeff Motske</div><div class="dm-title">Founder &amp; CEO</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://trilogyfs.com" target="_blank">trilogyfs.com ↗</a></td><td class="why-cell">Peloton Capital minority 2025; concurrent Flagship and Horizon acquisitions.</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier2" data-side="buy" data-connected="no">
+              <td class="firm-cell">Dakota Wealth Management <span class="firm-loc">Palm Beach Gardens, FL</span></td>
+              <td class="aum-cell">$2.5B</td>
+              <td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-buy">Buy-Side Serial</span></td>
+              <td class="dm-cell"><div class="dm-name">Peter Raimondi</div><div class="dm-title">Founder &amp; CEO</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://dakotawealth.com" target="_blank">dakotawealth.com ↗</a></td><td class="why-cell">Lokken Investment Group Nov 2025 (succession); Emigrant Partners backed.</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier2" data-side="buy" data-connected="no">
+              <td class="firm-cell">Forta Wealth Partners <span class="firm-loc">Indianapolis, IN</span></td>
+              <td class="aum-cell">$900M</td>
+              <td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-buy">Emerging</span></td>
+              <td class="dm-cell"><div class="dm-name">Will Turner</div><div class="dm-title">Principal &amp; Wealth Advisor</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://fortawealth.com" target="_blank">fortawealth.com ↗</a></td><td class="why-cell">Launched Jan 27, 2026; Elevation Point minority; ex-Merrill Lynch Turner Group.</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier2" data-side="buy" data-connected="no">
+              <td class="firm-cell">Hampton Bluff Capital <span class="firm-loc">Atlanta, GA</span></td>
+              <td class="aum-cell">$1.3B</td>
+              <td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-buy">Emerging</span></td>
+              <td class="dm-cell"><div class="dm-name">Founding Partners</div><div class="dm-title">Verification needed</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://hamptonbluff.com" target="_blank">hamptonbluff.com ↗</a></td><td class="why-cell">Launched Feb 18, 2026; Elevation Point minority; ex-UBS Odyssey team.</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier2" data-side="buy" data-connected="no">
+              <td class="firm-cell">Avidian Wealth Solutions <span class="firm-loc">Houston, TX</span></td>
+              <td class="aum-cell">$4B</td>
+              <td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-buy">Emerging</span></td>
+              <td class="dm-cell"><div class="dm-name">CEO</div><div class="dm-title">Employee-owned</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://avidianwealth.com" target="_blank">avidianwealth.com ↗</a></td><td class="why-cell">Active recruiting; Troy Taylor joined Feb 2026; exploring inorganic growth.</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier2" data-side="buy" data-connected="no">
+              <td class="firm-cell">Carnegie Investment Counsel <span class="firm-loc">Pepper Pike, OH</span></td>
+              <td class="aum-cell">$6B</td>
+              <td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-buy">Buy-Side Serial</span></td>
+              <td class="dm-cell"><div class="dm-name">Richard Alt</div><div class="dm-title">CEO &amp; Principal</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://carnegieinvest.com" target="_blank">carnegieinvest.com ↗</a></td><td class="why-cell">Eagle Ridge $1.3B; fee-only fiduciary since 1974; Pittsburgh and Columbus expansion.</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier2" data-side="buy" data-connected="no">
+              <td class="firm-cell">Choreo Advisors <span class="firm-loc">Jacksonville, FL</span></td>
+              <td class="aum-cell">$6–8B</td>
+              <td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-buy">Buy-Side Serial</span></td>
+              <td class="dm-cell"><div class="dm-name">CEO</div><div class="dm-title">PE-backed mid-market acquirer</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://choreoadvisors.com" target="_blank">choreoadvisors.com ↗</a></td><td class="why-cell">Northeast Financial + Herbein ($1.3B combined, Jan 2026); active acquirer.</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier2" data-side="buy" data-connected="no">
+              <td class="firm-cell">Prime Capital Financial <span class="firm-loc">Overland Park, KS</span></td>
+              <td class="aum-cell">$7–9B</td>
+              <td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-buy">Buy-Side Serial</span></td>
+              <td class="dm-cell"><div class="dm-name">Glenn Spencer</div><div class="dm-title">CEO</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://primecapitalfinancial.com" target="_blank">Visit ↗</a></td><td class="why-cell">Bradshaw Rogers ($600M), SineCera Capital; Abry Partners minority.</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier2" data-side="buy" data-connected="no">
+              <td class="firm-cell">Cresset Asset Management <span class="firm-loc">Chicago, IL</span></td>
+              <td class="aum-cell">$8–10B</td>
+              <td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-buy">Buy-Side Serial</span></td>
+              <td class="dm-cell"><div class="dm-name">CEO</div><div class="dm-title">Constellation portfolio</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://cressetcapital.com" target="_blank">cressetcapital.com ↗</a></td><td class="why-cell">Acquired Monticello Associates; building UHNW platform.</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier2" data-side="buy" data-connected="no">
+              <td class="firm-cell">Procyon Partners <span class="firm-loc">Shelton, CT</span></td>
+              <td class="aum-cell">$8–9B</td>
+              <td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-buy">PE-Backed</span></td>
+              <td class="dm-cell"><div class="dm-name">Phil Fiore, Jr.</div><div class="dm-title">CEO &amp; Co-Founder</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://procyonpartners.net" target="_blank">procyonpartners.net ↗</a></td><td class="why-cell">Dynasty network; Constellation minority 2025; Wooster Corthell July 2025; targets $300M–$3B.</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier2" data-side="buy" data-connected="no">
+              <td class="firm-cell">CM Wealth <span class="firm-loc">Cleveland, OH</span></td>
+              <td class="aum-cell">$6B+</td>
+              <td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-buy">Emerging</span></td>
+              <td class="dm-cell"><div class="dm-name">Paul Bodnar</div><div class="dm-title">New CEO (Apr 2026)</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://cmwealth.com" target="_blank">cmwealth.com ↗</a></td><td class="why-cell">Decade-long planned succession; new leadership may signal acquisition mandate.</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier2" data-side="buy" data-connected="no">
+              <td class="firm-cell">Farther <span class="firm-loc">New York, NY</span></td>
+              <td class="aum-cell">$3B+</td>
+              <td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-buy">Emerging</span></td>
+              <td class="dm-cell"><div class="dm-name">CEO</div><div class="dm-title">Tech-forward RIA</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.google.com/search?q=Farther%20RIA" target="_blank">google.com ↗</a></td><td class="why-cell">Hired Ben Seidenstein from Goldman Apr 2026; PE-backed; recruiting wirehouse advisors.</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier2" data-side="sell" data-connected="no">
+              <td class="firm-cell">Beaird Harris <span class="firm-loc">Dallas, TX</span></td>
+              <td class="aum-cell">$1B+</td>
+              <td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-sell">Succession</span></td>
+              <td class="dm-cell"><div class="dm-name">Steve Harris</div><div class="dm-title">Managing Partner</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://beairdharris.com" target="_blank">beairdharris.com ↗</a></td><td class="why-cell">Multi-partner structure formalizing; integrated CPA + Wealth model.</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier2" data-side="sell" data-connected="no">
+              <td class="firm-cell">Loxahatchee Capital <span class="firm-loc">Tequesta, FL</span></td>
+              <td class="aum-cell">$1.4B</td>
+              <td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-sell">Strategic Crossroads</span></td>
+              <td class="dm-cell"><div class="dm-name">Founding Partners</div><div class="dm-title">Verification needed</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://loxahatcheecapital.com" target="_blank">loxahatcheecapital.com ↗</a></td><td class="why-cell">UBS breakaway; Elevation Point minority early 2026; multi-family office.</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier2" data-side="sell" data-connected="no">
+              <td class="firm-cell">Harbor View Private Wealth <span class="firm-loc">Atlanta, GA</span></td>
+              <td class="aum-cell">$1.3B</td>
+              <td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-sell">Partnership Transition</span></td>
+              <td class="dm-cell"><div class="dm-name">Founding Partners</div><div class="dm-title">Verification needed</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://harborviewpw.com" target="_blank">harborviewpw.com ↗</a></td><td class="why-cell">Launched Jan 2026; UBS breakaway; Elevation Point minority.</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier2" data-side="sell" data-connected="no">
+              <td class="firm-cell">DayMark Wealth Partners <span class="firm-loc">Cleveland, OH</span></td>
+              <td class="aum-cell">$4B+</td>
+              <td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-sell">Partnership Transition</span></td>
+              <td class="dm-cell"><div class="dm-name">Michael Quinn</div><div class="dm-title">Co-Founder &amp; CEO</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://daymarkwp.com" target="_blank">daymarkwp.com ↗</a></td><td class="why-cell">Constellation Wealth Capital portfolio; ongoing platform M&amp;A.</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier2" data-side="sell" data-connected="no">
+              <td class="firm-cell">Crestone Capital Advisors <span class="firm-loc">Boulder, CO</span></td>
+              <td class="aum-cell">$7B</td>
+              <td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-sell">Succession</span></td>
+              <td class="dm-cell"><div class="dm-name">Eric Kramer</div><div class="dm-title">President &amp; CEO</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://crestonecapital.com" target="_blank">crestonecapital.com ↗</a></td><td class="why-cell">Founder-led MFO; Mountain West market; entrepreneur and family-enterprise client base.</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier2" data-side="sell" data-connected="no">
+              <td class="firm-cell">Halbert Hargrove <span class="firm-loc">Long Beach, CA</span></td>
+              <td class="aum-cell">$4B+</td>
+              <td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-sell">Succession</span></td>
+              <td class="dm-cell"><div class="dm-name">Russ Hill</div><div class="dm-title">Chairman</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://halberthargrove.com" target="_blank">halberthargrove.com ↗</a></td><td class="why-cell">Founded 1933; multi-generational ownership; Brian Spinelli leading next-gen transition.</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier2" data-side="sell" data-connected="no">
+              <td class="firm-cell">Bogart Wealth <span class="firm-loc">McLean, VA</span></td>
+              <td class="aum-cell">$3.1B</td>
+              <td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-sell">Succession</span></td>
+              <td class="dm-cell"><div class="dm-name">James Bogart, CFP</div><div class="dm-title">CEO &amp; Founder</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.google.com/search?q=Bogart%20Wealth%20RIA" target="_blank">google.com ↗</a></td><td class="why-cell">Constellation minority Jan 2025; grew $600M to $3.1B organically; Barron's Top 100.</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier2" data-side="sell" data-connected="no">
+              <td class="firm-cell">Schultz Collins <span class="firm-loc">San Francisco, CA</span></td>
+              <td class="aum-cell">$1.5B</td>
+              <td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-sell">Partnership Transition</span></td>
+              <td class="dm-cell"><div class="dm-name">Founding Partners</div><div class="dm-title">Long-tenured</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://schultzcollins.com" target="_blank">schultzcollins.com ↗</a></td><td class="why-cell">Bay Area fee-only boutique; no visible succession structure.</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier2" data-side="sell" data-connected="no">
+              <td class="firm-cell">Greenwood Gearhart <span class="firm-loc">Fayetteville, AR</span></td>
+              <td class="aum-cell">$500M–$1B</td>
+              <td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-sell">Succession</span></td>
+              <td class="dm-cell"><div class="dm-name">Founders</div><div class="dm-title">Constellation portfolio</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.google.com/search?q=Greenwood%20Gearhart%20RIA" target="_blank">google.com ↗</a></td><td class="why-cell">Constellation portfolio firm in underserved Arkansas market.</td>
+            </tr>
+
+            <!-- ===== $10B AND ABOVE / LONG-CYCLE ===== -->
+            <tr data-aum="over10" data-tier="tier1" data-side="buy" data-connected="yes">
+              <td class="firm-cell">NorthRock Partners <span class="firm-loc">Minneapolis, MN</span></td>
+              <td class="aum-cell">$12B</td>
+              <td><span class="tag tag-tier1">Tier 1</span></td>
+              <td><span class="tag tag-buy">Buy-Side Serial</span></td>
+              <td class="dm-cell"><div class="dm-name">CEO</div><div class="dm-title">Sammons Financial-backed</div></td>
+              <td><span class="tag tag-conn">Connected</span></td>
+              <td><a class="site-link" href="https://www.google.com/search?q=NorthRock%20Partners%20RIA" target="_blank">google.com ↗</a></td><td class="why-cell">Two acquisitions in 2026: Martin &amp; Associates (~$500M, Jan) and Vantage ($950M, Apr).</td>
+            </tr>
+            <tr data-aum="over10" data-tier="tier1" data-side="buy" data-connected="yes">
+              <td class="firm-cell">Caprock <span class="firm-loc">Boise, ID</span></td>
+              <td class="aum-cell">$13–16B</td>
+              <td><span class="tag tag-tier1">Tier 1</span></td>
+              <td><span class="tag tag-buy">Buy-Side Serial</span></td>
+              <td class="dm-cell"><div class="dm-name">CEO</div><div class="dm-title">Multi-family office</div></td>
+              <td><span class="tag tag-conn">Connected</span></td>
+              <td><a class="site-link" href="https://www.google.com/search?q=Caprock%20RIA" target="_blank">google.com ↗</a></td><td class="why-cell">First M&amp;A acquisition (Grey Street, $2.2B) in 2024; Denver office Apr 2026 (10th US location).</td>
+            </tr>
+            <tr data-aum="over10" data-tier="tier1" data-side="buy" data-connected="no">
+              <td class="firm-cell">Arax Investment Partners <span class="firm-loc">New York, NY</span></td>
+              <td class="aum-cell">$40B</td>
+              <td><span class="tag tag-tier1">Tier 1</span></td>
+              <td><span class="tag tag-buy">Buy-Side Serial</span></td>
+              <td class="dm-cell"><div class="dm-name">CEO</div><div class="dm-title">Goal: accelerate deal pace</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.google.com/search?q=Arax%20Investment%20Partners%20RIA" target="_blank">google.com ↗</a></td><td class="why-cell">3+ acquisitions 2026 YTD: GFP Private Wealth ($1.5B Feb), Omni Financial NY (Mar).</td>
+            </tr>
+            <tr data-aum="over10" data-tier="tier1" data-side="buy" data-connected="no">
+              <td class="firm-cell">Cerity Partners <span class="firm-loc">New York, NY</span></td>
+              <td class="aum-cell">$40B+</td>
+              <td><span class="tag tag-tier1">Tier 1</span></td>
+              <td><span class="tag tag-buy">Buy-Side Serial</span></td>
+              <td class="dm-cell"><div class="dm-name">CEO</div><div class="dm-title">Warburg Pincus-backed</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.google.com/search?q=Cerity%20Partners%20RIA" target="_blank">google.com ↗</a></td><td class="why-cell">3+ acquisitions Q1 2026: SOL ($2.8B), Austin Private ($1.4B), Verus; Warburg $1B minority Feb 2026.</td>
+            </tr>
+            <tr data-aum="over10" data-tier="tier1" data-side="buy" data-connected="no">
+              <td class="firm-cell">Clearstead Advisors <span class="firm-loc">Cleveland, OH</span></td>
+              <td class="aum-cell">$55B</td>
+              <td><span class="tag tag-tier1">Tier 1</span></td>
+              <td><span class="tag tag-buy">Buy-Side Serial</span></td>
+              <td class="dm-cell"><div class="dm-name">CEO</div><div class="dm-title">UHNW + MFO platform</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.google.com/search?q=Clearstead%20Advisors%20RIA" target="_blank">google.com ↗</a></td><td class="why-cell">Clarius Group ($5.1B) closed Jan 31, 2026; prior: Waveland, Wilbanks Smith, Baldwin.</td>
+            </tr>
+            <tr data-aum="over10" data-tier="tier1" data-side="buy" data-connected="no">
+              <td class="firm-cell">&amp;Partners <span class="firm-loc">New York, NY</span></td>
+              <td class="aum-cell">$10B+</td>
+              <td><span class="tag tag-tier1">Tier 1</span></td>
+              <td><span class="tag tag-buy">Buy-Side Serial</span></td>
+              <td class="dm-cell"><div class="dm-name">CEO</div><div class="dm-title">Wirehouse breakaway acquirer</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.google.com/search?q=%26amp%3BPartners%20RIA" target="_blank">google.com ↗</a></td><td class="why-cell">Multiple Q1 2026 wirehouse breakaway acquisitions: $950M Wells Fargo VA team; Wells Fargo NY team Mar 2026.</td>
+            </tr>
+            <tr data-aum="over10" data-tier="tier1" data-side="buy" data-connected="no">
+              <td class="firm-cell">MAI Capital Management <span class="firm-loc">Cleveland, OH</span></td>
+              <td class="aum-cell">$72.6B</td>
+              <td><span class="tag tag-tier1">Tier 1</span></td>
+              <td><span class="tag tag-buy">PE-Backed</span></td>
+              <td class="dm-cell"><div class="dm-name">CEO</div><div class="dm-title">Carlyle majority</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.google.com/search?q=MAI%20Capital%20Management%20RIA" target="_blank">google.com ↗</a></td><td class="why-cell">Carlyle Group majority closed Mar 2026; valuation $2.8B+; new governance and acquisition mandate.</td>
+            </tr>
+            <tr data-aum="over10" data-tier="tier1" data-side="buy" data-connected="no">
+              <td class="firm-cell">Concurrent Investment Advisors <span class="firm-loc">Tampa, FL</span></td>
+              <td class="aum-cell">$15B+</td>
+              <td><span class="tag tag-tier1">Tier 1</span></td>
+              <td><span class="tag tag-buy">PE-Backed</span></td>
+              <td class="dm-cell"><div class="dm-name">CEO</div><div class="dm-title">Genstar-backed</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.google.com/search?q=Concurrent%20Investment%20Advisors%20RIA" target="_blank">google.com ↗</a></td><td class="why-cell">Active partnership platform; recent multi-team additions in Texas; Southeast/Mid-Atlantic targets.</td>
+            </tr>
+            <tr data-aum="over10" data-tier="tier1" data-side="buy" data-connected="no">
+              <td class="firm-cell">Lido Advisors <span class="firm-loc">Los Angeles, CA</span></td>
+              <td class="aum-cell">$9–12B</td>
+              <td><span class="tag tag-tier1">Tier 1</span></td>
+              <td><span class="tag tag-buy">Buy-Side Serial</span></td>
+              <td class="dm-cell"><div class="dm-name">CEO</div><div class="dm-title">Charlesbank-backed</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.google.com/search?q=Lido%20Advisors%20RIA" target="_blank">google.com ↗</a></td><td class="why-cell">Multiple tuck-in acquisitions 2024–25; PE mandate to deploy capital in West/Southwest.</td>
+            </tr>
+            <tr data-aum="over10" data-tier="tier2" data-side="buy" data-connected="no">
+              <td class="firm-cell">Coldstream Wealth Management <span class="firm-loc">Bellevue, WA</span></td>
+              <td class="aum-cell">$14B</td>
+              <td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-buy">Buy-Side Serial</span></td>
+              <td class="dm-cell"><div class="dm-name">CEO</div><div class="dm-title">100% employee-owned</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.google.com/search?q=Coldstream%20Wealth%20Management%20RIA" target="_blank">google.com ↗</a></td><td class="why-cell">Multiple PNW mergers; opened Bend, OR office; no PE conflict.</td>
+            </tr>
+            <tr data-aum="over10" data-tier="tier2" data-side="buy" data-connected="no">
+              <td class="firm-cell">Mission Wealth <span class="firm-loc">Santa Barbara, CA</span></td>
+              <td class="aum-cell">$14.1B</td>
+              <td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-buy">Buy-Side Serial</span></td>
+              <td class="dm-cell"><div class="dm-name">CEO</div><div class="dm-title">Multi-state acquirer</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.google.com/search?q=Mission%20Wealth%20RIA" target="_blank">google.com ↗</a></td><td class="why-cell">PBL Wealth Jan 2026; Logic Capital 2025; Texas market expansion.</td>
+            </tr>
+            <tr data-aum="over10" data-tier="tier2" data-side="buy" data-connected="no">
+              <td class="firm-cell">The AmeriFlex Group <span class="firm-loc">Las Vegas, NV</span></td>
+              <td class="aum-cell">$13B</td>
+              <td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-buy">Emerging</span></td>
+              <td class="dm-cell"><div class="dm-name">CEO</div><div class="dm-title">Hybrid RIA</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.google.com/search?q=The%20AmeriFlex%20Group%20RIA" target="_blank">google.com ↗</a></td><td class="why-cell">Cambridge Investment Research minority Jan 2026; SuccessionFully platform expansion.</td>
+            </tr>
+            <tr data-aum="over10" data-tier="tier2" data-side="buy" data-connected="no">
+              <td class="firm-cell">Rockefeller Capital Management <span class="firm-loc">New York, NY</span></td>
+              <td class="aum-cell">$50B+</td>
+              <td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-buy">Buy-Side Serial</span></td>
+              <td class="dm-cell"><div class="dm-name">CEO</div><div class="dm-title">National platform</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.google.com/search?q=Rockefeller%20Capital%20Management%20RIA" target="_blank">google.com ↗</a></td><td class="why-cell">Active acquisition of UBS advisor breakaway teams 2026; steady stream of defections.</td>
+            </tr>
+            <tr data-aum="over10" data-tier="tier2" data-side="buy" data-connected="no">
+              <td class="firm-cell">Integrated Partners <span class="firm-loc">Waltham, MA</span></td>
+              <td class="aum-cell">$40B+ AUA</td>
+              <td><span class="tag tag-tier1">Tier 1</span></td>
+              <td><span class="tag tag-buy">Buy-Side Serial</span></td>
+              <td class="dm-cell"><div class="dm-name">CEO</div><div class="dm-title">Merchant IM-backed</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.google.com/search?q=Integrated%20Partners%20RIA" target="_blank">google.com ↗</a></td><td class="why-cell">CPA-affiliated practice acquisition program; 3–6 deals per year.</td>
+            </tr>
+            <tr data-aum="over10" data-tier="tier2" data-side="buy" data-connected="no">
+              <td class="firm-cell">Wealth Partners Capital Group <span class="firm-loc">New York, NY</span></td>
+              <td class="aum-cell">$15B+ platform</td>
+              <td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-buy">PE-Backed</span></td>
+              <td class="dm-cell"><div class="dm-name">CEO</div><div class="dm-title">HGGC-backed via Aspire</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.google.com/search?q=Wealth%20Partners%20Capital%20Group%20RIA" target="_blank">google.com ↗</a></td><td class="why-cell">Raised $400M debt facility Ares Jul 2025; minority co-investment in $1–5B RIAs in 2026.</td>
+            </tr>
+            <tr data-aum="over10" data-tier="tier2" data-side="buy" data-connected="no">
+              <td class="firm-cell">Pitcairn <span class="firm-loc">Jenkintown, PA</span></td>
+              <td class="aum-cell">$10B+</td>
+              <td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-buy">Family Office Platform</span></td>
+              <td class="dm-cell"><div class="dm-name">Andrew L. Busser</div><div class="dm-title">President &amp; CEO</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.google.com/search?q=Pitcairn%20RIA" target="_blank">google.com ↗</a></td><td class="why-cell">Shared SFO model serving 120+ UHNW families; founded 1923; growth via SFO acquisitions.</td>
+            </tr>
+            <tr data-aum="over10" data-tier="tier1" data-side="buy" data-connected="no">
+              <td class="firm-cell">RFG Advisory <span class="firm-loc">Birmingham, AL</span></td>
+              <td class="aum-cell">$20B AUA</td>
+              <td><span class="tag tag-tier1">Tier 1</span></td>
+              <td><span class="tag tag-buy">PE-Backed</span></td>
+              <td class="dm-cell"><div class="dm-name">Bobby White</div><div class="dm-title">Founder &amp; CEO</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.rfgadvisory.com" target="_blank">rfgadvisory.com ↗</a></td><td class="why-cell">First majority acquisition (RVA Wealth) Apr 2026; W-2 partner firm transition; ~80 advisors near retirement.</td>
+            </tr>
+            <tr data-aum="over10" data-tier="tier2" data-side="sell" data-connected="no">
+              <td class="firm-cell">Soltis Investment Advisors <span class="firm-loc">Cedar City, UT</span></td>
+              <td class="aum-cell">$13B</td>
+              <td><span class="tag tag-tier1">Tier 1</span></td>
+              <td><span class="tag tag-sell">Strategic Crossroads</span></td>
+              <td class="dm-cell"><div class="dm-name">CEO</div><div class="dm-title">Estancia + LLR-backed</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.google.com/search?q=Soltis%20Investment%20Advisors%20RIA" target="_blank">google.com ↗</a></td><td class="why-cell">Estancia + LLR majority June 2024; GDM Tax acquisition Apr 2026; rapid growth from $6.8B.</td>
+            </tr>
+            <tr data-aum="over10" data-tier="tier2" data-side="sell" data-connected="no">
+              <td class="firm-cell">F.L.Putnam Investment Management <span class="firm-loc">Wellesley, MA</span></td>
+              <td class="aum-cell">$10B</td>
+              <td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-sell">Strategic Crossroads</span></td>
+              <td class="dm-cell"><div class="dm-name">CEO</div><div class="dm-title">Growth-stage</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.google.com/search?q=F.L.Putnam%20Investment%20Management%20RIA" target="_blank">google.com ↗</a></td><td class="why-cell">Multiple acquisitions including Arcadia (Michigan, Apr 2026); Northeast/Midwest expansion.</td>
+            </tr>
+            <tr data-aum="over10" data-tier="tier2" data-side="sell" data-connected="no">
+              <td class="firm-cell">Brighton Jones <span class="firm-loc">Seattle, WA</span></td>
+              <td class="aum-cell">$10B+</td>
+              <td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-sell">Strategic Crossroads</span></td>
+              <td class="dm-cell"><div class="dm-name">CEO</div><div class="dm-title">W-2 advisor model</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.google.com/search?q=Brighton%20Jones%20RIA" target="_blank">google.com ↗</a></td><td class="why-cell">WA millionaire-tax pressure on clients; advisors among most visible voices on the issue Apr 2026.</td>
+            </tr>
+            <tr data-aum="over10" data-tier="tier2" data-side="sell" data-connected="no">
+              <td class="firm-cell">Pathstone <span class="firm-loc">Englewood, NJ</span></td>
+              <td class="aum-cell">$50B+</td>
+              <td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-sell">Partnership Transition</span></td>
+              <td class="dm-cell"><div class="dm-name">CEO</div><div class="dm-title">Multi-tier partner equity</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.google.com/search?q=Pathstone%20RIA" target="_blank">google.com ↗</a></td><td class="why-cell">Independent MFO; ongoing Federal Street Advisors integration; multiple partner tiers.</td>
+            </tr>
+            <tr data-aum="over10" data-tier="tier2" data-side="buy" data-connected="no">
+              <td class="firm-cell">RWA Wealth Partners <span class="firm-loc">Newton, MA</span></td>
+              <td class="aum-cell">$18B</td>
+              <td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-buy">PE-Backed</span></td>
+              <td class="dm-cell"><div class="dm-name">Michelle Knight</div><div class="dm-title">CEO</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.google.com/search?q=RWA%20Wealth%20Partners%20RIA" target="_blank">google.com ↗</a></td><td class="why-cell">One of largest woman-led RIAs; Boston, Chicago, San Francisco; active 2025 M&amp;A.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="shell">
+      <div class="footer-bottom">
+        <span>© Kupfer.</span>
+        <span>Internal · Privileged</span>
+      </div>
+    </div>
+          <a class="firm-site-link" href="https://novarecapital.com" target="_blank">novarecapital.com ↗</a>
+          <a class="firm-site-link" href="https://compositionwealth.com" target="_blank">compositionwealth.com ↗</a>
+          <a class="firm-site-link" href="https://www.rfgadvisory.com" target="_blank">www.rfgadvisory.com ↗</a>
+          <a class="firm-site-link" href="https://www.summitwealthgroup.com" target="_blank">www.summitwealthgroup.com ↗</a>
+          <a class="firm-site-link" href="https://cyndeowp.com" target="_blank">cyndeowp.com ↗</a>
+          <a class="firm-site-link" href="https://credentwealth.com" target="_blank">credentwealth.com ↗</a>
+  </footer>
+
+<script>
+  // Filter + search
+  const tableRows = document.querySelectorAll('#dbTable tbody tr');
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const searchInput = document.getElementById('search');
+  let activeFilter = 'all';
+
+  function applyFilters() {
+    const term = (searchInput.value || '').toLowerCase().trim();
+    tableRows.forEach(row => {
+      let show = true;
+      if (activeFilter === 'connected') show = row.dataset.connected === 'yes';
+      else if (activeFilter === 'tier1') show = row.dataset.tier === 'tier1';
+      else if (activeFilter === 'buy') show = row.dataset.side === 'buy';
+      else if (activeFilter === 'sell') show = row.dataset.side === 'sell';
+      else if (activeFilter === 'under10') show = row.dataset.aum === 'under10';
+      else if (activeFilter === 'over10') show = row.dataset.aum === 'over10';
+      if (show && term) show = row.textContent.toLowerCase().includes(term);
+      row.style.display = show ? '' : 'none';
+    });
+  }
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      activeFilter = btn.dataset.filter;
+      applyFilters();
+    });
+  });
+  searchInput.addEventListener('input', applyFilters);
+
+  // ===== Outreach completion checkboxes (synced via /api/outreach) =====
+  (function(){
+    const API = '/api/outreach';
+    const STORE_KEY = 'kupfer.outreachComplete.v1';
+    const POLL_MS = 15000;
+
+    const labels = Array.from(document.querySelectorAll('.pri-done'));
+    const byId = {};
+    labels.forEach(label => {
+      const id = label.dataset.prospect;
+      if (id) byId[id] = label;
+    });
+
+    function render(state) {
+      Object.keys(byId).forEach(id => {
+        const label = byId[id];
+        const input = label.querySelector('input[type="checkbox"]');
+        const card = label.closest('.pri-card');
+        const checked = !!state[id];
+        if (input) input.checked = checked;
+        if (card) card.classList.toggle('is-done', checked);
+      });
+    }
+
+    function readCache() {
+      try { return JSON.parse(localStorage.getItem(STORE_KEY) || '{}'); } catch(e) { return {}; }
+    }
+    function writeCache(state) {
+      try { localStorage.setItem(STORE_KEY, JSON.stringify(state)); } catch(e) {}
+    }
+
+    // 1. Paint from local cache immediately (no waiting on network)
+    render(readCache());
+
+    // 2. Fetch authoritative state from server
+    async function pull() {
+      try {
+        const res = await fetch(API, { cache: 'no-store' });
+        if (!res.ok) return;
+        const state = await res.json();
+        writeCache(state);
+        render(state);
+      } catch(e) { /* offline — keep cached */ }
+    }
+    pull();
+    setInterval(pull, POLL_MS);
+
+    // 3. Wire up checkbox changes
+    labels.forEach(label => {
+      const id = label.dataset.prospect;
+      const input = label.querySelector('input[type="checkbox"]');
+      const card = label.closest('.pri-card');
+      if (!id || !input) return;
+
+      input.addEventListener('change', async () => {
+        const value = input.checked ? new Date().toISOString() : false;
+
+        // optimistic UI
+        if (card) card.classList.toggle('is-done', input.checked);
+        const cache = readCache();
+        if (input.checked) cache[id] = value; else delete cache[id];
+        writeCache(cache);
+
+        // send to server
+        try {
+          const res = await fetch(API, {
+            method: 'POST',
+            headers: { 'content-type': 'application/json' },
+            body: JSON.stringify({ [id]: value }),
+          });
+          if (res.ok) {
+            const state = await res.json();
+            writeCache(state);
+            render(state);
+          }
+        } catch(e) {
+          // network failure — keep optimistic state, will re-sync on next poll
+        }
+      });
+    });
+  })();
+</script>
+
+</body>
+</html>
