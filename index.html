@@ -8,6 +8,90 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&display=swap" rel="stylesheet">
 <style>
+  /* Password gate */
+  .pw-gate {
+    position: fixed; inset: 0; z-index: 9999;
+    background: #f4efe6;
+    display: flex; align-items: center; justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+    font-family: 'Europa', 'Futura', 'Jost', sans-serif;
+  }
+  .pw-gate.is-hidden { display: none; }
+  .pw-gate-brand {
+    font-family: 'Futura', 'Futura PT', 'Jost', sans-serif;
+    font-weight: 500;
+    font-size: 22px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #1a1511;
+    display: flex; align-items: baseline; gap: 10px;
+  }
+  .pw-gate-brand .brand-dot {
+    display: inline-block;
+    width: 10px; height: 10px;
+    background: #1a305c;
+    border-radius: 50%;
+    transform: translateY(-1px);
+  }
+  .pw-gate-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    width: 280px;
+  }
+  .pw-gate-form input {
+    width: 100%;
+    padding: 10px 14px;
+    font-size: 15px;
+    font-family: 'Jost', sans-serif;
+    font-weight: 300;
+    letter-spacing: 0.12em;
+    text-align: center;
+    border: 1.5px solid rgba(26,21,17,0.25);
+    border-radius: 6px;
+    background: #fff;
+    color: #1a1511;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  .pw-gate-form input:focus {
+    border-color: #1a305c;
+  }
+  .pw-gate-form input.pw-error {
+    border-color: #b34040;
+    animation: pw-shake 0.35s ease-in-out;
+  }
+  .pw-gate-form button {
+    width: 100%;
+    padding: 10px 14px;
+    font-size: 14px;
+    font-family: 'Jost', sans-serif;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    background: #1a305c;
+    color: #f4efe6;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  .pw-gate-form button:hover { background: #0f1f3d; }
+  .pw-gate-hint {
+    font-size: 12px;
+    color: #3a332c;
+    opacity: 0.6;
+    letter-spacing: 0.02em;
+  }
+  @keyframes pw-shake {
+    0%, 100% { transform: translateX(0); }
+    20% { transform: translateX(-6px); }
+    40% { transform: translateX(6px); }
+    60% { transform: translateX(-4px); }
+    80% { transform: translateX(4px); }
+  }
   :root {
     --bone: #f4efe6;
     --bone-2: #ebe3d4;
@@ -1018,6 +1102,16 @@
 </style>
 </head>
 <body>
+
+  <!-- Password Gate -->
+  <div class="pw-gate" id="pwGate">
+    <div class="pw-gate-brand"><span class="brand-dot"></span> Kupfer.</div>
+    <form class="pw-gate-form" id="pwForm" autocomplete="off">
+      <input type="password" id="pwInput" placeholder="Enter password" autofocus />
+      <button type="submit">Enter</button>
+    </form>
+    <div class="pw-gate-hint">Internal access only</div>
+  </div>
 
   <!-- Masthead -->
   <header class="masthead">
@@ -2162,6 +2256,31 @@
           // network failure — keep optimistic state, will re-sync on next poll
         }
       });
+    });
+  })();
+
+  // ===== Password gate =====
+  (function(){
+    var PASS = 'KUPFER';
+    var KEY = 'kupfer.auth';
+    var gate = document.getElementById('pwGate');
+    var form = document.getElementById('pwForm');
+    var inp = document.getElementById('pwInput');
+
+    if (sessionStorage.getItem(KEY) === '1') {
+      gate.classList.add('is-hidden');
+    }
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      if (inp.value.trim().toUpperCase() === PASS) {
+        sessionStorage.setItem(KEY, '1');
+        gate.classList.add('is-hidden');
+      } else {
+        inp.classList.add('pw-error');
+        inp.value = '';
+        setTimeout(function(){ inp.classList.remove('pw-error'); }, 400);
+      }
     });
   })();
 </script>
