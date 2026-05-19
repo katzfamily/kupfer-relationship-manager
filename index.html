@@ -595,13 +595,16 @@
     transition: background 0.18s, color 0.18s, border-color 0.18s;
     margin-left: auto;
   }
-  /* Flex line break to force .pri-done onto its own row, then right-align */
+  /* Flex line break to force .pri-done onto its own row */
   .pri-actions .pri-break {
     flex-basis: 100%;
     height: 0;
     margin: 0;
     padding: 0;
     border: 0;
+  }
+  .pri-break + .pri-done {
+    margin-left: 0;
   }
   .pri-done:hover {
     border-color: var(--oxblood);
