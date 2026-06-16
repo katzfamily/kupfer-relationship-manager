@@ -242,6 +242,30 @@
   .pri-card.is-done { opacity: 0.62; }
   .pri-card.is-done:hover { opacity: 1; }
   .pri-card.is-done .pri-name { text-decoration: line-through; text-decoration-thickness: 1px; text-decoration-color: var(--ink-soft); }
+  .pri-suppress {
+    display: inline-flex; align-items: center; gap: 12px; cursor: pointer; user-select: none;
+    padding: 11px 16px 11px 14px; border: 1.5px dashed var(--ink-soft); background: transparent;
+    font-family: 'Futura', 'Futura PT', 'Jost', sans-serif; font-size: 11px; font-weight: 500;
+    letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink-soft);
+    transition: background 0.18s, color 0.18s, border-color 0.18s;
+  }
+  .pri-done + .pri-suppress { margin-left: 0; }
+  .pri-suppress:hover { border-color: var(--ink); color: var(--ink); }
+  .pri-suppress input {
+    appearance: none; -webkit-appearance: none; width: 18px; height: 18px;
+    border: 1.5px solid var(--ink-soft); background: var(--bone); margin: 0; cursor: pointer;
+    position: relative; flex-shrink: 0; transition: background 0.15s, border-color 0.15s;
+  }
+  .pri-suppress input:hover { border-color: var(--ink); }
+  .pri-suppress input:checked { background: var(--ink); border-color: var(--ink); }
+  .pri-suppress input:checked::after { content: ""; position: absolute; left: 4px; top: 0px; width: 6px; height: 11px; border-right: 2px solid var(--bone); border-bottom: 2px solid var(--bone); transform: rotate(45deg); }
+  .pri-suppress .pri-suppress-label-done { display: none; }
+  .pri-card.is-suppressed .pri-suppress { border-style: solid; border-color: var(--ink); color: var(--ink); background: rgba(26,21,17,0.05); }
+  .pri-card.is-suppressed .pri-suppress .pri-suppress-label-todo { display: none; }
+  .pri-card.is-suppressed .pri-suppress .pri-suppress-label-done { display: inline; }
+  .pri-card.is-suppressed { opacity: 0.4; filter: grayscale(0.5); }
+  .pri-card.is-suppressed:hover { opacity: 0.85; filter: grayscale(0); }
+  .pri-card.is-suppressed .pri-name { text-decoration: line-through; text-decoration-thickness: 1px; text-decoration-color: var(--ink-soft); }
   .btn {
     font-family: 'Futura', 'Futura PT', 'Jost', sans-serif; font-size: 12px; font-weight: 500;
     letter-spacing: 0.18em; text-transform: uppercase; padding: 12px 22px;
@@ -410,6 +434,9 @@
             <label class="pri-done" data-prospect="hefty">
               <input type="checkbox" /><span class="pri-done-label-todo">Mark Outreach Complete</span><span class="pri-done-label-done">Outreach Complete ✓</span>
             </label>
+            <label class="pri-suppress" data-prospect="hefty">
+              <input type="checkbox" /><span class="pri-suppress-label-todo">Do Not Resurface</span><span class="pri-suppress-label-done">Won't Resurface ✓</span>
+            </label>
           </div>
         </article>
  
@@ -431,6 +458,9 @@
             <span class="pri-break"></span>
             <label class="pri-done" data-prospect="balentine">
               <input type="checkbox" /><span class="pri-done-label-todo">Mark Complete</span><span class="pri-done-label-done">Outreach Complete ✓</span>
+            </label>
+            <label class="pri-suppress" data-prospect="balentine">
+              <input type="checkbox" /><span class="pri-suppress-label-todo">Do Not Resurface</span><span class="pri-suppress-label-done">Won't Resurface ✓</span>
             </label>
           </div>
         </article>
@@ -454,6 +484,9 @@
             <label class="pri-done" data-prospect="morris">
               <input type="checkbox" /><span class="pri-done-label-todo">Mark Complete</span><span class="pri-done-label-done">Outreach Complete ✓</span>
             </label>
+            <label class="pri-suppress" data-prospect="morris">
+              <input type="checkbox" /><span class="pri-suppress-label-todo">Do Not Resurface</span><span class="pri-suppress-label-done">Won't Resurface ✓</span>
+            </label>
           </div>
         </article>
  
@@ -475,6 +508,9 @@
             <span class="pri-break"></span>
             <label class="pri-done" data-prospect="hannum">
               <input type="checkbox" /><span class="pri-done-label-todo">Mark Complete</span><span class="pri-done-label-done">Complete ✓</span>
+            </label>
+            <label class="pri-suppress" data-prospect="hannum">
+              <input type="checkbox" /><span class="pri-suppress-label-todo">Do Not Resurface</span><span class="pri-suppress-label-done">Won't Resurface ✓</span>
             </label>
           </div>
         </article>
@@ -498,6 +534,9 @@
             <label class="pri-done" data-prospect="guarino">
               <input type="checkbox" /><span class="pri-done-label-todo">Mark Complete</span><span class="pri-done-label-done">Complete ✓</span>
             </label>
+            <label class="pri-suppress" data-prospect="guarino">
+              <input type="checkbox" /><span class="pri-suppress-label-todo">Do Not Resurface</span><span class="pri-suppress-label-done">Won't Resurface ✓</span>
+            </label>
           </div>
         </article>
  
@@ -515,6 +554,9 @@
             <span class="pri-break"></span>
             <label class="pri-done" data-prospect="dann">
               <input type="checkbox" /><span class="pri-done-label-todo">Mark Complete</span><span class="pri-done-label-done">Complete ✓</span>
+            </label>
+            <label class="pri-suppress" data-prospect="dann">
+              <input type="checkbox" /><span class="pri-suppress-label-todo">Do Not Resurface</span><span class="pri-suppress-label-done">Won't Resurface ✓</span>
             </label>
           </div>
         </article>
@@ -1308,9 +1350,13 @@
     const API = '/api/outreach';
     const STORE_KEY = 'kupfer.outreachComplete.v1';
     const POLL_MS = 15000;
+    const NR = '_noresurface';
     const labels = Array.from(document.querySelectorAll('.pri-done'));
+    const suppressLabels = Array.from(document.querySelectorAll('.pri-suppress'));
     const byId = {};
     labels.forEach(label => { const id = label.dataset.prospect; if (id) byId[id] = label; });
+    const suppressById = {};
+    suppressLabels.forEach(label => { const id = label.dataset.prospect; if (id) suppressById[id] = label; });
  
     function render(state) {
       Object.keys(byId).forEach(id => {
@@ -1320,6 +1366,14 @@
         const checked = !!state[id];
         if (input) input.checked = checked;
         if (card) card.classList.toggle('is-done', checked);
+      });
+      Object.keys(suppressById).forEach(id => {
+        const label = suppressById[id];
+        const input = label.querySelector('input[type="checkbox"]');
+        const card = label.closest('.pri-card');
+        const checked = !!state[id + NR];
+        if (input) input.checked = checked;
+        if (card) card.classList.toggle('is-suppressed', checked);
       });
     }
     function readCache() { try { return JSON.parse(localStorage.getItem(STORE_KEY) || '{}'); } catch(e) { return {}; } }
@@ -1339,21 +1393,36 @@
     pull();
     setInterval(pull, POLL_MS);
  
+    async function persist(key, checked) {
+      const value = checked ? new Date().toISOString() : false;
+      const cache = readCache();
+      if (checked) cache[key] = value; else delete cache[key];
+      writeCache(cache);
+      try {
+        const res = await fetch(API, { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ [key]: value }) });
+        if (res.ok) { const state = await res.json(); writeCache(state); render(state); }
+      } catch(e) {}
+    }
+
     labels.forEach(label => {
       const id = label.dataset.prospect;
       const input = label.querySelector('input[type="checkbox"]');
       const card = label.closest('.pri-card');
       if (!id || !input) return;
-      input.addEventListener('change', async () => {
-        const value = input.checked ? new Date().toISOString() : false;
+      input.addEventListener('change', () => {
         if (card) card.classList.toggle('is-done', input.checked);
-        const cache = readCache();
-        if (input.checked) cache[id] = value; else delete cache[id];
-        writeCache(cache);
-        try {
-          const res = await fetch(API, { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ [id]: value }) });
-          if (res.ok) { const state = await res.json(); writeCache(state); render(state); }
-        } catch(e) {}
+        persist(id, input.checked);
+      });
+    });
+
+    suppressLabels.forEach(label => {
+      const id = label.dataset.prospect;
+      const input = label.querySelector('input[type="checkbox"]');
+      const card = label.closest('.pri-card');
+      if (!id || !input) return;
+      input.addEventListener('change', () => {
+        if (card) card.classList.toggle('is-suppressed', input.checked);
+        persist(id + NR, input.checked);
       });
     });
   })();
