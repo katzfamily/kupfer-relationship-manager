@@ -362,6 +362,15 @@
     .masthead-inner { flex-wrap: wrap; gap: 12px; }
     .mast-meta { flex-wrap: wrap; gap: 14px; }
   }
+  .cstatus { display: inline-block; font-family: 'Futura', 'Futura PT', 'Jost', sans-serif; font-size: 9px; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 600; padding: 4px 8px; white-space: nowrap; border: 1px solid; }
+  .cstatus--accepted { color: var(--bone); background: var(--oxblood); border-color: var(--oxblood); }
+  .cstatus--sent { color: var(--oxblood); border-color: var(--oxblood); background: rgba(26,48,92,0.06); }
+  .cstatus--notsent { color: var(--ink-soft); border-color: var(--rule); }
+  #contacts .contact-row { flex-wrap: wrap; }
+  #contacts .contact-info { min-width: 55%; }
+  .cfilter-btn { font-family: 'Futura', 'Futura PT', 'Jost', sans-serif; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 500; padding: 10px 16px; background: transparent; border: 1px solid var(--rule); color: var(--ink-soft); cursor: pointer; transition: all 0.15s; }
+  .cfilter-btn:hover { border-color: var(--oxblood); color: var(--oxblood); }
+  .cfilter-btn.active { background: var(--oxblood); color: var(--bone); border-color: var(--oxblood); }
 </style>
 </head>
 <body>
@@ -398,7 +407,7 @@
       <div class="hero-stats">
         <div class="hero-stat"><div class="num">5</div><div class="label">Priority outreach picks under $10B AUM</div></div>
         <div class="hero-stat"><div class="num">3</div><div class="label">Direct CEO connections in the priority five</div></div>
-        <div class="hero-stat"><div class="num">90<small>+</small></div><div class="label">Total prospects tracked in the active pipeline</div></div>
+        <div class="hero-stat"><div class="num">138</div><div class="label">Total prospects tracked in the active pipeline</div></div>
         <div class="hero-stat"><div class="num">$31.8<sup>B</sup></div><div class="label">Aggregate AUM across the priority five</div></div>
       </div>
     </div>
@@ -1297,12 +1306,1715 @@
               <td><a class="site-link" href="https://www.google.com/search?q=RWA+Wealth+Partners+RIA" target="_blank">google.com ↗</a></td>
               <td class="why-cell">One of largest woman-led RIAs; Boston, Chicago, San Francisco; active 2025 M&amp;A.</td>
             </tr>
+            <tr data-aum="over10" data-tier="tier1" data-side="buy" data-connected="no">
+              <td class="firm-cell">Diversified Trust <span class="firm-loc">Nashville, TN</span></td>
+              <td class="aum-cell">$10B</td><td><span class="tag tag-tier1">Tier 1</span></td>
+              <td><span class="tag tag-buy">PE-Backed</span></td>
+              <td class="dm-cell"><div class="dm-name">Brian Puckett (to be verified via current ADV)</div><div class="dm-title">Managing Principal / CEO</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.google.com/search?q=Diversified+Trust+RIA" target="_blank">google.com ↗</a></td>
+              <td class="why-cell">Buy-Side PE-Backed · Sourced April 21, 2026 · Decision-maker needs verification</td>
+            </tr>
+            <tr data-aum="over10" data-tier="tier1" data-side="buy" data-connected="no">
+              <td class="firm-cell">Ferguson Wellman Capital Management <span class="firm-loc">Portland, Oregon</span></td>
+              <td class="aum-cell">$10B+</td><td><span class="tag tag-tier1">Tier 1</span></td>
+              <td><span class="tag tag-buy">Independent First-Time Acquirer</span></td>
+              <td class="dm-cell"><div class="dm-name">Ralph Cole</div><div class="dm-title">CEO</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.google.com/search?q=Ferguson+Wellman+Capital+Management+RIA" target="_blank">google.com ↗</a></td>
+              <td class="why-cell">Buy-Side, Independent First-Time Acquirer · Sourced May 28, 2026</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier2" data-side="sell" data-connected="no">
+              <td class="firm-cell">Vista Capital Partners <span class="firm-loc">Portland, Oregon</span></td>
+              <td class="aum-cell">$1.5B+</td><td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-sell">Succession Candidate</span></td>
+              <td class="dm-cell"><div class="dm-name">Carl Carlson</div><div class="dm-title">Co-Founder and Principal (verification needed)</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.google.com/search?q=Vista+Capital+Partners+RIA" target="_blank">google.com ↗</a></td>
+              <td class="why-cell">Sell-Side Succession Candidate · Sourced June 22, 2026 · Decision-maker needs verification</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier2" data-side="buy" data-connected="no">
+              <td class="firm-cell">Twin Harbors Private Wealth <span class="firm-loc">Melville, New York</span></td>
+              <td class="aum-cell">$1.4B</td><td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-buy">Emerging Acquirer</span></td>
+              <td class="dm-cell"><div class="dm-name">Founding Partners (verification needed via Form ADV)</div><div class="dm-title">Founding Partners</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.google.com/search?q=Twin+Harbors+Private+Wealth+RIA" target="_blank">google.com ↗</a></td>
+              <td class="why-cell">Buy-Side Emerging Acquirer · Sourced June 22, 2026 · Decision-maker needs verification</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier2" data-side="both" data-connected="no">
+              <td class="firm-cell">OM Investments <span class="firm-loc">Houston, TX</span></td>
+              <td class="aum-cell">Very small</td><td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-tier2">Solo-advisor RIA</span></td>
+              <td class="dm-cell"><div class="dm-name">—</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.google.com/search?q=OM+Investments+RIA" target="_blank">google.com ↗</a></td>
+              <td class="why-cell">Solo-advisor RIA · Early relationship underway · Sourced May 21, 2026</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier2" data-side="sell" data-connected="no">
+              <td class="firm-cell">Sullivan Bruyette Speros &amp; Blayney <span class="firm-loc">McLean, Virginia</span></td>
+              <td class="aum-cell">$4B</td><td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-sell">Succession Candidate</span></td>
+              <td class="dm-cell"><div class="dm-name">Greg Sullivan</div><div class="dm-title">President and Founder</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.google.com/search?q=Sullivan+Bruyette+Speros+%26+Blayney+RIA" target="_blank">google.com ↗</a></td>
+              <td class="why-cell">Sell-Side Succession Candidate · Sourced June 22, 2026</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier2" data-side="sell" data-connected="no">
+              <td class="firm-cell">Wescott Financial Advisory Group <span class="firm-loc">Philadelphia, Pennsylvania</span></td>
+              <td class="aum-cell">$2.5B+</td><td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-sell">Succession Candidate</span></td>
+              <td class="dm-cell"><div class="dm-name">Grant Rawdin</div><div class="dm-title">Founder and CEO</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.google.com/search?q=Wescott+Financial+Advisory+Group+RIA" target="_blank">google.com ↗</a></td>
+              <td class="why-cell">Sell-Side Succession Candidate · Sourced May 28, 2026</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier2" data-side="sell" data-connected="no">
+              <td class="firm-cell">The Joseph Group <span class="firm-loc">Worthington, Ohio</span></td>
+              <td class="aum-cell">$1.5B+</td><td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-sell">Succession Candidate</span></td>
+              <td class="dm-cell"><div class="dm-name">Matt Palmer</div><div class="dm-title">CEO and Co-Founder (verification needed)</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.google.com/search?q=The+Joseph+Group+RIA" target="_blank">google.com ↗</a></td>
+              <td class="why-cell">Sell-Side Succession Candidate · Sourced June 22, 2026 · Decision-maker needs verification</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier2" data-side="sell" data-connected="no">
+              <td class="firm-cell">WMS Partners <span class="firm-loc">Towson, Maryland</span></td>
+              <td class="aum-cell">$5B+</td><td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-sell">Partnership Transition</span></td>
+              <td class="dm-cell"><div class="dm-name">Tim Chase</div><div class="dm-title">Managing Partner (verification needed)</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.google.com/search?q=WMS+Partners+RIA" target="_blank">google.com ↗</a></td>
+              <td class="why-cell">Sell-Side Partnership Transition · Sourced May 1, 2026 · Decision-maker needs verification</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier2" data-side="buy" data-connected="no">
+              <td class="firm-cell">HBK Sorce Advisory <span class="firm-loc">Pittsburgh, Pennsylvania</span></td>
+              <td class="aum-cell">$2B+</td><td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-buy">Emerging Acquirer</span></td>
+              <td class="dm-cell"><div class="dm-name">Christopher M. Sorce</div><div class="dm-title">President and Founding Member</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.google.com/search?q=HBK+Sorce+Advisory+RIA" target="_blank">google.com ↗</a></td>
+              <td class="why-cell">Buy-Side Emerging Acquirer · Sourced June 22, 2026</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier2" data-side="buy" data-connected="no">
+              <td class="firm-cell">Iron North Private Wealth <span class="firm-loc">Coeur d'Alene, Idaho</span></td>
+              <td class="aum-cell">$350M</td><td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-buy">Emerging Acquirer</span></td>
+              <td class="dm-cell"><div class="dm-name">Brad Desormeaux</div><div class="dm-title">CEO and Founder</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.google.com/search?q=Iron+North+Private+Wealth+RIA" target="_blank">google.com ↗</a></td>
+              <td class="why-cell">Buy-Side Emerging Acquirer · Sourced June 22, 2026</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier2" data-side="sell" data-connected="no">
+              <td class="firm-cell">Sage Mountain Advisors <span class="firm-loc">Atlanta, Georgia</span></td>
+              <td class="aum-cell">$2.5B+</td><td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-sell">Succession Candidate</span></td>
+              <td class="dm-cell"><div class="dm-name">Greg Hoffman</div><div class="dm-title">CEO and Founder (verification needed)</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.google.com/search?q=Sage+Mountain+Advisors+RIA" target="_blank">google.com ↗</a></td>
+              <td class="why-cell">Sell-Side Succession Candidate · Sourced June 22, 2026 · Decision-maker needs verification</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier2" data-side="sell" data-connected="no">
+              <td class="firm-cell">Mosaic Financial Partners <span class="firm-loc">San Francisco, California</span></td>
+              <td class="aum-cell">$3B+</td><td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-sell">Succession Candidate</span></td>
+              <td class="dm-cell"><div class="dm-name">Confirm CEO via ADV or firm website</div><div class="dm-title">CEO / Managing Partner</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.google.com/search?q=Mosaic+Financial+Partners+RIA" target="_blank">google.com ↗</a></td>
+              <td class="why-cell">Sell-Side Succession Candidate · Sourced May 28, 2026 · Decision-maker needs verification</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier2" data-side="sell" data-connected="no">
+              <td class="firm-cell">Howe &amp; Rusling <span class="firm-loc">Rochester, New York</span></td>
+              <td class="aum-cell">$2B+</td><td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-sell">Succession Candidate</span></td>
+              <td class="dm-cell"><div class="dm-name">Daniel Burns</div><div class="dm-title">President and Principal (verification needed)</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.google.com/search?q=Howe+%26+Rusling+RIA" target="_blank">google.com ↗</a></td>
+              <td class="why-cell">Sell-Side Succession Candidate · Sourced June 22, 2026 · Decision-maker needs verification</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier1" data-side="buy" data-connected="no">
+              <td class="firm-cell">Cyndeo Wealth Partners <span class="firm-loc">St. Petersburg, Florida</span></td>
+              <td class="aum-cell">$3.1B</td><td><span class="tag tag-tier1">Tier 1</span></td>
+              <td><span class="tag tag-buy">Emerging Acquirer</span></td>
+              <td class="dm-cell"><div class="dm-name">Matt Kilgroe</div><div class="dm-title">CEO and President</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.google.com/search?q=Cyndeo+Wealth+Partners+RIA" target="_blank">google.com ↗</a></td>
+              <td class="why-cell">Buy-Side Emerging Acquirer · Sourced March 10, 2026</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier2" data-side="sell" data-connected="no">
+              <td class="firm-cell">Tanglewood Total Wealth Management <span class="firm-loc">Houston, Texas</span></td>
+              <td class="aum-cell">$1.68B</td><td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-sell">Succession Candidate</span></td>
+              <td class="dm-cell"><div class="dm-name">John Merrill</div><div class="dm-title">Founder and President</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.google.com/search?q=Tanglewood+Total+Wealth+Management+RIA" target="_blank">google.com ↗</a></td>
+              <td class="why-cell">Sell-Side Succession Candidate · Sourced May 28, 2026</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier2" data-side="sell" data-connected="no">
+              <td class="firm-cell">Abacus Wealth Partners <span class="firm-loc">Los Angeles, CA</span></td>
+              <td class="aum-cell">$3B+</td><td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-sell">Succession</span></td>
+              <td class="dm-cell"><div class="dm-name">Neela Humsi</div><div class="dm-title">CEO</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.google.com/search?q=Abacus+Wealth+Partners+RIA" target="_blank">google.com ↗</a></td>
+              <td class="why-cell">Sell-Side Succession · Sourced April 21, 2026</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier2" data-side="sell" data-connected="no">
+              <td class="firm-cell">TFC Financial Management <span class="firm-loc">Boston, Massachusetts</span></td>
+              <td class="aum-cell">$2B+</td><td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-sell">Succession Candidate</span></td>
+              <td class="dm-cell"><div class="dm-name">Daniel Kraninger</div><div class="dm-title">President and CEO (verification needed)</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.google.com/search?q=TFC+Financial+Management+RIA" target="_blank">google.com ↗</a></td>
+              <td class="why-cell">Sell-Side Succession Candidate · Sourced June 22, 2026 · Decision-maker needs verification</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier2" data-side="sell" data-connected="no">
+              <td class="firm-cell">Brouwer &amp; Janachowski <span class="firm-loc">Tiburon, California</span></td>
+              <td class="aum-cell">$1.5B</td><td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-sell">Succession Candidate</span></td>
+              <td class="dm-cell"><div class="dm-name">Steve Janachowski</div><div class="dm-title">Co-Founder and CEO (verification needed)</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.google.com/search?q=Brouwer+%26+Janachowski+RIA" target="_blank">google.com ↗</a></td>
+              <td class="why-cell">Sell-Side Succession Candidate · Sourced June 22, 2026 · Decision-maker needs verification</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier2" data-side="sell" data-connected="no">
+              <td class="firm-cell">Pinnacle Associates <span class="firm-loc">New York, New York</span></td>
+              <td class="aum-cell">$3B+</td><td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-sell">Succession Candidate</span></td>
+              <td class="dm-cell"><div class="dm-name">John Marshall</div><div class="dm-title">CEO and Managing Partner (verification needed)</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.google.com/search?q=Pinnacle+Associates+RIA" target="_blank">google.com ↗</a></td>
+              <td class="why-cell">Sell-Side Succession Candidate · Sourced June 22, 2026 · Decision-maker needs verification</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier2" data-side="sell" data-connected="no">
+              <td class="firm-cell">Regent Atlantic Capital <span class="firm-loc">Parsippany, New Jersey</span></td>
+              <td class="aum-cell">$5B+</td><td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-sell">Succession Candidate</span></td>
+              <td class="dm-cell"><div class="dm-name">Chris Cordaro</div><div class="dm-title">CEO and Chief Investment Officer</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.google.com/search?q=Regent+Atlantic+Capital+RIA" target="_blank">google.com ↗</a></td>
+              <td class="why-cell">Sell-Side Succession Candidate · Sourced May 28, 2026</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier1" data-side="buy" data-connected="no">
+              <td class="firm-cell">Kintra Wealth <span class="firm-loc">Williamsport, Pennsylvania</span></td>
+              <td class="aum-cell">$4B</td><td><span class="tag tag-tier1">Tier 1</span></td>
+              <td><span class="tag tag-buy">Emerging Acquirer</span></td>
+              <td class="dm-cell"><div class="dm-name">Andy Harris</div><div class="dm-title">CEO and Co-Founder</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.google.com/search?q=Kintra+Wealth+RIA" target="_blank">google.com ↗</a></td>
+              <td class="why-cell">Buy-Side Emerging Acquirer · Sourced June 22, 2026</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier2" data-side="sell" data-connected="no">
+              <td class="firm-cell">Plancorp <span class="firm-loc">St. Louis, Missouri</span></td>
+              <td class="aum-cell">$7B+</td><td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-sell">Succession Candidate</span></td>
+              <td class="dm-cell"><div class="dm-name">Chris Kerckhoff</div><div class="dm-title">President and CEO</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.google.com/search?q=Plancorp+RIA" target="_blank">google.com ↗</a></td>
+              <td class="why-cell">Sell-Side Succession Candidate · Sourced May 1, 2026</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier2" data-side="sell" data-connected="no">
+              <td class="firm-cell">Waldron Private Wealth <span class="firm-loc">Pittsburgh, PA</span></td>
+              <td class="aum-cell">$3.5B+</td><td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-sell">Succession</span></td>
+              <td class="dm-cell"><div class="dm-name">Andrew Millard (to be verified via current ADV)</div><div class="dm-title">Founder / Managing Principal</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.google.com/search?q=Waldron+Private+Wealth+RIA" target="_blank">google.com ↗</a></td>
+              <td class="why-cell">Sell-Side Succession · Sourced April 21, 2026 · Decision-maker needs verification</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier2" data-side="sell" data-connected="no">
+              <td class="firm-cell">Ancora Advisors <span class="firm-loc">Cleveland, Ohio</span></td>
+              <td class="aum-cell">$7B+</td><td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-sell">Strategic Crossroads</span></td>
+              <td class="dm-cell"><div class="dm-name">Frederick DiSanto</div><div class="dm-title">Chairman and CEO</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.google.com/search?q=Ancora+Advisors+RIA" target="_blank">google.com ↗</a></td>
+              <td class="why-cell">Sell-Side / Strategic Crossroads · Sourced May 28, 2026</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier2" data-side="sell" data-connected="no">
+              <td class="firm-cell">Capital Investment Counsel <span class="firm-loc">Raleigh, North Carolina</span></td>
+              <td class="aum-cell">$4B</td><td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-sell">Succession Candidate</span></td>
+              <td class="dm-cell"><div class="dm-name">Richard Bryant</div><div class="dm-title">CEO and Founder (verification needed)</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.google.com/search?q=Capital+Investment+Counsel+RIA" target="_blank">google.com ↗</a></td>
+              <td class="why-cell">Sell-Side Succession Candidate · Sourced June 22, 2026 · Decision-maker needs verification</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier2" data-side="sell" data-connected="no">
+              <td class="firm-cell">Loring, Wolcott &amp; Coolidge <span class="firm-loc">Boston, Massachusetts</span></td>
+              <td class="aum-cell">$6B+</td><td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-sell">Partnership Transition</span></td>
+              <td class="dm-cell"><div class="dm-name">Confirm Managing Partner via firm website or ADV</div><div class="dm-title">Managing Partner / CEO</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.google.com/search?q=Loring%2C+Wolcott+%26+Coolidge+RIA" target="_blank">google.com ↗</a></td>
+              <td class="why-cell">Sell-Side / Partnership Transition · Sourced May 28, 2026 · Decision-maker needs verification</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier2" data-side="sell" data-connected="no">
+              <td class="firm-cell">Tobias Financial Advisors <span class="firm-loc">Plantation, Florida</span></td>
+              <td class="aum-cell">$1B+</td><td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-sell">Succession Candidate</span></td>
+              <td class="dm-cell"><div class="dm-name">Benjamin Tobias</div><div class="dm-title">Founder and President</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.google.com/search?q=Tobias+Financial+Advisors+RIA" target="_blank">google.com ↗</a></td>
+              <td class="why-cell">Sell-Side Succession Candidate · Sourced June 22, 2026</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier2" data-side="sell" data-connected="no">
+              <td class="firm-cell">Perigon Wealth Management <span class="firm-loc">San Francisco, California</span></td>
+              <td class="aum-cell">$3B-$5B</td><td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-sell">Partnership Transition</span></td>
+              <td class="dm-cell"><div class="dm-name">—</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.google.com/search?q=Perigon+Wealth+Management+RIA" target="_blank">google.com ↗</a></td>
+              <td class="why-cell">Sell-Side Partnership Transition · Sourced March 10, 2026</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier3" data-side="sell" data-connected="no">
+              <td class="firm-cell">Verity Asset Management <span class="firm-loc">Marietta, Georgia</span></td>
+              <td class="aum-cell">$1.5B</td><td><span class="tag tag-tier2">Tier 3</span></td>
+              <td><span class="tag tag-sell">Succession Candidate</span></td>
+              <td class="dm-cell"><div class="dm-name">Confirm via ADV</div><div class="dm-title"></div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.google.com/search?q=Verity+Asset+Management+RIA" target="_blank">google.com ↗</a></td>
+              <td class="why-cell">Sell-Side Succession Candidate · Sourced May 28, 2026 · Decision-maker needs verification</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier2" data-side="sell" data-connected="no">
+              <td class="firm-cell">Round Table Wealth Management <span class="firm-loc">Westfield, New Jersey</span></td>
+              <td class="aum-cell">$1B+</td><td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-sell">Succession Candidate</span></td>
+              <td class="dm-cell"><div class="dm-name">Robert Hagins</div><div class="dm-title">CEO and Founder (verification needed)</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.google.com/search?q=Round+Table+Wealth+Management+RIA" target="_blank">google.com ↗</a></td>
+              <td class="why-cell">Sell-Side Succession Candidate · Sourced June 22, 2026 · Decision-maker needs verification</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier2" data-side="buy" data-connected="yes">
+              <td class="firm-cell">OnePointBFG Wealth Partners <span class="firm-loc">New Jersey</span></td>
+              <td class="aum-cell">$2B-$4B</td><td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-buy">Emerging Acquirer</span></td>
+              <td class="dm-cell"><div class="dm-name">—</div></td>
+              <td><span class="tag tag-conn">Connected</span></td>
+              <td><a class="site-link" href="https://www.google.com/search?q=OnePointBFG+Wealth+Partners+RIA" target="_blank">google.com ↗</a></td>
+              <td class="why-cell">Buy-Side Emerging Acquirer · Sourced March 10, 2026</td>
+            </tr>
+            <tr data-aum="over10" data-tier="tier1" data-side="buy" data-connected="no">
+              <td class="firm-cell">Aspiriant <span class="firm-loc">Los Angeles, California</span></td>
+              <td class="aum-cell">$17B+</td><td><span class="tag tag-tier1">Tier 1</span></td>
+              <td><span class="tag tag-buy">100% Employee-Owned</span></td>
+              <td class="dm-cell"><div class="dm-name">Rob Francais</div><div class="dm-title">Co-Founder and CEO</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.google.com/search?q=Aspiriant+RIA" target="_blank">google.com ↗</a></td>
+              <td class="why-cell">Buy-Side, 100% Employee-Owned · Sourced May 28, 2026</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier2" data-side="sell" data-connected="yes">
+              <td class="firm-cell">AlphaCore Wealth Advisory <span class="firm-loc">San Juan Capistrano, California</span></td>
+              <td class="aum-cell">~$6.5B</td><td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-sell">Succession Candidate</span></td>
+              <td class="dm-cell"><div class="dm-name">—</div></td>
+              <td><span class="tag tag-conn">Connected</span></td>
+              <td><a class="site-link" href="https://www.google.com/search?q=AlphaCore+Wealth+Advisory+RIA" target="_blank">google.com ↗</a></td>
+              <td class="why-cell">Sell-Side Succession Candidate · Sourced March 10, 2026</td>
+            </tr>
+            <tr data-aum="over10" data-tier="tier1" data-side="buy" data-connected="no">
+              <td class="firm-cell">Johnson Investment Counsel <span class="firm-loc">Cincinnati, Ohio</span></td>
+              <td class="aum-cell">$13B+</td><td><span class="tag tag-tier1">Tier 1</span></td>
+              <td><span class="tag tag-buy">Employee-Owned Since 1965</span></td>
+              <td class="dm-cell"><div class="dm-name">Jason Jackman, CFA</div><div class="dm-title">CEO</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.google.com/search?q=Johnson+Investment+Counsel+RIA" target="_blank">google.com ↗</a></td>
+              <td class="why-cell">Buy-Side, Employee-Owned Since 1965 · Sourced May 28, 2026</td>
+            </tr>
+            <tr data-aum="over10" data-tier="tier2" data-side="buy" data-connected="no">
+              <td class="firm-cell">Plante Moran Financial Advisors <span class="firm-loc">Southfield, Michigan</span></td>
+              <td class="aum-cell">$25B</td><td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-buy">Cultivation</span></td>
+              <td class="dm-cell"><div class="dm-name">Confirm Managing Director of PMFA via ADV or website</div><div class="dm-title">Managing Director, PMFA</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.google.com/search?q=Plante+Moran+Financial+Advisors+RIA" target="_blank">google.com ↗</a></td>
+              <td class="why-cell">Buy-Side / Cultivation · Sourced May 28, 2026 · Decision-maker needs verification</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier2" data-side="sell" data-connected="no">
+              <td class="firm-cell">Covenant Wealth Advisors <span class="firm-loc">Richmond, Virginia</span></td>
+              <td class="aum-cell">$2B+</td><td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-sell">Succession Candidate</span></td>
+              <td class="dm-cell"><div class="dm-name">Confirm CEO and founding partners via ADV or firm website</div><div class="dm-title">CEO / Founding Partner</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.google.com/search?q=Covenant+Wealth+Advisors+RIA" target="_blank">google.com ↗</a></td>
+              <td class="why-cell">Sell-Side Succession Candidate · Sourced May 28, 2026 · Decision-maker needs verification</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier2" data-side="sell" data-connected="no">
+              <td class="firm-cell">Strategic Wealth Partners <span class="firm-loc">Cleveland, Ohio</span></td>
+              <td class="aum-cell">$3B+</td><td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-sell">Succession Candidate</span></td>
+              <td class="dm-cell"><div class="dm-name">Tim Chase</div><div class="dm-title">CEO and Founder (verification needed)</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.google.com/search?q=Strategic+Wealth+Partners+RIA" target="_blank">google.com ↗</a></td>
+              <td class="why-cell">Sell-Side Succession Candidate · Sourced June 22, 2026 · Decision-maker needs verification</td>
+            </tr>
+            <tr data-aum="over10" data-tier="tier2" data-side="sell" data-connected="no">
+              <td class="firm-cell">Tiedemann Advisors <span class="firm-loc">New York, New York</span></td>
+              <td class="aum-cell">$24B</td><td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-sell">Strategic Transaction</span></td>
+              <td class="dm-cell"><div class="dm-name">Craig Smith</div><div class="dm-title">CEO</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.google.com/search?q=Tiedemann+Advisors+RIA" target="_blank">google.com ↗</a></td>
+              <td class="why-cell">Sell-Side / Strategic Transaction · Sourced May 28, 2026</td>
+            </tr>
+            <tr data-aum="over10" data-tier="tier2" data-side="both" data-connected="no">
+              <td class="firm-cell">Greenspring Advisors <span class="firm-loc">Towson, Maryland</span></td>
+              <td class="aum-cell">$10B</td><td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-tier2">Partnership Transition / Equity Structuring</span></td>
+              <td class="dm-cell"><div class="dm-name">Pat Collins</div><div class="dm-title">Co-Founder</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.google.com/search?q=Greenspring+Advisors+RIA" target="_blank">google.com ↗</a></td>
+              <td class="why-cell">Partnership Transition / Equity Structuring · Sourced May 28, 2026</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier2" data-side="sell" data-connected="no">
+              <td class="firm-cell">Signature Wealth Partners <span class="firm-loc">Southeast U.S.</span></td>
+              <td class="aum-cell">$1B-$2B</td><td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-sell">Succession Candidate</span></td>
+              <td class="dm-cell"><div class="dm-name">Todd Bryant</div><div class="dm-title">Founding Partner</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.google.com/search?q=Signature+Wealth+Partners+RIA" target="_blank">google.com ↗</a></td>
+              <td class="why-cell">Sell-Side Succession Candidate · Sourced March 10, 2026</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier2" data-side="buy" data-connected="no">
+              <td class="firm-cell">Angeles Wealth Management <span class="firm-loc">Los Angeles, California</span></td>
+              <td class="aum-cell">$1B-$2B</td><td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-buy">Emerging Acquirer</span></td>
+              <td class="dm-cell"><div class="dm-name">Adam Stern</div><div class="dm-title">CEO, Angeles Family Office</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.google.com/search?q=Angeles+Wealth+Management+RIA" target="_blank">google.com ↗</a></td>
+              <td class="why-cell">Buy-Side Emerging Acquirer · Sourced March 10, 2026</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier1" data-side="buy" data-connected="no">
+              <td class="firm-cell">Homrich Berg <span class="firm-loc">Atlanta, GA</span></td>
+              <td class="aum-cell">$7B</td><td><span class="tag tag-tier1">Tier 1</span></td>
+              <td><span class="tag tag-buy">Serial Acquirer</span></td>
+              <td class="dm-cell"><div class="dm-name">H. Pepper Braswell</div><div class="dm-title">CEO</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.google.com/search?q=Homrich+Berg+RIA" target="_blank">google.com ↗</a></td>
+              <td class="why-cell">Buy-Side Serial Acquirer · Sourced April 21, 2026</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier2" data-side="sell" data-connected="no">
+              <td class="firm-cell">Avior Wealth Management <span class="firm-loc">South Florida</span></td>
+              <td class="aum-cell">$1B-$3B</td><td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-sell">Strategic Crossroads</span></td>
+              <td class="dm-cell"><div class="dm-name">—</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.google.com/search?q=Avior+Wealth+Management+RIA" target="_blank">google.com ↗</a></td>
+              <td class="why-cell">Sell-Side Strategic Crossroads · Sourced March 10, 2026</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier2" data-side="sell" data-connected="no">
+              <td class="firm-cell">Compound Planning</td>
+              <td class="aum-cell">$1B+</td><td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-sell">Partnership Transition</span></td>
+              <td class="dm-cell"><div class="dm-name">Christian Haigh</div><div class="dm-title">CEO and Co-Founder</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.google.com/search?q=Compound+Planning+RIA" target="_blank">google.com ↗</a></td>
+              <td class="why-cell">Sell-Side Partnership Transition · Sourced June 22, 2026</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier2" data-side="sell" data-connected="no">
+              <td class="firm-cell">Ritholtz Wealth Management <span class="firm-loc">New York, NY</span></td>
+              <td class="aum-cell">$6B+</td><td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-sell">Partnership Transition</span></td>
+              <td class="dm-cell"><div class="dm-name">Josh Brown</div><div class="dm-title">CEO</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.google.com/search?q=Ritholtz+Wealth+Management+RIA" target="_blank">google.com ↗</a></td>
+              <td class="why-cell">Sell-Side Partnership Transition · Sourced April 21, 2026</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier2" data-side="sell" data-connected="no">
+              <td class="firm-cell">Brownson, Rehmus &amp; Foxworth <span class="firm-loc">Chicago, IL</span></td>
+              <td class="aum-cell">$7B</td><td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-sell">Partnership Transition</span></td>
+              <td class="dm-cell"><div class="dm-name">Jonathan Brownson (to be verified via current ADV)</div><div class="dm-title"></div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.google.com/search?q=Brownson%2C+Rehmus+%26+Foxworth+RIA" target="_blank">google.com ↗</a></td>
+              <td class="why-cell">Sell-Side Partnership Transition · Sourced April 21, 2026 · Decision-maker needs verification</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier2" data-side="sell" data-connected="no">
+              <td class="firm-cell">CV Advisors <span class="firm-loc">Miami, Florida</span></td>
+              <td class="aum-cell">$3B-$5B</td><td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-sell">Partnership Transition</span></td>
+              <td class="dm-cell"><div class="dm-name">—</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.google.com/search?q=CV+Advisors+RIA" target="_blank">google.com ↗</a></td>
+              <td class="why-cell">Sell-Side Partnership Transition · Sourced March 10, 2026</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier2" data-side="sell" data-connected="no">
+              <td class="firm-cell">Brightworth <span class="firm-loc">Atlanta, Georgia</span></td>
+              <td class="aum-cell">$3.5B</td><td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-sell">Succession Candidate</span></td>
+              <td class="dm-cell"><div class="dm-name">Confirm CEO and founding partners via ADV or firm website</div><div class="dm-title">CEO / Managing Partner</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.google.com/search?q=Brightworth+RIA" target="_blank">google.com ↗</a></td>
+              <td class="why-cell">Sell-Side Succession Candidate · Sourced May 28, 2026 · Decision-maker needs verification</td>
+            </tr>
+            <tr data-aum="over10" data-tier="tier2" data-side="sell" data-connected="no">
+              <td class="firm-cell">Tolleson Wealth Management <span class="firm-loc">Dallas, Texas</span></td>
+              <td class="aum-cell">$10B+</td><td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-sell">Succession Candidate</span></td>
+              <td class="dm-cell"><div class="dm-name">Carter Tolleson</div><div class="dm-title">President</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.google.com/search?q=Tolleson+Wealth+Management+RIA" target="_blank">google.com ↗</a></td>
+              <td class="why-cell">Sell-Side Succession Candidate · Sourced May 1, 2026</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier2" data-side="sell" data-connected="no">
+              <td class="firm-cell">Moisand Fitzgerald Tamayo <span class="firm-loc">Orlando, Florida</span></td>
+              <td class="aum-cell">$2B+</td><td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-sell">Succession Candidate</span></td>
+              <td class="dm-cell"><div class="dm-name">Confirm CEO/senior partner via ADV</div><div class="dm-title">CEO / Senior Partner</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.google.com/search?q=Moisand+Fitzgerald+Tamayo+RIA" target="_blank">google.com ↗</a></td>
+              <td class="why-cell">Sell-Side Succession Candidate · Sourced May 28, 2026 · Decision-maker needs verification</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier2" data-side="sell" data-connected="no">
+              <td class="firm-cell">BFG Financial Advisors <span class="firm-loc">Timonium, Maryland</span></td>
+              <td class="aum-cell">~$1B</td><td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-sell">Succession Candidate</span></td>
+              <td class="dm-cell"><div class="dm-name">Lena Nebel</div><div class="dm-title">CEO</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.google.com/search?q=BFG+Financial+Advisors+RIA" target="_blank">google.com ↗</a></td>
+              <td class="why-cell">Sell-Side Succession Candidate · Sourced March 10, 2026</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier3" data-side="buy" data-connected="no">
+              <td class="firm-cell">Strathmore Capital Advisors <span class="firm-loc">Charlotte, North Carolina</span></td>
+              <td class="aum-cell">~$750M</td><td><span class="tag tag-tier2">Tier 3</span></td>
+              <td><span class="tag tag-buy">Employee-Owned Acquirer</span></td>
+              <td class="dm-cell"><div class="dm-name">John Charles Kernodle</div><div class="dm-title">President and Founder</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.google.com/search?q=Strathmore+Capital+Advisors+RIA" target="_blank">google.com ↗</a></td>
+              <td class="why-cell">Buy-Side, Employee-Owned Acquirer · Sourced May 28, 2026</td>
+            </tr>
+            <tr data-aum="over10" data-tier="tier1" data-side="sell" data-connected="yes">
+              <td class="firm-cell">Freestone Capital Management <span class="firm-loc">Seattle, Washington</span></td>
+              <td class="aum-cell">$13B</td><td><span class="tag tag-tier1">Tier 1</span></td>
+              <td><span class="tag tag-sell">Active Minority Stake Process</span></td>
+              <td class="dm-cell"><div class="dm-name">Gary Furukawa</div><div class="dm-title">Founder, Senior Partner, and CIO</div></td>
+              <td><span class="tag tag-conn">Connected</span></td>
+              <td><a class="site-link" href="https://www.google.com/search?q=Freestone+Capital+Management+RIA" target="_blank">google.com ↗</a></td>
+              <td class="why-cell">Sell-Side, Active Minority Stake Process · Sourced May 28, 2026</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier2" data-side="both" data-connected="no">
+              <td class="firm-cell">WestPoint Wealth <span class="firm-loc">Ohio (four offices)</span></td>
+              <td class="aum-cell">Small, undisclosed</td><td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-tier2">Independent RIA</span></td>
+              <td class="dm-cell"><div class="dm-name">—</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.google.com/search?q=WestPoint+Wealth+RIA" target="_blank">google.com ↗</a></td>
+              <td class="why-cell">Independent RIA · Early relationship underway · Sourced May 21, 2026</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier2" data-side="buy" data-connected="no">
+              <td class="firm-cell">Modera Wealth Management <span class="firm-loc">Westwood, New Jersey</span></td>
+              <td class="aum-cell">$9B+</td><td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-buy">Serial Acquirer</span></td>
+              <td class="dm-cell"><div class="dm-name">Tom Orecchio</div><div class="dm-title">Principal and Co-Founder</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.google.com/search?q=Modera+Wealth+Management+RIA" target="_blank">google.com ↗</a></td>
+              <td class="why-cell">Buy-Side Serial Acquirer · Sourced May 1, 2026</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier1" data-side="buy" data-connected="no">
+              <td class="firm-cell">Beacon Coast Partners <span class="firm-loc">San Francisco, California</span></td>
+              <td class="aum-cell">$3.5B</td><td><span class="tag tag-tier1">Tier 1</span></td>
+              <td><span class="tag tag-buy">Emerging Acquirer</span></td>
+              <td class="dm-cell"><div class="dm-name">Michael Evans</div><div class="dm-title">Founding Managing Partner</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.google.com/search?q=Beacon+Coast+Partners+RIA" target="_blank">google.com ↗</a></td>
+              <td class="why-cell">Buy-Side Emerging Acquirer · Sourced June 22, 2026</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier2" data-side="sell" data-connected="no">
+              <td class="firm-cell">Massey Quick Simon <span class="firm-loc">Morristown, New Jersey</span></td>
+              <td class="aum-cell">$5B+</td><td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-sell">Partnership</span></td>
+              <td class="dm-cell"><div class="dm-name">Confirm CEO via ADV or firm website</div><div class="dm-title">CEO / Managing Partner</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.google.com/search?q=Massey+Quick+Simon+RIA" target="_blank">google.com ↗</a></td>
+              <td class="why-cell">Sell-Side / Partnership · Sourced May 28, 2026 · Decision-maker needs verification</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier2" data-side="sell" data-connected="no">
+              <td class="firm-cell">Hemington Wealth Management <span class="firm-loc">Falls Church, Virginia</span></td>
+              <td class="aum-cell">$1B+</td><td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-sell">Succession Candidate</span></td>
+              <td class="dm-cell"><div class="dm-name">Eileen O'Connor</div><div class="dm-title">Founder and CEO</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.google.com/search?q=Hemington+Wealth+Management+RIA" target="_blank">google.com ↗</a></td>
+              <td class="why-cell">Sell-Side Succession Candidate · Sourced June 22, 2026</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier3" data-side="sell" data-connected="no">
+              <td class="firm-cell">Homburg Peroff <span class="firm-loc">Dallas, Texas</span></td>
+              <td class="aum-cell">$2B</td><td><span class="tag tag-tier2">Tier 3</span></td>
+              <td><span class="tag tag-sell">Cultivation</span></td>
+              <td class="dm-cell"><div class="dm-name">Confirm via ADV</div><div class="dm-title"></div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.google.com/search?q=Homburg+Peroff+RIA" target="_blank">google.com ↗</a></td>
+              <td class="why-cell">Sell-Side / Cultivation · Sourced May 28, 2026 · Decision-maker needs verification</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier2" data-side="sell" data-connected="no">
+              <td class="firm-cell">Verdence Capital Advisors <span class="firm-loc">Hunt Valley, Maryland</span></td>
+              <td class="aum-cell">Estimated $2B-$4B</td><td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-sell">Partnership Transition</span></td>
+              <td class="dm-cell"><div class="dm-name">—</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.google.com/search?q=Verdence+Capital+Advisors+RIA" target="_blank">google.com ↗</a></td>
+              <td class="why-cell">Sell-Side Partnership Transition · Sourced March 10, 2026</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier2" data-side="both" data-connected="no">
+              <td class="firm-cell">True Alpha Wealth <span class="firm-loc">Northern Ohio</span></td>
+              <td class="aum-cell">About $500M</td><td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-tier2">RIA practice (Kestra platform)</span></td>
+              <td class="dm-cell"><div class="dm-name">Tyler McKean</div><div class="dm-title">Certified Exit Planning Advisor (CEPA)</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.google.com/search?q=True+Alpha+Wealth+RIA" target="_blank">google.com ↗</a></td>
+              <td class="why-cell">RIA practice (Kestra platform) · PE: Kestra (platform, not equity PE backer) · Early relationship underway · Sourced May 21, 2026</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier2" data-side="sell" data-connected="no">
+              <td class="firm-cell">Bingham, Osborn &amp; Scarborough <span class="firm-loc">San Francisco, California</span></td>
+              <td class="aum-cell">$6B+</td><td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-sell">Succession Candidate</span></td>
+              <td class="dm-cell"><div class="dm-name">Russ Wermers</div><div class="dm-title">Managing Partner (verification needed)</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.google.com/search?q=Bingham%2C+Osborn+%26+Scarborough+RIA" target="_blank">google.com ↗</a></td>
+              <td class="why-cell">Sell-Side Succession Candidate · Sourced May 1, 2026 · Decision-maker needs verification</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier2" data-side="sell" data-connected="no">
+              <td class="firm-cell">Manchester Capital Management <span class="firm-loc">Manchester, Vermont</span></td>
+              <td class="aum-cell">$3B+</td><td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-sell">Partnership Transition</span></td>
+              <td class="dm-cell"><div class="dm-name">Ted Cronin</div><div class="dm-title">Founder and CEO</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.google.com/search?q=Manchester+Capital+Management+RIA" target="_blank">google.com ↗</a></td>
+              <td class="why-cell">Sell-Side Partnership Transition · Sourced June 22, 2026</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier2" data-side="sell" data-connected="no">
+              <td class="firm-cell">Financial Synergies Wealth Advisors <span class="firm-loc">Houston, Texas</span></td>
+              <td class="aum-cell">$1.6B</td><td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-sell">Succession — Internal Transition</span></td>
+              <td class="dm-cell"><div class="dm-name">James Dowd</div><div class="dm-title">Founder / Senior Partner</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.google.com/search?q=Financial+Synergies+Wealth+Advisors+RIA" target="_blank">google.com ↗</a></td>
+              <td class="why-cell">Sell-Side Succession — Internal Transition · Sourced May 28, 2026</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier2" data-side="buy" data-connected="no">
+              <td class="firm-cell">Snowden Lane Partners <span class="firm-loc">New York, NY</span></td>
+              <td class="aum-cell">$9B+</td><td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-buy">Serial Acquirer</span></td>
+              <td class="dm-cell"><div class="dm-name">Rob Mooney</div><div class="dm-title">Managing Partner and CEO</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.google.com/search?q=Snowden+Lane+Partners+RIA" target="_blank">google.com ↗</a></td>
+              <td class="why-cell">Buy-Side Serial Acquirer · Sourced April 21, 2026</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier2" data-side="buy" data-connected="no">
+              <td class="firm-cell">Karpus Investment Management <span class="firm-loc">Pittsford, New York</span></td>
+              <td class="aum-cell">$3.5B</td><td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-buy">Emerging Acquirer</span></td>
+              <td class="dm-cell"><div class="dm-name">George W. Karpus</div><div class="dm-title">Founder and Chairman</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.google.com/search?q=Karpus+Investment+Management+RIA" target="_blank">google.com ↗</a></td>
+              <td class="why-cell">Buy-Side Emerging Acquirer · Sourced June 22, 2026</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier2" data-side="sell" data-connected="no">
+              <td class="firm-cell">Wealthcare Capital Management <span class="firm-loc">Richmond, Virginia</span></td>
+              <td class="aum-cell">$2B+</td><td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-sell">Partnership Transition</span></td>
+              <td class="dm-cell"><div class="dm-name">David Loeper</div><div class="dm-title">CEO and Founder</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.google.com/search?q=Wealthcare+Capital+Management+RIA" target="_blank">google.com ↗</a></td>
+              <td class="why-cell">Sell-Side Partnership Transition · Sourced June 22, 2026</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier2" data-side="sell" data-connected="no">
+              <td class="firm-cell">Accredited Investors Wealth Management <span class="firm-loc">Edina, Minnesota</span></td>
+              <td class="aum-cell">$1.5B</td><td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-sell">Succession Candidate</span></td>
+              <td class="dm-cell"><div class="dm-name">Ross Levin</div><div class="dm-title">Founding Principal and CEO</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.google.com/search?q=Accredited+Investors+Wealth+Management+RIA" target="_blank">google.com ↗</a></td>
+              <td class="why-cell">Sell-Side Succession Candidate · Sourced May 28, 2026</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier2" data-side="buy" data-connected="no">
+              <td class="firm-cell">Parcion Private Wealth <span class="firm-loc">Bellevue, Washington</span></td>
+              <td class="aum-cell">$2.5B</td><td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-buy">Cultivation — / Referral Pipeline</span></td>
+              <td class="dm-cell"><div class="dm-name">Terry Cook, CFP, CIMA</div><div class="dm-title">CEO, Founder, and Managing Principal</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.google.com/search?q=Parcion+Private+Wealth+RIA" target="_blank">google.com ↗</a></td>
+              <td class="why-cell">Cultivation — Buy-Side / Referral Pipeline · Sourced May 28, 2026</td>
+            </tr>
 </tbody>
         </table>
       </div>
     </div>
   </section>
  
+  <section id="contacts">
+    <div class="shell">
+      <div class="section-label"><span class="num">04</span><span>Outreach Tracker</span><span class="rule"></span></div>
+      <div class="section-head-split">
+        <h2 class="section-title">Every <em>contact</em>, every firm.</h2>
+        <p class="section-deck">129 named contacts across 67 firms, tagged by role and live LinkedIn connection status. 30 requests already accepted; the rest are the working outreach queue.</p>
+      </div>
+      <div class="hero-stats" style="margin-bottom:40px;">
+        <div class="hero-stat"><div class="num">129</div><div class="label">Named contacts tracked</div></div>
+        <div class="hero-stat"><div class="num">30</div><div class="label">Connections accepted</div></div>
+        <div class="hero-stat"><div class="num">63</div><div class="label">Primary decision-makers</div></div>
+        <div class="hero-stat"><div class="num">67</div><div class="label">Firms with a named contact</div></div>
+      </div>
+      <div class="controls">
+        <button class="cfilter-btn active" data-cfilter="all">All Contacts</button>
+        <button class="cfilter-btn" data-cfilter="accepted">Connected</button>
+        <button class="cfilter-btn" data-cfilter="sent">Request Sent</button>
+        <button class="cfilter-btn" data-cfilter="notsent">Not Sent</button>
+        <button class="cfilter-btn" data-cfilter="dm">Decision-Makers</button>
+        <input type="text" class="search-input" id="csearch" placeholder="Search contact, firm, or title…"/>
+      </div>
+      <div class="firm-grid">
+        <div class="firm-block tier-1" data-cfirm="AlphaCore Wealth Advisory">
+          <h3 class="firm-name">AlphaCore Wealth Advisory</h3>
+          <div class="firm-meta">2 contacts<span class="sep">·</span><b>2 connected</b></div>
+          <div class="contacts">
+            <div class="contact-row" data-crole="dm" data-cstatus="accepted">
+              <div class="contact-info"><div class="contact-name">Trevor Callan <span class="badge-dm">Decision-Maker</span></div><div class="contact-title">Managing Partner</div></div>
+              <span class="cstatus cstatus--accepted">Connected</span>
+              <a class="contact-link" href="https://www.linkedin.com/search/results/people/?keywords=Trevor%20Callan" target="_blank">LinkedIn ↗</a>
+            </div>
+            <div class="contact-row" data-crole="secondary" data-cstatus="accepted">
+              <div class="contact-info"><div class="contact-name">Ryan Callan <span class="badge-warm">Secondary</span></div><div class="contact-title">Partner</div></div>
+              <span class="cstatus cstatus--accepted">Connected</span>
+              <a class="contact-link" href="https://www.linkedin.com/search/results/people/?keywords=Ryan%20Callan" target="_blank">LinkedIn ↗</a>
+            </div>
+          </div>
+        </div>
+        <div class="firm-block tier-1" data-cfirm="BIP Wealth">
+          <h3 class="firm-name">BIP Wealth</h3>
+          <div class="firm-meta">3 contacts<span class="sep">·</span><b>2 connected</b></div>
+          <div class="contacts">
+            <div class="contact-row" data-crole="dm" data-cstatus="accepted">
+              <div class="contact-info"><div class="contact-name">Bill Harris <span class="badge-dm">Decision-Maker</span></div><div class="contact-title">Co-Founder and CEO</div></div>
+              <span class="cstatus cstatus--accepted">Connected</span>
+              <a class="contact-link" href="https://www.linkedin.com/search/results/people/?keywords=Bill%20Harris" target="_blank">LinkedIn ↗</a>
+            </div>
+            <div class="contact-row" data-crole="secondary" data-cstatus="notsent">
+              <div class="contact-info"><div class="contact-name">Caleb Smith <span class="badge-warm">Secondary</span></div><div class="contact-title">Chief Development Officer</div></div>
+              <span class="cstatus cstatus--notsent">Not Sent</span>
+              <a class="contact-link" href="https://www.linkedin.com/search/results/people/?keywords=Caleb%20Smith" target="_blank">LinkedIn ↗</a>
+            </div>
+            <div class="contact-row" data-crole="other" data-cstatus="accepted">
+              <div class="contact-info"><div class="contact-name">Charles Crowley, CFP, AIF </div><div class="contact-title">Personal Wealth Advisor</div></div>
+              <span class="cstatus cstatus--accepted">Connected</span>
+              <a class="contact-link" href="https://www.linkedin.com/search/results/people/?keywords=Charles%20Crowley%2C%20CFP%2C%20AIF" target="_blank">LinkedIn ↗</a>
+            </div>
+          </div>
+        </div>
+        <div class="firm-block tier-1" data-cfirm="Credent Wealth Management">
+          <h3 class="firm-name">Credent Wealth Management</h3>
+          <div class="firm-meta">6 contacts<span class="sep">·</span><b>6 connected</b></div>
+          <div class="contacts">
+            <div class="contact-row" data-crole="dm" data-cstatus="accepted">
+              <div class="contact-info"><div class="contact-name">David Hefty <span class="badge-dm">Decision-Maker</span></div><div class="contact-title">CEO</div></div>
+              <span class="cstatus cstatus--accepted">Connected</span>
+              <a class="contact-link" href="https://www.linkedin.com/search/results/people/?keywords=David%20Hefty" target="_blank">LinkedIn ↗</a>
+            </div>
+            <div class="contact-row" data-crole="secondary" data-cstatus="accepted">
+              <div class="contact-info"><div class="contact-name">Stacy Hefty <span class="badge-warm">Secondary</span></div><div class="contact-title">President</div></div>
+              <span class="cstatus cstatus--accepted">Connected</span>
+              <a class="contact-link" href="https://www.linkedin.com/search/results/people/?keywords=Stacy%20Hefty" target="_blank">LinkedIn ↗</a>
+            </div>
+            <div class="contact-row" data-crole="other" data-cstatus="accepted">
+              <div class="contact-info"><div class="contact-name">Travis Glassley, J.D. </div><div class="contact-title">Partner, Wealth Manager</div></div>
+              <span class="cstatus cstatus--accepted">Connected</span>
+              <a class="contact-link" href="https://www.linkedin.com/search/results/people/?keywords=Travis%20Glassley%2C%20J.D." target="_blank">LinkedIn ↗</a>
+            </div>
+            <div class="contact-row" data-crole="other" data-cstatus="accepted">
+              <div class="contact-info"><div class="contact-name">Kyle Osting </div><div class="contact-title">General Counsel and CCO</div></div>
+              <span class="cstatus cstatus--accepted">Connected</span>
+              <a class="contact-link" href="https://www.linkedin.com/search/results/people/?keywords=Kyle%20Osting" target="_blank">LinkedIn ↗</a>
+            </div>
+            <div class="contact-row" data-crole="other" data-cstatus="accepted">
+              <div class="contact-info"><div class="contact-name">Christopher Bredeson </div><div class="contact-title">Wealth Advisor and Partner</div></div>
+              <span class="cstatus cstatus--accepted">Connected</span>
+              <a class="contact-link" href="https://www.linkedin.com/search/results/people/?keywords=Christopher%20Bredeson" target="_blank">LinkedIn ↗</a>
+            </div>
+            <div class="contact-row" data-crole="other" data-cstatus="accepted">
+              <div class="contact-info"><div class="contact-name">J. Pearce Priebe </div><div class="contact-title">Wealth Advisor and Partner</div></div>
+              <span class="cstatus cstatus--accepted">Connected</span>
+              <a class="contact-link" href="https://www.linkedin.com/search/results/people/?keywords=J.%20Pearce%20Priebe" target="_blank">LinkedIn ↗</a>
+            </div>
+          </div>
+        </div>
+        <div class="firm-block tier-1" data-cfirm="Freestone Capital Management">
+          <h3 class="firm-name">Freestone Capital Management</h3>
+          <div class="firm-meta">4 contacts<span class="sep">·</span><b>1 connected</b></div>
+          <div class="contacts">
+            <div class="contact-row" data-crole="dm" data-cstatus="notsent">
+              <div class="contact-info"><div class="contact-name">Gary Furukawa <span class="badge-dm">Decision-Maker</span></div><div class="contact-title">Founder, Senior Partner, and CIO</div></div>
+              <span class="cstatus cstatus--notsent">Not Sent</span>
+              <a class="contact-link" href="https://www.linkedin.com/search/results/people/?keywords=Gary%20Furukawa" target="_blank">LinkedIn ↗</a>
+            </div>
+            <div class="contact-row" data-crole="secondary" data-cstatus="notsent">
+              <div class="contact-info"><div class="contact-name">Jim Hughes <span class="badge-warm">Secondary</span></div><div class="contact-title">Managing Director</div></div>
+              <span class="cstatus cstatus--notsent">Not Sent</span>
+              <a class="contact-link" href="https://www.linkedin.com/search/results/people/?keywords=Jim%20Hughes" target="_blank">LinkedIn ↗</a>
+            </div>
+            <div class="contact-row" data-crole="secondary" data-cstatus="notsent">
+              <div class="contact-info"><div class="contact-name">Erik Morgan <span class="badge-warm">Secondary</span></div><div class="contact-title">Senior Partner</div></div>
+              <span class="cstatus cstatus--notsent">Not Sent</span>
+              <a class="contact-link" href="https://www.linkedin.com/search/results/people/?keywords=Erik%20Morgan" target="_blank">LinkedIn ↗</a>
+            </div>
+            <div class="contact-row" data-crole="other" data-cstatus="accepted">
+              <div class="contact-info"><div class="contact-name">Aaron Sellsted </div><div class="contact-title">Managing Director</div></div>
+              <span class="cstatus cstatus--accepted">Connected</span>
+              <a class="contact-link" href="https://www.linkedin.com/search/results/people/?keywords=Aaron%20Sellsted" target="_blank">LinkedIn ↗</a>
+            </div>
+          </div>
+        </div>
+        <div class="firm-block tier-1" data-cfirm="Lido Advisors">
+          <h3 class="firm-name">Lido Advisors</h3>
+          <div class="firm-meta">12 contacts<span class="sep">·</span><b>10 connected</b></div>
+          <div class="contacts">
+            <div class="contact-row" data-crole="dm" data-cstatus="notsent">
+              <div class="contact-info"><div class="contact-name">Jason Ozur <span class="badge-dm">Decision-Maker</span></div><div class="contact-title">CEO</div></div>
+              <span class="cstatus cstatus--notsent">Not Sent</span>
+              <a class="contact-link" href="https://www.linkedin.com/search/results/people/?keywords=Jason%20Ozur" target="_blank">LinkedIn ↗</a>
+            </div>
+            <div class="contact-row" data-crole="secondary" data-cstatus="notsent">
+              <div class="contact-info"><div class="contact-name">Greg Kushner <span class="badge-warm">Secondary</span></div><div class="contact-title">President</div></div>
+              <span class="cstatus cstatus--notsent">Not Sent</span>
+              <a class="contact-link" href="https://www.linkedin.com/search/results/people/?keywords=Greg%20Kushner" target="_blank">LinkedIn ↗</a>
+            </div>
+            <div class="contact-row" data-crole="secondary" data-cstatus="accepted">
+              <div class="contact-info"><div class="contact-name">Henry Hagenbuch <span class="badge-warm">Secondary</span></div><div class="contact-title">Senior Managing Director, Head of M&amp;A</div></div>
+              <span class="cstatus cstatus--accepted">Connected</span>
+              <a class="contact-link" href="https://www.linkedin.com/search/results/people/?keywords=Henry%20Hagenbuch" target="_blank">LinkedIn ↗</a>
+            </div>
+            <div class="contact-row" data-crole="secondary" data-cstatus="accepted">
+              <div class="contact-info"><div class="contact-name">Ken Stern <span class="badge-warm">Secondary</span></div><div class="contact-title">Co-CEO</div></div>
+              <span class="cstatus cstatus--accepted">Connected</span>
+              <a class="contact-link" href="https://www.linkedin.com/search/results/people/?keywords=Ken%20Stern" target="_blank">LinkedIn ↗</a>
+            </div>
+            <div class="contact-row" data-crole="secondary" data-cstatus="accepted">
+              <div class="contact-info"><div class="contact-name">Jeffrey Westheimer, JD <span class="badge-warm">Secondary</span></div><div class="contact-title">Founding Partner, Senior Managing Director</div></div>
+              <span class="cstatus cstatus--accepted">Connected</span>
+              <a class="contact-link" href="https://www.linkedin.com/search/results/people/?keywords=Jeffrey%20Westheimer%2C%20JD" target="_blank">LinkedIn ↗</a>
+            </div>
+            <div class="contact-row" data-crole="secondary" data-cstatus="accepted">
+              <div class="contact-info"><div class="contact-name">Timothy Mergenthal <span class="badge-warm">Secondary</span></div><div class="contact-title">Mergers &amp; Acquisitions</div></div>
+              <span class="cstatus cstatus--accepted">Connected</span>
+              <a class="contact-link" href="https://www.linkedin.com/search/results/people/?keywords=Timothy%20Mergenthal" target="_blank">LinkedIn ↗</a>
+            </div>
+            <div class="contact-row" data-crole="other" data-cstatus="accepted">
+              <div class="contact-info"><div class="contact-name">Keri Kutakoff, CIMA, ChFC </div><div class="contact-title">Director, Growth Practice Management</div></div>
+              <span class="cstatus cstatus--accepted">Connected</span>
+              <a class="contact-link" href="https://www.linkedin.com/search/results/people/?keywords=Keri%20Kutakoff%2C%20CIMA%2C%20ChFC" target="_blank">LinkedIn ↗</a>
+            </div>
+            <div class="contact-row" data-crole="other" data-cstatus="accepted">
+              <div class="contact-info"><div class="contact-name">Colin C. Grover, CFP </div><div class="contact-title">Wealth Management Advisor</div></div>
+              <span class="cstatus cstatus--accepted">Connected</span>
+              <a class="contact-link" href="https://www.linkedin.com/search/results/people/?keywords=Colin%20C.%20Grover%2C%20CFP" target="_blank">LinkedIn ↗</a>
+            </div>
+            <div class="contact-row" data-crole="other" data-cstatus="accepted">
+              <div class="contact-info"><div class="contact-name">Adam Osterling, CFP </div><div class="contact-title">VP, Wealth Advisor</div></div>
+              <span class="cstatus cstatus--accepted">Connected</span>
+              <a class="contact-link" href="https://www.linkedin.com/search/results/people/?keywords=Adam%20Osterling%2C%20CFP" target="_blank">LinkedIn ↗</a>
+            </div>
+            <div class="contact-row" data-crole="other" data-cstatus="accepted">
+              <div class="contact-info"><div class="contact-name">Nicholas Doddo </div><div class="contact-title">Senior Vice President</div></div>
+              <span class="cstatus cstatus--accepted">Connected</span>
+              <a class="contact-link" href="https://www.linkedin.com/search/results/people/?keywords=Nicholas%20Doddo" target="_blank">LinkedIn ↗</a>
+            </div>
+            <div class="contact-row" data-crole="other" data-cstatus="accepted">
+              <div class="contact-info"><div class="contact-name">Brad Barthelmes, CPA </div><div class="contact-title">Senior Vice President</div></div>
+              <span class="cstatus cstatus--accepted">Connected</span>
+              <a class="contact-link" href="https://www.linkedin.com/search/results/people/?keywords=Brad%20Barthelmes%2C%20CPA" target="_blank">LinkedIn ↗</a>
+            </div>
+            <div class="contact-row" data-crole="other" data-cstatus="accepted">
+              <div class="contact-info"><div class="contact-name">Sagar Sheth </div><div class="contact-title">Senior Vice President</div></div>
+              <span class="cstatus cstatus--accepted">Connected</span>
+              <a class="contact-link" href="https://www.linkedin.com/search/results/people/?keywords=Sagar%20Sheth" target="_blank">LinkedIn ↗</a>
+            </div>
+          </div>
+        </div>
+        <div class="firm-block tier-1" data-cfirm="Modern Wealth Management">
+          <h3 class="firm-name">Modern Wealth Management</h3>
+          <div class="firm-meta">7 contacts<span class="sep">·</span><b>5 connected</b></div>
+          <div class="contacts">
+            <div class="contact-row" data-crole="dm" data-cstatus="accepted">
+              <div class="contact-info"><div class="contact-name">Jason Gordo <span class="badge-dm">Decision-Maker</span></div><div class="contact-title">Co-Founder and President</div></div>
+              <span class="cstatus cstatus--accepted">Connected</span>
+              <a class="contact-link" href="https://www.linkedin.com/search/results/people/?keywords=Jason%20Gordo" target="_blank">LinkedIn ↗</a>
+            </div>
+            <div class="contact-row" data-crole="secondary" data-cstatus="notsent">
+              <div class="contact-info"><div class="contact-name">Mike Capelle <span class="badge-warm">Secondary</span></div><div class="contact-title">Co-CEO</div></div>
+              <span class="cstatus cstatus--notsent">Not Sent</span>
+              <a class="contact-link" href="https://www.linkedin.com/search/results/people/?keywords=Mike%20Capelle" target="_blank">LinkedIn ↗</a>
+            </div>
+            <div class="contact-row" data-crole="secondary" data-cstatus="notsent">
+              <div class="contact-info"><div class="contact-name">Gary Roth <span class="badge-warm">Secondary</span></div><div class="contact-title">Co-CEO</div></div>
+              <span class="cstatus cstatus--notsent">Not Sent</span>
+              <a class="contact-link" href="https://www.linkedin.com/search/results/people/?keywords=Gary%20Roth" target="_blank">LinkedIn ↗</a>
+            </div>
+            <div class="contact-row" data-crole="secondary" data-cstatus="accepted">
+              <div class="contact-info"><div class="contact-name">Derek Bruton <span class="badge-warm">Secondary</span></div><div class="contact-title">Head of M&amp;A</div></div>
+              <span class="cstatus cstatus--accepted">Connected</span>
+              <a class="contact-link" href="https://www.linkedin.com/search/results/people/?keywords=Derek%20Bruton" target="_blank">LinkedIn ↗</a>
+            </div>
+            <div class="contact-row" data-crole="other" data-cstatus="accepted">
+              <div class="contact-info"><div class="contact-name">Jennifer Stone, CFP </div><div class="contact-title">Managing Director, Executive Advisor</div></div>
+              <span class="cstatus cstatus--accepted">Connected</span>
+              <a class="contact-link" href="https://www.linkedin.com/search/results/people/?keywords=Jennifer%20Stone%2C%20CFP" target="_blank">LinkedIn ↗</a>
+            </div>
+            <div class="contact-row" data-crole="other" data-cstatus="accepted">
+              <div class="contact-info"><div class="contact-name">Logan DeGraeve, CFP </div><div class="contact-title">Head of Advisory Services</div></div>
+              <span class="cstatus cstatus--accepted">Connected</span>
+              <a class="contact-link" href="https://www.linkedin.com/search/results/people/?keywords=Logan%20DeGraeve%2C%20CFP" target="_blank">LinkedIn ↗</a>
+            </div>
+            <div class="contact-row" data-crole="other" data-cstatus="accepted">
+              <div class="contact-info"><div class="contact-name">Thomas Fink </div><div class="contact-title">Vice President</div></div>
+              <span class="cstatus cstatus--accepted">Connected</span>
+              <a class="contact-link" href="https://www.linkedin.com/search/results/people/?keywords=Thomas%20Fink" target="_blank">LinkedIn ↗</a>
+            </div>
+          </div>
+        </div>
+        <div class="firm-block tier-1" data-cfirm="Novare Capital Management">
+          <h3 class="firm-name">Novare Capital Management</h3>
+          <div class="firm-meta">2 contacts<span class="sep">·</span><b>2 connected</b></div>
+          <div class="contacts">
+            <div class="contact-row" data-crole="other" data-cstatus="accepted">
+              <div class="contact-info"><div class="contact-name">Alex Dann, CFP </div><div class="contact-title">SVP, Relationship Manager</div></div>
+              <span class="cstatus cstatus--accepted">Connected</span>
+              <a class="contact-link" href="https://www.linkedin.com/search/results/people/?keywords=Alex%20Dann%2C%20CFP" target="_blank">LinkedIn ↗</a>
+            </div>
+            <div class="contact-row" data-crole="other" data-cstatus="accepted">
+              <div class="contact-info"><div class="contact-name">John Ryan, CFP </div><div class="contact-title">Vice President, Relationship Manager</div></div>
+              <span class="cstatus cstatus--accepted">Connected</span>
+              <a class="contact-link" href="https://www.linkedin.com/search/results/people/?keywords=John%20Ryan%2C%20CFP" target="_blank">LinkedIn ↗</a>
+            </div>
+          </div>
+        </div>
+        <div class="firm-block tier-1" data-cfirm="OnePointBFG Wealth Partners">
+          <h3 class="firm-name">OnePointBFG Wealth Partners</h3>
+          <div class="firm-meta">1 contact<span class="sep">·</span><b>1 connected</b></div>
+          <div class="contacts">
+            <div class="contact-row" data-crole="other" data-cstatus="accepted">
+              <div class="contact-info"><div class="contact-name">Jayce Nall </div><div class="contact-title">Director of Artificial Intelligence</div></div>
+              <span class="cstatus cstatus--accepted">Connected</span>
+              <a class="contact-link" href="https://www.linkedin.com/search/results/people/?keywords=Jayce%20Nall" target="_blank">LinkedIn ↗</a>
+            </div>
+          </div>
+        </div>
+        <div class="firm-block tier-1" data-cfirm="RFG Advisory">
+          <h3 class="firm-name">RFG Advisory</h3>
+          <div class="firm-meta">3 contacts<span class="sep">·</span><b>1 connected</b></div>
+          <div class="contacts">
+            <div class="contact-row" data-crole="dm" data-cstatus="notsent">
+              <div class="contact-info"><div class="contact-name">Bobby White <span class="badge-dm">Decision-Maker</span></div><div class="contact-title">CEO and Co-Founder</div></div>
+              <span class="cstatus cstatus--notsent">Not Sent</span>
+              <a class="contact-link" href="https://www.linkedin.com/search/results/people/?keywords=Bobby%20White" target="_blank">LinkedIn ↗</a>
+            </div>
+            <div class="contact-row" data-crole="secondary" data-cstatus="notsent">
+              <div class="contact-info"><div class="contact-name">Ed Swenson <span class="badge-warm">Secondary</span></div><div class="contact-title">President</div></div>
+              <span class="cstatus cstatus--notsent">Not Sent</span>
+              <a class="contact-link" href="https://www.linkedin.com/search/results/people/?keywords=Ed%20Swenson" target="_blank">LinkedIn ↗</a>
+            </div>
+            <div class="contact-row" data-crole="other" data-cstatus="accepted">
+              <div class="contact-info"><div class="contact-name">Doug Nelson </div><div class="contact-title">CFO</div></div>
+              <span class="cstatus cstatus--accepted">Connected</span>
+              <a class="contact-link" href="https://www.linkedin.com/search/results/people/?keywords=Doug%20Nelson" target="_blank">LinkedIn ↗</a>
+            </div>
+          </div>
+        </div>
+        <div class="firm-block" data-cfirm="55 North Private Wealth">
+          <h3 class="firm-name">55 North Private Wealth</h3>
+          <div class="firm-meta">2 contacts</div>
+          <div class="contacts">
+            <div class="contact-row" data-crole="dm" data-cstatus="notsent">
+              <div class="contact-info"><div class="contact-name">Steve Curley, CFA, CFP <span class="badge-dm">Decision-Maker</span></div><div class="contact-title">Founder and Chief Investment Strategist</div></div>
+              <span class="cstatus cstatus--notsent">Not Sent</span>
+              <a class="contact-link" href="https://www.linkedin.com/search/results/people/?keywords=Steve%20Curley%2C%20CFA%2C%20CFP" target="_blank">LinkedIn ↗</a>
+            </div>
+            <div class="contact-row" data-crole="secondary" data-cstatus="notsent">
+              <div class="contact-info"><div class="contact-name">Darrell DeVaney <span class="badge-warm">Secondary</span></div><div class="contact-title">Co-Managing Principal</div></div>
+              <span class="cstatus cstatus--notsent">Not Sent</span>
+              <a class="contact-link" href="https://www.linkedin.com/search/results/people/?keywords=Darrell%20DeVaney" target="_blank">LinkedIn ↗</a>
+            </div>
+          </div>
+        </div>
+        <div class="firm-block" data-cfirm="Abacus Wealth Partners">
+          <h3 class="firm-name">Abacus Wealth Partners</h3>
+          <div class="firm-meta">1 contact</div>
+          <div class="contacts">
+            <div class="contact-row" data-crole="dm" data-cstatus="notsent">
+              <div class="contact-info"><div class="contact-name">Neela Humsi <span class="badge-dm">Decision-Maker</span></div><div class="contact-title">CEO</div></div>
+              <span class="cstatus cstatus--notsent">Not Sent</span>
+              <a class="contact-link" href="https://www.linkedin.com/search/results/people/?keywords=Neela%20Humsi" target="_blank">LinkedIn ↗</a>
+            </div>
+          </div>
+        </div>
+        <div class="firm-block" data-cfirm="Accredited Investors Wealth Management">
+          <h3 class="firm-name">Accredited Investors Wealth Management</h3>
+          <div class="firm-meta">1 contact</div>
+          <div class="contacts">
+            <div class="contact-row" data-crole="dm" data-cstatus="notsent">
+              <div class="contact-info"><div class="contact-name">Ross Levin <span class="badge-dm">Decision-Maker</span></div><div class="contact-title">Founding Principal and CEO</div></div>
+              <span class="cstatus cstatus--notsent">Not Sent</span>
+              <a class="contact-link" href="https://www.linkedin.com/search/results/people/?keywords=Ross%20Levin" target="_blank">LinkedIn ↗</a>
+            </div>
+          </div>
+        </div>
+        <div class="firm-block" data-cfirm="Ancora Advisors">
+          <h3 class="firm-name">Ancora Advisors</h3>
+          <div class="firm-meta">1 contact</div>
+          <div class="contacts">
+            <div class="contact-row" data-crole="dm" data-cstatus="notsent">
+              <div class="contact-info"><div class="contact-name">Frederick DiSanto <span class="badge-dm">Decision-Maker</span></div><div class="contact-title">Chairman and CEO</div></div>
+              <span class="cstatus cstatus--notsent">Not Sent</span>
+              <a class="contact-link" href="https://www.linkedin.com/search/results/people/?keywords=Frederick%20DiSanto" target="_blank">LinkedIn ↗</a>
+            </div>
+          </div>
+        </div>
+        <div class="firm-block" data-cfirm="Angeles Wealth Management">
+          <h3 class="firm-name">Angeles Wealth Management</h3>
+          <div class="firm-meta">1 contact</div>
+          <div class="contacts">
+            <div class="contact-row" data-crole="dm" data-cstatus="notsent">
+              <div class="contact-info"><div class="contact-name">Adam Stern <span class="badge-dm">Decision-Maker</span></div><div class="contact-title">CEO, Angeles Family Office</div></div>
+              <span class="cstatus cstatus--notsent">Not Sent</span>
+              <a class="contact-link" href="https://www.linkedin.com/search/results/people/?keywords=Adam%20Stern" target="_blank">LinkedIn ↗</a>
+            </div>
+          </div>
+        </div>
+        <div class="firm-block" data-cfirm="Arax Investment Partners">
+          <h3 class="firm-name">Arax Investment Partners</h3>
+          <div class="firm-meta">1 contact</div>
+          <div class="contacts">
+            <div class="contact-row" data-crole="dm" data-cstatus="notsent">
+              <div class="contact-info"><div class="contact-name">Haig Ariyan <span class="badge-dm">Decision-Maker</span></div><div class="contact-title">CEO and Founder</div></div>
+              <span class="cstatus cstatus--notsent">Not Sent</span>
+              <a class="contact-link" href="https://www.linkedin.com/search/results/people/?keywords=Haig%20Ariyan" target="_blank">LinkedIn ↗</a>
+            </div>
+          </div>
+        </div>
+        <div class="firm-block" data-cfirm="Aspen Standard Wealth">
+          <h3 class="firm-name">Aspen Standard Wealth</h3>
+          <div class="firm-meta">2 contacts</div>
+          <div class="contacts">
+            <div class="contact-row" data-crole="dm" data-cstatus="notsent">
+              <div class="contact-info"><div class="contact-name">Aly Kassim-Lakha <span class="badge-dm">Decision-Maker</span></div><div class="contact-title">CEO</div></div>
+              <span class="cstatus cstatus--notsent">Not Sent</span>
+              <a class="contact-link" href="https://www.linkedin.com/search/results/people/?keywords=Aly%20Kassim-Lakha" target="_blank">LinkedIn ↗</a>
+            </div>
+            <div class="contact-row" data-crole="secondary" data-cstatus="notsent">
+              <div class="contact-info"><div class="contact-name">Kevin DiSano <span class="badge-warm">Secondary</span></div><div class="contact-title">President (appointed Feb 2026)</div></div>
+              <span class="cstatus cstatus--notsent">Not Sent</span>
+              <a class="contact-link" href="https://www.linkedin.com/search/results/people/?keywords=Kevin%20DiSano" target="_blank">LinkedIn ↗</a>
+            </div>
+          </div>
+        </div>
+        <div class="firm-block" data-cfirm="Aspiriant">
+          <h3 class="firm-name">Aspiriant</h3>
+          <div class="firm-meta">3 contacts</div>
+          <div class="contacts">
+            <div class="contact-row" data-crole="dm" data-cstatus="notsent">
+              <div class="contact-info"><div class="contact-name">Rob Francais <span class="badge-dm">Decision-Maker</span></div><div class="contact-title">Co-Founder and CEO</div></div>
+              <span class="cstatus cstatus--notsent">Not Sent</span>
+              <a class="contact-link" href="https://www.linkedin.com/search/results/people/?keywords=Rob%20Francais" target="_blank">LinkedIn ↗</a>
+            </div>
+            <div class="contact-row" data-crole="secondary" data-cstatus="notsent">
+              <div class="contact-info"><div class="contact-name">Sandi Bragar <span class="badge-warm">Secondary</span></div><div class="contact-title">Chief Client Officer</div></div>
+              <span class="cstatus cstatus--notsent">Not Sent</span>
+              <a class="contact-link" href="https://www.linkedin.com/search/results/people/?keywords=Sandi%20Bragar" target="_blank">LinkedIn ↗</a>
+            </div>
+            <div class="contact-row" data-crole="secondary" data-cstatus="notsent">
+              <div class="contact-info"><div class="contact-name">John Allen <span class="badge-warm">Secondary</span></div><div class="contact-title">CIO</div></div>
+              <span class="cstatus cstatus--notsent">Not Sent</span>
+              <a class="contact-link" href="https://www.linkedin.com/search/results/people/?keywords=John%20Allen" target="_blank">LinkedIn ↗</a>
+            </div>
+          </div>
+        </div>
+        <div class="firm-block" data-cfirm="Avidian Wealth Solutions">
+          <h3 class="firm-name">Avidian Wealth Solutions</h3>
+          <div class="firm-meta">1 contact</div>
+          <div class="contacts">
+            <div class="contact-row" data-crole="secondary" data-cstatus="notsent">
+              <div class="contact-info"><div class="contact-name">Gregory Litts <span class="badge-warm">Secondary</span></div><div class="contact-title">Senior Wealth Advisor</div></div>
+              <span class="cstatus cstatus--notsent">Not Sent</span>
+              <a class="contact-link" href="https://www.linkedin.com/search/results/people/?keywords=Gregory%20Litts" target="_blank">LinkedIn ↗</a>
+            </div>
+          </div>
+        </div>
+        <div class="firm-block" data-cfirm="Balentine">
+          <h3 class="firm-name">Balentine</h3>
+          <div class="firm-meta">2 contacts</div>
+          <div class="contacts">
+            <div class="contact-row" data-crole="dm" data-cstatus="notsent">
+              <div class="contact-info"><div class="contact-name">Adrian Cronje, PhD, CFA <span class="badge-dm">Decision-Maker</span></div><div class="contact-title">CEO</div></div>
+              <span class="cstatus cstatus--notsent">Not Sent</span>
+              <a class="contact-link" href="https://www.linkedin.com/search/results/people/?keywords=Adrian%20Cronje%2C%20PhD%2C%20CFA" target="_blank">LinkedIn ↗</a>
+            </div>
+            <div class="contact-row" data-crole="secondary" data-cstatus="notsent">
+              <div class="contact-info"><div class="contact-name">Robert Balentine <span class="badge-warm">Secondary</span></div><div class="contact-title">Founder and Chairman</div></div>
+              <span class="cstatus cstatus--notsent">Not Sent</span>
+              <a class="contact-link" href="https://www.linkedin.com/search/results/people/?keywords=Robert%20Balentine" target="_blank">LinkedIn ↗</a>
+            </div>
+          </div>
+        </div>
+        <div class="firm-block" data-cfirm="Beaird Harris">
+          <h3 class="firm-name">Beaird Harris</h3>
+          <div class="firm-meta">2 contacts</div>
+          <div class="contacts">
+            <div class="contact-row" data-crole="dm" data-cstatus="notsent">
+              <div class="contact-info"><div class="contact-name">Steve Harris <span class="badge-dm">Decision-Maker</span></div><div class="contact-title">Managing Partner</div></div>
+              <span class="cstatus cstatus--notsent">Not Sent</span>
+              <a class="contact-link" href="https://www.linkedin.com/search/results/people/?keywords=Steve%20Harris" target="_blank">LinkedIn ↗</a>
+            </div>
+            <div class="contact-row" data-crole="secondary" data-cstatus="notsent">
+              <div class="contact-info"><div class="contact-name">Jacob King <span class="badge-warm">Secondary</span></div><div class="contact-title">Partner and Wealth Manager</div></div>
+              <span class="cstatus cstatus--notsent">Not Sent</span>
+              <a class="contact-link" href="https://www.linkedin.com/search/results/people/?keywords=Jacob%20King" target="_blank">LinkedIn ↗</a>
+            </div>
+          </div>
+        </div>
+        <div class="firm-block" data-cfirm="BFG Financial Advisors">
+          <h3 class="firm-name">BFG Financial Advisors</h3>
+          <div class="firm-meta">2 contacts</div>
+          <div class="contacts">
+            <div class="contact-row" data-crole="dm" data-cstatus="notsent">
+              <div class="contact-info"><div class="contact-name">Lena Nebel <span class="badge-dm">Decision-Maker</span></div><div class="contact-title">CEO</div></div>
+              <span class="cstatus cstatus--notsent">Not Sent</span>
+              <a class="contact-link" href="https://www.linkedin.com/search/results/people/?keywords=Lena%20Nebel" target="_blank">LinkedIn ↗</a>
+            </div>
+            <div class="contact-row" data-crole="secondary" data-cstatus="notsent">
+              <div class="contact-info"><div class="contact-name">Eric Brotman <span class="badge-warm">Secondary</span></div><div class="contact-title">Chief Growth Officer</div></div>
+              <span class="cstatus cstatus--notsent">Not Sent</span>
+              <a class="contact-link" href="https://www.linkedin.com/search/results/people/?keywords=Eric%20Brotman" target="_blank">LinkedIn ↗</a>
+            </div>
+          </div>
+        </div>
+        <div class="firm-block" data-cfirm="Bingham, Osborn &amp; Scarborough">
+          <h3 class="firm-name">Bingham, Osborn &amp; Scarborough</h3>
+          <div class="firm-meta">1 contact</div>
+          <div class="contacts">
+            <div class="contact-row" data-crole="dm" data-cstatus="notsent">
+              <div class="contact-info"><div class="contact-name">Russ Wermers <span class="badge-dm">Decision-Maker</span></div><div class="contact-title">Managing Partner (verification needed)</div></div>
+              <span class="cstatus cstatus--notsent">Not Sent</span>
+              <a class="contact-link" href="https://www.linkedin.com/search/results/people/?keywords=Russ%20Wermers" target="_blank">LinkedIn ↗</a>
+            </div>
+          </div>
+        </div>
+        <div class="firm-block" data-cfirm="Brighton Jones">
+          <h3 class="firm-name">Brighton Jones</h3>
+          <div class="firm-meta">2 contacts</div>
+          <div class="contacts">
+            <div class="contact-row" data-crole="dm" data-cstatus="notsent">
+              <div class="contact-info"><div class="contact-name">Jon Jones <span class="badge-dm">Decision-Maker</span></div><div class="contact-title">Founder and Managing Principal</div></div>
+              <span class="cstatus cstatus--notsent">Not Sent</span>
+              <a class="contact-link" href="https://www.linkedin.com/search/results/people/?keywords=Jon%20Jones" target="_blank">LinkedIn ↗</a>
+            </div>
+            <div class="contact-row" data-crole="secondary" data-cstatus="notsent">
+              <div class="contact-info"><div class="contact-name">Chris Brighton <span class="badge-warm">Secondary</span></div><div class="contact-title">Co-Founder</div></div>
+              <span class="cstatus cstatus--notsent">Not Sent</span>
+              <a class="contact-link" href="https://www.linkedin.com/search/results/people/?keywords=Chris%20Brighton" target="_blank">LinkedIn ↗</a>
+            </div>
+          </div>
+        </div>
+        <div class="firm-block" data-cfirm="Brownson, Rehmus &amp; Foxworth">
+          <h3 class="firm-name">Brownson, Rehmus &amp; Foxworth</h3>
+          <div class="firm-meta">1 contact</div>
+          <div class="contacts">
+            <div class="contact-row" data-crole="dm" data-cstatus="notsent">
+              <div class="contact-info"><div class="contact-name">Jonathan Brownson <span class="badge-dm">Decision-Maker</span></div><div class="contact-title">Managing Principal</div></div>
+              <span class="cstatus cstatus--notsent">Not Sent</span>
+              <a class="contact-link" href="https://www.linkedin.com/search/results/people/?keywords=Jonathan%20Brownson" target="_blank">LinkedIn ↗</a>
+            </div>
+          </div>
+        </div>
+        <div class="firm-block" data-cfirm="CM Wealth">
+          <h3 class="firm-name">CM Wealth</h3>
+          <div class="firm-meta">1 contact</div>
+          <div class="contacts">
+            <div class="contact-row" data-crole="dm" data-cstatus="notsent">
+              <div class="contact-info"><div class="contact-name">Paul Bodnar <span class="badge-dm">Decision-Maker</span></div><div class="contact-title">CEO</div></div>
+              <span class="cstatus cstatus--notsent">Not Sent</span>
+              <a class="contact-link" href="https://www.linkedin.com/search/results/people/?keywords=Paul%20Bodnar" target="_blank">LinkedIn ↗</a>
+            </div>
+          </div>
+        </div>
+        <div class="firm-block" data-cfirm="Coldstream Wealth Management">
+          <h3 class="firm-name">Coldstream Wealth Management</h3>
+          <div class="firm-meta">2 contacts</div>
+          <div class="contacts">
+            <div class="contact-row" data-crole="dm" data-cstatus="notsent">
+              <div class="contact-info"><div class="contact-name">Kevin Fitzwilson <span class="badge-dm">Decision-Maker</span></div><div class="contact-title">CEO</div></div>
+              <span class="cstatus cstatus--notsent">Not Sent</span>
+              <a class="contact-link" href="https://www.linkedin.com/search/results/people/?keywords=Kevin%20Fitzwilson" target="_blank">LinkedIn ↗</a>
+            </div>
+            <div class="contact-row" data-crole="secondary" data-cstatus="notsent">
+              <div class="contact-info"><div class="contact-name">Josh Harris <span class="badge-warm">Secondary</span></div><div class="contact-title">President of M&amp;A</div></div>
+              <span class="cstatus cstatus--notsent">Not Sent</span>
+              <a class="contact-link" href="https://www.linkedin.com/search/results/people/?keywords=Josh%20Harris" target="_blank">LinkedIn ↗</a>
+            </div>
+          </div>
+        </div>
+        <div class="firm-block" data-cfirm="Crestone Capital Advisors">
+          <h3 class="firm-name">Crestone Capital Advisors</h3>
+          <div class="firm-meta">1 contact</div>
+          <div class="contacts">
+            <div class="contact-row" data-crole="dm" data-cstatus="notsent">
+              <div class="contact-info"><div class="contact-name">Eric Kramer <span class="badge-dm">Decision-Maker</span></div><div class="contact-title">President and CEO</div></div>
+              <span class="cstatus cstatus--notsent">Not Sent</span>
+              <a class="contact-link" href="https://www.linkedin.com/search/results/people/?keywords=Eric%20Kramer" target="_blank">LinkedIn ↗</a>
+            </div>
+          </div>
+        </div>
+        <div class="firm-block" data-cfirm="Crewe Advisors">
+          <h3 class="firm-name">Crewe Advisors</h3>
+          <div class="firm-meta">1 contact</div>
+          <div class="contacts">
+            <div class="contact-row" data-crole="dm" data-cstatus="notsent">
+              <div class="contact-info"><div class="contact-name">Richard Chevalier <span class="badge-dm">Decision-Maker</span></div><div class="contact-title">Founder and CEO</div></div>
+              <span class="cstatus cstatus--notsent">Not Sent</span>
+              <a class="contact-link" href="https://www.linkedin.com/search/results/people/?keywords=Richard%20Chevalier" target="_blank">LinkedIn ↗</a>
+            </div>
+          </div>
+        </div>
+        <div class="firm-block" data-cfirm="Cyndeo Wealth Partners">
+          <h3 class="firm-name">Cyndeo Wealth Partners</h3>
+          <div class="firm-meta">1 contact</div>
+          <div class="contacts">
+            <div class="contact-row" data-crole="dm" data-cstatus="notsent">
+              <div class="contact-info"><div class="contact-name">Matt Kilgroe <span class="badge-dm">Decision-Maker</span></div><div class="contact-title">CEO and President</div></div>
+              <span class="cstatus cstatus--notsent">Not Sent</span>
+              <a class="contact-link" href="https://www.linkedin.com/search/results/people/?keywords=Matt%20Kilgroe" target="_blank">LinkedIn ↗</a>
+            </div>
+          </div>
+        </div>
+        <div class="firm-block" data-cfirm="Diversified Trust">
+          <h3 class="firm-name">Diversified Trust</h3>
+          <div class="firm-meta">1 contact</div>
+          <div class="contacts">
+            <div class="contact-row" data-crole="dm" data-cstatus="notsent">
+              <div class="contact-info"><div class="contact-name">Brian Puckett <span class="badge-dm">Decision-Maker</span></div><div class="contact-title">Managing Principal / CEO</div></div>
+              <span class="cstatus cstatus--notsent">Not Sent</span>
+              <a class="contact-link" href="https://www.linkedin.com/search/results/people/?keywords=Brian%20Puckett" target="_blank">LinkedIn ↗</a>
+            </div>
+          </div>
+        </div>
+        <div class="firm-block" data-cfirm="F.L.Putnam Investment Management Co.">
+          <h3 class="firm-name">F.L.Putnam Investment Management Co.</h3>
+          <div class="firm-meta">1 contact</div>
+          <div class="contacts">
+            <div class="contact-row" data-crole="dm" data-cstatus="notsent">
+              <div class="contact-info"><div class="contact-name">Tom Manning <span class="badge-dm">Decision-Maker</span></div><div class="contact-title">CEO</div></div>
+              <span class="cstatus cstatus--notsent">Not Sent</span>
+              <a class="contact-link" href="https://www.linkedin.com/search/results/people/?keywords=Tom%20Manning" target="_blank">LinkedIn ↗</a>
+            </div>
+          </div>
+        </div>
+        <div class="firm-block" data-cfirm="Farther">
+          <h3 class="firm-name">Farther</h3>
+          <div class="firm-meta">2 contacts</div>
+          <div class="contacts">
+            <div class="contact-row" data-crole="dm" data-cstatus="notsent">
+              <div class="contact-info"><div class="contact-name">Taylor Matthews <span class="badge-dm">Decision-Maker</span></div><div class="contact-title">CEO and Co-Founder</div></div>
+              <span class="cstatus cstatus--notsent">Not Sent</span>
+              <a class="contact-link" href="https://www.linkedin.com/search/results/people/?keywords=Taylor%20Matthews" target="_blank">LinkedIn ↗</a>
+            </div>
+            <div class="contact-row" data-crole="secondary" data-cstatus="notsent">
+              <div class="contact-info"><div class="contact-name">Brad Genser <span class="badge-warm">Secondary</span></div><div class="contact-title">Co-Founder and COO</div></div>
+              <span class="cstatus cstatus--notsent">Not Sent</span>
+              <a class="contact-link" href="https://www.linkedin.com/search/results/people/?keywords=Brad%20Genser" target="_blank">LinkedIn ↗</a>
+            </div>
+          </div>
+        </div>
+        <div class="firm-block" data-cfirm="Ferguson Wellman Capital Management">
+          <h3 class="firm-name">Ferguson Wellman Capital Management</h3>
+          <div class="firm-meta">2 contacts</div>
+          <div class="contacts">
+            <div class="contact-row" data-crole="dm" data-cstatus="notsent">
+              <div class="contact-info"><div class="contact-name">Ralph Cole <span class="badge-dm">Decision-Maker</span></div><div class="contact-title">CEO</div></div>
+              <span class="cstatus cstatus--notsent">Not Sent</span>
+              <a class="contact-link" href="https://www.linkedin.com/search/results/people/?keywords=Ralph%20Cole" target="_blank">LinkedIn ↗</a>
+            </div>
+            <div class="contact-row" data-crole="secondary" data-cstatus="notsent">
+              <div class="contact-info"><div class="contact-name">Brad Houle <span class="badge-warm">Secondary</span></div><div class="contact-title">EVP and Head of Fixed Income</div></div>
+              <span class="cstatus cstatus--notsent">Not Sent</span>
+              <a class="contact-link" href="https://www.linkedin.com/search/results/people/?keywords=Brad%20Houle" target="_blank">LinkedIn ↗</a>
+            </div>
+          </div>
+        </div>
+        <div class="firm-block" data-cfirm="Financial Synergies Wealth Advisors">
+          <h3 class="firm-name">Financial Synergies Wealth Advisors</h3>
+          <div class="firm-meta">1 contact</div>
+          <div class="contacts">
+            <div class="contact-row" data-crole="dm" data-cstatus="notsent">
+              <div class="contact-info"><div class="contact-name">James Dowd <span class="badge-dm">Decision-Maker</span></div><div class="contact-title">Founder / Senior Partner</div></div>
+              <span class="cstatus cstatus--notsent">Not Sent</span>
+              <a class="contact-link" href="https://www.linkedin.com/search/results/people/?keywords=James%20Dowd" target="_blank">LinkedIn ↗</a>
+            </div>
+          </div>
+        </div>
+        <div class="firm-block" data-cfirm="Greenspring Advisors">
+          <h3 class="firm-name">Greenspring Advisors</h3>
+          <div class="firm-meta">2 contacts</div>
+          <div class="contacts">
+            <div class="contact-row" data-crole="dm" data-cstatus="notsent">
+              <div class="contact-info"><div class="contact-name">Pat Collins <span class="badge-dm">Decision-Maker</span></div><div class="contact-title">Co-Founder</div></div>
+              <span class="cstatus cstatus--notsent">Not Sent</span>
+              <a class="contact-link" href="https://www.linkedin.com/search/results/people/?keywords=Pat%20Collins" target="_blank">LinkedIn ↗</a>
+            </div>
+            <div class="contact-row" data-crole="secondary" data-cstatus="notsent">
+              <div class="contact-info"><div class="contact-name">Michael Goodman <span class="badge-warm">Secondary</span></div><div class="contact-title">Co-Founder (formerly Wealthstream)</div></div>
+              <span class="cstatus cstatus--notsent">Not Sent</span>
+              <a class="contact-link" href="https://www.linkedin.com/search/results/people/?keywords=Michael%20Goodman" target="_blank">LinkedIn ↗</a>
+            </div>
+          </div>
+        </div>
+        <div class="firm-block" data-cfirm="Halbert Hargrove">
+          <h3 class="firm-name">Halbert Hargrove</h3>
+          <div class="firm-meta">2 contacts</div>
+          <div class="contacts">
+            <div class="contact-row" data-crole="dm" data-cstatus="notsent">
+              <div class="contact-info"><div class="contact-name">Russ Hill <span class="badge-dm">Decision-Maker</span></div><div class="contact-title">Chairman</div></div>
+              <span class="cstatus cstatus--notsent">Not Sent</span>
+              <a class="contact-link" href="https://www.linkedin.com/search/results/people/?keywords=Russ%20Hill" target="_blank">LinkedIn ↗</a>
+            </div>
+            <div class="contact-row" data-crole="secondary" data-cstatus="notsent">
+              <div class="contact-info"><div class="contact-name">Brian Spinelli <span class="badge-warm">Secondary</span></div><div class="contact-title">Co-CEO</div></div>
+              <span class="cstatus cstatus--notsent">Not Sent</span>
+              <a class="contact-link" href="https://www.linkedin.com/search/results/people/?keywords=Brian%20Spinelli" target="_blank">LinkedIn ↗</a>
+            </div>
+          </div>
+        </div>
+        <div class="firm-block" data-cfirm="Homrich Berg">
+          <h3 class="firm-name">Homrich Berg</h3>
+          <div class="firm-meta">1 contact</div>
+          <div class="contacts">
+            <div class="contact-row" data-crole="dm" data-cstatus="notsent">
+              <div class="contact-info"><div class="contact-name">H. Pepper Braswell <span class="badge-dm">Decision-Maker</span></div><div class="contact-title">CEO</div></div>
+              <span class="cstatus cstatus--notsent">Not Sent</span>
+              <a class="contact-link" href="https://www.linkedin.com/search/results/people/?keywords=H.%20Pepper%20Braswell" target="_blank">LinkedIn ↗</a>
+            </div>
+          </div>
+        </div>
+        <div class="firm-block" data-cfirm="Integrated Partners">
+          <h3 class="firm-name">Integrated Partners</h3>
+          <div class="firm-meta">1 contact</div>
+          <div class="contacts">
+            <div class="contact-row" data-crole="dm" data-cstatus="notsent">
+              <div class="contact-info"><div class="contact-name">Paul Saganey <span class="badge-dm">Decision-Maker</span></div><div class="contact-title">Founder and President</div></div>
+              <span class="cstatus cstatus--notsent">Not Sent</span>
+              <a class="contact-link" href="https://www.linkedin.com/search/results/people/?keywords=Paul%20Saganey" target="_blank">LinkedIn ↗</a>
+            </div>
+          </div>
+        </div>
+        <div class="firm-block" data-cfirm="Johnson Investment Counsel">
+          <h3 class="firm-name">Johnson Investment Counsel</h3>
+          <div class="firm-meta">2 contacts</div>
+          <div class="contacts">
+            <div class="contact-row" data-crole="dm" data-cstatus="notsent">
+              <div class="contact-info"><div class="contact-name">Jason Jackman, CFA <span class="badge-dm">Decision-Maker</span></div><div class="contact-title">CEO</div></div>
+              <span class="cstatus cstatus--notsent">Not Sent</span>
+              <a class="contact-link" href="https://www.linkedin.com/search/results/people/?keywords=Jason%20Jackman%2C%20CFA" target="_blank">LinkedIn ↗</a>
+            </div>
+            <div class="contact-row" data-crole="secondary" data-cstatus="notsent">
+              <div class="contact-info"><div class="contact-name">Charles Rinehart, CFA, CAIA <span class="badge-warm">Secondary</span></div><div class="contact-title">CIO</div></div>
+              <span class="cstatus cstatus--notsent">Not Sent</span>
+              <a class="contact-link" href="https://www.linkedin.com/search/results/people/?keywords=Charles%20Rinehart%2C%20CFA%2C%20CAIA" target="_blank">LinkedIn ↗</a>
+            </div>
+          </div>
+        </div>
+        <div class="firm-block" data-cfirm="Krilogy">
+          <h3 class="firm-name">Krilogy</h3>
+          <div class="firm-meta">1 contact</div>
+          <div class="contacts">
+            <div class="contact-row" data-crole="dm" data-cstatus="notsent">
+              <div class="contact-info"><div class="contact-name">Kent Skornia <span class="badge-dm">Decision-Maker</span></div><div class="contact-title">Founder and CEO</div></div>
+              <span class="cstatus cstatus--notsent">Not Sent</span>
+              <a class="contact-link" href="https://www.linkedin.com/search/results/people/?keywords=Kent%20Skornia" target="_blank">LinkedIn ↗</a>
+            </div>
+          </div>
+        </div>
+        <div class="firm-block" data-cfirm="Miracle Mile Advisors">
+          <h3 class="firm-name">Miracle Mile Advisors</h3>
+          <div class="firm-meta">2 contacts</div>
+          <div class="contacts">
+            <div class="contact-row" data-crole="dm" data-cstatus="notsent">
+              <div class="contact-info"><div class="contact-name">Dennis Morton <span class="badge-dm">Decision-Maker</span></div><div class="contact-title">CEO and Co-Founder</div></div>
+              <span class="cstatus cstatus--notsent">Not Sent</span>
+              <a class="contact-link" href="https://www.linkedin.com/search/results/people/?keywords=Dennis%20Morton" target="_blank">LinkedIn ↗</a>
+            </div>
+            <div class="contact-row" data-crole="secondary" data-cstatus="notsent">
+              <div class="contact-info"><div class="contact-name">Erik Cooper <span class="badge-warm">Secondary</span></div><div class="contact-title">Co-Founder</div></div>
+              <span class="cstatus cstatus--notsent">Not Sent</span>
+              <a class="contact-link" href="https://www.linkedin.com/search/results/people/?keywords=Erik%20Cooper" target="_blank">LinkedIn ↗</a>
+            </div>
+          </div>
+        </div>
+        <div class="firm-block" data-cfirm="Modera Wealth Management">
+          <h3 class="firm-name">Modera Wealth Management</h3>
+          <div class="firm-meta">2 contacts</div>
+          <div class="contacts">
+            <div class="contact-row" data-crole="dm" data-cstatus="notsent">
+              <div class="contact-info"><div class="contact-name">Tom Orecchio <span class="badge-dm">Decision-Maker</span></div><div class="contact-title">Principal and Co-Founder</div></div>
+              <span class="cstatus cstatus--notsent">Not Sent</span>
+              <a class="contact-link" href="https://www.linkedin.com/search/results/people/?keywords=Tom%20Orecchio" target="_blank">LinkedIn ↗</a>
+            </div>
+            <div class="contact-row" data-crole="secondary" data-cstatus="notsent">
+              <div class="contact-info"><div class="contact-name">Charles Boinske <span class="badge-warm">Secondary</span></div><div class="contact-title">Principal</div></div>
+              <span class="cstatus cstatus--notsent">Not Sent</span>
+              <a class="contact-link" href="https://www.linkedin.com/search/results/people/?keywords=Charles%20Boinske" target="_blank">LinkedIn ↗</a>
+            </div>
+          </div>
+        </div>
+        <div class="firm-block" data-cfirm="Mozaic">
+          <h3 class="firm-name">Mozaic</h3>
+          <div class="firm-meta">1 contact</div>
+          <div class="contacts">
+            <div class="contact-row" data-crole="dm" data-cstatus="notsent">
+              <div class="contact-info"><div class="contact-name">Christopher Zyda <span class="badge-dm">Decision-Maker</span></div><div class="contact-title">Founder and CEO</div></div>
+              <span class="cstatus cstatus--notsent">Not Sent</span>
+              <a class="contact-link" href="https://www.linkedin.com/search/results/people/?keywords=Christopher%20Zyda" target="_blank">LinkedIn ↗</a>
+            </div>
+          </div>
+        </div>
+        <div class="firm-block" data-cfirm="Parcion Private Wealth">
+          <h3 class="firm-name">Parcion Private Wealth</h3>
+          <div class="firm-meta">3 contacts</div>
+          <div class="contacts">
+            <div class="contact-row" data-crole="dm" data-cstatus="notsent">
+              <div class="contact-info"><div class="contact-name">Terry Cook <span class="badge-dm">Decision-Maker</span></div><div class="contact-title">CEO, Founder, and Managing Principal</div></div>
+              <span class="cstatus cstatus--notsent">Not Sent</span>
+              <a class="contact-link" href="https://www.linkedin.com/search/results/people/?keywords=Terry%20Cook" target="_blank">LinkedIn ↗</a>
+            </div>
+            <div class="contact-row" data-crole="secondary" data-cstatus="notsent">
+              <div class="contact-info"><div class="contact-name">Sam King <span class="badge-warm">Secondary</span></div><div class="contact-title">COO/CCO</div></div>
+              <span class="cstatus cstatus--notsent">Not Sent</span>
+              <a class="contact-link" href="https://www.linkedin.com/search/results/people/?keywords=Sam%20King" target="_blank">LinkedIn ↗</a>
+            </div>
+            <div class="contact-row" data-crole="secondary" data-cstatus="notsent">
+              <div class="contact-info"><div class="contact-name">Dan McCollum <span class="badge-warm">Secondary</span></div><div class="contact-title">CIO</div></div>
+              <span class="cstatus cstatus--notsent">Not Sent</span>
+              <a class="contact-link" href="https://www.linkedin.com/search/results/people/?keywords=Dan%20McCollum" target="_blank">LinkedIn ↗</a>
+            </div>
+          </div>
+        </div>
+        <div class="firm-block" data-cfirm="Pitcairn">
+          <h3 class="firm-name">Pitcairn</h3>
+          <div class="firm-meta">2 contacts</div>
+          <div class="contacts">
+            <div class="contact-row" data-crole="dm" data-cstatus="notsent">
+              <div class="contact-info"><div class="contact-name">Andrew L. Busser <span class="badge-dm">Decision-Maker</span></div><div class="contact-title">President and CEO</div></div>
+              <span class="cstatus cstatus--notsent">Not Sent</span>
+              <a class="contact-link" href="https://www.linkedin.com/search/results/people/?keywords=Andrew%20L.%20Busser" target="_blank">LinkedIn ↗</a>
+            </div>
+            <div class="contact-row" data-crole="secondary" data-cstatus="notsent">
+              <div class="contact-info"><div class="contact-name">Rick Pitcairn, CFA <span class="badge-warm">Secondary</span></div><div class="contact-title">Chairman</div></div>
+              <span class="cstatus cstatus--notsent">Not Sent</span>
+              <a class="contact-link" href="https://www.linkedin.com/search/results/people/?keywords=Rick%20Pitcairn%2C%20CFA" target="_blank">LinkedIn ↗</a>
+            </div>
+          </div>
+        </div>
+        <div class="firm-block" data-cfirm="Plancorp">
+          <h3 class="firm-name">Plancorp</h3>
+          <div class="firm-meta">1 contact</div>
+          <div class="contacts">
+            <div class="contact-row" data-crole="dm" data-cstatus="notsent">
+              <div class="contact-info"><div class="contact-name">Chris Kerckhoff <span class="badge-dm">Decision-Maker</span></div><div class="contact-title">President and CEO</div></div>
+              <span class="cstatus cstatus--notsent">Not Sent</span>
+              <a class="contact-link" href="https://www.linkedin.com/search/results/people/?keywords=Chris%20Kerckhoff" target="_blank">LinkedIn ↗</a>
+            </div>
+          </div>
+        </div>
+        <div class="firm-block" data-cfirm="Plante Moran Financial Advisors">
+          <h3 class="firm-name">Plante Moran Financial Advisors</h3>
+          <div class="firm-meta">1 contact</div>
+          <div class="contacts">
+            <div class="contact-row" data-crole="secondary" data-cstatus="notsent">
+              <div class="contact-info"><div class="contact-name">Jim Proppe <span class="badge-warm">Secondary</span></div><div class="contact-title">Firm Managing Partner at Plante Moran</div></div>
+              <span class="cstatus cstatus--notsent">Not Sent</span>
+              <a class="contact-link" href="https://www.linkedin.com/search/results/people/?keywords=Jim%20Proppe" target="_blank">LinkedIn ↗</a>
+            </div>
+          </div>
+        </div>
+        <div class="firm-block" data-cfirm="Prospero Wealth">
+          <h3 class="firm-name">Prospero Wealth</h3>
+          <div class="firm-meta">1 contact</div>
+          <div class="contacts">
+            <div class="contact-row" data-crole="dm" data-cstatus="notsent">
+              <div class="contact-info"><div class="contact-name">Eric Franklin <span class="badge-dm">Decision-Maker</span></div><div class="contact-title">Founder and CEO</div></div>
+              <span class="cstatus cstatus--notsent">Not Sent</span>
+              <a class="contact-link" href="https://www.linkedin.com/search/results/people/?keywords=Eric%20Franklin" target="_blank">LinkedIn ↗</a>
+            </div>
+          </div>
+        </div>
+        <div class="firm-block" data-cfirm="Regent Atlantic Capital">
+          <h3 class="firm-name">Regent Atlantic Capital</h3>
+          <div class="firm-meta">2 contacts</div>
+          <div class="contacts">
+            <div class="contact-row" data-crole="dm" data-cstatus="notsent">
+              <div class="contact-info"><div class="contact-name">Chris Cordaro <span class="badge-dm">Decision-Maker</span></div><div class="contact-title">CEO and CIO</div></div>
+              <span class="cstatus cstatus--notsent">Not Sent</span>
+              <a class="contact-link" href="https://www.linkedin.com/search/results/people/?keywords=Chris%20Cordaro" target="_blank">LinkedIn ↗</a>
+            </div>
+            <div class="contact-row" data-crole="secondary" data-cstatus="notsent">
+              <div class="contact-info"><div class="contact-name">Marc Stern <span class="badge-warm">Secondary</span></div><div class="contact-title">Managing Partner</div></div>
+              <span class="cstatus cstatus--notsent">Not Sent</span>
+              <a class="contact-link" href="https://www.linkedin.com/search/results/people/?keywords=Marc%20Stern" target="_blank">LinkedIn ↗</a>
+            </div>
+          </div>
+        </div>
+        <div class="firm-block" data-cfirm="Ritholtz Wealth Management">
+          <h3 class="firm-name">Ritholtz Wealth Management</h3>
+          <div class="firm-meta">2 contacts</div>
+          <div class="contacts">
+            <div class="contact-row" data-crole="dm" data-cstatus="notsent">
+              <div class="contact-info"><div class="contact-name">Josh Brown <span class="badge-dm">Decision-Maker</span></div><div class="contact-title">CEO</div></div>
+              <span class="cstatus cstatus--notsent">Not Sent</span>
+              <a class="contact-link" href="https://www.linkedin.com/search/results/people/?keywords=Josh%20Brown" target="_blank">LinkedIn ↗</a>
+            </div>
+            <div class="contact-row" data-crole="secondary" data-cstatus="notsent">
+              <div class="contact-info"><div class="contact-name">Barry Ritholtz <span class="badge-warm">Secondary</span></div><div class="contact-title">Founder and Chairman</div></div>
+              <span class="cstatus cstatus--notsent">Not Sent</span>
+              <a class="contact-link" href="https://www.linkedin.com/search/results/people/?keywords=Barry%20Ritholtz" target="_blank">LinkedIn ↗</a>
+            </div>
+          </div>
+        </div>
+        <div class="firm-block" data-cfirm="Schultz Collins">
+          <h3 class="firm-name">Schultz Collins</h3>
+          <div class="firm-meta">1 contact</div>
+          <div class="contacts">
+            <div class="contact-row" data-crole="dm" data-cstatus="notsent">
+              <div class="contact-info"><div class="contact-name">Gary Collins <span class="badge-dm">Decision-Maker</span></div><div class="contact-title">Principal and Co-Founder</div></div>
+              <span class="cstatus cstatus--notsent">Not Sent</span>
+              <a class="contact-link" href="https://www.linkedin.com/search/results/people/?keywords=Gary%20Collins" target="_blank">LinkedIn ↗</a>
+            </div>
+          </div>
+        </div>
+        <div class="firm-block" data-cfirm="Signature Wealth Partners">
+          <h3 class="firm-name">Signature Wealth Partners</h3>
+          <div class="firm-meta">1 contact</div>
+          <div class="contacts">
+            <div class="contact-row" data-crole="dm" data-cstatus="notsent">
+              <div class="contact-info"><div class="contact-name">Todd Bryant <span class="badge-dm">Decision-Maker</span></div><div class="contact-title">Founding Partner</div></div>
+              <span class="cstatus cstatus--notsent">Not Sent</span>
+              <a class="contact-link" href="https://www.linkedin.com/search/results/people/?keywords=Todd%20Bryant" target="_blank">LinkedIn ↗</a>
+            </div>
+          </div>
+        </div>
+        <div class="firm-block" data-cfirm="Snowden Lane Partners">
+          <h3 class="firm-name">Snowden Lane Partners</h3>
+          <div class="firm-meta">1 contact</div>
+          <div class="contacts">
+            <div class="contact-row" data-crole="dm" data-cstatus="notsent">
+              <div class="contact-info"><div class="contact-name">Rob Mooney <span class="badge-dm">Decision-Maker</span></div><div class="contact-title">Managing Partner and CEO</div></div>
+              <span class="cstatus cstatus--notsent">Not Sent</span>
+              <a class="contact-link" href="https://www.linkedin.com/search/results/people/?keywords=Rob%20Mooney" target="_blank">LinkedIn ↗</a>
+            </div>
+          </div>
+        </div>
+        <div class="firm-block" data-cfirm="Socium Advisors">
+          <h3 class="firm-name">Socium Advisors</h3>
+          <div class="firm-meta">2 contacts</div>
+          <div class="contacts">
+            <div class="contact-row" data-crole="dm" data-cstatus="notsent">
+              <div class="contact-info"><div class="contact-name">Scott Underwood <span class="badge-dm">Decision-Maker</span></div><div class="contact-title">Founder and CEO</div></div>
+              <span class="cstatus cstatus--notsent">Not Sent</span>
+              <a class="contact-link" href="https://www.linkedin.com/search/results/people/?keywords=Scott%20Underwood" target="_blank">LinkedIn ↗</a>
+            </div>
+            <div class="contact-row" data-crole="secondary" data-cstatus="notsent">
+              <div class="contact-info"><div class="contact-name">PJ McDaniel <span class="badge-warm">Secondary</span></div><div class="contact-title">Chief Growth Officer</div></div>
+              <span class="cstatus cstatus--notsent">Not Sent</span>
+              <a class="contact-link" href="https://www.linkedin.com/search/results/people/?keywords=PJ%20McDaniel" target="_blank">LinkedIn ↗</a>
+            </div>
+          </div>
+        </div>
+        <div class="firm-block" data-cfirm="Strathmore Capital Advisors">
+          <h3 class="firm-name">Strathmore Capital Advisors</h3>
+          <div class="firm-meta">2 contacts</div>
+          <div class="contacts">
+            <div class="contact-row" data-crole="dm" data-cstatus="notsent">
+              <div class="contact-info"><div class="contact-name">John Charles Kernodle <span class="badge-dm">Decision-Maker</span></div><div class="contact-title">President and Founder</div></div>
+              <span class="cstatus cstatus--notsent">Not Sent</span>
+              <a class="contact-link" href="https://www.linkedin.com/search/results/people/?keywords=John%20Charles%20Kernodle" target="_blank">LinkedIn ↗</a>
+            </div>
+            <div class="contact-row" data-crole="secondary" data-cstatus="notsent">
+              <div class="contact-info"><div class="contact-name">Zachary Huneycutt <span class="badge-warm">Secondary</span></div><div class="contact-title">CIO and Partner</div></div>
+              <span class="cstatus cstatus--notsent">Not Sent</span>
+              <a class="contact-link" href="https://www.linkedin.com/search/results/people/?keywords=Zachary%20Huneycutt" target="_blank">LinkedIn ↗</a>
+            </div>
+          </div>
+        </div>
+        <div class="firm-block" data-cfirm="Summit Wealth Group">
+          <h3 class="firm-name">Summit Wealth Group</h3>
+          <div class="firm-meta">4 contacts</div>
+          <div class="contacts">
+            <div class="contact-row" data-crole="dm" data-cstatus="notsent">
+              <div class="contact-info"><div class="contact-name">Randy Morris <span class="badge-dm">Decision-Maker</span></div><div class="contact-title">CEO</div></div>
+              <span class="cstatus cstatus--notsent">Not Sent</span>
+              <a class="contact-link" href="https://www.linkedin.com/search/results/people/?keywords=Randy%20Morris" target="_blank">LinkedIn ↗</a>
+            </div>
+            <div class="contact-row" data-crole="secondary" data-cstatus="notsent">
+              <div class="contact-info"><div class="contact-name">Chelsea Ganey, CFA <span class="badge-warm">Secondary</span></div><div class="contact-title">Chief Investment Officer</div></div>
+              <span class="cstatus cstatus--notsent">Not Sent</span>
+              <a class="contact-link" href="https://www.linkedin.com/search/results/people/?keywords=Chelsea%20Ganey%2C%20CFA" target="_blank">LinkedIn ↗</a>
+            </div>
+            <div class="contact-row" data-crole="other" data-cstatus="sent">
+              <div class="contact-info"><div class="contact-name">Theodore Spin... (name truncated, needs confirmation) </div><div class="contact-title">Founder and Senior Managing Director (name truncated)</div></div>
+              <span class="cstatus cstatus--sent">Request Sent</span>
+              <a class="contact-link" href="https://www.linkedin.com/search/results/people/?keywords=Theodore%20Spin...%20%28name%20truncated%2C%20needs%20confirmation%29" target="_blank">LinkedIn ↗</a>
+            </div>
+            <div class="contact-row" data-crole="other" data-cstatus="sent">
+              <div class="contact-info"><div class="contact-name">Stephanie Lopez </div><div class="contact-title">Managing Director</div></div>
+              <span class="cstatus cstatus--sent">Request Sent</span>
+              <a class="contact-link" href="https://www.linkedin.com/search/results/people/?keywords=Stephanie%20Lopez" target="_blank">LinkedIn ↗</a>
+            </div>
+          </div>
+        </div>
+        <div class="firm-block" data-cfirm="Summitry">
+          <h3 class="firm-name">Summitry</h3>
+          <div class="firm-meta">1 contact</div>
+          <div class="contacts">
+            <div class="contact-row" data-crole="dm" data-cstatus="notsent">
+              <div class="contact-info"><div class="contact-name">Glenn Hopper <span class="badge-dm">Decision-Maker</span></div><div class="contact-title">CEO / Managing Principal</div></div>
+              <span class="cstatus cstatus--notsent">Not Sent</span>
+              <a class="contact-link" href="https://www.linkedin.com/search/results/people/?keywords=Glenn%20Hopper" target="_blank">LinkedIn ↗</a>
+            </div>
+          </div>
+        </div>
+        <div class="firm-block" data-cfirm="Tanglewood Total Wealth Management">
+          <h3 class="firm-name">Tanglewood Total Wealth Management</h3>
+          <div class="firm-meta">3 contacts</div>
+          <div class="contacts">
+            <div class="contact-row" data-crole="dm" data-cstatus="notsent">
+              <div class="contact-info"><div class="contact-name">John Merrill <span class="badge-dm">Decision-Maker</span></div><div class="contact-title">Founder and President</div></div>
+              <span class="cstatus cstatus--notsent">Not Sent</span>
+              <a class="contact-link" href="https://www.linkedin.com/search/results/people/?keywords=John%20Merrill" target="_blank">LinkedIn ↗</a>
+            </div>
+            <div class="contact-row" data-crole="secondary" data-cstatus="notsent">
+              <div class="contact-info"><div class="contact-name">Keith Fenstad <span class="badge-warm">Secondary</span></div><div class="contact-title">Director of Wealth Planning and CCO</div></div>
+              <span class="cstatus cstatus--notsent">Not Sent</span>
+              <a class="contact-link" href="https://www.linkedin.com/search/results/people/?keywords=Keith%20Fenstad" target="_blank">LinkedIn ↗</a>
+            </div>
+            <div class="contact-row" data-crole="secondary" data-cstatus="notsent">
+              <div class="contact-info"><div class="contact-name">Brian Merrill <span class="badge-warm">Secondary</span></div><div class="contact-title">CFO and Corporate Development Officer</div></div>
+              <span class="cstatus cstatus--notsent">Not Sent</span>
+              <a class="contact-link" href="https://www.linkedin.com/search/results/people/?keywords=Brian%20Merrill" target="_blank">LinkedIn ↗</a>
+            </div>
+          </div>
+        </div>
+        <div class="firm-block" data-cfirm="Telemus Capital">
+          <h3 class="firm-name">Telemus Capital</h3>
+          <div class="firm-meta">2 contacts</div>
+          <div class="contacts">
+            <div class="contact-row" data-crole="dm" data-cstatus="notsent">
+              <div class="contact-info"><div class="contact-name">Lyle Wolberg <span class="badge-dm">Decision-Maker</span></div><div class="contact-title">Principal and Co-Founder</div></div>
+              <span class="cstatus cstatus--notsent">Not Sent</span>
+              <a class="contact-link" href="https://www.linkedin.com/search/results/people/?keywords=Lyle%20Wolberg" target="_blank">LinkedIn ↗</a>
+            </div>
+            <div class="contact-row" data-crole="secondary" data-cstatus="notsent">
+              <div class="contact-info"><div class="contact-name">Matt Ran <span class="badge-warm">Secondary</span></div><div class="contact-title">Principal and Co-Founder</div></div>
+              <span class="cstatus cstatus--notsent">Not Sent</span>
+              <a class="contact-link" href="https://www.linkedin.com/search/results/people/?keywords=Matt%20Ran" target="_blank">LinkedIn ↗</a>
+            </div>
+          </div>
+        </div>
+        <div class="firm-block" data-cfirm="Tiedemann Advisors">
+          <h3 class="firm-name">Tiedemann Advisors</h3>
+          <div class="firm-meta">1 contact</div>
+          <div class="contacts">
+            <div class="contact-row" data-crole="dm" data-cstatus="notsent">
+              <div class="contact-info"><div class="contact-name">Craig Smith <span class="badge-dm">Decision-Maker</span></div><div class="contact-title">CEO</div></div>
+              <span class="cstatus cstatus--notsent">Not Sent</span>
+              <a class="contact-link" href="https://www.linkedin.com/search/results/people/?keywords=Craig%20Smith" target="_blank">LinkedIn ↗</a>
+            </div>
+          </div>
+        </div>
+        <div class="firm-block" data-cfirm="Tolleson Wealth Management">
+          <h3 class="firm-name">Tolleson Wealth Management</h3>
+          <div class="firm-meta">2 contacts</div>
+          <div class="contacts">
+            <div class="contact-row" data-crole="dm" data-cstatus="notsent">
+              <div class="contact-info"><div class="contact-name">Carter Tolleson <span class="badge-dm">Decision-Maker</span></div><div class="contact-title">President</div></div>
+              <span class="cstatus cstatus--notsent">Not Sent</span>
+              <a class="contact-link" href="https://www.linkedin.com/search/results/people/?keywords=Carter%20Tolleson" target="_blank">LinkedIn ↗</a>
+            </div>
+            <div class="contact-row" data-crole="secondary" data-cstatus="notsent">
+              <div class="contact-info"><div class="contact-name">John Tolleson <span class="badge-warm">Secondary</span></div><div class="contact-title">Founder</div></div>
+              <span class="cstatus cstatus--notsent">Not Sent</span>
+              <a class="contact-link" href="https://www.linkedin.com/search/results/people/?keywords=John%20Tolleson" target="_blank">LinkedIn ↗</a>
+            </div>
+          </div>
+        </div>
+        <div class="firm-block" data-cfirm="True Alpha Wealth">
+          <h3 class="firm-name">True Alpha Wealth</h3>
+          <div class="firm-meta">1 contact</div>
+          <div class="contacts">
+            <div class="contact-row" data-crole="other" data-cstatus="notsent">
+              <div class="contact-info"><div class="contact-name">Tyler McKean </div><div class="contact-title">Certified Exit Planning Advisor (CEPA)</div></div>
+              <span class="cstatus cstatus--notsent">Not Sent</span>
+              <a class="contact-link" href="https://www.linkedin.com/search/results/people/?keywords=Tyler%20McKean" target="_blank">LinkedIn ↗</a>
+            </div>
+          </div>
+        </div>
+        <div class="firm-block" data-cfirm="Truepoint Wealth Counsel">
+          <h3 class="firm-name">Truepoint Wealth Counsel</h3>
+          <div class="firm-meta">1 contact</div>
+          <div class="contacts">
+            <div class="contact-row" data-crole="dm" data-cstatus="notsent">
+              <div class="contact-info"><div class="contact-name">Chris Kourtakis <span class="badge-dm">Decision-Maker</span></div><div class="contact-title">Founding Principal / CEO</div></div>
+              <span class="cstatus cstatus--notsent">Not Sent</span>
+              <a class="contact-link" href="https://www.linkedin.com/search/results/people/?keywords=Chris%20Kourtakis" target="_blank">LinkedIn ↗</a>
+            </div>
+          </div>
+        </div>
+        <div class="firm-block" data-cfirm="Waldron Private Wealth">
+          <h3 class="firm-name">Waldron Private Wealth</h3>
+          <div class="firm-meta">1 contact</div>
+          <div class="contacts">
+            <div class="contact-row" data-crole="dm" data-cstatus="notsent">
+              <div class="contact-info"><div class="contact-name">Andrew Millard <span class="badge-dm">Decision-Maker</span></div><div class="contact-title">Founder / Managing Principal</div></div>
+              <span class="cstatus cstatus--notsent">Not Sent</span>
+              <a class="contact-link" href="https://www.linkedin.com/search/results/people/?keywords=Andrew%20Millard" target="_blank">LinkedIn ↗</a>
+            </div>
+          </div>
+        </div>
+        <div class="firm-block" data-cfirm="Wealth Partners Capital Group">
+          <h3 class="firm-name">Wealth Partners Capital Group</h3>
+          <div class="firm-meta">1 contact</div>
+          <div class="contacts">
+            <div class="contact-row" data-crole="dm" data-cstatus="notsent">
+              <div class="contact-info"><div class="contact-name">Ted Barnhill <span class="badge-dm">Decision-Maker</span></div><div class="contact-title">Managing Partner</div></div>
+              <span class="cstatus cstatus--notsent">Not Sent</span>
+              <a class="contact-link" href="https://www.linkedin.com/search/results/people/?keywords=Ted%20Barnhill" target="_blank">LinkedIn ↗</a>
+            </div>
+          </div>
+        </div>
+        <div class="firm-block" data-cfirm="Wescott Financial Advisory Group">
+          <h3 class="firm-name">Wescott Financial Advisory Group</h3>
+          <div class="firm-meta">2 contacts</div>
+          <div class="contacts">
+            <div class="contact-row" data-crole="dm" data-cstatus="notsent">
+              <div class="contact-info"><div class="contact-name">Grant Rawdin <span class="badge-dm">Decision-Maker</span></div><div class="contact-title">Founder and CEO</div></div>
+              <span class="cstatus cstatus--notsent">Not Sent</span>
+              <a class="contact-link" href="https://www.linkedin.com/search/results/people/?keywords=Grant%20Rawdin" target="_blank">LinkedIn ↗</a>
+            </div>
+            <div class="contact-row" data-crole="dm" data-cstatus="notsent">
+              <div class="contact-info"><div class="contact-name">Tom Wescott <span class="badge-dm">Decision-Maker</span></div><div class="contact-title">Founder and CEO</div></div>
+              <span class="cstatus cstatus--notsent">Not Sent</span>
+              <a class="contact-link" href="https://www.linkedin.com/search/results/people/?keywords=Tom%20Wescott" target="_blank">LinkedIn ↗</a>
+            </div>
+          </div>
+        </div>
+        <div class="firm-block" data-cfirm="WMS Partners">
+          <h3 class="firm-name">WMS Partners</h3>
+          <div class="firm-meta">1 contact</div>
+          <div class="contacts">
+            <div class="contact-row" data-crole="dm" data-cstatus="notsent">
+              <div class="contact-info"><div class="contact-name">Tim Chase <span class="badge-dm">Decision-Maker</span></div><div class="contact-title">Managing Partner (verification needed)</div></div>
+              <span class="cstatus cstatus--notsent">Not Sent</span>
+              <a class="contact-link" href="https://www.linkedin.com/search/results/people/?keywords=Tim%20Chase" target="_blank">LinkedIn ↗</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <footer>
     <div class="shell">
       <div class="footer-bottom"><span>© Kupfer.</span><span>Internal · Privileged</span></div>
@@ -1447,6 +3159,36 @@
     });
   })();
  
+  (function(){
+    var btns = document.querySelectorAll('.cfilter-btn');
+    var search = document.getElementById('csearch');
+    if (!btns.length || !search) return;
+    var rows = Array.from(document.querySelectorAll('#contacts .contact-row'));
+    var blocks = Array.from(document.querySelectorAll('#contacts .firm-block'));
+    var f = 'all';
+    function apply(){
+      var term = (search.value || '').toLowerCase().trim();
+      rows.forEach(function(r){
+        var show = true;
+        if (f === 'accepted') show = r.dataset.cstatus === 'accepted';
+        else if (f === 'sent') show = r.dataset.cstatus === 'sent';
+        else if (f === 'notsent') show = r.dataset.cstatus === 'notsent';
+        else if (f === 'dm') show = r.dataset.crole === 'dm';
+        if (show && term) show = r.textContent.toLowerCase().includes(term);
+        r.style.display = show ? '' : 'none';
+      });
+      blocks.forEach(function(b){
+        var vis = Array.from(b.querySelectorAll('.contact-row')).some(function(r){ return r.style.display !== 'none'; });
+        b.style.display = vis ? '' : 'none';
+      });
+    }
+    btns.forEach(function(b){ b.addEventListener('click', function(){
+      btns.forEach(function(x){ x.classList.remove('active'); });
+      b.classList.add('active'); f = b.dataset.cfilter; apply();
+    }); });
+    search.addEventListener('input', apply);
+  })();
+
 </script>
  
 </body>
