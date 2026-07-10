@@ -402,7 +402,7 @@
       </p>
       <div class="icp-callout">
         <b>Priority Filter / The Five Only</b>
-        <p><strong>Under $10B AUM is the qualifier for the priority five</strong> — firms above that threshold typically default to AmLaw 100 counsel. The complete pipeline in §03 includes prospects of <strong>all sizes</strong>; large connected firms (Caprock $16B, NorthRock $12B, Arax $40B, Cerity $40B+, MAI $72B, Clearstead $55B) appear there as long-cycle relationship-building targets even though they sit outside the priority outreach band.</p>
+        <p><strong>Under $10B AUM is the qualifier for the priority five</strong> — firms above that threshold typically default to AmLaw 100 counsel. The complete working list below includes prospects of <strong>all sizes</strong>; large connected firms (Caprock $16B, NorthRock $12B, Arax $40B, Cerity $40B+, MAI $72B, Clearstead $55B) appear there as long-cycle relationship-building targets even though they sit outside the priority outreach band.</p>
       </div>
       <div class="hero-stats">
         <div class="hero-stat"><div class="num" id="statPicks">5</div><div class="label">Priority outreach picks under $10B AUM</div></div>
@@ -582,7 +582,7 @@
       <div class="section-label"><span class="num">02</span><span>Connection Map</span><span class="rule"></span></div>
       <div class="section-head-split">
         <h2 class="section-title">Every <em>warm path</em> into the ICP pipeline.</h2>
-        <p class="section-deck">Nine firms have at least one accepted 1st-degree LinkedIn connection — <strong>30 named connections in total</strong>, from decision-makers to M&amp;A leads and senior advisors. This is every live warm path, drawn directly from the outreach tracker in §04.</p>
+        <p class="section-deck">Nine firms have at least one accepted 1st-degree LinkedIn connection — <strong>30 named connections in total</strong>, from decision-makers to M&amp;A leads and senior advisors. This is every live warm path, drawn directly from the outreach tracker below.</p>
       </div>
       <div class="firm-grid">
 
@@ -3233,11 +3233,18 @@
       return s;
     }
 
+    // A real, named person to reach out to — never a placeholder or a bare role.
+    // This is a person-to-person tool: a card with no human name is not actionable.
+    function hasPerson(p) {
+      const nm = (p.dmName || '').trim();
+      return nm && !/^(—|-|n\/a|tbd|founder|founders|team|unknown)$/i.test(nm);
+    }
+
     // Qualifier for The Five: an existing connection at a firm under $10B AUM,
-    // not marked "Do Not Resurface".
+    // with a named person to contact, not marked "Do Not Resurface".
     function qualified() {
       return prospects.filter(function(p) {
-        return p.aumBand === 'under10' && p.connected && !state[p.slug + NR];
+        return p.aumBand === 'under10' && p.connected && hasPerson(p) && !state[p.slug + NR];
       });
     }
 
@@ -3300,9 +3307,7 @@
       h += '<div class="pri-rank">' + rankLabel + '</div>';
       h += '<div class="pri-pills">' + pills(p, reserve) + '</div>';
       h += '<div class="pri-tier-tag">' + tierTag + '</div>';
-      const nm = (p.dmName || '').trim();
-      const headline = (!nm || /^(—|-|n\/a|tbd|founder|founders|team)$/i.test(nm)) ? p.firm : p.dmName;
-      h += '<h3 class="pri-name">' + esc(headline) + '</h3>';
+      h += '<h3 class="pri-name">' + esc(p.dmName) + '</h3>';
       h += '<div class="pri-title">' + esc(p.dmTitle) + '</div>';
       h += '<div class="pri-firm">' + esc(p.firm) + (p.loc ? ' &nbsp;·&nbsp; ' + esc(p.loc) : '') + '</div>';
       if (!reserve) h += statBlock(p, size === 'featured');
