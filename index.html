@@ -854,7 +854,7 @@
               <td class="firm-cell">Novare Capital Management <span class="firm-loc">Charlotte, NC</span></td>
               <td class="aum-cell">$1.8B</td><td><span class="tag tag-tier2">Tier 2</span></td>
               <td><span class="tag tag-sell">Succession</span></td>
-              <td class="dm-cell"><div class="dm-name">Founder</div><div class="dm-title">Connection via Alex Dann (SVP)</div></td>
+              <td class="dm-cell"><div class="dm-name">Alex Dann, CFP</div><div class="dm-title">SVP, Relationship Manager</div></td>
               <td><span class="tag tag-conn">Connected</span></td>
               <td><a class="site-link" href="https://novarecapital.com" target="_blank">novarecapital.com ↗</a></td>
               <td class="why-cell">Emigrant Partners minority 2025; Charlotte hub; founder-led succession candidate.</td>
@@ -1700,7 +1700,7 @@
               <td class="firm-cell">OnePointBFG Wealth Partners <span class="firm-loc">New Jersey</span></td>
               <td class="aum-cell">$2B-$4B</td><td><span class="tag tag-tier2">Tier 2</span></td>
               <td><span class="tag tag-buy">Emerging Acquirer</span></td>
-              <td class="dm-cell"><div class="dm-name">—</div></td>
+              <td class="dm-cell"><div class="dm-name">Jayce Nall</div><div class="dm-title">Director of Artificial Intelligence</div></td>
               <td><span class="tag tag-conn">Connected</span></td>
               <td><a class="site-link" href="https://www.google.com/search?q=OnePointBFG+Wealth+Partners+RIA" target="_blank">google.com ↗</a></td>
               <td class="why-cell">Buy-Side Emerging Acquirer · Sourced March 10, 2026</td>
@@ -1718,7 +1718,7 @@
               <td class="firm-cell">AlphaCore Wealth Advisory <span class="firm-loc">San Juan Capistrano, California</span></td>
               <td class="aum-cell">~$6.5B</td><td><span class="tag tag-tier2">Tier 2</span></td>
               <td><span class="tag tag-sell">Succession Candidate</span></td>
-              <td class="dm-cell"><div class="dm-name">—</div></td>
+              <td class="dm-cell"><div class="dm-name">Trevor Callan</div><div class="dm-title">Managing Partner</div></td>
               <td><span class="tag tag-conn">Connected</span></td>
               <td><a class="site-link" href="https://www.google.com/search?q=AlphaCore+Wealth+Advisory+RIA" target="_blank">google.com ↗</a></td>
               <td class="why-cell">Sell-Side Succession Candidate · Sourced March 10, 2026</td>
@@ -3300,7 +3300,9 @@
       h += '<div class="pri-rank">' + rankLabel + '</div>';
       h += '<div class="pri-pills">' + pills(p, reserve) + '</div>';
       h += '<div class="pri-tier-tag">' + tierTag + '</div>';
-      h += '<h3 class="pri-name">' + esc(p.dmName || p.firm) + '</h3>';
+      const nm = (p.dmName || '').trim();
+      const headline = (!nm || /^(—|-|n\/a|tbd|founder|founders|team)$/i.test(nm)) ? p.firm : p.dmName;
+      h += '<h3 class="pri-name">' + esc(headline) + '</h3>';
       h += '<div class="pri-title">' + esc(p.dmTitle) + '</div>';
       h += '<div class="pri-firm">' + esc(p.firm) + (p.loc ? ' &nbsp;·&nbsp; ' + esc(p.loc) : '') + '</div>';
       if (!reserve) h += statBlock(p, size === 'featured');
