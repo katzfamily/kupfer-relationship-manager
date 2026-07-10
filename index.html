@@ -405,10 +405,10 @@
         <p><strong>Under $10B AUM is the qualifier for the priority five</strong> — firms above that threshold typically default to AmLaw 100 counsel. The complete pipeline in §03 includes prospects of <strong>all sizes</strong>; large connected firms (Caprock $16B, NorthRock $12B, Arax $40B, Cerity $40B+, MAI $72B, Clearstead $55B) appear there as long-cycle relationship-building targets even though they sit outside the priority outreach band.</p>
       </div>
       <div class="hero-stats">
-        <div class="hero-stat"><div class="num">5</div><div class="label">Priority outreach picks under $10B AUM</div></div>
-        <div class="hero-stat"><div class="num">3</div><div class="label">Direct CEO connections in the priority five</div></div>
-        <div class="hero-stat"><div class="num">138</div><div class="label">Total prospects tracked in the active pipeline</div></div>
-        <div class="hero-stat"><div class="num">$31.8<sup>B</sup></div><div class="label">Aggregate AUM across the priority five</div></div>
+        <div class="hero-stat"><div class="num" id="statPicks">5</div><div class="label">Priority outreach picks under $10B AUM</div></div>
+        <div class="hero-stat"><div class="num" id="statCeo">3</div><div class="label">Direct CEO connections in the priority five</div></div>
+        <div class="hero-stat"><div class="num" id="statTotal">138</div><div class="label">Total prospects tracked in the active pipeline</div></div>
+        <div class="hero-stat"><div class="num" id="statAum">$31.8<sup>B</sup></div><div class="label">Aggregate AUM across the priority five</div></div>
       </div>
     </div>
   </section>
@@ -418,10 +418,12 @@
       <div class="section-label"><span class="num">01</span><span>The Five</span><span class="rule"></span></div>
       <div class="section-head-split">
         <h2 class="section-title">Reach out <em>this week.</em></h2>
-        <p class="section-deck">All five are 1st degree LinkedIn connections at firms strictly under $10B AUM. Three carry direct CEO-level access. The remaining two offer an inside connection to the decision-maker.</p>
+        <p class="section-deck">Selected live from the pipeline below — the highest-priority 1st degree LinkedIn connections at firms strictly under $10B AUM, ranked by tier and strength of the relationship path. This list re-selects itself every time the contact data is updated, so it never repeats what you've already worked.</p>
       </div>
-      <div class="priority-grid">
- 
+      <!-- The Five is rendered dynamically from the ICP Pipeline (§03) by the priority-picks script below.
+           The static cards here are a no-JS fallback only; the live list re-selects whenever the pipeline data changes. -->
+      <div class="priority-grid" id="priorityGrid">
+
         <article class="pri-card featured">
           <div class="pri-rank">01</div>
           <div class="pri-pills"><span class="pill pill--connected">1st Degree</span><span class="pill pill--ceo">CEO Direct</span></div>
@@ -579,94 +581,202 @@
       <div class="section-label"><span class="num">02</span><span>Connection Map</span><span class="rule"></span></div>
       <div class="section-head-split">
         <h2 class="section-title">Every <em>warm path</em> into the ICP pipeline.</h2>
-        <p class="section-deck">Six prospect firms under $10B AUM have at least one 1st degree LinkedIn connection. Three buy-side acquirers, one sell-side partnership transition, one sell-side succession candidate, plus a strategic warm path through Corsair Capital into Composition Wealth.</p>
+        <p class="section-deck">Nine firms have at least one accepted 1st-degree LinkedIn connection — <strong>30 named connections in total</strong>, from decision-makers to M&amp;A leads and senior advisors. This is every live warm path, drawn directly from the outreach tracker in §04.</p>
       </div>
       <div class="firm-grid">
- 
-        <div class="firm-block tier-1" id="credent">
+
+        <div class="firm-block tier-1">
           <h3 class="firm-name">Credent Wealth Management</h3>
-          <div class="firm-meta"><b>$4.3B</b><span class="sep">·</span>Auburn IN<span class="sep">·</span><b>Tier 1</b><span class="sep">·</span>Buy-Side Serial</div>
+          <div class="firm-meta"><b>$4.3B</b><span class="sep">·</span>Auburn, IN<span class="sep">·</span><b>Tier 1</b><span class="sep">·</span>Buy-Side Serial</div>
           <div class="contacts">
             <div class="contact-row key mega">
-              <div class="contact-info"><div class="contact-name">David Hefty, CFP <span class="badge-dm">Decision-Maker</span></div><div class="contact-title">Chief Executive Officer</div></div>
+              <div class="contact-info"><div class="contact-name">David Hefty <span class="badge-dm">Decision-Maker</span></div><div class="contact-title">Chief Executive Officer</div></div>
               <a class="contact-link" href="https://www.linkedin.com/search/results/people/?keywords=David%20Hefty" target="_blank">LinkedIn ↗</a>
+            </div>
+            <div class="contact-row key">
+              <div class="contact-info"><div class="contact-name">Stacy Hefty <span class="badge-warm">Secondary</span></div><div class="contact-title">President</div></div>
+              <a class="contact-link" href="https://www.linkedin.com/search/results/people/?keywords=Stacy%20Hefty" target="_blank">LinkedIn ↗</a>
             </div>
             <div class="contact-row">
               <div class="contact-info"><div class="contact-name">Travis Glassley, J.D.</div><div class="contact-title">Partner, Wealth Manager</div></div>
-              <a class="contact-link" href="https://www.linkedin.com/search/results/people/?keywords=Travis%20Glassley" target="_blank">LinkedIn ↗</a>
+              <a class="contact-link" href="https://www.linkedin.com/search/results/people/?keywords=Travis%20Glassley%2C%20J.D." target="_blank">LinkedIn ↗</a>
+            </div>
+            <div class="contact-row">
+              <div class="contact-info"><div class="contact-name">Kyle Osting</div><div class="contact-title">General Counsel and CCO</div></div>
+              <a class="contact-link" href="https://www.linkedin.com/search/results/people/?keywords=Kyle%20Osting" target="_blank">LinkedIn ↗</a>
+            </div>
+            <div class="contact-row">
+              <div class="contact-info"><div class="contact-name">Christopher Bredeson</div><div class="contact-title">Wealth Advisor and Partner</div></div>
+              <a class="contact-link" href="https://www.linkedin.com/search/results/people/?keywords=Christopher%20Bredeson" target="_blank">LinkedIn ↗</a>
+            </div>
+            <div class="contact-row">
+              <div class="contact-info"><div class="contact-name">J. Pearce Priebe</div><div class="contact-title">Wealth Advisor and Partner</div></div>
+              <a class="contact-link" href="https://www.linkedin.com/search/results/people/?keywords=J.%20Pearce%20Priebe" target="_blank">LinkedIn ↗</a>
             </div>
           </div>
           <div class="firm-trigger"><b>Signal</b>$150M Crestline commitment Dec 2025; two acquisitions Jan 2026; 14 offices.</div>
         </div>
- 
+
         <div class="firm-block tier-1">
-          <h3 class="firm-name">Balentine</h3>
-          <div class="firm-meta"><b>$7.5B</b><span class="sep">·</span>Atlanta GA<span class="sep">·</span><b>Tier 1</b><span class="sep">·</span>Sell-Side / Partnership Transition</div>
+          <h3 class="firm-name">Modern Wealth Management</h3>
+          <div class="firm-meta"><b>~$10B</b><span class="sep">·</span>Monterey, CA<span class="sep">·</span><b>Tier 1</b><span class="sep">·</span>Buy-Side Serial</div>
           <div class="contacts">
             <div class="contact-row key mega">
-              <div class="contact-info"><div class="contact-name">Adrian Cronje, PhD <span class="badge-dm">Decision-Maker</span></div><div class="contact-title">Chief Executive Officer &amp; Founding Partner</div></div>
-              <a class="contact-link" href="https://www.linkedin.com/search/results/people/?keywords=Adrian%20Cronje" target="_blank">LinkedIn ↗</a>
+              <div class="contact-info"><div class="contact-name">Jason Gordo <span class="badge-dm">Decision-Maker</span></div><div class="contact-title">Co-Founder and President</div></div>
+              <a class="contact-link" href="https://www.linkedin.com/search/results/people/?keywords=Jason%20Gordo" target="_blank">LinkedIn ↗</a>
+            </div>
+            <div class="contact-row key">
+              <div class="contact-info"><div class="contact-name">Derek Bruton <span class="badge-warm">Secondary</span></div><div class="contact-title">Head of M&amp;A</div></div>
+              <a class="contact-link" href="https://www.linkedin.com/search/results/people/?keywords=Derek%20Bruton" target="_blank">LinkedIn ↗</a>
+            </div>
+            <div class="contact-row">
+              <div class="contact-info"><div class="contact-name">Jennifer Stone, CFP</div><div class="contact-title">Managing Director, Executive Advisor</div></div>
+              <a class="contact-link" href="https://www.linkedin.com/search/results/people/?keywords=Jennifer%20Stone%2C%20CFP" target="_blank">LinkedIn ↗</a>
+            </div>
+            <div class="contact-row">
+              <div class="contact-info"><div class="contact-name">Logan DeGraeve, CFP</div><div class="contact-title">Head of Advisory Services</div></div>
+              <a class="contact-link" href="https://www.linkedin.com/search/results/people/?keywords=Logan%20DeGraeve%2C%20CFP" target="_blank">LinkedIn ↗</a>
+            </div>
+            <div class="contact-row">
+              <div class="contact-info"><div class="contact-name">Thomas Fink</div><div class="contact-title">Vice President</div></div>
+              <a class="contact-link" href="https://www.linkedin.com/search/results/people/?keywords=Thomas%20Fink" target="_blank">LinkedIn ↗</a>
             </div>
           </div>
-          <div class="firm-trigger"><b>Signal</b>FJM acquired 20% stake January 2025; employee-owned UHNW firm introducing outside capital for the first time; partnership restructuring and succession advisory opportunity.</div>
+          <div class="firm-trigger"><b>Signal</b>18+ acquisitions since April 2023; five in 2025; recently hired a Head of M&amp;A.</div>
         </div>
- 
-        <div class="firm-block tier-1">
-          <h3 class="firm-name">Summit Wealth Group</h3>
-          <div class="firm-meta"><b>~$3B</b><span class="sep">·</span>Colorado Springs CO<span class="sep">·</span><b>Tier 1</b><span class="sep">·</span>Buy-Side Emerging</div>
+
+        <div class="firm-block">
+          <h3 class="firm-name">AlphaCore Wealth Advisory</h3>
+          <div class="firm-meta"><b>~$6.5B</b><span class="sep">·</span>San Juan Capistrano, CA<span class="sep">·</span><b>Tier 2</b><span class="sep">·</span>Sell-Side Succession Candidate</div>
           <div class="contacts">
             <div class="contact-row key mega">
-              <div class="contact-info"><div class="contact-name">Randy Morris, CFP <span class="badge-dm">Decision-Maker</span></div><div class="contact-title">Founder &amp; CEO</div></div>
-              <a class="contact-link" href="https://www.linkedin.com/search/results/people/?keywords=Randy%20Morris" target="_blank">LinkedIn ↗</a>
+              <div class="contact-info"><div class="contact-name">Trevor Callan <span class="badge-dm">Decision-Maker</span></div><div class="contact-title">Managing Partner</div></div>
+              <a class="contact-link" href="https://www.linkedin.com/search/results/people/?keywords=Trevor%20Callan" target="_blank">LinkedIn ↗</a>
+            </div>
+            <div class="contact-row key">
+              <div class="contact-info"><div class="contact-name">Ryan Callan <span class="badge-warm">Secondary</span></div><div class="contact-title">Partner</div></div>
+              <a class="contact-link" href="https://www.linkedin.com/search/results/people/?keywords=Ryan%20Callan" target="_blank">LinkedIn ↗</a>
+            </div>
+          </div>
+          <div class="firm-trigger"><b>Signal</b>Sell-side succession candidate; sourced March 2026.</div>
+        </div>
+
+        <div class="firm-block tier-1">
+          <h3 class="firm-name">BIP Wealth</h3>
+          <div class="firm-meta"><b>$5.5B</b><span class="sep">·</span>Atlanta, GA<span class="sep">·</span><b>Tier 1</b><span class="sep">·</span>Buy-Side Emerging</div>
+          <div class="contacts">
+            <div class="contact-row key mega">
+              <div class="contact-info"><div class="contact-name">Bill Harris <span class="badge-dm">Decision-Maker</span></div><div class="contact-title">Co-Founder and CEO</div></div>
+              <a class="contact-link" href="https://www.linkedin.com/search/results/people/?keywords=Bill%20Harris" target="_blank">LinkedIn ↗</a>
             </div>
             <div class="contact-row">
-              <div class="contact-info"><div class="contact-name">Jason Runung, CFP</div><div class="contact-title">Senior Financial Advisor &amp; VP</div></div>
-              <a class="contact-link" href="https://www.linkedin.com/search/results/people/?keywords=Jason%20Runung" target="_blank">LinkedIn ↗</a>
+              <div class="contact-info"><div class="contact-name">Charles Crowley, CFP, AIF</div><div class="contact-title">Personal Wealth Advisor</div></div>
+              <a class="contact-link" href="https://www.linkedin.com/search/results/people/?keywords=Charles%20Crowley%2C%20CFP%2C%20AIF" target="_blank">LinkedIn ↗</a>
             </div>
           </div>
-          <div class="firm-trigger"><b>Signal</b>First acquisition Feb 2026 (Premier Private Wealth, $470M); Constellation-backed; three senior hires.</div>
+          <div class="firm-trigger"><b>Signal</b>Constellation Wealth Capital minority Feb 2026 to fund acquisitions; new CDO Caleb Smith.</div>
         </div>
- 
+
         <div class="firm-block tier-1">
-          <h3 class="firm-name">RFG Advisory</h3>
-          <div class="firm-meta"><b>$7.5B</b><span class="sep">·</span>Birmingham AL<span class="sep">·</span><b>Tier 1</b></div>
+          <h3 class="firm-name">Lido Advisors</h3>
+          <div class="firm-meta"><b>$9–12B</b><span class="sep">·</span>Los Angeles, CA<span class="sep">·</span><b>Tier 1</b><span class="sep">·</span>Buy-Side Serial</div>
           <div class="contacts">
             <div class="contact-row key">
-              <div class="contact-info"><div class="contact-name">Maggie Hannum</div><div class="contact-title">Senior Director, Executive Operations</div></div>
-              <a class="contact-link" href="https://www.linkedin.com/search/results/people/?keywords=Maggie%20Hannum" target="_blank">LinkedIn ↗</a>
+              <div class="contact-info"><div class="contact-name">Ken Stern <span class="badge-warm">Secondary</span></div><div class="contact-title">Co-CEO</div></div>
+              <a class="contact-link" href="https://www.linkedin.com/search/results/people/?keywords=Ken%20Stern" target="_blank">LinkedIn ↗</a>
             </div>
-          </div>
-          <div class="firm-trigger"><b>Signal</b>First majority acquisition (RVA Wealth $320M) March 31, 2026; Long Ridge Equity-backed; W-2 partner firm structure; ~80 platform advisors approaching retirement.</div>
-        </div>
- 
-        <div class="firm-block tier-1">
-          <h3 class="firm-name">Composition Wealth</h3>
-          <div class="firm-meta"><b>$9.5B</b><span class="sep">·</span>Los Angeles CA<span class="sep">·</span><b>Tier 1</b><span class="sep">·</span>Buy-Side Serial</div>
-          <div class="contacts">
             <div class="contact-row key">
-              <div class="contact-info"><div class="contact-name">Christopher Guarino, CFP</div><div class="contact-title">Director, Wealth Advisor</div></div>
-              <a class="contact-link" href="https://www.linkedin.com/search/results/people/?keywords=Christopher%20Guarino" target="_blank">LinkedIn ↗</a>
+              <div class="contact-info"><div class="contact-name">Henry Hagenbuch <span class="badge-warm">Secondary</span></div><div class="contact-title">Senior Managing Director, Head of M&amp;A</div></div>
+              <a class="contact-link" href="https://www.linkedin.com/search/results/people/?keywords=Henry%20Hagenbuch" target="_blank">LinkedIn ↗</a>
+            </div>
+            <div class="contact-row key">
+              <div class="contact-info"><div class="contact-name">Jeffrey Westheimer, JD <span class="badge-warm">Secondary</span></div><div class="contact-title">Founding Partner, Senior Managing Director</div></div>
+              <a class="contact-link" href="https://www.linkedin.com/search/results/people/?keywords=Jeffrey%20Westheimer%2C%20JD" target="_blank">LinkedIn ↗</a>
+            </div>
+            <div class="contact-row key">
+              <div class="contact-info"><div class="contact-name">Timothy Mergenthal <span class="badge-warm">Secondary</span></div><div class="contact-title">Mergers &amp; Acquisitions</div></div>
+              <a class="contact-link" href="https://www.linkedin.com/search/results/people/?keywords=Timothy%20Mergenthal" target="_blank">LinkedIn ↗</a>
             </div>
             <div class="contact-row">
-              <div class="contact-info"><div class="contact-name">Richard Creedon <span class="badge-warm">Warm Path</span></div><div class="contact-title">Managing Director, Corsair Capital (PE Backer)</div></div>
-              <a class="contact-link" href="https://www.linkedin.com/search/results/people/?keywords=Richard%20Creedon" target="_blank">LinkedIn ↗</a>
+              <div class="contact-info"><div class="contact-name">Keri Kutakoff, CIMA, ChFC</div><div class="contact-title">Director, Growth Practice Management</div></div>
+              <a class="contact-link" href="https://www.linkedin.com/search/results/people/?keywords=Keri%20Kutakoff%2C%20CIMA%2C%20ChFC" target="_blank">LinkedIn ↗</a>
+            </div>
+            <div class="contact-row">
+              <div class="contact-info"><div class="contact-name">Colin C. Grover, CFP</div><div class="contact-title">Wealth Management Advisor</div></div>
+              <a class="contact-link" href="https://www.linkedin.com/search/results/people/?keywords=Colin%20C.%20Grover%2C%20CFP" target="_blank">LinkedIn ↗</a>
+            </div>
+            <div class="contact-row">
+              <div class="contact-info"><div class="contact-name">Adam Osterling, CFP</div><div class="contact-title">VP, Wealth Advisor</div></div>
+              <a class="contact-link" href="https://www.linkedin.com/search/results/people/?keywords=Adam%20Osterling%2C%20CFP" target="_blank">LinkedIn ↗</a>
+            </div>
+            <div class="contact-row">
+              <div class="contact-info"><div class="contact-name">Nicholas Doddo</div><div class="contact-title">Senior Vice President</div></div>
+              <a class="contact-link" href="https://www.linkedin.com/search/results/people/?keywords=Nicholas%20Doddo" target="_blank">LinkedIn ↗</a>
+            </div>
+            <div class="contact-row">
+              <div class="contact-info"><div class="contact-name">Brad Barthelmes, CPA</div><div class="contact-title">Senior Vice President</div></div>
+              <a class="contact-link" href="https://www.linkedin.com/search/results/people/?keywords=Brad%20Barthelmes%2C%20CPA" target="_blank">LinkedIn ↗</a>
+            </div>
+            <div class="contact-row">
+              <div class="contact-info"><div class="contact-name">Sagar Sheth</div><div class="contact-title">Senior Vice President</div></div>
+              <a class="contact-link" href="https://www.linkedin.com/search/results/people/?keywords=Sagar%20Sheth" target="_blank">LinkedIn ↗</a>
             </div>
           </div>
-          <div class="firm-trigger"><b>Signal</b>6 acquisitions in 2025; targeting NYC, Boston, Austin, Dallas; Corsair Capital backed; rebranded from Miracle Mile.</div>
+          <div class="firm-trigger"><b>Signal</b>Multiple tuck-in acquisitions 2024–25; PE mandate to deploy capital across the West and Southwest.</div>
         </div>
- 
+
         <div class="firm-block">
           <h3 class="firm-name">Novare Capital Management</h3>
-          <div class="firm-meta"><b>$1.8B</b><span class="sep">·</span>Charlotte NC<span class="sep">·</span><b>Tier 2</b><span class="sep">·</span>Sell-Side Succession</div>
+          <div class="firm-meta"><b>$1.8B</b><span class="sep">·</span>Charlotte, NC<span class="sep">·</span><b>Tier 2</b><span class="sep">·</span>Sell-Side Succession</div>
           <div class="contacts">
-            <div class="contact-row key">
-              <div class="contact-info"><div class="contact-name">Alex Dann, CFP</div><div class="contact-title">Senior Vice President, Relationship Manager</div></div>
-              <a class="contact-link" href="https://www.linkedin.com/search/results/people/?keywords=Alex%20Dann" target="_blank">LinkedIn ↗</a>
+            <div class="contact-row">
+              <div class="contact-info"><div class="contact-name">Alex Dann, CFP</div><div class="contact-title">SVP, Relationship Manager</div></div>
+              <a class="contact-link" href="https://www.linkedin.com/search/results/people/?keywords=Alex%20Dann%2C%20CFP" target="_blank">LinkedIn ↗</a>
+            </div>
+            <div class="contact-row">
+              <div class="contact-info"><div class="contact-name">John Ryan, CFP</div><div class="contact-title">Vice President, Relationship Manager</div></div>
+              <a class="contact-link" href="https://www.linkedin.com/search/results/people/?keywords=John%20Ryan%2C%20CFP" target="_blank">LinkedIn ↗</a>
             </div>
           </div>
-          <div class="firm-trigger"><b>Signal</b>Emigrant Partners minority investment 2025; founder-led structure; firmly in sell-side sweet spot.</div>
+          <div class="firm-trigger"><b>Signal</b>Emigrant Partners minority investment 2025; founder-led Charlotte succession candidate.</div>
         </div>
- 
+
+        <div class="firm-block tier-1">
+          <h3 class="firm-name">RFG Advisory</h3>
+          <div class="firm-meta"><b>$7.5B</b><span class="sep">·</span>Birmingham, AL<span class="sep">·</span><b>Tier 1</b><span class="sep">·</span>Buy-Side Emerging</div>
+          <div class="contacts">
+            <div class="contact-row">
+              <div class="contact-info"><div class="contact-name">Doug Nelson</div><div class="contact-title">Chief Financial Officer</div></div>
+              <a class="contact-link" href="https://www.linkedin.com/search/results/people/?keywords=Doug%20Nelson" target="_blank">LinkedIn ↗</a>
+            </div>
+          </div>
+          <div class="firm-trigger"><b>Signal</b>First majority acquisition (RVA Wealth $320M) March 31, 2026; Long Ridge Equity-backed.</div>
+        </div>
+
+        <div class="firm-block tier-1">
+          <h3 class="firm-name">Freestone Capital Management</h3>
+          <div class="firm-meta"><b>$13B</b><span class="sep">·</span>Seattle, WA<span class="sep">·</span><b>Tier 1</b><span class="sep">·</span>Sell-Side / Active Minority Stake</div>
+          <div class="contacts">
+            <div class="contact-row">
+              <div class="contact-info"><div class="contact-name">Aaron Sellsted</div><div class="contact-title">Managing Director</div></div>
+              <a class="contact-link" href="https://www.linkedin.com/search/results/people/?keywords=Aaron%20Sellsted" target="_blank">LinkedIn ↗</a>
+            </div>
+          </div>
+          <div class="firm-trigger"><b>Signal</b>Active minority-stake process underway; sourced May 2026.</div>
+        </div>
+
+        <div class="firm-block">
+          <h3 class="firm-name">OnePointBFG Wealth Partners</h3>
+          <div class="firm-meta"><b>$2–4B</b><span class="sep">·</span>New Jersey<span class="sep">·</span><b>Tier 2</b><span class="sep">·</span>Buy-Side Emerging Acquirer</div>
+          <div class="contacts">
+            <div class="contact-row">
+              <div class="contact-info"><div class="contact-name">Jayce Nall</div><div class="contact-title">Director of Artificial Intelligence</div></div>
+              <a class="contact-link" href="https://www.linkedin.com/search/results/people/?keywords=Jayce%20Nall" target="_blank">LinkedIn ↗</a>
+            </div>
+          </div>
+          <div class="firm-trigger"><b>Signal</b>Emerging acquirer; sourced March 2026.</div>
+        </div>
+
       </div>
     </div>
   </section>
@@ -3058,85 +3168,209 @@
   });
   searchInput.addEventListener('input', applyFilters);
  
+  /* The Five — selected live from the ICP Pipeline (§03).
+     Every time the pipeline/contacts data changes, this re-selects the top five
+     connected, under-$10B prospects, so the list at the top is never stale.
+     "Do Not Resurface" drops a pick and pulls the next-ranked prospect up. */
   (function(){
     const API = '/api/outreach';
     const STORE_KEY = 'kupfer.outreachComplete.v1';
     const POLL_MS = 15000;
     const NR = '_noresurface';
-    const labels = Array.from(document.querySelectorAll('.pri-done'));
-    const suppressLabels = Array.from(document.querySelectorAll('.pri-suppress'));
-    const byId = {};
-    labels.forEach(label => { const id = label.dataset.prospect; if (id) byId[id] = label; });
-    const suppressById = {};
-    suppressLabels.forEach(label => { const id = label.dataset.prospect; if (id) suppressById[id] = label; });
- 
-    function render(state) {
-      Object.keys(byId).forEach(id => {
-        const label = byId[id];
-        const input = label.querySelector('input[type="checkbox"]');
+
+    const grid = document.getElementById('priorityGrid');
+    const rows = Array.from(document.querySelectorAll('#dbTable tbody tr'));
+    if (!grid || !rows.length) return;
+
+    function readCache() { try { return JSON.parse(localStorage.getItem(STORE_KEY) || '{}'); } catch(e) { return {}; } }
+    function writeCache(s) { try { localStorage.setItem(STORE_KEY, JSON.stringify(s)); } catch(e) {} }
+    let state = readCache();
+
+    function slugify(s) { return (s || '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, ''); }
+    function txt(el) { return el ? el.textContent.trim() : ''; }
+    function esc(s) { return (s || '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;'); }
+    function parseAum(t) { const m = (t || '').replace(/[~$,\s]/g, '').match(/([\d.]+)/); return m ? parseFloat(m[1]) : 0; }
+
+    // Extract a structured prospect for every row in the pipeline table.
+    const prospects = rows.map(function(r, i) {
+      const firmCell = r.querySelector('.firm-cell');
+      let firm = '';
+      if (firmCell) { const n = firmCell.childNodes[0]; firm = n ? n.textContent.trim() : txt(firmCell); }
+      const connTag = r.querySelector('.tag-conn');
+      const connText = txt(connTag);
+      const conn = /ceo/i.test(connText) ? 'ceo' : (connTag && connText && connText !== '—' ? 'connected' : 'none');
+      const siteLink = r.querySelector('.site-link');
+      const aumText = txt(r.querySelector('.aum-cell'));
+      return {
+        idx: i,
+        firm: firm,
+        slug: slugify(firm) || ('row-' + i),
+        loc: txt(r.querySelector('.firm-loc')),
+        aumText: aumText,
+        aumVal: parseAum(aumText),
+        aumBand: r.dataset.aum,
+        tier: r.dataset.tier,
+        tierLabel: txt(r.querySelector('.tag-tier1, .tag-tier2')) || (r.dataset.tier === 'tier1' ? 'Tier 1' : 'Tier 2'),
+        side: r.dataset.side,
+        sideLabel: txt(r.querySelector('.tag-buy, .tag-sell')) || (r.dataset.side === 'sell' ? 'Sell-Side' : 'Buy-Side'),
+        connected: r.dataset.connected === 'yes' && conn !== 'none',
+        conn: conn,
+        dmName: txt(r.querySelector('.dm-name')),
+        dmTitle: txt(r.querySelector('.dm-title')),
+        site: siteLink ? siteLink.getAttribute('href') : '#',
+        signal: txt(r.querySelector('.why-cell'))
+      };
+    });
+
+    // Priority = Tier weight + strength of the relationship path.
+    function score(p) {
+      let s = p.tier === 'tier1' ? 100 : p.tier === 'tier2' ? 60 : 30;
+      s += p.conn === 'ceo' ? 60 : p.conn === 'connected' ? 30 : 0;
+      return s;
+    }
+
+    // Qualifier for The Five: an existing connection at a firm under $10B AUM,
+    // not marked "Do Not Resurface". Highest score first, pipeline order breaks ties.
+    function eligible() {
+      return prospects
+        .filter(function(p) { return p.aumBand === 'under10' && p.connected && !state[p.slug + NR]; })
+        .sort(function(a, b) { return score(b) - score(a) || a.idx - b.idx; });
+    }
+
+    function sizeFor(i) { return i === 0 ? 'featured' : (i <= 2 ? 'half' : 'third'); }
+
+    function liLink(p) {
+      const generic = /^(founder|founders|ceo|newly appointed president)$/i.test(p.dmName);
+      const q = encodeURIComponent(!p.dmName || generic ? p.firm : p.dmName);
+      return 'https://www.linkedin.com/search/results/people/?keywords=' + q;
+    }
+
+    function pills(p, reserve) {
+      if (reserve) return '<span class="pill">Reserve</span>';
+      let h = '<span class="pill pill--connected">1st Degree</span>';
+      h += p.conn === 'ceo' ? '<span class="pill pill--ceo">CEO Direct</span>' : '<span class="pill pill--mist">Warm Path</span>';
+      return h;
+    }
+
+    function statBlock(p, full) {
+      const rel = p.conn === 'ceo' ? 'Direct CEO' : '1st Degree';
+      let h = '<div class="pri-stats">';
+      h += '<div class="pri-stat"><label>Platform AUM</label><val>' + esc(p.aumText || '—') + '</val></div>';
+      if (full) {
+        h += '<div class="pri-stat"><label>Tier</label><val>' + esc(p.tierLabel) + '</val></div>';
+        h += '<div class="pri-stat"><label>Side</label><val>' + esc(p.sideLabel) + '</val></div>';
+      }
+      h += '<div class="pri-stat"><label>Relationship</label><val>' + rel + '</val></div>';
+      return h + '</div>';
+    }
+
+    function cardHtml(p, rank, size, reserve) {
+      const cls = 'pri-card ' + size + (reserve ? ' reserve' : '');
+      const rankLabel = reserve ? '+1' : (rank < 10 ? '0' + rank : '' + rank);
+      const tierTag = reserve
+        ? '<b>Reserve</b> &nbsp;/&nbsp; Backup Outreach &nbsp;/&nbsp; ' + esc(p.sideLabel)
+        : '<b>' + esc(p.tierLabel) + '</b> &nbsp;/&nbsp; ' + esc(p.sideLabel);
+      const trigger = reserve
+        ? '<strong>If any of the top five doesn\'t respond by Friday.</strong> ' + esc(p.signal)
+        : '<strong>Trigger.</strong> ' + esc(p.signal);
+      const liLabel = size === 'featured' ? 'Send LinkedIn Message' : 'LinkedIn Message';
+
+      let h = '<article class="' + cls + '">';
+      h += '<div class="pri-rank">' + rankLabel + '</div>';
+      h += '<div class="pri-pills">' + pills(p, reserve) + '</div>';
+      h += '<div class="pri-tier-tag">' + tierTag + '</div>';
+      h += '<h3 class="pri-name">' + esc(p.dmName || p.firm) + '</h3>';
+      h += '<div class="pri-title">' + esc(p.dmTitle) + '</div>';
+      h += '<div class="pri-firm">' + esc(p.firm) + (p.loc ? ' &nbsp;·&nbsp; ' + esc(p.loc) : '') + '</div>';
+      if (!reserve) h += statBlock(p, size === 'featured');
+      h += '<p class="pri-trigger">' + trigger + '</p>';
+      h += '<div class="pri-actions">';
+      h += '<a class="btn btn--primary" href="' + liLink(p) + '" target="_blank">' + liLabel + ' <span class="arrow">↗</span></a>';
+      h += '<a class="btn" href="' + esc(p.site) + '" target="_blank">Firm Website</a>';
+      if (size !== 'featured') h += '<span class="pri-break"></span>';
+      h += '<label class="pri-done" data-prospect="' + p.slug + '"><input type="checkbox" /><span class="pri-done-label-todo">Mark Outreach Complete</span><span class="pri-done-label-done">Outreach Complete ✓</span></label>';
+      h += '<label class="pri-suppress" data-prospect="' + p.slug + '"><input type="checkbox" /><span class="pri-suppress-label-todo">Do Not Resurface</span><span class="pri-suppress-label-done">Won\'t Resurface ✓</span></label>';
+      h += '</div></article>';
+      return h;
+    }
+
+    function updateStats(five) {
+      const picks = document.getElementById('statPicks');
+      const ceo = document.getElementById('statCeo');
+      const total = document.getElementById('statTotal');
+      const aum = document.getElementById('statAum');
+      if (picks) picks.textContent = five.length;
+      if (ceo) ceo.textContent = five.filter(function(p) { return p.conn === 'ceo'; }).length;
+      if (total) total.textContent = prospects.length;
+      if (aum) { const sum = five.reduce(function(a, p) { return a + (p.aumVal || 0); }, 0); aum.innerHTML = '$' + sum.toFixed(1) + '<sup>B</sup>'; }
+    }
+
+    function applyState() {
+      grid.querySelectorAll('.pri-done').forEach(function(label) {
+        const input = label.querySelector('input');
         const card = label.closest('.pri-card');
-        const checked = !!state[id];
+        const checked = !!state[label.dataset.prospect];
         if (input) input.checked = checked;
         if (card) card.classList.toggle('is-done', checked);
       });
-      Object.keys(suppressById).forEach(id => {
-        const label = suppressById[id];
-        const input = label.querySelector('input[type="checkbox"]');
+    }
+
+    function wire() {
+      grid.querySelectorAll('.pri-done').forEach(function(label) {
+        const id = label.dataset.prospect;
+        const input = label.querySelector('input');
         const card = label.closest('.pri-card');
-        const checked = !!state[id + NR];
-        if (input) input.checked = checked;
-        if (card) card.classList.toggle('is-suppressed', checked);
+        if (!id || !input) return;
+        input.addEventListener('change', function() {
+          if (card) card.classList.toggle('is-done', input.checked);
+          persist(id, input.checked, false);
+        });
+      });
+      grid.querySelectorAll('.pri-suppress').forEach(function(label) {
+        const id = label.dataset.prospect;
+        const input = label.querySelector('input');
+        if (!id || !input) return;
+        input.addEventListener('change', function() { persist(id + NR, input.checked, true); });
       });
     }
-    function readCache() { try { return JSON.parse(localStorage.getItem(STORE_KEY) || '{}'); } catch(e) { return {}; } }
-    function writeCache(state) { try { localStorage.setItem(STORE_KEY, JSON.stringify(state)); } catch(e) {} }
- 
-    render(readCache());
- 
+
+    function render() {
+      const elig = eligible();
+      const five = elig.slice(0, 5);
+      const reserve = elig[5];
+      let html = '';
+      five.forEach(function(p, i) { html += cardHtml(p, i + 1, sizeFor(i), false); });
+      if (reserve) html += cardHtml(reserve, 6, 'third', true);
+      grid.innerHTML = html || '<p class="section-deck" style="grid-column:span 12;">No connected prospects under $10B remain. Add contacts to the pipeline, or clear a “Do Not Resurface” flag.</p>';
+      applyState();
+      wire();
+      updateStats(five);
+    }
+
+    async function persist(key, checked, rerender) {
+      const value = checked ? new Date().toISOString() : false;
+      if (checked) state[key] = value; else delete state[key];
+      writeCache(state);
+      if (rerender) render();
+      try {
+        const res = await fetch(API, { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ [key]: value }) });
+        if (res.ok) { state = await res.json(); writeCache(state); render(); }
+      } catch(e) {}
+    }
+
     async function pull() {
       try {
         const res = await fetch(API, { cache: 'no-store' });
         if (!res.ok) return;
-        const state = await res.json();
+        state = await res.json();
         writeCache(state);
-        render(state);
+        render();
       } catch(e) {}
     }
+
+    render();
     pull();
     setInterval(pull, POLL_MS);
- 
-    async function persist(key, checked) {
-      const value = checked ? new Date().toISOString() : false;
-      const cache = readCache();
-      if (checked) cache[key] = value; else delete cache[key];
-      writeCache(cache);
-      try {
-        const res = await fetch(API, { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ [key]: value }) });
-        if (res.ok) { const state = await res.json(); writeCache(state); render(state); }
-      } catch(e) {}
-    }
-
-    labels.forEach(label => {
-      const id = label.dataset.prospect;
-      const input = label.querySelector('input[type="checkbox"]');
-      const card = label.closest('.pri-card');
-      if (!id || !input) return;
-      input.addEventListener('change', () => {
-        if (card) card.classList.toggle('is-done', input.checked);
-        persist(id, input.checked);
-      });
-    });
-
-    suppressLabels.forEach(label => {
-      const id = label.dataset.prospect;
-      const input = label.querySelector('input[type="checkbox"]');
-      const card = label.closest('.pri-card');
-      if (!id || !input) return;
-      input.addEventListener('change', () => {
-        if (card) card.classList.toggle('is-suppressed', input.checked);
-        persist(id + NR, input.checked);
-      });
-    });
   })();
  
   (function(){
