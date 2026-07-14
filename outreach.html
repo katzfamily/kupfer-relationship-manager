@@ -39,13 +39,13 @@
       <div class="section-label"><span class="num">05</span><span>Outreach Tracker</span><span class="rule"></span></div>
       <div class="section-head-split">
         <h2 class="section-title">Every <em>contact</em>, every firm.</h2>
-        <p class="section-deck">129 named contacts across 67 firms, tagged by role and live LinkedIn connection status. 30 requests already accepted; the rest are the working outreach queue.</p>
+        <p class="section-deck">Every named contact across all firms, tagged by role and by the connection status <em>recorded</em> for each — as maintained in the CRM. The site has no live LinkedIn visibility; "accepted" reflects the status Corey has logged for that connection. Accepted contacts are the confirmed 1st-degree relationships; the rest are the working outreach queue.</p>
       </div>
       <div class="hero-stats" style="margin-bottom:40px;">
-        <div class="hero-stat"><div class="num">129</div><div class="label">Named contacts tracked</div></div>
-        <div class="hero-stat"><div class="num">30</div><div class="label">Connections accepted</div></div>
-        <div class="hero-stat"><div class="num">63</div><div class="label">Primary decision-makers</div></div>
-        <div class="hero-stat"><div class="num">67</div><div class="label">Firms with a named contact</div></div>
+        <div class="hero-stat"><div class="num" id="ocStatContacts">129</div><div class="label">Named contacts tracked</div></div>
+        <div class="hero-stat"><div class="num" id="ocStatAccepted">30</div><div class="label">Marked accepted (recorded)</div></div>
+        <div class="hero-stat"><div class="num" id="ocStatDM">63</div><div class="label">Primary decision-makers</div></div>
+        <div class="hero-stat"><div class="num" id="ocStatFirms">67</div><div class="label">Firms with a named contact</div></div>
       </div>
       <div class="controls">
         <button class="cfilter-btn active" data-cfilter="all">All Contacts</button>
@@ -1169,6 +1169,21 @@
       b.classList.add('active'); f = b.dataset.cfilter; apply();
     }); });
     search.addEventListener('input', apply);
+  })();
+
+  /* Summary stats — counted live from the contact rows actually on this page,
+     so they always match the list. These are a tally of recorded contact data,
+     NOT a live measurement of LinkedIn (the site has no such visibility). */
+  (function(){
+    var rows = Array.from(document.querySelectorAll('#contacts .contact-row'));
+    if (!rows.length) return;
+    function set(id, v){ var el = document.getElementById(id); if (el) el.textContent = v; }
+    set('ocStatContacts', rows.length);
+    set('ocStatAccepted', rows.filter(function(r){ return r.dataset.cstatus === 'accepted'; }).length);
+    set('ocStatDM', rows.filter(function(r){ return r.dataset.crole === 'dm'; }).length);
+    var firms = {};
+    document.querySelectorAll('#contacts [data-cfirm]').forEach(function(b){ firms[b.dataset.cfirm] = 1; });
+    set('ocStatFirms', Object.keys(firms).length);
   })();
 
 </script>
