@@ -1,0 +1,1374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Working List — Kupfer.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+ 
+  <div class="pw-gate" id="pwGate">
+    <div class="pw-gate-brand"><span class="brand-dot"></span> Kupfer.</div>
+    <form class="pw-gate-form" id="pwForm" autocomplete="off">
+      <input type="password" id="pwInput" placeholder="Enter password" autofocus />
+      <button type="submit">Enter</button>
+    </form>
+    <div class="pw-gate-hint">Internal access only</div>
+  </div>
+ 
+  <header class="masthead">
+    <div class="shell masthead-inner">
+      <div class="brand"><span class="brand-mark"></span> Kupfer.</div>
+      <nav class="mast-nav">
+        <a href="/">Home</a>
+        <a href="/working-list.html" class="active">Working List</a>
+        <a href="/outreach.html">Outreach Tracker</a>
+      </nav>
+      <div class="mast-meta">
+        <span><span class="dot"></span>Connections <b>8,286</b></span>
+      </div>
+    </div>
+  </header>
+ 
+  <section id="pipeline">
+    <div class="shell">
+      <div class="section-label"><span class="num">04</span><span>ICP Pipeline · Under $10B</span><span class="rule"></span></div>
+      <div class="section-head-split">
+        <h2 class="section-title">The complete <em>working list.</em></h2>
+        <p class="section-deck">Every active prospect at all AUM tiers. Filter by size, tier, side, or connection status. The under-$10B band is highlighted as the priority outreach zone; larger firms remain on the list as long-cycle targets.</p>
+      </div>
+      <div class="controls">
+        <button class="filter-btn active" data-filter="all">All Prospects</button>
+        <button class="filter-btn" data-filter="under10">Under $10B (Priority Band)</button>
+        <button class="filter-btn" data-filter="over10">$10B and Above</button>
+        <button class="filter-btn" data-filter="connected">Connected</button>
+        <button class="filter-btn" data-filter="tier1">Tier 1 Only</button>
+        <button class="filter-btn" data-filter="buy">Buy-Side</button>
+        <button class="filter-btn" data-filter="sell">Sell-Side</button>
+        <input type="text" class="search-input" placeholder="Search firm, decision-maker, or signal…" id="search"/>
+      </div>
+      <div style="overflow-x: auto;">
+        <table class="db-table" id="dbTable">
+          <thead>
+            <tr><th>Firm</th><th>AUM</th><th>Tier</th><th>Side</th><th>Decision-Maker</th><th>Connection</th><th>Site</th><th>Signal &amp; Fit</th></tr>
+          </thead>
+          <tbody>
+            <tr data-aum="under10" data-tier="tier1" data-side="buy" data-connected="yes" data-week="2026-03-10">
+              <td class="firm-cell">Credent Wealth Management <span class="firm-loc">Auburn, IN</span></td>
+              <td class="aum-cell">$4.3B</td><td><span class="tag tag-tier1">Tier 1</span></td>
+              <td><span class="tag tag-buy">Buy-Side Serial</span></td>
+              <td class="dm-cell"><div class="dm-name">David Hefty</div><div class="dm-title">CEO</div></td>
+              <td><span class="tag tag-conn">CEO Direct</span></td>
+              <td><a class="site-link" href="https://credentwealth.com" target="_blank">credentwealth.com ↗</a></td>
+              <td class="why-cell">$150M Crestline commitment Dec 2025; two acquisitions Jan 2026; 14 offices.</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier1" data-side="sell" data-connected="no" data-week="2026-02-17">
+              <td class="firm-cell">Balentine <span class="firm-loc">Atlanta, GA</span></td>
+              <td class="aum-cell">$7.5B</td><td><span class="tag tag-tier1">Tier 1</span></td>
+              <td><span class="tag tag-sell">Partnership Transition</span></td>
+              <td class="dm-cell"><div class="dm-name">Adrian Cronje, PhD</div><div class="dm-title">CEO &amp; Founding Partner</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.balentine.com" target="_blank">balentine.com ↗</a></td>
+              <td class="why-cell">FJM acquired 20% stake Jan 2025; employee-owned UHNW firm; partnership restructuring and succession advisory opportunity.</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier1" data-side="buy" data-connected="no" data-week="2026-03-10">
+              <td class="firm-cell">Summit Wealth Group <span class="firm-loc">Colorado Springs, CO</span></td>
+              <td class="aum-cell">~$3B</td><td><span class="tag tag-tier1">Tier 1</span></td>
+              <td><span class="tag tag-buy">Buy-Side Emerging</span></td>
+              <td class="dm-cell"><div class="dm-name">Randy Morris</div><div class="dm-title">CEO</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.summitwealthgroup.com" target="_blank">summitwealthgroup.com ↗</a></td>
+              <td class="why-cell">First acquisition Feb 2026 (Premier Private Wealth, $470M); Constellation-backed; three senior hires.</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier1" data-side="buy" data-connected="yes" data-week="2026-04-21">
+              <td class="firm-cell">RFG Advisory <span class="firm-loc">Birmingham, AL</span></td>
+              <td class="aum-cell">$7.5B</td><td><span class="tag tag-tier1">Tier 1</span></td>
+              <td><span class="tag tag-buy">Emerging</span></td>
+              <td class="dm-cell"><div class="dm-name">Bobby White</div><div class="dm-title">Founder &amp; CEO</div></td>
+              <td><span class="tag tag-conn">Connected</span></td>
+              <td><a class="site-link" href="https://www.rfgadvisory.com" target="_blank">rfgadvisory.com ↗</a></td>
+              <td class="why-cell">First majority acquisition (RVA Wealth $320M) Mar 31, 2026; Long Ridge Equity-backed; W-2 partner firm structure.</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier1" data-side="buy" data-connected="no" data-week="">
+              <td class="firm-cell">Composition Wealth <span class="firm-loc">Los Angeles, CA</span></td>
+              <td class="aum-cell">$9.5B</td><td><span class="tag tag-tier1">Tier 1</span></td>
+              <td><span class="tag tag-buy">Buy-Side Serial</span></td>
+              <td class="dm-cell"><div class="dm-name">Nate Angelo</div><div class="dm-title">CEO</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://compositionwealth.com" target="_blank">compositionwealth.com ↗</a></td>
+              <td class="why-cell">6 acquisitions in 2025; targeting NYC, Boston, Austin, Dallas; Corsair Capital backed (warm path via Richard Creedon).</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier2" data-side="sell" data-connected="yes" data-week="2026-03-10">
+              <td class="firm-cell">Novare Capital Management <span class="firm-loc">Charlotte, NC</span></td>
+              <td class="aum-cell">$1.8B</td><td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-sell">Succession</span></td>
+              <td class="dm-cell"><div class="dm-name">Alex Dann, CFP</div><div class="dm-title">SVP, Relationship Manager</div></td>
+              <td><span class="tag tag-conn">Connected</span></td>
+              <td><a class="site-link" href="https://novarecapital.com" target="_blank">novarecapital.com ↗</a></td>
+              <td class="why-cell">Emigrant Partners minority 2025; Charlotte hub; founder-led succession candidate.</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier1" data-side="buy" data-connected="no" data-week="2026-05-01">
+              <td class="firm-cell">Socium Advisors <span class="firm-loc">St. Louis, MO</span></td>
+              <td class="aum-cell">$4.3B</td><td><span class="tag tag-tier1">Tier 1</span></td>
+              <td><span class="tag tag-buy">Buy-Side Serial</span></td>
+              <td class="dm-cell"><div class="dm-name">Scott Underwood</div><div class="dm-title">Founder &amp; CEO</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://sociumadvisors.com" target="_blank">sociumadvisors.com ↗</a></td>
+              <td class="why-cell">Amplify Wealth Partners merger ($1.6B, April 2026); 26 financial professionals onboard; Wisconsin expansion.</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier1" data-side="buy" data-connected="no" data-week="2026-03-10">
+              <td class="firm-cell">Krilogy <span class="firm-loc">St. Louis, MO</span></td>
+              <td class="aum-cell">$4.1B</td><td><span class="tag tag-tier1">Tier 1</span></td>
+              <td><span class="tag tag-buy">PE-Backed</span></td>
+              <td class="dm-cell"><div class="dm-name">Kent Skornia</div><div class="dm-title">Founder &amp; CEO</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.krilogy.com" target="_blank">krilogy.com ↗</a></td>
+              <td class="why-cell">Rise Growth minority Oct 2025; targets $5B in 2026; 21 prior tuck-ins; Dallas expansion.</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier1" data-side="buy" data-connected="no" data-week="2026-03-10">
+              <td class="firm-cell">Aspen Standard Wealth <span class="firm-loc">New York, NY</span></td>
+              <td class="aum-cell">~$8B</td><td><span class="tag tag-tier1">Tier 1</span></td>
+              <td><span class="tag tag-buy">Buy-Side Serial</span></td>
+              <td class="dm-cell"><div class="dm-name">CEO</div><div class="dm-title">Newly appointed President</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://aspenstandardwealth.com" target="_blank">Visit ↗</a></td>
+              <td class="why-cell">7 acquisitions since late-2024 launch; BlueSky Wealth ($1B) Mar 2026; MG Financial ($1.1B) Aug 2025.</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier1" data-side="buy" data-connected="no" data-week="2026-03-10">
+              <td class="firm-cell">Modern Wealth Management <span class="firm-loc">Monterey, CA</span></td>
+              <td class="aum-cell">~$10B</td><td><span class="tag tag-tier1">Tier 1</span></td>
+              <td><span class="tag tag-buy">Buy-Side Serial</span></td>
+              <td class="dm-cell"><div class="dm-name">Founders</div><div class="dm-title">ex-United Capital execs</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://modernwealth.com" target="_blank">modernwealth.com ↗</a></td>
+              <td class="why-cell">18+ acquisitions since April 2023; 5 in 2025; recently hired Head of M&amp;A.</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier1" data-side="buy" data-connected="no" data-week="2026-03-10">
+              <td class="firm-cell">BIP Wealth <span class="firm-loc">Atlanta, GA</span></td>
+              <td class="aum-cell">$5.5B</td><td><span class="tag tag-tier1">Tier 1</span></td>
+              <td><span class="tag tag-buy">Buy-Side Emerging</span></td>
+              <td class="dm-cell"><div class="dm-name">Bill Harris</div><div class="dm-title">Co-Founder &amp; CEO</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://bipwealth.com" target="_blank">bipwealth.com ↗</a></td>
+              <td class="why-cell">Constellation Wealth Capital minority Feb 2026 to fund acquisitions; new CDO Caleb Smith.</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier1" data-side="buy" data-connected="no" data-week="2026-03-10">
+              <td class="firm-cell">Apollon Wealth Management <span class="firm-loc">Greenville, SC</span></td>
+              <td class="aum-cell">$8.65B</td><td><span class="tag tag-tier1">Tier 1</span></td>
+              <td><span class="tag tag-buy">Buy-Side Serial</span></td>
+              <td class="dm-cell"><div class="dm-name">CEO</div><div class="dm-title">Verification needed</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://apollonwealthmanagement.com" target="_blank">Visit ↗</a></td>
+              <td class="why-cell">Acquired Motley Fool Wealth Management ($1.5B); multiple acquisitions in 2025.</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier1" data-side="buy" data-connected="no" data-week="2026-04-21">
+              <td class="firm-cell">Summitry <span class="firm-loc">San Mateo, CA</span></td>
+              <td class="aum-cell">$4B+</td><td><span class="tag tag-tier1">Tier 1</span></td>
+              <td><span class="tag tag-buy">Buy-Side Emerging</span></td>
+              <td class="dm-cell"><div class="dm-name">CEO</div><div class="dm-title">Verification needed</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://summitry.com" target="_blank">summitry.com ↗</a></td>
+              <td class="why-cell">$721M Bay Area partner firm Mar 2026; transitioning organic-to-acquisition-led growth.</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier1" data-side="buy" data-connected="no" data-week="2026-02-17">
+              <td class="firm-cell">Cary Street Partners <span class="firm-loc">Richmond, VA</span></td>
+              <td class="aum-cell">$10.7B</td><td><span class="tag tag-tier1">Tier 1</span></td>
+              <td><span class="tag tag-buy">PE-Backed</span></td>
+              <td class="dm-cell"><div class="dm-name">Joseph R. Schmuckler</div><div class="dm-title">CEO &amp; Managing Director</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://carystreetpartners.com" target="_blank">carystreetpartners.com ↗</a></td>
+              <td class="why-cell">CIVC Partners investment Apr 2025; IFS Advisors acquisition; 20 offices, 7 states.</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier1" data-side="buy" data-connected="no" data-week="2026-02-17">
+              <td class="firm-cell">Americana Partners <span class="firm-loc">Houston, TX</span></td>
+              <td class="aum-cell">$12B+</td><td><span class="tag tag-tier1">Tier 1</span></td>
+              <td><span class="tag tag-buy">Buy-Side Serial</span></td>
+              <td class="dm-cell"><div class="dm-name">Jason Fertitta</div><div class="dm-title">CEO &amp; Partner</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://americanapartners.com" target="_blank">americanapartners.com ↗</a></td>
+              <td class="why-cell">Dynasty network member with Lovell Minnick backing; second out-of-state acquisition late 2025.</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier1" data-side="buy" data-connected="no" data-week="2026-02-17">
+              <td class="firm-cell">Apella Wealth <span class="firm-loc">West Hartford, CT</span></td>
+              <td class="aum-cell">$6B+</td><td><span class="tag tag-tier1">Tier 1</span></td>
+              <td><span class="tag tag-buy">Buy-Side Serial</span></td>
+              <td class="dm-cell"><div class="dm-name">Patrick Sweeny</div><div class="dm-title">CEO</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://apellawealth.com" target="_blank">apellawealth.com ↗</a></td>
+              <td class="why-cell">21+ transactions; Marrella Mar 2025, Independence June 2025; WPCG-backed.</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier1" data-side="buy" data-connected="no" data-week="">
+              <td class="firm-cell">55 North Private Wealth <span class="firm-loc">Winter Park, FL</span></td>
+              <td class="aum-cell">$600M+</td><td><span class="tag tag-tier1">Tier 1</span></td>
+              <td><span class="tag tag-buy">Emerging</span></td>
+              <td class="dm-cell"><div class="dm-name">Steve Curley, CFA</div><div class="dm-title">Founder &amp; CIS</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://55npw.com" target="_blank">55npw.com ↗</a></td>
+              <td class="why-cell">First acquisition (F4 Wealth) Jan 2025 signals acquisitive transition; Investors First Podcast network.</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier1" data-side="buy" data-connected="no" data-week="2026-04-21">
+              <td class="firm-cell">Aerodigm Wealth <span class="firm-loc">Portland, OR</span></td>
+              <td class="aum-cell">$1.5B</td><td><span class="tag tag-tier1">Tier 1</span></td>
+              <td><span class="tag tag-buy">Emerging / Sell-Side</span></td>
+              <td class="dm-cell"><div class="dm-name">Jared Siegel</div><div class="dm-title">Managing Partner</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://aerodigmwealth.com" target="_blank">aerodigmwealth.com ↗</a></td>
+              <td class="why-cell">Management buyout of Delap LLP wealth division early 2026; UHNW focus.</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier1" data-side="sell" data-connected="no" data-week="2026-02-17">
+              <td class="firm-cell">Mozaic <span class="firm-loc">Beverly Hills, CA</span></td>
+              <td class="aum-cell">$4.1B</td><td><span class="tag tag-tier1">Tier 1</span></td>
+              <td><span class="tag tag-sell">Active Sale</span></td>
+              <td class="dm-cell"><div class="dm-name">Christopher Zyda</div><div class="dm-title">Founder &amp; CEO</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://mozaicllc.com" target="_blank">mozaicllc.com ↗</a></td>
+              <td class="why-cell"><strong>Actively pursuing sale.</strong> Stifel KBW engaged. Time-sensitive.</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier1" data-side="sell" data-connected="no" data-week="2026-05-01">
+              <td class="firm-cell">IFC Advisors <span class="firm-loc">Los Angeles, CA</span></td>
+              <td class="aum-cell">$2.5B</td><td><span class="tag tag-tier1">Tier 1</span></td>
+              <td><span class="tag tag-sell">Partnership Transition</span></td>
+              <td class="dm-cell"><div class="dm-name">Marc Ackerman</div><div class="dm-title">Co-Founder</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://ifcadvisors.com" target="_blank">ifcadvisors.com ↗</a></td>
+              <td class="why-cell">Sixth Street/Merchant minority Feb 2026; Jim Hays moved to executive chairman.</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier1" data-side="sell" data-connected="no" data-week="2026-04-21">
+              <td class="firm-cell">Truepoint Wealth Counsel <span class="firm-loc">Cincinnati, OH</span></td>
+              <td class="aum-cell">$4B</td><td><span class="tag tag-tier1">Tier 1</span></td>
+              <td><span class="tag tag-sell">Succession</span></td>
+              <td class="dm-cell"><div class="dm-name">Founders</div><div class="dm-title">Long-tenured principals</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://truepointwealth.com" target="_blank">truepointwealth.com ↗</a></td>
+              <td class="why-cell">Founder-led fee-only RIA; no known succession plan; 20+ years.</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier1" data-side="sell" data-connected="no" data-week="2026-04-21">
+              <td class="firm-cell">Telemus Capital <span class="firm-loc">Southfield, MI</span></td>
+              <td class="aum-cell">$3.5B</td><td><span class="tag tag-tier1">Tier 1</span></td>
+              <td><span class="tag tag-sell">Succession</span></td>
+              <td class="dm-cell"><div class="dm-name">Managing Partners</div><div class="dm-title">Fee-only RIA</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://telemus.com" target="_blank">telemus.com ↗</a></td>
+              <td class="why-cell">Multi-partner fee-only RIA; uneven retirement timelines; suburban Detroit.</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier1" data-side="sell" data-connected="no" data-week="2026-04-21">
+              <td class="firm-cell">Confluence Financial Partners <span class="firm-loc">Pittsburgh, PA</span></td>
+              <td class="aum-cell">$1.5B</td><td><span class="tag tag-tier1">Tier 1</span></td>
+              <td><span class="tag tag-sell">Succession</span></td>
+              <td class="dm-cell"><div class="dm-name">Founder</div><div class="dm-title">Verification needed</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://confluencefp.com" target="_blank">confluencefp.com ↗</a></td>
+              <td class="why-cell">Independent Pittsburgh boutique; founder-led 15+ years.</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier1" data-side="sell" data-connected="no" data-week="2026-04-21">
+              <td class="firm-cell">Prospero Wealth <span class="firm-loc">Seattle, WA</span></td>
+              <td class="aum-cell">$1.5B+</td><td><span class="tag tag-tier1">Tier 1</span></td>
+              <td><span class="tag tag-sell">Strategic Crossroads</span></td>
+              <td class="dm-cell"><div class="dm-name">Eric Franklin</div><div class="dm-title">Founder</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://prosperowealth.com" target="_blank">prosperowealth.com ↗</a></td>
+              <td class="why-cell">Post-Amazon breakaway; WA 9.9% millionaire-tax pressure; founder evaluating options.</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier2" data-side="buy" data-connected="no" data-week="2026-05-01">
+              <td class="firm-cell">Grimes &amp; Company <span class="firm-loc">Westborough, MA</span></td>
+              <td class="aum-cell">$5.7B</td><td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-buy">PE-Backed</span></td>
+              <td class="dm-cell"><div class="dm-name">Kevin Grimes</div><div class="dm-title">CEO &amp; CIO</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://grimesco.com" target="_blank">grimesco.com ↗</a></td>
+              <td class="why-cell">Rise Growth minority Feb 2025; multi-state expansion; family-owned.</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier2" data-side="buy" data-connected="no" data-week="2026-05-01">
+              <td class="firm-cell">Trilogy Financial Services <span class="firm-loc">Irvine, CA</span></td>
+              <td class="aum-cell">$4B</td><td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-buy">PE-Backed</span></td>
+              <td class="dm-cell"><div class="dm-name">Jeff Motske</div><div class="dm-title">Founder &amp; CEO</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://trilogyfs.com" target="_blank">trilogyfs.com ↗</a></td>
+              <td class="why-cell">Peloton Capital minority 2025; concurrent Flagship and Horizon acquisitions.</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier2" data-side="buy" data-connected="no" data-week="2026-05-01">
+              <td class="firm-cell">Dakota Wealth Management <span class="firm-loc">Palm Beach Gardens, FL</span></td>
+              <td class="aum-cell">$2.5B</td><td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-buy">Buy-Side Serial</span></td>
+              <td class="dm-cell"><div class="dm-name">Peter Raimondi</div><div class="dm-title">Founder &amp; CEO</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://dakotawealth.com" target="_blank">dakotawealth.com ↗</a></td>
+              <td class="why-cell">Lokken Investment Group Nov 2025 (succession); Emigrant Partners backed.</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier2" data-side="buy" data-connected="no" data-week="2026-05-01">
+              <td class="firm-cell">Forta Wealth Partners <span class="firm-loc">Indianapolis, IN</span></td>
+              <td class="aum-cell">$900M</td><td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-buy">Emerging</span></td>
+              <td class="dm-cell"><div class="dm-name">Will Turner</div><div class="dm-title">Principal &amp; Wealth Advisor</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://fortawealth.com" target="_blank">fortawealth.com ↗</a></td>
+              <td class="why-cell">Launched Jan 27, 2026; Elevation Point minority; ex-Merrill Lynch Turner Group.</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier2" data-side="buy" data-connected="no" data-week="">
+              <td class="firm-cell">Hampton Bluff Capital <span class="firm-loc">Atlanta, GA</span></td>
+              <td class="aum-cell">$1.3B</td><td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-buy">Emerging</span></td>
+              <td class="dm-cell"><div class="dm-name">Founding Partners</div><div class="dm-title">Verification needed</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://hamptonbluff.com" target="_blank">hamptonbluff.com ↗</a></td>
+              <td class="why-cell">Launched Feb 18, 2026; Elevation Point minority; ex-UBS Odyssey team.</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier2" data-side="buy" data-connected="no" data-week="2026-03-10">
+              <td class="firm-cell">Avidian Wealth Solutions <span class="firm-loc">Houston, TX</span></td>
+              <td class="aum-cell">$4B</td><td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-buy">Emerging</span></td>
+              <td class="dm-cell"><div class="dm-name">CEO</div><div class="dm-title">Employee-owned</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://avidianwealth.com" target="_blank">avidianwealth.com ↗</a></td>
+              <td class="why-cell">Active recruiting; Troy Taylor joined Feb 2026; exploring inorganic growth.</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier2" data-side="buy" data-connected="no" data-week="2026-03-10">
+              <td class="firm-cell">Carnegie Investment Counsel <span class="firm-loc">Pepper Pike, OH</span></td>
+              <td class="aum-cell">$6B</td><td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-buy">Buy-Side Serial</span></td>
+              <td class="dm-cell"><div class="dm-name">Richard Alt</div><div class="dm-title">CEO &amp; Principal</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://carnegieinvest.com" target="_blank">carnegieinvest.com ↗</a></td>
+              <td class="why-cell">Eagle Ridge $1.3B; fee-only fiduciary since 1974; Pittsburgh and Columbus expansion.</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier2" data-side="buy" data-connected="no" data-week="2026-03-10">
+              <td class="firm-cell">Choreo Advisors <span class="firm-loc">Jacksonville, FL</span></td>
+              <td class="aum-cell">$6–8B</td><td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-buy">Buy-Side Serial</span></td>
+              <td class="dm-cell"><div class="dm-name">CEO</div><div class="dm-title">PE-backed mid-market acquirer</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://choreoadvisors.com" target="_blank">choreoadvisors.com ↗</a></td>
+              <td class="why-cell">Northeast Financial + Herbein ($1.3B combined, Jan 2026); active acquirer.</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier2" data-side="buy" data-connected="no" data-week="">
+              <td class="firm-cell">Prime Capital Financial <span class="firm-loc">Overland Park, KS</span></td>
+              <td class="aum-cell">$7–9B</td><td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-buy">Buy-Side Serial</span></td>
+              <td class="dm-cell"><div class="dm-name">Glenn Spencer</div><div class="dm-title">CEO</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://primecapitalfinancial.com" target="_blank">Visit ↗</a></td>
+              <td class="why-cell">Bradshaw Rogers ($600M), SineCera Capital; Abry Partners minority.</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier2" data-side="buy" data-connected="no" data-week="2026-03-10">
+              <td class="firm-cell">Cresset Asset Management <span class="firm-loc">Chicago, IL</span></td>
+              <td class="aum-cell">$8–10B</td><td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-buy">Buy-Side Serial</span></td>
+              <td class="dm-cell"><div class="dm-name">CEO</div><div class="dm-title">Constellation portfolio</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://cressetcapital.com" target="_blank">cressetcapital.com ↗</a></td>
+              <td class="why-cell">Acquired Monticello Associates; building UHNW platform.</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier2" data-side="buy" data-connected="no" data-week="">
+              <td class="firm-cell">Procyon Partners <span class="firm-loc">Shelton, CT</span></td>
+              <td class="aum-cell">$8–9B</td><td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-buy">PE-Backed</span></td>
+              <td class="dm-cell"><div class="dm-name">Phil Fiore, Jr.</div><div class="dm-title">CEO &amp; Co-Founder</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://procyonpartners.net" target="_blank">procyonpartners.net ↗</a></td>
+              <td class="why-cell">Dynasty network; Constellation minority 2025; Wooster Corthell July 2025; targets $300M–$3B.</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier2" data-side="buy" data-connected="no" data-week="2026-04-21">
+              <td class="firm-cell">CM Wealth <span class="firm-loc">Cleveland, OH</span></td>
+              <td class="aum-cell">$6B+</td><td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-buy">Emerging</span></td>
+              <td class="dm-cell"><div class="dm-name">Paul Bodnar</div><div class="dm-title">New CEO (Apr 2026)</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://cmwealth.com" target="_blank">cmwealth.com ↗</a></td>
+              <td class="why-cell">Decade-long planned succession; new leadership may signal acquisition mandate.</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier2" data-side="buy" data-connected="no" data-week="2026-04-21">
+              <td class="firm-cell">Farther <span class="firm-loc">New York, NY</span></td>
+              <td class="aum-cell">$3B+</td><td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-buy">Emerging</span></td>
+              <td class="dm-cell"><div class="dm-name">CEO</div><div class="dm-title">Tech-forward RIA</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.google.com/search?q=Farther+RIA" target="_blank">google.com ↗</a></td>
+              <td class="why-cell">Hired Ben Seidenstein from Goldman Apr 2026; PE-backed; recruiting wirehouse advisors.</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier2" data-side="sell" data-connected="no" data-week="2026-05-01">
+              <td class="firm-cell">Beaird Harris <span class="firm-loc">Dallas, TX</span></td>
+              <td class="aum-cell">$1B+</td><td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-sell">Succession</span></td>
+              <td class="dm-cell"><div class="dm-name">Steve Harris</div><div class="dm-title">Managing Partner</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://beairdharris.com" target="_blank">beairdharris.com ↗</a></td>
+              <td class="why-cell">Multi-partner structure formalizing; integrated CPA + Wealth model.</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier2" data-side="sell" data-connected="no" data-week="2026-05-01">
+              <td class="firm-cell">Loxahatchee Capital <span class="firm-loc">Tequesta, FL</span></td>
+              <td class="aum-cell">$1.4B</td><td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-sell">Strategic Crossroads</span></td>
+              <td class="dm-cell"><div class="dm-name">Founding Partners</div><div class="dm-title">Verification needed</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://loxahatcheecapital.com" target="_blank">loxahatcheecapital.com ↗</a></td>
+              <td class="why-cell">UBS breakaway; Elevation Point minority early 2026; multi-family office.</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier2" data-side="sell" data-connected="no" data-week="2026-05-01">
+              <td class="firm-cell">Harbor View Private Wealth <span class="firm-loc">Atlanta, GA</span></td>
+              <td class="aum-cell">$1.3B</td><td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-sell">Partnership Transition</span></td>
+              <td class="dm-cell"><div class="dm-name">Founding Partners</div><div class="dm-title">Verification needed</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://harborviewpw.com" target="_blank">harborviewpw.com ↗</a></td>
+              <td class="why-cell">Launched Jan 2026; UBS breakaway; Elevation Point minority.</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier2" data-side="sell" data-connected="no" data-week="">
+              <td class="firm-cell">DayMark Wealth Partners <span class="firm-loc">Cleveland, OH</span></td>
+              <td class="aum-cell">$4B+</td><td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-sell">Partnership Transition</span></td>
+              <td class="dm-cell"><div class="dm-name">Michael Quinn</div><div class="dm-title">Co-Founder &amp; CEO</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://daymarkwp.com" target="_blank">daymarkwp.com ↗</a></td>
+              <td class="why-cell">Constellation Wealth Capital portfolio; ongoing platform M&amp;A.</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier2" data-side="sell" data-connected="no" data-week="2026-05-01">
+              <td class="firm-cell">Crestone Capital Advisors <span class="firm-loc">Boulder, CO</span></td>
+              <td class="aum-cell">$7B</td><td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-sell">Succession</span></td>
+              <td class="dm-cell"><div class="dm-name">Eric Kramer</div><div class="dm-title">President &amp; CEO</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://crestonecapital.com" target="_blank">crestonecapital.com ↗</a></td>
+              <td class="why-cell">Founder-led MFO; Mountain West market; entrepreneur and family-enterprise client base.</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier2" data-side="sell" data-connected="no" data-week="2026-05-01">
+              <td class="firm-cell">Halbert Hargrove <span class="firm-loc">Long Beach, CA</span></td>
+              <td class="aum-cell">$4B+</td><td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-sell">Succession</span></td>
+              <td class="dm-cell"><div class="dm-name">Russ Hill</div><div class="dm-title">Chairman</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://halberthargrove.com" target="_blank">halberthargrove.com ↗</a></td>
+              <td class="why-cell">Founded 1933; multi-generational ownership; Brian Spinelli leading next-gen transition.</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier2" data-side="sell" data-connected="no" data-week="2026-03-10">
+              <td class="firm-cell">Bogart Wealth <span class="firm-loc">McLean, VA</span></td>
+              <td class="aum-cell">$3.1B</td><td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-sell">Succession</span></td>
+              <td class="dm-cell"><div class="dm-name">James Bogart, CFP</div><div class="dm-title">CEO &amp; Founder</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.google.com/search?q=Bogart+Wealth+RIA" target="_blank">google.com ↗</a></td>
+              <td class="why-cell">Constellation minority Jan 2025; grew $600M to $3.1B organically; Barron's Top 100.</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier2" data-side="sell" data-connected="no" data-week="">
+              <td class="firm-cell">Schultz Collins <span class="firm-loc">San Francisco, CA</span></td>
+              <td class="aum-cell">$1.5B</td><td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-sell">Partnership Transition</span></td>
+              <td class="dm-cell"><div class="dm-name">Founding Partners</div><div class="dm-title">Long-tenured</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://schultzcollins.com" target="_blank">schultzcollins.com ↗</a></td>
+              <td class="why-cell">Bay Area fee-only boutique; no visible succession structure.</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier2" data-side="sell" data-connected="no" data-week="2026-03-10">
+              <td class="firm-cell">Greenwood Gearhart <span class="firm-loc">Fayetteville, AR</span></td>
+              <td class="aum-cell">$500M–$1B</td><td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-sell">Succession</span></td>
+              <td class="dm-cell"><div class="dm-name">Founders</div><div class="dm-title">Constellation portfolio</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.google.com/search?q=Greenwood+Gearhart+RIA" target="_blank">google.com ↗</a></td>
+              <td class="why-cell">Constellation portfolio firm in underserved Arkansas market.</td>
+            </tr>
+            <tr data-aum="over10" data-tier="tier1" data-side="buy" data-connected="yes" data-week="2026-05-01">
+              <td class="firm-cell">NorthRock Partners <span class="firm-loc">Minneapolis, MN</span></td>
+              <td class="aum-cell">$12B</td><td><span class="tag tag-tier1">Tier 1</span></td>
+              <td><span class="tag tag-buy">Buy-Side Serial</span></td>
+              <td class="dm-cell"><div class="dm-name">CEO</div><div class="dm-title">Sammons Financial-backed</div></td>
+              <td><span class="tag tag-conn">Connected</span></td>
+              <td><a class="site-link" href="https://www.google.com/search?q=NorthRock+Partners+RIA" target="_blank">google.com ↗</a></td>
+              <td class="why-cell">Two acquisitions in 2026: Martin &amp; Associates (~$500M, Jan) and Vantage ($950M, Apr).</td>
+            </tr>
+            <tr data-aum="over10" data-tier="tier1" data-side="buy" data-connected="yes" data-week="2026-05-01">
+              <td class="firm-cell">Caprock <span class="firm-loc">Boise, ID</span></td>
+              <td class="aum-cell">$13–16B</td><td><span class="tag tag-tier1">Tier 1</span></td>
+              <td><span class="tag tag-buy">Buy-Side Serial</span></td>
+              <td class="dm-cell"><div class="dm-name">CEO</div><div class="dm-title">Multi-family office</div></td>
+              <td><span class="tag tag-conn">Connected</span></td>
+              <td><a class="site-link" href="https://www.google.com/search?q=Caprock+RIA" target="_blank">google.com ↗</a></td>
+              <td class="why-cell">First M&amp;A acquisition (Grey Street, $2.2B) in 2024; Denver office Apr 2026 (10th US location).</td>
+            </tr>
+            <tr data-aum="over10" data-tier="tier1" data-side="buy" data-connected="no" data-week="2026-04-21">
+              <td class="firm-cell">Arax Investment Partners <span class="firm-loc">New York, NY</span></td>
+              <td class="aum-cell">$40B</td><td><span class="tag tag-tier1">Tier 1</span></td>
+              <td><span class="tag tag-buy">Buy-Side Serial</span></td>
+              <td class="dm-cell"><div class="dm-name">Haig Ariyan</div><div class="dm-title">CEO &amp; Founder</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.google.com/search?q=Arax+Investment+Partners+RIA" target="_blank">google.com ↗</a></td>
+              <td class="why-cell">3+ acquisitions 2026 YTD: GFP Private Wealth ($1.5B Feb), Omni Financial NY (Mar).</td>
+            </tr>
+            <tr data-aum="over10" data-tier="tier1" data-side="buy" data-connected="no" data-week="">
+              <td class="firm-cell">Cerity Partners <span class="firm-loc">New York, NY</span></td>
+              <td class="aum-cell">$40B+</td><td><span class="tag tag-tier1">Tier 1</span></td>
+              <td><span class="tag tag-buy">Buy-Side Serial</span></td>
+              <td class="dm-cell"><div class="dm-name">CEO</div><div class="dm-title">Warburg Pincus-backed</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.google.com/search?q=Cerity+Partners+RIA" target="_blank">google.com ↗</a></td>
+              <td class="why-cell">3+ acquisitions Q1 2026: SOL ($2.8B), Austin Private ($1.4B), Verus; Warburg $1B minority Feb 2026.</td>
+            </tr>
+            <tr data-aum="over10" data-tier="tier1" data-side="buy" data-connected="no" data-week="">
+              <td class="firm-cell">Clearstead Advisors <span class="firm-loc">Cleveland, OH</span></td>
+              <td class="aum-cell">$55B</td><td><span class="tag tag-tier1">Tier 1</span></td>
+              <td><span class="tag tag-buy">Buy-Side Serial</span></td>
+              <td class="dm-cell"><div class="dm-name">CEO</div><div class="dm-title">UHNW + MFO platform</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.google.com/search?q=Clearstead+Advisors+RIA" target="_blank">google.com ↗</a></td>
+              <td class="why-cell">Clarius Group ($5.1B) closed Jan 31, 2026; prior: Waveland, Wilbanks Smith, Baldwin.</td>
+            </tr>
+            <tr data-aum="over10" data-tier="tier1" data-side="buy" data-connected="no" data-week="2026-04-21">
+              <td class="firm-cell">&amp;Partners <span class="firm-loc">New York, NY</span></td>
+              <td class="aum-cell">$10B+</td><td><span class="tag tag-tier1">Tier 1</span></td>
+              <td><span class="tag tag-buy">Buy-Side Serial</span></td>
+              <td class="dm-cell"><div class="dm-name">CEO</div><div class="dm-title">Wirehouse breakaway acquirer</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.google.com/search?q=%26Partners+RIA" target="_blank">google.com ↗</a></td>
+              <td class="why-cell">Multiple Q1 2026 wirehouse breakaway acquisitions: $950M Wells Fargo VA team; Wells Fargo NY team Mar 2026.</td>
+            </tr>
+            <tr data-aum="over10" data-tier="tier1" data-side="buy" data-connected="no" data-week="">
+              <td class="firm-cell">MAI Capital Management <span class="firm-loc">Cleveland, OH</span></td>
+              <td class="aum-cell">$72.6B</td><td><span class="tag tag-tier1">Tier 1</span></td>
+              <td><span class="tag tag-buy">PE-Backed</span></td>
+              <td class="dm-cell"><div class="dm-name">CEO</div><div class="dm-title">Carlyle majority</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.google.com/search?q=MAI+Capital+Management+RIA" target="_blank">google.com ↗</a></td>
+              <td class="why-cell">Carlyle Group majority closed Mar 2026; valuation $2.8B+; new governance and acquisition mandate.</td>
+            </tr>
+            <tr data-aum="over10" data-tier="tier1" data-side="buy" data-connected="no" data-week="2026-04-21">
+              <td class="firm-cell">Concurrent Investment Advisors <span class="firm-loc">Tampa, FL</span></td>
+              <td class="aum-cell">$15B+</td><td><span class="tag tag-tier1">Tier 1</span></td>
+              <td><span class="tag tag-buy">PE-Backed</span></td>
+              <td class="dm-cell"><div class="dm-name">CEO</div><div class="dm-title">Genstar-backed</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.google.com/search?q=Concurrent+Investment+Advisors+RIA" target="_blank">google.com ↗</a></td>
+              <td class="why-cell">Active partnership platform; recent multi-team additions in Texas; Southeast/Mid-Atlantic targets.</td>
+            </tr>
+            <tr data-aum="over10" data-tier="tier1" data-side="buy" data-connected="no" data-week="2026-04-21">
+              <td class="firm-cell">Lido Advisors <span class="firm-loc">Los Angeles, CA</span></td>
+              <td class="aum-cell">$9–12B</td><td><span class="tag tag-tier1">Tier 1</span></td>
+              <td><span class="tag tag-buy">Buy-Side Serial</span></td>
+              <td class="dm-cell"><div class="dm-name">Jason Ozur</div><div class="dm-title">CEO</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.google.com/search?q=Lido+Advisors+RIA" target="_blank">google.com ↗</a></td>
+              <td class="why-cell">Multiple tuck-in acquisitions 2024–25; PE mandate to deploy capital in West/Southwest.</td>
+            </tr>
+            <tr data-aum="over10" data-tier="tier2" data-side="buy" data-connected="no" data-week="2026-05-28">
+              <td class="firm-cell">Coldstream Wealth Management <span class="firm-loc">Bellevue, WA</span></td>
+              <td class="aum-cell">$14B</td><td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-buy">Buy-Side Serial</span></td>
+              <td class="dm-cell"><div class="dm-name">CEO</div><div class="dm-title">100% employee-owned</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.google.com/search?q=Coldstream+Wealth+Management+RIA" target="_blank">google.com ↗</a></td>
+              <td class="why-cell">Multiple PNW mergers; opened Bend, OR office; no PE conflict.</td>
+            </tr>
+            <tr data-aum="over10" data-tier="tier2" data-side="buy" data-connected="no" data-week="2026-05-01">
+              <td class="firm-cell">Mission Wealth <span class="firm-loc">Santa Barbara, CA</span></td>
+              <td class="aum-cell">$14.1B</td><td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-buy">Buy-Side Serial</span></td>
+              <td class="dm-cell"><div class="dm-name">CEO</div><div class="dm-title">Multi-state acquirer</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.google.com/search?q=Mission+Wealth+RIA" target="_blank">google.com ↗</a></td>
+              <td class="why-cell">PBL Wealth Jan 2026; Logic Capital 2025; Texas market expansion.</td>
+            </tr>
+            <tr data-aum="over10" data-tier="tier2" data-side="buy" data-connected="no" data-week="2026-05-01">
+              <td class="firm-cell">The AmeriFlex Group <span class="firm-loc">Las Vegas, NV</span></td>
+              <td class="aum-cell">$13B</td><td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-buy">Emerging</span></td>
+              <td class="dm-cell"><div class="dm-name">CEO</div><div class="dm-title">Hybrid RIA</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.google.com/search?q=AmeriFlex+Group+RIA" target="_blank">google.com ↗</a></td>
+              <td class="why-cell">Cambridge Investment Research minority Jan 2026; SuccessionFully platform expansion.</td>
+            </tr>
+            <tr data-aum="over10" data-tier="tier2" data-side="buy" data-connected="no" data-week="">
+              <td class="firm-cell">Rockefeller Capital Management <span class="firm-loc">New York, NY</span></td>
+              <td class="aum-cell">$50B+</td><td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-buy">Buy-Side Serial</span></td>
+              <td class="dm-cell"><div class="dm-name">CEO</div><div class="dm-title">National platform</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.google.com/search?q=Rockefeller+Capital+Management+RIA" target="_blank">google.com ↗</a></td>
+              <td class="why-cell">Active acquisition of UBS advisor breakaway teams 2026; steady stream of defections.</td>
+            </tr>
+            <tr data-aum="over10" data-tier="tier1" data-side="buy" data-connected="no" data-week="2026-04-21">
+              <td class="firm-cell">Integrated Partners <span class="firm-loc">Waltham, MA</span></td>
+              <td class="aum-cell">$40B+ AUA</td><td><span class="tag tag-tier1">Tier 1</span></td>
+              <td><span class="tag tag-buy">Buy-Side Serial</span></td>
+              <td class="dm-cell"><div class="dm-name">Paul Saganey</div><div class="dm-title">Founder &amp; President</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.google.com/search?q=Integrated+Partners+RIA" target="_blank">google.com ↗</a></td>
+              <td class="why-cell">CPA-affiliated practice acquisition program; 3–6 deals per year; Merchant IM-backed.</td>
+            </tr>
+            <tr data-aum="over10" data-tier="tier2" data-side="buy" data-connected="no" data-week="2026-04-21">
+              <td class="firm-cell">Wealth Partners Capital Group <span class="firm-loc">New York, NY</span></td>
+              <td class="aum-cell">$15B+ platform</td><td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-buy">PE-Backed</span></td>
+              <td class="dm-cell"><div class="dm-name">Ted Barnhill</div><div class="dm-title">Managing Partner</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.google.com/search?q=Wealth+Partners+Capital+Group+RIA" target="_blank">google.com ↗</a></td>
+              <td class="why-cell">Raised $400M debt facility Ares Jul 2025; minority co-investment in $1–5B RIAs in 2026.</td>
+            </tr>
+            <tr data-aum="over10" data-tier="tier2" data-side="buy" data-connected="no" data-week="2026-02-17">
+              <td class="firm-cell">Pitcairn <span class="firm-loc">Jenkintown, PA</span></td>
+              <td class="aum-cell">$10B+</td><td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-buy">Family Office Platform</span></td>
+              <td class="dm-cell"><div class="dm-name">Andrew L. Busser</div><div class="dm-title">President &amp; CEO</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.google.com/search?q=Pitcairn+RIA" target="_blank">google.com ↗</a></td>
+              <td class="why-cell">Shared SFO model serving 120+ UHNW families; founded 1923; growth via SFO acquisitions.</td>
+            </tr>
+            <tr data-aum="over10" data-tier="tier1" data-side="buy" data-connected="no" data-week="2026-04-21">
+              <td class="firm-cell">RFG Advisory <span class="firm-loc">Birmingham, AL</span></td>
+              <td class="aum-cell">$20B AUA</td><td><span class="tag tag-tier1">Tier 1</span></td>
+              <td><span class="tag tag-buy">PE-Backed</span></td>
+              <td class="dm-cell"><div class="dm-name">Bobby White</div><div class="dm-title">Founder &amp; CEO</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.rfgadvisory.com" target="_blank">rfgadvisory.com ↗</a></td>
+              <td class="why-cell">First majority acquisition (RVA Wealth) Apr 2026; W-2 partner firm transition; ~80 advisors near retirement.</td>
+            </tr>
+            <tr data-aum="over10" data-tier="tier2" data-side="sell" data-connected="no" data-week="2026-05-01">
+              <td class="firm-cell">Soltis Investment Advisors <span class="firm-loc">Cedar City, UT</span></td>
+              <td class="aum-cell">$13B</td><td><span class="tag tag-tier1">Tier 1</span></td>
+              <td><span class="tag tag-sell">Strategic Crossroads</span></td>
+              <td class="dm-cell"><div class="dm-name">CEO</div><div class="dm-title">Estancia + LLR-backed</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.google.com/search?q=Soltis+Investment+Advisors+RIA" target="_blank">google.com ↗</a></td>
+              <td class="why-cell">Estancia + LLR majority June 2024; GDM Tax acquisition Apr 2026; rapid growth from $6.8B.</td>
+            </tr>
+            <tr data-aum="over10" data-tier="tier2" data-side="sell" data-connected="no" data-week="">
+              <td class="firm-cell">F.L.Putnam Investment Management <span class="firm-loc">Wellesley, MA</span></td>
+              <td class="aum-cell">$10B</td><td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-sell">Strategic Crossroads</span></td>
+              <td class="dm-cell"><div class="dm-name">CEO</div><div class="dm-title">Growth-stage</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.google.com/search?q=FL+Putnam+Investment+Management+RIA" target="_blank">google.com ↗</a></td>
+              <td class="why-cell">Multiple acquisitions including Arcadia (Michigan, Apr 2026); Northeast/Midwest expansion.</td>
+            </tr>
+            <tr data-aum="over10" data-tier="tier2" data-side="sell" data-connected="no" data-week="2026-04-21">
+              <td class="firm-cell">Brighton Jones <span class="firm-loc">Seattle, WA</span></td>
+              <td class="aum-cell">$10B+</td><td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-sell">Strategic Crossroads</span></td>
+              <td class="dm-cell"><div class="dm-name">Jon Jones</div><div class="dm-title">Founder &amp; Managing Principal</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.google.com/search?q=Brighton+Jones+RIA" target="_blank">google.com ↗</a></td>
+              <td class="why-cell">WA millionaire-tax pressure on clients; advisors among most visible voices on the issue Apr 2026.</td>
+            </tr>
+            <tr data-aum="over10" data-tier="tier2" data-side="sell" data-connected="no" data-week="">
+              <td class="firm-cell">Pathstone <span class="firm-loc">Englewood, NJ</span></td>
+              <td class="aum-cell">$50B+</td><td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-sell">Partnership Transition</span></td>
+              <td class="dm-cell"><div class="dm-name">CEO</div><div class="dm-title">Multi-tier partner equity</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.google.com/search?q=Pathstone+RIA" target="_blank">google.com ↗</a></td>
+              <td class="why-cell">Independent MFO; ongoing Federal Street Advisors integration; multiple partner tiers.</td>
+            </tr>
+            <tr data-aum="over10" data-tier="tier2" data-side="buy" data-connected="no" data-week="2026-02-17">
+              <td class="firm-cell">RWA Wealth Partners <span class="firm-loc">Newton, MA</span></td>
+              <td class="aum-cell">$18B</td><td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-buy">PE-Backed</span></td>
+              <td class="dm-cell"><div class="dm-name">Michelle Knight</div><div class="dm-title">CEO</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.google.com/search?q=RWA+Wealth+Partners+RIA" target="_blank">google.com ↗</a></td>
+              <td class="why-cell">One of largest woman-led RIAs; Boston, Chicago, San Francisco; active 2025 M&amp;A.</td>
+            </tr>
+            <tr data-aum="over10" data-tier="tier1" data-side="buy" data-connected="no" data-week="2026-04-21">
+              <td class="firm-cell">Diversified Trust <span class="firm-loc">Nashville, TN</span></td>
+              <td class="aum-cell">$10B</td><td><span class="tag tag-tier1">Tier 1</span></td>
+              <td><span class="tag tag-buy">PE-Backed</span></td>
+              <td class="dm-cell"><div class="dm-name">Brian Puckett (to be verified via current ADV)</div><div class="dm-title">Managing Principal / CEO</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.google.com/search?q=Diversified+Trust+RIA" target="_blank">google.com ↗</a></td>
+              <td class="why-cell">Buy-Side PE-Backed · Sourced April 21, 2026 · Decision-maker needs verification</td>
+            </tr>
+            <tr data-aum="over10" data-tier="tier1" data-side="buy" data-connected="no" data-week="2026-05-28">
+              <td class="firm-cell">Ferguson Wellman Capital Management <span class="firm-loc">Portland, Oregon</span></td>
+              <td class="aum-cell">$10B+</td><td><span class="tag tag-tier1">Tier 1</span></td>
+              <td><span class="tag tag-buy">Independent First-Time Acquirer</span></td>
+              <td class="dm-cell"><div class="dm-name">Ralph Cole</div><div class="dm-title">CEO</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.google.com/search?q=Ferguson+Wellman+Capital+Management+RIA" target="_blank">google.com ↗</a></td>
+              <td class="why-cell">Buy-Side, Independent First-Time Acquirer · Sourced May 28, 2026</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier2" data-side="sell" data-connected="no" data-week="2026-06-22">
+              <td class="firm-cell">Vista Capital Partners <span class="firm-loc">Portland, Oregon</span></td>
+              <td class="aum-cell">$1.5B+</td><td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-sell">Succession Candidate</span></td>
+              <td class="dm-cell"><div class="dm-name">Carl Carlson</div><div class="dm-title">Co-Founder and Principal (verification needed)</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.google.com/search?q=Vista+Capital+Partners+RIA" target="_blank">google.com ↗</a></td>
+              <td class="why-cell">Sell-Side Succession Candidate · Sourced June 22, 2026 · Decision-maker needs verification</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier2" data-side="buy" data-connected="no" data-week="2026-06-22">
+              <td class="firm-cell">Twin Harbors Private Wealth <span class="firm-loc">Melville, New York</span></td>
+              <td class="aum-cell">$1.4B</td><td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-buy">Emerging Acquirer</span></td>
+              <td class="dm-cell"><div class="dm-name">Founding Partners (verification needed via Form ADV)</div><div class="dm-title">Founding Partners</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.google.com/search?q=Twin+Harbors+Private+Wealth+RIA" target="_blank">google.com ↗</a></td>
+              <td class="why-cell">Buy-Side Emerging Acquirer · Sourced June 22, 2026 · Decision-maker needs verification</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier2" data-side="both" data-connected="no" data-week="2026-05-21">
+              <td class="firm-cell">OM Investments <span class="firm-loc">Houston, TX</span></td>
+              <td class="aum-cell">Very small</td><td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-tier2">Solo-advisor RIA</span></td>
+              <td class="dm-cell"><div class="dm-name">—</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.google.com/search?q=OM+Investments+RIA" target="_blank">google.com ↗</a></td>
+              <td class="why-cell">Solo-advisor RIA · Early relationship underway · Sourced May 21, 2026</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier2" data-side="sell" data-connected="no" data-week="2026-06-22">
+              <td class="firm-cell">Sullivan Bruyette Speros &amp; Blayney <span class="firm-loc">McLean, Virginia</span></td>
+              <td class="aum-cell">$4B</td><td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-sell">Succession Candidate</span></td>
+              <td class="dm-cell"><div class="dm-name">Greg Sullivan</div><div class="dm-title">President and Founder</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.google.com/search?q=Sullivan+Bruyette+Speros+%26+Blayney+RIA" target="_blank">google.com ↗</a></td>
+              <td class="why-cell">Sell-Side Succession Candidate · Sourced June 22, 2026</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier2" data-side="sell" data-connected="no" data-week="2026-05-28">
+              <td class="firm-cell">Wescott Financial Advisory Group <span class="firm-loc">Philadelphia, Pennsylvania</span></td>
+              <td class="aum-cell">$2.5B+</td><td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-sell">Succession Candidate</span></td>
+              <td class="dm-cell"><div class="dm-name">Grant Rawdin</div><div class="dm-title">Founder and CEO</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.google.com/search?q=Wescott+Financial+Advisory+Group+RIA" target="_blank">google.com ↗</a></td>
+              <td class="why-cell">Sell-Side Succession Candidate · Sourced May 28, 2026</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier2" data-side="sell" data-connected="no" data-week="2026-06-22">
+              <td class="firm-cell">The Joseph Group <span class="firm-loc">Worthington, Ohio</span></td>
+              <td class="aum-cell">$1.5B+</td><td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-sell">Succession Candidate</span></td>
+              <td class="dm-cell"><div class="dm-name">Matt Palmer</div><div class="dm-title">CEO and Co-Founder (verification needed)</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.google.com/search?q=The+Joseph+Group+RIA" target="_blank">google.com ↗</a></td>
+              <td class="why-cell">Sell-Side Succession Candidate · Sourced June 22, 2026 · Decision-maker needs verification</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier2" data-side="sell" data-connected="no" data-week="2026-05-01">
+              <td class="firm-cell">WMS Partners <span class="firm-loc">Towson, Maryland</span></td>
+              <td class="aum-cell">$5B+</td><td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-sell">Partnership Transition</span></td>
+              <td class="dm-cell"><div class="dm-name">Tim Chase</div><div class="dm-title">Managing Partner (verification needed)</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.google.com/search?q=WMS+Partners+RIA" target="_blank">google.com ↗</a></td>
+              <td class="why-cell">Sell-Side Partnership Transition · Sourced May 1, 2026 · Decision-maker needs verification</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier2" data-side="buy" data-connected="no" data-week="2026-06-22">
+              <td class="firm-cell">HBK Sorce Advisory <span class="firm-loc">Pittsburgh, Pennsylvania</span></td>
+              <td class="aum-cell">$2B+</td><td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-buy">Emerging Acquirer</span></td>
+              <td class="dm-cell"><div class="dm-name">Christopher M. Sorce</div><div class="dm-title">President and Founding Member</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.google.com/search?q=HBK+Sorce+Advisory+RIA" target="_blank">google.com ↗</a></td>
+              <td class="why-cell">Buy-Side Emerging Acquirer · Sourced June 22, 2026</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier2" data-side="buy" data-connected="no" data-week="2026-06-22">
+              <td class="firm-cell">Iron North Private Wealth <span class="firm-loc">Coeur d'Alene, Idaho</span></td>
+              <td class="aum-cell">$350M</td><td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-buy">Emerging Acquirer</span></td>
+              <td class="dm-cell"><div class="dm-name">Brad Desormeaux</div><div class="dm-title">CEO and Founder</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.google.com/search?q=Iron+North+Private+Wealth+RIA" target="_blank">google.com ↗</a></td>
+              <td class="why-cell">Buy-Side Emerging Acquirer · Sourced June 22, 2026</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier2" data-side="sell" data-connected="no" data-week="2026-06-22">
+              <td class="firm-cell">Sage Mountain Advisors <span class="firm-loc">Atlanta, Georgia</span></td>
+              <td class="aum-cell">$2.5B+</td><td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-sell">Succession Candidate</span></td>
+              <td class="dm-cell"><div class="dm-name">Greg Hoffman</div><div class="dm-title">CEO and Founder (verification needed)</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.google.com/search?q=Sage+Mountain+Advisors+RIA" target="_blank">google.com ↗</a></td>
+              <td class="why-cell">Sell-Side Succession Candidate · Sourced June 22, 2026 · Decision-maker needs verification</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier2" data-side="sell" data-connected="no" data-week="2026-05-28">
+              <td class="firm-cell">Mosaic Financial Partners <span class="firm-loc">San Francisco, California</span></td>
+              <td class="aum-cell">$3B+</td><td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-sell">Succession Candidate</span></td>
+              <td class="dm-cell"><div class="dm-name">Confirm CEO via ADV or firm website</div><div class="dm-title">CEO / Managing Partner</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.google.com/search?q=Mosaic+Financial+Partners+RIA" target="_blank">google.com ↗</a></td>
+              <td class="why-cell">Sell-Side Succession Candidate · Sourced May 28, 2026 · Decision-maker needs verification</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier2" data-side="sell" data-connected="no" data-week="2026-06-22">
+              <td class="firm-cell">Howe &amp; Rusling <span class="firm-loc">Rochester, New York</span></td>
+              <td class="aum-cell">$2B+</td><td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-sell">Succession Candidate</span></td>
+              <td class="dm-cell"><div class="dm-name">Daniel Burns</div><div class="dm-title">President and Principal (verification needed)</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.google.com/search?q=Howe+%26+Rusling+RIA" target="_blank">google.com ↗</a></td>
+              <td class="why-cell">Sell-Side Succession Candidate · Sourced June 22, 2026 · Decision-maker needs verification</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier1" data-side="buy" data-connected="no" data-week="2026-03-10">
+              <td class="firm-cell">Cyndeo Wealth Partners <span class="firm-loc">St. Petersburg, Florida</span></td>
+              <td class="aum-cell">$3.1B</td><td><span class="tag tag-tier1">Tier 1</span></td>
+              <td><span class="tag tag-buy">Emerging Acquirer</span></td>
+              <td class="dm-cell"><div class="dm-name">Matt Kilgroe</div><div class="dm-title">CEO and President</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.google.com/search?q=Cyndeo+Wealth+Partners+RIA" target="_blank">google.com ↗</a></td>
+              <td class="why-cell">Buy-Side Emerging Acquirer · Sourced March 10, 2026</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier2" data-side="sell" data-connected="no" data-week="2026-05-28">
+              <td class="firm-cell">Tanglewood Total Wealth Management <span class="firm-loc">Houston, Texas</span></td>
+              <td class="aum-cell">$1.68B</td><td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-sell">Succession Candidate</span></td>
+              <td class="dm-cell"><div class="dm-name">John Merrill</div><div class="dm-title">Founder and President</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.google.com/search?q=Tanglewood+Total+Wealth+Management+RIA" target="_blank">google.com ↗</a></td>
+              <td class="why-cell">Sell-Side Succession Candidate · Sourced May 28, 2026</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier2" data-side="sell" data-connected="no" data-week="2026-04-21">
+              <td class="firm-cell">Abacus Wealth Partners <span class="firm-loc">Los Angeles, CA</span></td>
+              <td class="aum-cell">$3B+</td><td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-sell">Succession</span></td>
+              <td class="dm-cell"><div class="dm-name">Neela Humsi</div><div class="dm-title">CEO</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.google.com/search?q=Abacus+Wealth+Partners+RIA" target="_blank">google.com ↗</a></td>
+              <td class="why-cell">Sell-Side Succession · Sourced April 21, 2026</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier2" data-side="sell" data-connected="no" data-week="2026-06-22">
+              <td class="firm-cell">TFC Financial Management <span class="firm-loc">Boston, Massachusetts</span></td>
+              <td class="aum-cell">$2B+</td><td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-sell">Succession Candidate</span></td>
+              <td class="dm-cell"><div class="dm-name">Daniel Kraninger</div><div class="dm-title">President and CEO (verification needed)</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.google.com/search?q=TFC+Financial+Management+RIA" target="_blank">google.com ↗</a></td>
+              <td class="why-cell">Sell-Side Succession Candidate · Sourced June 22, 2026 · Decision-maker needs verification</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier2" data-side="sell" data-connected="no" data-week="2026-06-22">
+              <td class="firm-cell">Brouwer &amp; Janachowski <span class="firm-loc">Tiburon, California</span></td>
+              <td class="aum-cell">$1.5B</td><td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-sell">Succession Candidate</span></td>
+              <td class="dm-cell"><div class="dm-name">Steve Janachowski</div><div class="dm-title">Co-Founder and CEO (verification needed)</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.google.com/search?q=Brouwer+%26+Janachowski+RIA" target="_blank">google.com ↗</a></td>
+              <td class="why-cell">Sell-Side Succession Candidate · Sourced June 22, 2026 · Decision-maker needs verification</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier2" data-side="sell" data-connected="no" data-week="2026-06-22">
+              <td class="firm-cell">Pinnacle Associates <span class="firm-loc">New York, New York</span></td>
+              <td class="aum-cell">$3B+</td><td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-sell">Succession Candidate</span></td>
+              <td class="dm-cell"><div class="dm-name">John Marshall</div><div class="dm-title">CEO and Managing Partner (verification needed)</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.google.com/search?q=Pinnacle+Associates+RIA" target="_blank">google.com ↗</a></td>
+              <td class="why-cell">Sell-Side Succession Candidate · Sourced June 22, 2026 · Decision-maker needs verification</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier2" data-side="sell" data-connected="no" data-week="2026-05-28">
+              <td class="firm-cell">Regent Atlantic Capital <span class="firm-loc">Parsippany, New Jersey</span></td>
+              <td class="aum-cell">$5B+</td><td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-sell">Succession Candidate</span></td>
+              <td class="dm-cell"><div class="dm-name">Chris Cordaro</div><div class="dm-title">CEO and Chief Investment Officer</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.google.com/search?q=Regent+Atlantic+Capital+RIA" target="_blank">google.com ↗</a></td>
+              <td class="why-cell">Sell-Side Succession Candidate · Sourced May 28, 2026</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier1" data-side="buy" data-connected="no" data-week="2026-06-22">
+              <td class="firm-cell">Kintra Wealth <span class="firm-loc">Williamsport, Pennsylvania</span></td>
+              <td class="aum-cell">$4B</td><td><span class="tag tag-tier1">Tier 1</span></td>
+              <td><span class="tag tag-buy">Emerging Acquirer</span></td>
+              <td class="dm-cell"><div class="dm-name">Andy Harris</div><div class="dm-title">CEO and Co-Founder</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.google.com/search?q=Kintra+Wealth+RIA" target="_blank">google.com ↗</a></td>
+              <td class="why-cell">Buy-Side Emerging Acquirer · Sourced June 22, 2026</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier2" data-side="sell" data-connected="no" data-week="2026-05-01">
+              <td class="firm-cell">Plancorp <span class="firm-loc">St. Louis, Missouri</span></td>
+              <td class="aum-cell">$7B+</td><td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-sell">Succession Candidate</span></td>
+              <td class="dm-cell"><div class="dm-name">Chris Kerckhoff</div><div class="dm-title">President and CEO</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.google.com/search?q=Plancorp+RIA" target="_blank">google.com ↗</a></td>
+              <td class="why-cell">Sell-Side Succession Candidate · Sourced May 1, 2026</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier2" data-side="sell" data-connected="no" data-week="2026-04-21">
+              <td class="firm-cell">Waldron Private Wealth <span class="firm-loc">Pittsburgh, PA</span></td>
+              <td class="aum-cell">$3.5B+</td><td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-sell">Succession</span></td>
+              <td class="dm-cell"><div class="dm-name">Andrew Millard (to be verified via current ADV)</div><div class="dm-title">Founder / Managing Principal</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.google.com/search?q=Waldron+Private+Wealth+RIA" target="_blank">google.com ↗</a></td>
+              <td class="why-cell">Sell-Side Succession · Sourced April 21, 2026 · Decision-maker needs verification</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier2" data-side="sell" data-connected="no" data-week="2026-05-28">
+              <td class="firm-cell">Ancora Advisors <span class="firm-loc">Cleveland, Ohio</span></td>
+              <td class="aum-cell">$7B+</td><td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-sell">Strategic Crossroads</span></td>
+              <td class="dm-cell"><div class="dm-name">Frederick DiSanto</div><div class="dm-title">Chairman and CEO</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.google.com/search?q=Ancora+Advisors+RIA" target="_blank">google.com ↗</a></td>
+              <td class="why-cell">Sell-Side / Strategic Crossroads · Sourced May 28, 2026</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier2" data-side="sell" data-connected="no" data-week="2026-06-22">
+              <td class="firm-cell">Capital Investment Counsel <span class="firm-loc">Raleigh, North Carolina</span></td>
+              <td class="aum-cell">$4B</td><td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-sell">Succession Candidate</span></td>
+              <td class="dm-cell"><div class="dm-name">Richard Bryant</div><div class="dm-title">CEO and Founder (verification needed)</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.google.com/search?q=Capital+Investment+Counsel+RIA" target="_blank">google.com ↗</a></td>
+              <td class="why-cell">Sell-Side Succession Candidate · Sourced June 22, 2026 · Decision-maker needs verification</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier2" data-side="sell" data-connected="no" data-week="2026-05-28">
+              <td class="firm-cell">Loring, Wolcott &amp; Coolidge <span class="firm-loc">Boston, Massachusetts</span></td>
+              <td class="aum-cell">$6B+</td><td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-sell">Partnership Transition</span></td>
+              <td class="dm-cell"><div class="dm-name">Confirm Managing Partner via firm website or ADV</div><div class="dm-title">Managing Partner / CEO</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.google.com/search?q=Loring%2C+Wolcott+%26+Coolidge+RIA" target="_blank">google.com ↗</a></td>
+              <td class="why-cell">Sell-Side / Partnership Transition · Sourced May 28, 2026 · Decision-maker needs verification</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier2" data-side="sell" data-connected="no" data-week="2026-06-22">
+              <td class="firm-cell">Tobias Financial Advisors <span class="firm-loc">Plantation, Florida</span></td>
+              <td class="aum-cell">$1B+</td><td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-sell">Succession Candidate</span></td>
+              <td class="dm-cell"><div class="dm-name">Benjamin Tobias</div><div class="dm-title">Founder and President</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.google.com/search?q=Tobias+Financial+Advisors+RIA" target="_blank">google.com ↗</a></td>
+              <td class="why-cell">Sell-Side Succession Candidate · Sourced June 22, 2026</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier2" data-side="sell" data-connected="no" data-week="2026-03-10">
+              <td class="firm-cell">Perigon Wealth Management <span class="firm-loc">San Francisco, California</span></td>
+              <td class="aum-cell">$3B-$5B</td><td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-sell">Partnership Transition</span></td>
+              <td class="dm-cell"><div class="dm-name">—</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.google.com/search?q=Perigon+Wealth+Management+RIA" target="_blank">google.com ↗</a></td>
+              <td class="why-cell">Sell-Side Partnership Transition · Sourced March 10, 2026</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier3" data-side="sell" data-connected="no" data-week="2026-05-28">
+              <td class="firm-cell">Verity Asset Management <span class="firm-loc">Marietta, Georgia</span></td>
+              <td class="aum-cell">$1.5B</td><td><span class="tag tag-tier2">Tier 3</span></td>
+              <td><span class="tag tag-sell">Succession Candidate</span></td>
+              <td class="dm-cell"><div class="dm-name">Confirm via ADV</div><div class="dm-title"></div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.google.com/search?q=Verity+Asset+Management+RIA" target="_blank">google.com ↗</a></td>
+              <td class="why-cell">Sell-Side Succession Candidate · Sourced May 28, 2026 · Decision-maker needs verification</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier2" data-side="sell" data-connected="no" data-week="2026-06-22">
+              <td class="firm-cell">Round Table Wealth Management <span class="firm-loc">Westfield, New Jersey</span></td>
+              <td class="aum-cell">$1B+</td><td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-sell">Succession Candidate</span></td>
+              <td class="dm-cell"><div class="dm-name">Robert Hagins</div><div class="dm-title">CEO and Founder (verification needed)</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.google.com/search?q=Round+Table+Wealth+Management+RIA" target="_blank">google.com ↗</a></td>
+              <td class="why-cell">Sell-Side Succession Candidate · Sourced June 22, 2026 · Decision-maker needs verification</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier2" data-side="buy" data-connected="yes" data-week="2026-03-10">
+              <td class="firm-cell">OnePointBFG Wealth Partners <span class="firm-loc">New Jersey</span></td>
+              <td class="aum-cell">$2B-$4B</td><td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-buy">Emerging Acquirer</span></td>
+              <td class="dm-cell"><div class="dm-name">Jayce Nall</div><div class="dm-title">Director of Artificial Intelligence</div></td>
+              <td><span class="tag tag-conn">Connected</span></td>
+              <td><a class="site-link" href="https://www.google.com/search?q=OnePointBFG+Wealth+Partners+RIA" target="_blank">google.com ↗</a></td>
+              <td class="why-cell">Buy-Side Emerging Acquirer · Sourced March 10, 2026</td>
+            </tr>
+            <tr data-aum="over10" data-tier="tier1" data-side="buy" data-connected="no" data-week="2026-05-28">
+              <td class="firm-cell">Aspiriant <span class="firm-loc">Los Angeles, California</span></td>
+              <td class="aum-cell">$17B+</td><td><span class="tag tag-tier1">Tier 1</span></td>
+              <td><span class="tag tag-buy">100% Employee-Owned</span></td>
+              <td class="dm-cell"><div class="dm-name">Rob Francais</div><div class="dm-title">Co-Founder and CEO</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.google.com/search?q=Aspiriant+RIA" target="_blank">google.com ↗</a></td>
+              <td class="why-cell">Buy-Side, 100% Employee-Owned · Sourced May 28, 2026</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier2" data-side="sell" data-connected="yes" data-week="2026-03-10">
+              <td class="firm-cell">AlphaCore Wealth Advisory <span class="firm-loc">San Juan Capistrano, California</span></td>
+              <td class="aum-cell">~$6.5B</td><td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-sell">Succession Candidate</span></td>
+              <td class="dm-cell"><div class="dm-name">Trevor Callan</div><div class="dm-title">Managing Partner</div></td>
+              <td><span class="tag tag-conn">Connected</span></td>
+              <td><a class="site-link" href="https://www.google.com/search?q=AlphaCore+Wealth+Advisory+RIA" target="_blank">google.com ↗</a></td>
+              <td class="why-cell">Sell-Side Succession Candidate · Sourced March 10, 2026</td>
+            </tr>
+            <tr data-aum="over10" data-tier="tier1" data-side="buy" data-connected="no" data-week="2026-05-28">
+              <td class="firm-cell">Johnson Investment Counsel <span class="firm-loc">Cincinnati, Ohio</span></td>
+              <td class="aum-cell">$13B+</td><td><span class="tag tag-tier1">Tier 1</span></td>
+              <td><span class="tag tag-buy">Employee-Owned Since 1965</span></td>
+              <td class="dm-cell"><div class="dm-name">Jason Jackman, CFA</div><div class="dm-title">CEO</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.google.com/search?q=Johnson+Investment+Counsel+RIA" target="_blank">google.com ↗</a></td>
+              <td class="why-cell">Buy-Side, Employee-Owned Since 1965 · Sourced May 28, 2026</td>
+            </tr>
+            <tr data-aum="over10" data-tier="tier2" data-side="buy" data-connected="no" data-week="2026-05-28">
+              <td class="firm-cell">Plante Moran Financial Advisors <span class="firm-loc">Southfield, Michigan</span></td>
+              <td class="aum-cell">$25B</td><td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-buy">Cultivation</span></td>
+              <td class="dm-cell"><div class="dm-name">Confirm Managing Director of PMFA via ADV or website</div><div class="dm-title">Managing Director, PMFA</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.google.com/search?q=Plante+Moran+Financial+Advisors+RIA" target="_blank">google.com ↗</a></td>
+              <td class="why-cell">Buy-Side / Cultivation · Sourced May 28, 2026 · Decision-maker needs verification</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier2" data-side="sell" data-connected="no" data-week="2026-05-28">
+              <td class="firm-cell">Covenant Wealth Advisors <span class="firm-loc">Richmond, Virginia</span></td>
+              <td class="aum-cell">$2B+</td><td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-sell">Succession Candidate</span></td>
+              <td class="dm-cell"><div class="dm-name">Confirm CEO and founding partners via ADV or firm website</div><div class="dm-title">CEO / Founding Partner</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.google.com/search?q=Covenant+Wealth+Advisors+RIA" target="_blank">google.com ↗</a></td>
+              <td class="why-cell">Sell-Side Succession Candidate · Sourced May 28, 2026 · Decision-maker needs verification</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier2" data-side="sell" data-connected="no" data-week="2026-06-22">
+              <td class="firm-cell">Strategic Wealth Partners <span class="firm-loc">Cleveland, Ohio</span></td>
+              <td class="aum-cell">$3B+</td><td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-sell">Succession Candidate</span></td>
+              <td class="dm-cell"><div class="dm-name">Tim Chase</div><div class="dm-title">CEO and Founder (verification needed)</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.google.com/search?q=Strategic+Wealth+Partners+RIA" target="_blank">google.com ↗</a></td>
+              <td class="why-cell">Sell-Side Succession Candidate · Sourced June 22, 2026 · Decision-maker needs verification</td>
+            </tr>
+            <tr data-aum="over10" data-tier="tier2" data-side="sell" data-connected="no" data-week="2026-05-28">
+              <td class="firm-cell">Tiedemann Advisors <span class="firm-loc">New York, New York</span></td>
+              <td class="aum-cell">$24B</td><td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-sell">Strategic Transaction</span></td>
+              <td class="dm-cell"><div class="dm-name">Craig Smith</div><div class="dm-title">CEO</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.google.com/search?q=Tiedemann+Advisors+RIA" target="_blank">google.com ↗</a></td>
+              <td class="why-cell">Sell-Side / Strategic Transaction · Sourced May 28, 2026</td>
+            </tr>
+            <tr data-aum="over10" data-tier="tier2" data-side="both" data-connected="no" data-week="2026-05-28">
+              <td class="firm-cell">Greenspring Advisors <span class="firm-loc">Towson, Maryland</span></td>
+              <td class="aum-cell">$10B</td><td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-tier2">Partnership Transition / Equity Structuring</span></td>
+              <td class="dm-cell"><div class="dm-name">Pat Collins</div><div class="dm-title">Co-Founder</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.google.com/search?q=Greenspring+Advisors+RIA" target="_blank">google.com ↗</a></td>
+              <td class="why-cell">Partnership Transition / Equity Structuring · Sourced May 28, 2026</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier2" data-side="sell" data-connected="no" data-week="2026-03-10">
+              <td class="firm-cell">Signature Wealth Partners <span class="firm-loc">Southeast U.S.</span></td>
+              <td class="aum-cell">$1B-$2B</td><td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-sell">Succession Candidate</span></td>
+              <td class="dm-cell"><div class="dm-name">Todd Bryant</div><div class="dm-title">Founding Partner</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.google.com/search?q=Signature+Wealth+Partners+RIA" target="_blank">google.com ↗</a></td>
+              <td class="why-cell">Sell-Side Succession Candidate · Sourced March 10, 2026</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier2" data-side="buy" data-connected="no" data-week="2026-03-10">
+              <td class="firm-cell">Angeles Wealth Management <span class="firm-loc">Los Angeles, California</span></td>
+              <td class="aum-cell">$1B-$2B</td><td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-buy">Emerging Acquirer</span></td>
+              <td class="dm-cell"><div class="dm-name">Adam Stern</div><div class="dm-title">CEO, Angeles Family Office</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.google.com/search?q=Angeles+Wealth+Management+RIA" target="_blank">google.com ↗</a></td>
+              <td class="why-cell">Buy-Side Emerging Acquirer · Sourced March 10, 2026</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier1" data-side="buy" data-connected="no" data-week="2026-04-21">
+              <td class="firm-cell">Homrich Berg <span class="firm-loc">Atlanta, GA</span></td>
+              <td class="aum-cell">$7B</td><td><span class="tag tag-tier1">Tier 1</span></td>
+              <td><span class="tag tag-buy">Serial Acquirer</span></td>
+              <td class="dm-cell"><div class="dm-name">H. Pepper Braswell</div><div class="dm-title">CEO</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.google.com/search?q=Homrich+Berg+RIA" target="_blank">google.com ↗</a></td>
+              <td class="why-cell">Buy-Side Serial Acquirer · Sourced April 21, 2026</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier2" data-side="sell" data-connected="no" data-week="2026-03-10">
+              <td class="firm-cell">Avior Wealth Management <span class="firm-loc">South Florida</span></td>
+              <td class="aum-cell">$1B-$3B</td><td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-sell">Strategic Crossroads</span></td>
+              <td class="dm-cell"><div class="dm-name">—</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.google.com/search?q=Avior+Wealth+Management+RIA" target="_blank">google.com ↗</a></td>
+              <td class="why-cell">Sell-Side Strategic Crossroads · Sourced March 10, 2026</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier2" data-side="sell" data-connected="no" data-week="2026-06-22">
+              <td class="firm-cell">Compound Planning</td>
+              <td class="aum-cell">$1B+</td><td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-sell">Partnership Transition</span></td>
+              <td class="dm-cell"><div class="dm-name">Christian Haigh</div><div class="dm-title">CEO and Co-Founder</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.google.com/search?q=Compound+Planning+RIA" target="_blank">google.com ↗</a></td>
+              <td class="why-cell">Sell-Side Partnership Transition · Sourced June 22, 2026</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier2" data-side="sell" data-connected="no" data-week="2026-04-21">
+              <td class="firm-cell">Ritholtz Wealth Management <span class="firm-loc">New York, NY</span></td>
+              <td class="aum-cell">$6B+</td><td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-sell">Partnership Transition</span></td>
+              <td class="dm-cell"><div class="dm-name">Josh Brown</div><div class="dm-title">CEO</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.google.com/search?q=Ritholtz+Wealth+Management+RIA" target="_blank">google.com ↗</a></td>
+              <td class="why-cell">Sell-Side Partnership Transition · Sourced April 21, 2026</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier2" data-side="sell" data-connected="no" data-week="2026-04-21">
+              <td class="firm-cell">Brownson, Rehmus &amp; Foxworth <span class="firm-loc">Chicago, IL</span></td>
+              <td class="aum-cell">$7B</td><td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-sell">Partnership Transition</span></td>
+              <td class="dm-cell"><div class="dm-name">Jonathan Brownson (to be verified via current ADV)</div><div class="dm-title"></div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.google.com/search?q=Brownson%2C+Rehmus+%26+Foxworth+RIA" target="_blank">google.com ↗</a></td>
+              <td class="why-cell">Sell-Side Partnership Transition · Sourced April 21, 2026 · Decision-maker needs verification</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier2" data-side="sell" data-connected="no" data-week="2026-03-10">
+              <td class="firm-cell">CV Advisors <span class="firm-loc">Miami, Florida</span></td>
+              <td class="aum-cell">$3B-$5B</td><td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-sell">Partnership Transition</span></td>
+              <td class="dm-cell"><div class="dm-name">—</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.google.com/search?q=CV+Advisors+RIA" target="_blank">google.com ↗</a></td>
+              <td class="why-cell">Sell-Side Partnership Transition · Sourced March 10, 2026</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier2" data-side="sell" data-connected="no" data-week="2026-05-28">
+              <td class="firm-cell">Brightworth <span class="firm-loc">Atlanta, Georgia</span></td>
+              <td class="aum-cell">$3.5B</td><td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-sell">Succession Candidate</span></td>
+              <td class="dm-cell"><div class="dm-name">Confirm CEO and founding partners via ADV or firm website</div><div class="dm-title">CEO / Managing Partner</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.google.com/search?q=Brightworth+RIA" target="_blank">google.com ↗</a></td>
+              <td class="why-cell">Sell-Side Succession Candidate · Sourced May 28, 2026 · Decision-maker needs verification</td>
+            </tr>
+            <tr data-aum="over10" data-tier="tier2" data-side="sell" data-connected="no" data-week="2026-05-01">
+              <td class="firm-cell">Tolleson Wealth Management <span class="firm-loc">Dallas, Texas</span></td>
+              <td class="aum-cell">$10B+</td><td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-sell">Succession Candidate</span></td>
+              <td class="dm-cell"><div class="dm-name">Carter Tolleson</div><div class="dm-title">President</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.google.com/search?q=Tolleson+Wealth+Management+RIA" target="_blank">google.com ↗</a></td>
+              <td class="why-cell">Sell-Side Succession Candidate · Sourced May 1, 2026</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier2" data-side="sell" data-connected="no" data-week="2026-05-28">
+              <td class="firm-cell">Moisand Fitzgerald Tamayo <span class="firm-loc">Orlando, Florida</span></td>
+              <td class="aum-cell">$2B+</td><td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-sell">Succession Candidate</span></td>
+              <td class="dm-cell"><div class="dm-name">Confirm CEO/senior partner via ADV</div><div class="dm-title">CEO / Senior Partner</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.google.com/search?q=Moisand+Fitzgerald+Tamayo+RIA" target="_blank">google.com ↗</a></td>
+              <td class="why-cell">Sell-Side Succession Candidate · Sourced May 28, 2026 · Decision-maker needs verification</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier2" data-side="sell" data-connected="no" data-week="2026-03-10">
+              <td class="firm-cell">BFG Financial Advisors <span class="firm-loc">Timonium, Maryland</span></td>
+              <td class="aum-cell">~$1B</td><td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-sell">Succession Candidate</span></td>
+              <td class="dm-cell"><div class="dm-name">Lena Nebel</div><div class="dm-title">CEO</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.google.com/search?q=BFG+Financial+Advisors+RIA" target="_blank">google.com ↗</a></td>
+              <td class="why-cell">Sell-Side Succession Candidate · Sourced March 10, 2026</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier3" data-side="buy" data-connected="no" data-week="2026-05-28">
+              <td class="firm-cell">Strathmore Capital Advisors <span class="firm-loc">Charlotte, North Carolina</span></td>
+              <td class="aum-cell">~$750M</td><td><span class="tag tag-tier2">Tier 3</span></td>
+              <td><span class="tag tag-buy">Employee-Owned Acquirer</span></td>
+              <td class="dm-cell"><div class="dm-name">John Charles Kernodle</div><div class="dm-title">President and Founder</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.google.com/search?q=Strathmore+Capital+Advisors+RIA" target="_blank">google.com ↗</a></td>
+              <td class="why-cell">Buy-Side, Employee-Owned Acquirer · Sourced May 28, 2026</td>
+            </tr>
+            <tr data-aum="over10" data-tier="tier1" data-side="sell" data-connected="yes" data-week="2026-05-28">
+              <td class="firm-cell">Freestone Capital Management <span class="firm-loc">Seattle, Washington</span></td>
+              <td class="aum-cell">$13B</td><td><span class="tag tag-tier1">Tier 1</span></td>
+              <td><span class="tag tag-sell">Active Minority Stake Process</span></td>
+              <td class="dm-cell"><div class="dm-name">Gary Furukawa</div><div class="dm-title">Founder, Senior Partner, and CIO</div></td>
+              <td><span class="tag tag-conn">Connected</span></td>
+              <td><a class="site-link" href="https://www.google.com/search?q=Freestone+Capital+Management+RIA" target="_blank">google.com ↗</a></td>
+              <td class="why-cell">Sell-Side, Active Minority Stake Process · Sourced May 28, 2026</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier2" data-side="both" data-connected="no" data-week="2026-05-21">
+              <td class="firm-cell">WestPoint Wealth <span class="firm-loc">Ohio (four offices)</span></td>
+              <td class="aum-cell">Small, undisclosed</td><td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-tier2">Independent RIA</span></td>
+              <td class="dm-cell"><div class="dm-name">—</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.google.com/search?q=WestPoint+Wealth+RIA" target="_blank">google.com ↗</a></td>
+              <td class="why-cell">Independent RIA · Early relationship underway · Sourced May 21, 2026</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier2" data-side="buy" data-connected="no" data-week="2026-05-01">
+              <td class="firm-cell">Modera Wealth Management <span class="firm-loc">Westwood, New Jersey</span></td>
+              <td class="aum-cell">$9B+</td><td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-buy">Serial Acquirer</span></td>
+              <td class="dm-cell"><div class="dm-name">Tom Orecchio</div><div class="dm-title">Principal and Co-Founder</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.google.com/search?q=Modera+Wealth+Management+RIA" target="_blank">google.com ↗</a></td>
+              <td class="why-cell">Buy-Side Serial Acquirer · Sourced May 1, 2026</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier1" data-side="buy" data-connected="no" data-week="2026-06-22">
+              <td class="firm-cell">Beacon Coast Partners <span class="firm-loc">San Francisco, California</span></td>
+              <td class="aum-cell">$3.5B</td><td><span class="tag tag-tier1">Tier 1</span></td>
+              <td><span class="tag tag-buy">Emerging Acquirer</span></td>
+              <td class="dm-cell"><div class="dm-name">Michael Evans</div><div class="dm-title">Founding Managing Partner</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.google.com/search?q=Beacon+Coast+Partners+RIA" target="_blank">google.com ↗</a></td>
+              <td class="why-cell">Buy-Side Emerging Acquirer · Sourced June 22, 2026</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier2" data-side="sell" data-connected="no" data-week="2026-05-28">
+              <td class="firm-cell">Massey Quick Simon <span class="firm-loc">Morristown, New Jersey</span></td>
+              <td class="aum-cell">$5B+</td><td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-sell">Partnership</span></td>
+              <td class="dm-cell"><div class="dm-name">Confirm CEO via ADV or firm website</div><div class="dm-title">CEO / Managing Partner</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.google.com/search?q=Massey+Quick+Simon+RIA" target="_blank">google.com ↗</a></td>
+              <td class="why-cell">Sell-Side / Partnership · Sourced May 28, 2026 · Decision-maker needs verification</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier2" data-side="sell" data-connected="no" data-week="2026-06-22">
+              <td class="firm-cell">Hemington Wealth Management <span class="firm-loc">Falls Church, Virginia</span></td>
+              <td class="aum-cell">$1B+</td><td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-sell">Succession Candidate</span></td>
+              <td class="dm-cell"><div class="dm-name">Eileen O'Connor</div><div class="dm-title">Founder and CEO</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.google.com/search?q=Hemington+Wealth+Management+RIA" target="_blank">google.com ↗</a></td>
+              <td class="why-cell">Sell-Side Succession Candidate · Sourced June 22, 2026</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier3" data-side="sell" data-connected="no" data-week="2026-05-28">
+              <td class="firm-cell">Homburg Peroff <span class="firm-loc">Dallas, Texas</span></td>
+              <td class="aum-cell">$2B</td><td><span class="tag tag-tier2">Tier 3</span></td>
+              <td><span class="tag tag-sell">Cultivation</span></td>
+              <td class="dm-cell"><div class="dm-name">Confirm via ADV</div><div class="dm-title"></div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.google.com/search?q=Homburg+Peroff+RIA" target="_blank">google.com ↗</a></td>
+              <td class="why-cell">Sell-Side / Cultivation · Sourced May 28, 2026 · Decision-maker needs verification</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier2" data-side="sell" data-connected="no" data-week="2026-03-10">
+              <td class="firm-cell">Verdence Capital Advisors <span class="firm-loc">Hunt Valley, Maryland</span></td>
+              <td class="aum-cell">Estimated $2B-$4B</td><td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-sell">Partnership Transition</span></td>
+              <td class="dm-cell"><div class="dm-name">—</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.google.com/search?q=Verdence+Capital+Advisors+RIA" target="_blank">google.com ↗</a></td>
+              <td class="why-cell">Sell-Side Partnership Transition · Sourced March 10, 2026</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier2" data-side="both" data-connected="no" data-week="2026-05-21">
+              <td class="firm-cell">True Alpha Wealth <span class="firm-loc">Northern Ohio</span></td>
+              <td class="aum-cell">About $500M</td><td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-tier2">RIA practice (Kestra platform)</span></td>
+              <td class="dm-cell"><div class="dm-name">Tyler McKean</div><div class="dm-title">Certified Exit Planning Advisor (CEPA)</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.google.com/search?q=True+Alpha+Wealth+RIA" target="_blank">google.com ↗</a></td>
+              <td class="why-cell">RIA practice (Kestra platform) · PE: Kestra (platform, not equity PE backer) · Early relationship underway · Sourced May 21, 2026</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier2" data-side="sell" data-connected="no" data-week="2026-05-01">
+              <td class="firm-cell">Bingham, Osborn &amp; Scarborough <span class="firm-loc">San Francisco, California</span></td>
+              <td class="aum-cell">$6B+</td><td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-sell">Succession Candidate</span></td>
+              <td class="dm-cell"><div class="dm-name">Russ Wermers</div><div class="dm-title">Managing Partner (verification needed)</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.google.com/search?q=Bingham%2C+Osborn+%26+Scarborough+RIA" target="_blank">google.com ↗</a></td>
+              <td class="why-cell">Sell-Side Succession Candidate · Sourced May 1, 2026 · Decision-maker needs verification</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier2" data-side="sell" data-connected="no" data-week="2026-06-22">
+              <td class="firm-cell">Manchester Capital Management <span class="firm-loc">Manchester, Vermont</span></td>
+              <td class="aum-cell">$3B+</td><td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-sell">Partnership Transition</span></td>
+              <td class="dm-cell"><div class="dm-name">Ted Cronin</div><div class="dm-title">Founder and CEO</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.google.com/search?q=Manchester+Capital+Management+RIA" target="_blank">google.com ↗</a></td>
+              <td class="why-cell">Sell-Side Partnership Transition · Sourced June 22, 2026</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier2" data-side="sell" data-connected="no" data-week="2026-05-28">
+              <td class="firm-cell">Financial Synergies Wealth Advisors <span class="firm-loc">Houston, Texas</span></td>
+              <td class="aum-cell">$1.6B</td><td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-sell">Succession — Internal Transition</span></td>
+              <td class="dm-cell"><div class="dm-name">James Dowd</div><div class="dm-title">Founder / Senior Partner</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.google.com/search?q=Financial+Synergies+Wealth+Advisors+RIA" target="_blank">google.com ↗</a></td>
+              <td class="why-cell">Sell-Side Succession — Internal Transition · Sourced May 28, 2026</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier2" data-side="buy" data-connected="no" data-week="2026-04-21">
+              <td class="firm-cell">Snowden Lane Partners <span class="firm-loc">New York, NY</span></td>
+              <td class="aum-cell">$9B+</td><td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-buy">Serial Acquirer</span></td>
+              <td class="dm-cell"><div class="dm-name">Rob Mooney</div><div class="dm-title">Managing Partner and CEO</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.google.com/search?q=Snowden+Lane+Partners+RIA" target="_blank">google.com ↗</a></td>
+              <td class="why-cell">Buy-Side Serial Acquirer · Sourced April 21, 2026</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier2" data-side="buy" data-connected="no" data-week="2026-06-22">
+              <td class="firm-cell">Karpus Investment Management <span class="firm-loc">Pittsford, New York</span></td>
+              <td class="aum-cell">$3.5B</td><td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-buy">Emerging Acquirer</span></td>
+              <td class="dm-cell"><div class="dm-name">George W. Karpus</div><div class="dm-title">Founder and Chairman</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.google.com/search?q=Karpus+Investment+Management+RIA" target="_blank">google.com ↗</a></td>
+              <td class="why-cell">Buy-Side Emerging Acquirer · Sourced June 22, 2026</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier2" data-side="sell" data-connected="no" data-week="2026-06-22">
+              <td class="firm-cell">Wealthcare Capital Management <span class="firm-loc">Richmond, Virginia</span></td>
+              <td class="aum-cell">$2B+</td><td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-sell">Partnership Transition</span></td>
+              <td class="dm-cell"><div class="dm-name">David Loeper</div><div class="dm-title">CEO and Founder</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.google.com/search?q=Wealthcare+Capital+Management+RIA" target="_blank">google.com ↗</a></td>
+              <td class="why-cell">Sell-Side Partnership Transition · Sourced June 22, 2026</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier2" data-side="sell" data-connected="no" data-week="2026-05-28">
+              <td class="firm-cell">Accredited Investors Wealth Management <span class="firm-loc">Edina, Minnesota</span></td>
+              <td class="aum-cell">$1.5B</td><td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-sell">Succession Candidate</span></td>
+              <td class="dm-cell"><div class="dm-name">Ross Levin</div><div class="dm-title">Founding Principal and CEO</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.google.com/search?q=Accredited+Investors+Wealth+Management+RIA" target="_blank">google.com ↗</a></td>
+              <td class="why-cell">Sell-Side Succession Candidate · Sourced May 28, 2026</td>
+            </tr>
+            <tr data-aum="under10" data-tier="tier2" data-side="buy" data-connected="no" data-week="2026-05-28">
+              <td class="firm-cell">Parcion Private Wealth <span class="firm-loc">Bellevue, Washington</span></td>
+              <td class="aum-cell">$2.5B</td><td><span class="tag tag-tier2">Tier 2</span></td>
+              <td><span class="tag tag-buy">Cultivation — / Referral Pipeline</span></td>
+              <td class="dm-cell"><div class="dm-name">Terry Cook, CFP, CIMA</div><div class="dm-title">CEO, Founder, and Managing Principal</div></td>
+              <td>—</td>
+              <td><a class="site-link" href="https://www.google.com/search?q=Parcion+Private+Wealth+RIA" target="_blank">google.com ↗</a></td>
+              <td class="why-cell">Cultivation — Buy-Side / Referral Pipeline · Sourced May 28, 2026</td>
+            </tr>
+</tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+ 
+  <footer>
+    <div class="shell">
+      <div class="footer-bottom"><span>© Kupfer.</span><span>Internal · Privileged</span></div>
+    </div>
+    <a class="firm-site-link" href="https://novarecapital.com" target="_blank">novarecapital.com ↗</a>
+    <a class="firm-site-link" href="https://compositionwealth.com" target="_blank">compositionwealth.com ↗</a>
+    <a class="firm-site-link" href="https://www.rfgadvisory.com" target="_blank">www.rfgadvisory.com ↗</a>
+    <a class="firm-site-link" href="https://www.summitwealthgroup.com" target="_blank">www.summitwealthgroup.com ↗</a>
+    <a class="firm-site-link" href="https://www.balentine.com" target="_blank">www.balentine.com ↗</a>
+    <a class="firm-site-link" href="https://credentwealth.com" target="_blank">credentwealth.com ↗</a>
+  </footer>
+ 
+<script>
+ 
+(function(){
+    var PASS = 'KUPFER';
+    var KEY = 'kupfer.auth';
+    var gate = document.getElementById('pwGate');
+    var form = document.getElementById('pwForm');
+    var inp = document.getElementById('pwInput');
+    if (sessionStorage.getItem(KEY) === '1') { gate.classList.add('is-hidden'); }
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      if (inp.value.trim().toUpperCase() === PASS) {
+        sessionStorage.setItem(KEY, '1');
+        gate.classList.add('is-hidden');
+      } else {
+        inp.classList.add('pw-error');
+        inp.value = '';
+        setTimeout(function(){ inp.classList.remove('pw-error'); }, 400);
+      }
+    });
+  })();
+ 
+  const tableRows = document.querySelectorAll('#dbTable tbody tr');
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const searchInput = document.getElementById('search');
+  let activeFilter = 'all';
+ 
+  function applyFilters() {
+    const term = (searchInput.value || '').toLowerCase().trim();
+    tableRows.forEach(row => {
+      let show = true;
+      if (activeFilter === 'connected') show = row.dataset.connected === 'yes';
+      else if (activeFilter === 'tier1') show = row.dataset.tier === 'tier1';
+      else if (activeFilter === 'buy') show = row.dataset.side === 'buy';
+      else if (activeFilter === 'sell') show = row.dataset.side === 'sell';
+      else if (activeFilter === 'under10') show = row.dataset.aum === 'under10';
+      else if (activeFilter === 'over10') show = row.dataset.aum === 'over10';
+      if (show && term) show = row.textContent.toLowerCase().includes(term);
+      row.style.display = show ? '' : 'none';
+    });
+  }
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      activeFilter = btn.dataset.filter;
+      applyFilters();
+    });
+  });
+  searchInput.addEventListener('input', applyFilters);
+
+</script>
+ 
+</body>
+</html>
