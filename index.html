@@ -314,6 +314,22 @@
   .firm-site-link:hover { background: var(--oxblood); color: var(--bone); text-decoration: none; }
   .firm-trigger { margin-top: 24px; padding-top: 22px; border-top: 1px solid var(--rule); font-family: 'Futura', 'Futura PT', 'Jost', sans-serif; font-weight: 400; font-size: 15px; line-height: 1.55; color: var(--ink-soft); letter-spacing: -0.003em; }
   .firm-trigger b { color: var(--oxblood); font-weight: 600; font-family: 'Europa', 'Futura', 'Jost', sans-serif; font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; display: block; margin-bottom: 6px; }
+  .road-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px; }
+  .road-trip { border: 1px solid var(--rule); background: var(--bone); padding: 30px 32px 28px; }
+  .road-trip.is-warm { border-left: 4px solid var(--oxblood); }
+  .road-when { font-family: 'Futura', 'Futura PT', 'Jost', sans-serif; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--oxblood); font-weight: 600; margin-bottom: 6px; }
+  .road-city { font-family: 'Futura', 'Futura PT', 'Jost', sans-serif; font-weight: 500; font-size: 26px; line-height: 1.1; letter-spacing: -0.01em; color: var(--ink); margin-bottom: 4px; }
+  .road-count { font-family: 'Europa', 'Futura', 'Jost', sans-serif; font-size: 12.5px; color: var(--ink-soft); font-weight: 300; margin-bottom: 20px; }
+  .road-firm { padding: 16px 0; border-top: 1px solid var(--rule-soft); }
+  .road-firm:first-of-type { border-top: none; }
+  .road-firm-name { font-family: 'Futura', 'Futura PT', 'Jost', sans-serif; font-weight: 500; font-size: 16px; color: var(--ink); letter-spacing: -0.005em; }
+  .road-firm-meta { font-family: 'Europa', 'Futura', 'Jost', sans-serif; font-size: 12px; color: var(--ink-soft); margin-top: 3px; font-weight: 300; }
+  .road-firm-meta b { color: var(--oxblood); font-weight: 600; }
+  .road-contacts { margin-top: 9px; font-family: 'Europa', 'Futura', 'Jost', sans-serif; font-size: 13px; line-height: 1.5; color: var(--ink-soft); font-weight: 300; }
+  .road-contacts .lead { font-family: 'Futura', 'Futura PT', 'Jost', sans-serif; font-weight: 500; color: var(--ink); }
+  .road-cold { margin-top: 8px; font-family: 'Europa', 'Futura', 'Jost', sans-serif; font-size: 12px; color: var(--ink-soft); font-weight: 300; font-style: italic; }
+  .road-empty { font-family: 'Europa', 'Futura', 'Jost', sans-serif; font-size: 15px; color: var(--ink-soft); font-weight: 300; padding: 10px 0 4px; }
+  .road-pending { margin-top: 22px; padding-top: 18px; border-top: 1px solid var(--rule); font-family: 'Europa', 'Futura', 'Jost', sans-serif; font-size: 12.5px; color: var(--ink-soft); font-weight: 300; }
   .controls { display: flex; gap: 10px; margin-bottom: 36px; flex-wrap: wrap; align-items: center; border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); padding: 16px 0; }
   .filter-btn { font-family: 'Futura', 'Futura PT', 'Jost', sans-serif; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 500; padding: 10px 16px; background: transparent; border: 1px solid var(--rule); color: var(--ink-soft); cursor: pointer; transition: all 0.15s; }
   .filter-btn:hover { border-color: var(--oxblood); color: var(--oxblood); }
@@ -782,9 +798,88 @@
     </div>
   </section>
  
+  <section id="road">
+    <div class="shell">
+      <div class="section-label"><span class="num">03</span><span>On the Road</span><span class="rule"></span></div>
+      <div class="section-head-split">
+        <h2 class="section-title">Who to see <em>when you travel.</em></h2>
+        <p class="section-deck">Prospect firms headquartered in each city on your upcoming schedule — warm 1st-degree connections first, conflicts excluded. Custodial BDO / RM contacts will populate here once that list is added.</p>
+      </div>
+      <div class="road-grid">
+
+        <article class="road-trip">
+          <div class="road-when">Aug 20 – 25</div>
+          <h3 class="road-city">Nashville, TN</h3>
+          <div class="road-count">1 prospect firm · no 1st-degree yet</div>
+          <div class="road-firm">
+            <div class="road-firm-name">Diversified Trust</div>
+            <div class="road-firm-meta">Nashville, TN &nbsp;·&nbsp; <b>~$10B</b> &nbsp;·&nbsp; Tier 1</div>
+            <div class="road-cold">No 1st-degree connection yet — cold intro. AUM sits right at the $10B threshold (needs verification).</div>
+          </div>
+        </article>
+
+        <article class="road-trip">
+          <div class="road-when">Aug 26 – 30</div>
+          <h3 class="road-city">Vancouver, BC</h3>
+          <div class="road-count">No tracked prospects</div>
+          <p class="road-empty">No RIA prospects are headquartered here in the current list.</p>
+          <div class="road-pending">Custodial BDO / RM connections for this city will appear here once the new LinkedIn list is added.</div>
+        </article>
+
+        <article class="road-trip is-warm">
+          <div class="road-when">Sep 1 – 3</div>
+          <h3 class="road-city">Dana Point, CA</h3>
+          <div class="road-count">1 warm prospect in Orange County</div>
+          <div class="road-firm">
+            <div class="road-firm-name">AlphaCore Wealth Advisory</div>
+            <div class="road-firm-meta">San Juan Capistrano, CA &nbsp;·&nbsp; <b>~$6.5B</b> &nbsp;·&nbsp; Tier 2 &nbsp;·&nbsp; Warm path</div>
+            <div class="road-contacts"><span class="lead">Trevor Callan</span>, Managing Partner &nbsp;·&nbsp; <span class="lead">Ryan Callan</span>, Partner &nbsp;— both 1st-degree connections.</div>
+          </div>
+        </article>
+
+        <article class="road-trip is-warm">
+          <div class="road-when">Sep 11 – 13</div>
+          <h3 class="road-city">Hollywood, CA</h3>
+          <div class="road-count">6 prospect firms in Greater LA · 1 warm</div>
+          <div class="road-firm">
+            <div class="road-firm-name">Lido Advisors</div>
+            <div class="road-firm-meta">Los Angeles, CA &nbsp;·&nbsp; <b>$9B+</b> &nbsp;·&nbsp; Tier 1 &nbsp;·&nbsp; Warm path</div>
+            <div class="road-contacts"><span class="lead">Ken Stern</span>, Co-CEO &nbsp;·&nbsp; <span class="lead">Jeffrey Westheimer, JD</span>, Founding Partner &nbsp;·&nbsp; <span class="lead">Henry Hagenbuch</span>, Head of M&amp;A &nbsp;— +7 more 1st-degree connections.</div>
+          </div>
+          <div class="road-firm">
+            <div class="road-firm-name">Aspiriant</div>
+            <div class="road-firm-meta">Los Angeles, CA &nbsp;·&nbsp; <b>$17B+</b> &nbsp;·&nbsp; Tier 1 &nbsp;·&nbsp; Long-cycle (&gt;$10B)</div>
+            <div class="road-cold">No 1st-degree connection yet — cold intro.</div>
+          </div>
+          <div class="road-firm">
+            <div class="road-firm-name">Mozaic</div>
+            <div class="road-firm-meta">Beverly Hills, CA &nbsp;·&nbsp; <b>$4.1B</b> &nbsp;·&nbsp; Tier 1</div>
+            <div class="road-cold">No 1st-degree connection yet — cold intro.</div>
+          </div>
+          <div class="road-firm">
+            <div class="road-firm-name">Abacus Wealth Partners</div>
+            <div class="road-firm-meta">Los Angeles, CA &nbsp;·&nbsp; <b>$3B+</b> &nbsp;·&nbsp; Tier 2</div>
+            <div class="road-cold">No 1st-degree connection yet — cold intro.</div>
+          </div>
+          <div class="road-firm">
+            <div class="road-firm-name">Angeles Wealth Management</div>
+            <div class="road-firm-meta">Los Angeles, CA &nbsp;·&nbsp; <b>$1B–$2B</b> &nbsp;·&nbsp; Tier 2</div>
+            <div class="road-cold">No 1st-degree connection yet — cold intro.</div>
+          </div>
+          <div class="road-firm">
+            <div class="road-firm-name">Halbert Hargrove</div>
+            <div class="road-firm-meta">Long Beach, CA &nbsp;·&nbsp; <b>$4B+</b> &nbsp;·&nbsp; Tier 2</div>
+            <div class="road-cold">No 1st-degree connection yet — cold intro.</div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
   <section id="pipeline">
     <div class="shell">
-      <div class="section-label"><span class="num">03</span><span>ICP Pipeline · Under $10B</span><span class="rule"></span></div>
+      <div class="section-label"><span class="num">04</span><span>ICP Pipeline · Under $10B</span><span class="rule"></span></div>
       <div class="section-head-split">
         <h2 class="section-title">The complete <em>working list.</em></h2>
         <p class="section-deck">Every active prospect at all AUM tiers. Filter by size, tier, side, or connection status. The under-$10B band is highlighted as the priority outreach zone; larger firms remain on the list as long-cycle targets.</p>
@@ -2055,7 +2150,7 @@
  
   <section id="contacts">
     <div class="shell">
-      <div class="section-label"><span class="num">04</span><span>Outreach Tracker</span><span class="rule"></span></div>
+      <div class="section-label"><span class="num">05</span><span>Outreach Tracker</span><span class="rule"></span></div>
       <div class="section-head-split">
         <h2 class="section-title">Every <em>contact</em>, every firm.</h2>
         <p class="section-deck">129 named contacts across 67 firms, tagged by role and live LinkedIn connection status. 30 requests already accepted; the rest are the working outreach queue.</p>
