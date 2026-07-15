@@ -325,7 +325,8 @@
   .filter-btn { font-family: 'Futura', 'Futura PT', 'Jost', sans-serif; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 500; padding: 10px 16px; background: transparent; border: 1px solid var(--rule); color: var(--ink-soft); cursor: pointer; transition: all 0.15s; }
   .filter-btn:hover { border-color: var(--oxblood); color: var(--oxblood); }
   .filter-btn.active { background: var(--oxblood); color: var(--bone); border-color: var(--oxblood); }
-  .search-input { flex: 1; min-width: 240px; background: var(--bone-2); border: 1px solid var(--rule); color: var(--ink); padding: 10px 14px; font-family: 'Europa', 'Futura', 'Jost', sans-serif; font-size: 14px; font-weight: 300; outline: none; transition: border-color 0.15s; }
+  .search-input { flex: 1; min-width: 240px; background: var(--bone-2); border: 1px solid var(--rule); color: var(--ink); padding: 10px 14px; font-family: 'Europa', 'Futura', 'Jost', sans-serif; font-size: 14px; font-weight: 300; outline: none; transition: border-color 0.15s; -webkit-appearance: none; appearance: none; border-radius: 0; }
+  .search-input::-webkit-search-cancel-button { -webkit-appearance: none; appearance: none; }
   .search-input:focus { border-color: var(--oxblood); }
   .search-input::placeholder { color: var(--ink-soft); }
   .db-table { width: 100%; border-collapse: collapse; font-size: 14px; }
@@ -366,6 +367,8 @@
     .pri-stat:nth-child(2) { border-right: none; }
     .db-table th, .db-table td { padding: 12px 8px; font-size: 12px; }
     .why-cell { display: none; }
+    /* 16px keeps iOS from auto-zooming when the search field is focused */
+    .search-input { font-size: 16px; min-width: 100%; }
     .table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 0 -24px; padding: 0 24px; }
     .masthead-inner { flex-wrap: wrap; gap: 12px; }
     .mast-meta { flex-wrap: wrap; gap: 8px 14px; }
