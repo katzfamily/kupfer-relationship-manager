@@ -388,12 +388,12 @@
   .mast-nav a.active { color: var(--ink); border-bottom-color: var(--oxblood); }
   @media (max-width: 760px) {
     .mast-nav {
-      gap: 18px; order: 3; width: 100%;
-      flex-wrap: nowrap; overflow-x: auto; -webkit-overflow-scrolling: touch;
-      padding-bottom: 4px; margin-top: 2px;
-      border-top: 1px solid var(--rule-soft); padding-top: 10px;
+      gap: 12px 20px; order: 3; width: 100%;
+      flex-wrap: wrap;
+      margin-top: 2px; padding-top: 10px;
+      border-top: 1px solid var(--rule-soft);
     }
-    .mast-nav a { font-size: 10px; letter-spacing: 0.1em; flex: 0 0 auto; }
+    .mast-nav a { font-size: 10px; letter-spacing: 0.1em; flex: 0 0 auto; padding: 2px 0; }
     .mast-meta { font-size: 10px; letter-spacing: 0.12em; gap: 6px 12px; }
     .masthead-inner { gap: 10px; }
     .brand { font-size: 17px; }
@@ -405,4 +405,11 @@
     .pri-name, .pri-card.featured .pri-name { max-width: 100%; }
     .pri-card.featured .pri-name { font-size: 30px; }
     .pri-name { font-size: 26px; }
+    /* Connection Map cards: stack name over LinkedIn so nothing is clipped */
+    .firm-block { padding: 28px 22px 24px; }
+    .contact-row { flex-wrap: wrap; }
+    .contact-info { flex: 1 1 100%; min-width: 0; }
+    .contact-link { margin-top: 8px; }
+    .badge-dm, .badge-warm { white-space: nowrap; margin-left: 0; transform: none; }
+    .contact-name { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 8px; }
   }
