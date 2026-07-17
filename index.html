@@ -573,11 +573,11 @@
     });
   })();
  
-/* The Five — selected live from the ICP Pipeline (§03).
-     Features the most recent weekly list (each row's data-week) first: this week's
-     connected, under-$10B prospects lead, ranked by score, with open slots topped up
-     by the next-best warm paths from earlier weeks. Add a new week of data and its
-     picks rise to the top automatically.
+/* The Five — selected live from the ICP Pipeline (Working List).
+     The five best-fit qualifiers, ranked by fit score (tier + relationship path +
+     decision-maker seniority + deal-activity signals). A newly-added prospect
+     refreshes The Five only when it out-scores one of the current members —
+     otherwise it waits in the pipeline. Ties break toward the newer weekly list.
      "Do Not Resurface" drops a pick and pulls the next-ranked prospect up. */
   (async function(){
     const API = '/api/outreach';
@@ -637,10 +637,20 @@
       };
     });
 
-    // Priority = Tier weight + strength of the relationship path.
+    // Fit score — how good a fit a prospect is for Corey's next conversation.
+    // The Five is simply the five highest-scoring qualifiers, so a better-fit
+    // prospect automatically displaces the weakest current member.
+    //   Tier weight ............ Tier 1 > Tier 2 > Tier 3
+    //   Relationship path ...... direct CEO/founder > 1st-degree connection
+    //   Decision-maker seniority a top-seat contact beats a peripheral one
+    //   Deal activity .......... serial acquirers / succession / breakaway =
+    //                            prime M&A timing for an M&A attorney
     function score(p) {
       let s = p.tier === 'tier1' ? 100 : p.tier === 'tier2' ? 60 : 30;
       s += p.conn === 'ceo' ? 60 : p.conn === 'connected' ? 30 : 0;
+      if (/\b(ceo|chief executive|founder|co-founder|managing partner|president|owner|principal)\b/i.test(p.dmTitle || '')) s += 15;
+      if (/serial/i.test(p.sideLabel || '')) s += 10;
+      if (/(acquir|acquisit|\bserial\b|roll[-\s]?up|consolidat|successi|merger|carve[-\s]?out|breakaway|actively)/i.test(p.signal || '')) s += 12;
       return s;
     }
 
@@ -659,21 +669,18 @@
       });
     }
 
-    // The Five features the MOST RECENT weekly list first. Each qualifying firm
-    // carries the date of the source list it came in on (data-week). The newest
-    // week's connected prospects lead — ranked by score — and any remaining slots
-    // are topped up by the next-best warm paths from earlier weeks. So when a new
-    // week of data is added, that week's picks automatically rise to the top and
-    // last week's picks fall back down the list.
-    function byScoreThenRecency(a, b) {
-      return score(b) - score(a) || (a.week < b.week ? 1 : a.week > b.week ? -1 : 0) || a.idx - b.idx;
+    // The Five = the five best-fit qualifiers, ranked by fit score. A newly-added
+    // prospect only enters when its score beats one of the current five; a weaker
+    // newcomer stays in the pipeline (Working List) and leaves The Five untouched.
+    // Ties break toward the more recent weekly list (data-week), then table order,
+    // so among equally-good fits the fresher relationship leads.
+    function byFit(a, b) {
+      return score(b) - score(a)
+        || (a.week < b.week ? 1 : a.week > b.week ? -1 : 0)
+        || a.idx - b.idx;
     }
     function eligible() {
-      const q = qualified();
-      const newest = q.reduce(function(m, p) { return p.week > m ? p.week : m; }, '');
-      const thisWeek = q.filter(function(p) { return newest && p.week === newest; }).sort(byScoreThenRecency);
-      const rest = q.filter(function(p) { return !newest || p.week !== newest; }).sort(byScoreThenRecency);
-      return thisWeek.concat(rest);
+      return qualified().sort(byFit);
     }
 
     function sizeFor(i) { return i === 0 ? 'featured' : (i <= 2 ? 'half' : 'third'); }
