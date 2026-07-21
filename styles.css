@@ -340,6 +340,7 @@
   .tag { display: inline-block; font-family: 'Futura', 'Futura PT', 'Jost', sans-serif; font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 500; padding: 4px 9px; border: 1px solid; white-space: nowrap; }
   .tag-tier1 { color: var(--oxblood); border-color: var(--oxblood); }
   .tag-tier2 { color: var(--ink-soft); border-color: var(--ink-soft); }
+  .tag-tier3 { color: var(--ink-soft); border-color: var(--rule); }
   .tag-buy { color: var(--ink); border-color: var(--mist); background: rgba(125,179,194,0.16); }
   .tag-sell { color: var(--ink); border-color: var(--ink); }
   .tag-conn { color: var(--bone); background: var(--oxblood); border-color: var(--oxblood); }
