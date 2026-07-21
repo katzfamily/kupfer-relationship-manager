@@ -6,3 +6,11 @@
   from = "/api/*"
   to = "/.netlify/functions/:splat"
   status = 200
+
+# Always revalidate pages and assets so content/design updates show up on a
+# normal refresh (the browser sends a conditional request and gets a fast 304
+# when nothing changed, or the fresh file when it did) — no hard-reload needed.
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
