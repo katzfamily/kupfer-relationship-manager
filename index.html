@@ -700,7 +700,12 @@
     // with a named person to contact, not marked "Do Not Resurface".
     function qualified() {
       return prospects.filter(function(p) {
-        return p.aumBand === 'under10' && p.connected && hasPerson(p) && !state[p.slug + NR];
+        // Drop anything Corey has already actioned: "Outreach Complete"
+        // (state[slug]) or "Do Not Resurface" (state[slug + NR]). Either one
+        // removes the prospect from The Five and pulls up the next-best warm
+        // path — completed conversations are replaced, not resurfaced.
+        return p.aumBand === 'under10' && p.connected && hasPerson(p)
+          && !state[p.slug] && !state[p.slug + NR];
       });
     }
 
