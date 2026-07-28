@@ -26,14 +26,6 @@
 </head>
 <body>
 
-  <div class="pw-gate" id="pwGate">
-    <div class="pw-gate-brand"><span class="brand-dot"></span> Kupfer.</div>
-    <form class="pw-gate-form" id="pwForm" autocomplete="off">
-      <input type="password" id="pwInput" placeholder="Enter password" autofocus />
-      <button type="submit">Enter</button>
-    </form>
-    <div class="pw-gate-hint">Internal access only</div>
-  </div>
 
   <header class="masthead">
     <div class="shell masthead-inner">
@@ -61,11 +53,10 @@
 
       <div class="wp-msg-wrap">
         <label class="wp-msg-label" for="wpMsg">Outreach message, edit, then copy</label>
-        <textarea class="wp-msg" id="wpMsg">Hi [First name], Kupfer is producing a white paper on the private-equity cycle in wealth management: where we are in the cycle, how it compares to PE cycles in other industries, and the lessons that carry over for independent firms. As a firm that advises on M&A across the RIA space, we want strong practitioner perspectives in it, and [Firm]'s vantage point would add real weight.
+        <textarea class="wp-msg" id="wpMsg">Hi [First name], Kupfer is producing a white paper on the private-equity cycle in wealth management: where we are in the cycle, how it compares to PE cycles in other industries, and the lessons that carry over for independent firms. As a firm that advises on M&A across the RIA space, we want strong practitioner perspectives in it, and [Firm]'s vantage point would add weight.
 
 Would you be open to a short conversation to contribute? We'll share the draft, and you'll receive the finished paper either way. No agenda beyond the research.
 
-Best,
 Corey Kupfer</textarea>
         <div><button class="wp-copy" id="wpCopy" type="button">Copy message</button></div>
         <p class="wp-hint">Contributors become the prospecting side of the paper; the finished paper doubles as a PR / nurture piece. Personalize the bracketed fields for each firm before sending.</p>
@@ -170,25 +161,6 @@ Corey Kupfer</textarea>
 
 <script>
 
-(function(){
-    var PASS = 'KUPFER';
-    var KEY = 'kupfer.auth';
-    var gate = document.getElementById('pwGate');
-    var form = document.getElementById('pwForm');
-    var inp = document.getElementById('pwInput');
-    if (sessionStorage.getItem(KEY) === '1') { gate.classList.add('is-hidden'); }
-    form.addEventListener('submit', function(e) {
-      e.preventDefault();
-      if (inp.value.trim().toUpperCase() === PASS) {
-        sessionStorage.setItem(KEY, '1');
-        gate.classList.add('is-hidden');
-      } else {
-        inp.classList.add('pw-error');
-        inp.value = '';
-        setTimeout(function(){ inp.classList.remove('pw-error'); }, 400);
-      }
-    });
-  })();
 
   (function(){
     var btn = document.getElementById('wpCopy');
