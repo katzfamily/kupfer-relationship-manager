@@ -12,14 +12,6 @@
 </head>
 <body>
  
-  <div class="pw-gate" id="pwGate">
-    <div class="pw-gate-brand"><span class="brand-dot"></span> Kupfer.</div>
-    <form class="pw-gate-form" id="pwForm" autocomplete="off">
-      <input type="password" id="pwInput" placeholder="Enter password" autofocus />
-      <button type="submit">Enter</button>
-    </form>
-    <div class="pw-gate-hint">Internal access only</div>
-  </div>
  
   <header class="masthead">
     <div class="shell masthead-inner">
@@ -165,29 +157,5 @@
     </a>
   </nav>
 
-<script>
- 
-(function(){
-    var PASS = 'KUPFER';
-    var KEY = 'kupfer.auth';
-    var gate = document.getElementById('pwGate');
-    var form = document.getElementById('pwForm');
-    var inp = document.getElementById('pwInput');
-    if (sessionStorage.getItem(KEY) === '1') { gate.classList.add('is-hidden'); }
-    form.addEventListener('submit', function(e) {
-      e.preventDefault();
-      if (inp.value.trim().toUpperCase() === PASS) {
-        sessionStorage.setItem(KEY, '1');
-        gate.classList.add('is-hidden');
-      } else {
-        inp.classList.add('pw-error');
-        inp.value = '';
-        setTimeout(function(){ inp.classList.remove('pw-error'); }, 400);
-      }
-    });
-  })();
-
-</script>
- 
 </body>
 </html>
