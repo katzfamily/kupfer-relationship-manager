@@ -817,11 +817,10 @@
 
     function render() {
       const elig = eligible();
+      // Hard cap at five. No reserve / "+1" card — Corey only wants five a week.
       const five = elig.slice(0, 5);
-      const reserve = elig[5];
       let html = '';
       five.forEach(function(p, i) { html += cardHtml(p, i + 1, sizeFor(i), false); });
-      if (reserve) html += cardHtml(reserve, 6, 'third', true);
       grid.innerHTML = html || '<p class="section-deck" style="grid-column:span 12;">No connected prospects under $10B remain. Add contacts to the pipeline, or clear a “Do Not Resurface” flag.</p>';
       applyState();
       wire();
