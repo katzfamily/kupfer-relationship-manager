@@ -405,7 +405,7 @@
     .mast-nav { display: none; }
     body { padding-bottom: calc(58px + env(safe-area-inset-bottom, 0px)); }
     .tabbar {
-      display: grid; grid-template-columns: repeat(4, 1fr);
+      display: grid; grid-template-columns: repeat(5, 1fr);
       position: fixed; left: 0; right: 0; bottom: 0; z-index: 60;
       background: var(--bone); border-top: 1.5px solid var(--ink);
       padding-bottom: env(safe-area-inset-bottom, 0px);
