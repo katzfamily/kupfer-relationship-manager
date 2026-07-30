@@ -601,7 +601,10 @@
       h += '<a class="btn" href="' + esc(p.site) + '" target="_blank">Firm Website</a>';
       if (size !== 'featured') h += '<span class="pri-break"></span>';
       h += '<label class="pri-done" data-prospect="' + p.slug + '"><input type="checkbox" /><span class="pri-done-label-todo">Mark Outreach Complete</span><span class="pri-done-label-done">Outreach Complete ✓</span></label>';
-      h += '<label class="pri-suppress" data-prospect="' + p.slug + '"><input type="checkbox" /><span class="pri-suppress-label-todo">Do Not Resurface</span><span class="pri-suppress-label-done">Won\'t Resurface ✓</span></label>';
+      h += '<label class="pri-suppress" data-prospect="' + p.slug + '"'
+        + ' data-firm="' + esc(p.firm) + '" data-loc="' + esc(p.loc) + '" data-side="' + esc(p.sideLabel) + '"'
+        + ' data-dm="' + esc(p.dmName) + '" data-dmtitle="' + esc(p.dmTitle) + '" data-reason="' + esc(p.signal) + '"'
+        + '><input type="checkbox" /><span class="pri-suppress-label-todo">Do Not Resurface</span><span class="pri-suppress-label-done">Won\'t Resurface ✓</span></label>';
       h += '</div></article>';
       return h;
     }
@@ -642,7 +645,21 @@
         const id = label.dataset.prospect;
         const input = label.querySelector('input');
         if (!id || !input) return;
-        input.addEventListener('change', function() { persist(id + NR, input.checked, true); });
+        input.addEventListener('change', function() {
+          persist(id + NR, input.checked, true);
+          // "Do Not Resurface" is Corey's explicit exclude signal: also commit the
+          // firm to the CRM Never Prospect List (or pull it back out if unchecked).
+          // Fire-and-forget; the backend no-ops if the CRM token isn't configured.
+          const np = input.checked
+            ? { firm: label.dataset.firm, loc: label.dataset.loc, side: label.dataset.side,
+                dm: label.dataset.dm, dmTitle: label.dataset.dmtitle, reason: label.dataset.reason }
+            : { firm: label.dataset.firm, remove: true };
+          if (np.firm) {
+            fetch('/api/never-prospect', {
+              method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify(np)
+            }).catch(function() {});
+          }
+        });
       });
     }
 
