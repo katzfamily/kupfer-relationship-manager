@@ -148,7 +148,7 @@
               <a class="contact-link" href="https://www.linkedin.com/search/results/people/?keywords=Ryan%20Callan" target="_blank">LinkedIn ↗</a>
             </div>
           </div>
-          <div class="firm-trigger"><b>Signal</b>Sell-side succession candidate; sourced March 2026.</div>
+          <div class="firm-trigger"><b>Signal</b>Sell-side succession candidate.</div>
         </div>
 
         <div class="firm-block tier-1">
@@ -264,7 +264,7 @@
               <a class="contact-link" href="https://www.linkedin.com/search/results/people/?keywords=Aaron%20Sellsted" target="_blank">LinkedIn ↗</a>
             </div>
           </div>
-          <div class="firm-trigger"><b>Signal</b>Active minority-stake process underway; sourced May 2026.</div>
+          <div class="firm-trigger"><b>Signal</b>Active minority-stake process underway.</div>
         </div>
 
         <div class="firm-block">
@@ -276,7 +276,7 @@
               <a class="contact-link" href="https://www.linkedin.com/search/results/people/?keywords=Jayce%20Nall" target="_blank">LinkedIn ↗</a>
             </div>
           </div>
-          <div class="firm-trigger"><b>Signal</b>Emerging acquirer; sourced March 2026.</div>
+          <div class="firm-trigger"><b>Signal</b>Emerging acquirer.</div>
         </div>
 
       </div>
@@ -576,6 +576,32 @@
       return h + '</div>';
     }
 
+    // Outreach-angle recommendation for The Five: should Corey's first message
+    // lead with the PE-in-wealth white paper, the DealQuest podcast, or both?
+    //   White paper .. the value-first way into a BUY-SIDE acquirer — invite the
+    //                  leader to contribute their vantage on the PE-in-wealth cycle.
+    //   DealQuest .... "Have you been in the room?" — a senior decision-maker with a
+    //                  real executed-deal / succession / breakaway story to tell.
+    // Either, both, or neither can apply; the card only shows a line when one does.
+    function outreachAngle(p) {
+      const sideLabel = (p.sideLabel || '').toLowerCase();
+      const isBuy = p.side === 'buy' || /buy/.test(sideLabel);
+      const senior = /\b(ceo|chief executive|founder|co-founder|managing partner|president|owner|principal|partner|managing director)\b/i.test(p.dmTitle || '');
+      const dealStory = /(acquir|acquisit|serial|roll[-\s]?up|consolidat|successi|merger|transition|breakaway|independen|exit|carve|sold|\bsale\b|minority stake|strategic|partnership)/i.test(p.signal || '');
+      const wp = isBuy;
+      const pod = senior && dealStory;
+      if (!wp && !pod) return '';
+      let text;
+      if (wp && pod) {
+        text = 'Lead with the <b>PE-in-wealth white paper</b> — the value-first way into a buy-side acquirer. The <b>DealQuest podcast</b> is a strong fallback: ' + esc(p.dmName || 'this leader') + ' has a real deal story to tell.';
+      } else if (wp) {
+        text = 'Lead with the <b>PE-in-wealth white paper</b> — invite ' + esc(p.dmName || 'this leader') + ' to contribute a buy-side vantage. Value-first, no ask for business.';
+      } else {
+        text = 'Angle toward the <b>DealQuest podcast</b> — "have you been in the room?" ' + esc(p.dmName || 'This leader') + ' has an executed-deal / succession story worth featuring.';
+      }
+      return '<div class="pri-angle"><label>Outreach angle</label><span>' + text + '</span></div>';
+    }
+
     function cardHtml(p, rank, size, reserve) {
       const cls = 'pri-card ' + size + (reserve ? ' reserve' : '');
       const rankLabel = reserve ? '+1' : (rank < 10 ? '0' + rank : '' + rank);
@@ -596,6 +622,7 @@
       h += '<div class="pri-firm">' + esc(p.firm) + (p.loc ? ' &nbsp;·&nbsp; ' + esc(p.loc) : '') + '</div>';
       if (!reserve) h += statBlock(p, size === 'featured');
       h += '<p class="pri-trigger">' + trigger + '</p>';
+      if (!reserve) h += outreachAngle(p);
       h += '<div class="pri-actions">';
       h += '<a class="btn btn--primary" href="' + liLink(p) + '" target="_blank">' + liLabel + ' <span class="arrow">↗</span></a>';
       h += '<a class="btn" href="' + esc(p.site) + '" target="_blank">Firm Website</a>';
